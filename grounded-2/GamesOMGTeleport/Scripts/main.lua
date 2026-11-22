@@ -6,7 +6,7 @@
 -- engine's K2_TeleportTo as a fallback. Watches the landing: a spot that doesn't hold (you keep falling, or the area never
 -- loads) puts you back where you were. Keys live in settings.txt next to this mod's folder name.
 
-local VERSION = "0.2.0"
+local VERSION = "0.2.1"
 local TAG = "[GamesOMG Teleport] "
 local UEHelpers = require("UEHelpers")
 
@@ -164,6 +164,15 @@ local function text(tree, s, size, colour, bold)
     return tb
 end
 
+-- long text wraps inside its own column and is clipped to it, so it never runs over the text beside it (0.2.0 drew long
+-- names over the PTS / N · E / UNDER WATER labels). The clip covers the first frame, before the wrap width is known.
+local function wrapped(tb)
+    pcall(function() tb:SetAutoWrapText(true) end)
+    pcall(function() tb.AutoWrapText = true end)
+    pcall(function() tb:SetClipping(1) end)        -- EWidgetClipping::ClipToBounds
+    return tb
+end
+
 local function setText(tb, s, colour)
     tb:SetText(FText(s))
     if colour then pcall(function() tb:SetColorAndOpacity({ SpecifiedColor = colour, ColorUseRule = 0 }) end) end
@@ -213,7 +222,7 @@ local function centre(canvas, w, sx, sy, ay, py)
     return s
 end
 
--- ── my places + ticks: plain text files next to the mod (one map, so they hold across your worlds) ─────────────────
+-- ── my places + ticks: plain text files next to the mod (My places hold across your worlds: one map; ticks don't) ─────
 local MINE_FILE, TICK_FILE = MODDIR .. "my-places.txt", MODDIR .. "ticks.txt"
 S.saved, S.ticks, S.sections, S.items = {}, {}, nil, {}
 do
@@ -227,8 +236,8 @@ do
     end
 end
 
--- ticks are kept per world (Bridge 11-20: FIRST GO and DSG share the yard, not their finds): the game's own id for the loaded
--- world is SaveLoadManager.CurrentPlaythroughSharedSaveID (0.6.0.3 schema; SaveGameHeaderData pairs it with SaveFolderName)
+-- ticks are kept per world (two worlds share the yard, not their finds), keyed by the game's own id for the loaded world:
+-- the game state's PlaythroughGuid, the same id the world's save folders carry ("(ID-<32 hex>)…")
 local function readTicks(path)
     local out = {}
     local t = io.open(path, "r")
@@ -265,34 +274,35 @@ local function saveTicks()
     return writeLines(S.tickFile or TICK_FILE, L)
 end
 
+-- 0.2.0 read SaveLoadManager.CurrentPlaythroughSharedSaveID: that is a Shared World's cloud id, empty for a world on your
+-- own PC, so every world fell back to one list. The game state holds the world's id whichever kind it is.
+local function guidHex(g)
+    local out = {}
+    for _, f in ipairs({ "A", "B", "C", "D" }) do
+        local v = g[f]
+        if type(v) ~= "number" then return nil end
+        out[#out + 1] = string.format("%08X", math.floor(v) & 0xFFFFFFFF)
+    end
+    local s = table.concat(out)
+    if s:match("^0+$") then return nil end         -- no world yet (main menu), or a guest the host didn't tell
+    return s
+end
+
 local function worldKey()
-    local function idOf(m)
-        if not (m and m.IsValid and m:IsValid()) then return nil end
-        local v = m.CurrentPlaythroughSharedSaveID
-        if v == nil then return nil end
-        local s
-        pcall(function() s = v:ToString() end)
-        if (s == nil or s == "") and type(v) == "string" then s = v end
-        if s == nil or s == "" then pcall(function() s = string.format("%08x%08x%08x%08x", v.A, v.B, v.C, v.D) end) end
-        return s
-    end
-    local id, via
-    for _, try in ipairs({
-        { "FindFirstOf", function() return FindFirstOf("SaveLoadManager") end },
-        { "GameInstance", function() return UEHelpers.GetGameInstance().SaveLoadManager end },
-    }) do
-        local ok, v = pcall(function() return idOf(try[2]()) end)
-        if ok and v and v ~= "" and not v:match("^[0%-]+$") then id, via = v, try[1]; break end
-    end
-    if not id then return nil end
-    return (id:gsub("[^%w%-_]", "")), via
+    local gs = UEHelpers.GetGameStateBase()
+    if not alive(gs) then return nil end
+    local id, name
+    pcall(function() id = guidHex(gs.PlaythroughGuid) end)
+    pcall(function() name = gs.PlaythroughName:ToString() end)
+    if not id then return nil, nil, name end
+    return id, "PlaythroughGuid", name
 end
 
 local function countTicks() local n = 0; for _ in pairs(S.ticks) do n = n + 1 end; return n end
 
 -- the loaded world's ticks; the old one-file ticks carry into whichever world loads first. True when it changed
 local function useWorld()
-    local key, via = worldKey()
+    local key, via, wname = worldKey()
     key = key or "all"
     if key == S.worldKey then return false end
     S.worldKey = key
@@ -306,7 +316,8 @@ local function useWorld()
             log("the old ticks file was carried into world " .. key)
         end
     end
-    log("world " .. key .. (via and (" (read via " .. via .. ")") or " (the game didn't say which world: one list for all)") .. ": " .. countTicks() .. " found")
+    log("world " .. key .. ((wname and wname ~= "") and (" \"" .. wname .. "\"") or "")
+        .. (via and (" (read via " .. via .. ")") or " (the game didn't say which world: one list for all)") .. ": " .. countTicks() .. " found")
     if S.sections then S.sections = nil end
     return true
 end
@@ -381,7 +392,7 @@ local function headRow(tree, list, s)
     pcall(function() row:SetVisibility(0) end)
     local hb = new("/Script/UMG.HorizontalBox", tree)
     row:SetContent(hb)
-    local arrow = text(tree, "▸", 14, COL.accent, true)
+    local arrow = text(tree, "+", 14, COL.accent, true)   -- + closed, – open: Roboto has no ▸ ▾ (0.2.0 showed a box)
     hadd(hb, sized(tree, arrow, 18), nil)
     hadd(hb, text(tree, string.upper(s.label), 13, COL.accent, true), M(4, 0, 0, 0), true)
     local count = text(tree, "", 12, COL.muted)
@@ -392,7 +403,7 @@ end
 
 local function hintRow(tree, list, s, msg)
     local row = box(tree, COL.clear, M(14, 2, 10, 8), 6)
-    row:SetContent(text(tree, msg, 13, COL.dim))
+    row:SetContent(wrapped(text(tree, msg, 13, COL.dim)))
     list:AddChild(row)
     return { w = row, hint = true, sec = s }
 end
@@ -414,8 +425,8 @@ local function placeRow(tree, list, s, p)
         hadd(hb, sized(tree, tb, 22, 22), M(0, 0, 8, 0))
         r.tick, r.mark = tb, mark
     end
-    r.name = text(tree, p.n, 16, COL.text)
-    hadd(hb, r.name, nil, true)
+    r.name = wrapped(text(tree, p.n, 16, COL.text))
+    hadd(hb, r.name, nil, true)                    -- the name takes what the labels leave, and wraps in it
     if p.water then hadd(hb, text(tree, "UNDER WATER", 11, COL.bad, true), M(10, 0, 0, 0)) end   -- suit up
     hadd(hb, text(tree, (p.s and (p.s .. "   ") or "") .. whereText(p), 12, COL.muted), M(10, 0, 0, 0))
     if s.mine then
@@ -475,7 +486,7 @@ local function buildPanel(pc)
     end)
     pcall(function() edit.ClearKeyboardFocusOnCommit = false end)
     pcall(function() edit.RevertTextOnEscape = false end)
-    edit:SetHintText(FText("Paste a /tp line, or type a place or a name"))
+    edit:SetHintText(FText("Paste a /tp line, or type a place"))   -- one that fits the box (0.2.0's was cut off)
     field:SetContent(edit)
 
     local btns = new("/Script/UMG.HorizontalBox", tree)
@@ -489,12 +500,12 @@ local function buildPanel(pc)
     pcall(function() backBtn:SetVisibility(0) end)
     hadd(btns, backBtn)
 
-    local status = text(tree, UI_HINT, 12, COL.dim)
+    local status = wrapped(text(tree, UI_HINT, 12, COL.dim))
     vadd(vb, status, M(2, 2, 0, 6))
 
     local list = new("/Script/UMG.ScrollBox", tree)
     vadd(vb, list, M(0, 0, 0, 8), true)
-    vadd(vb, text(tree, "Copy Teleport on any pin at gamesomg.com/grounded-2-map", 12, COL.dim), M(2, 0, 0, 0))
+    vadd(vb, wrapped(text(tree, "Copy Teleport on any pin at\ngamesomg.com/grounded-2-map", 12, COL.dim)), M(2, 0, 0, 0))
     return { w = w, tree = tree, slot = slot, edit = edit, status = status, list = list, saveBtn = saveBtn, backBtn = backBtn, btnC = {} }
 end
 
@@ -615,7 +626,7 @@ local function refresh(q)
                     setText(it.count, filt and (s.match .. " matching") or (f .. " / " .. (s.total + f) .. " found"))
                 end
             end
-            setText(it.arrow, isOpen(s) and "▾" or "▸")
+            setText(it.arrow, isOpen(s) and "–" or "+")
         elseif it.hint then
             show = (not filt) and s.open
         else
@@ -626,12 +637,24 @@ local function refresh(q)
         if show then S.vis[#S.vis + 1] = it end
     end
     if filt then
+        -- Enter goes to the place whose NAME you typed, even from the Found drawer, before a place that only shares its
+        -- area ("pergola" with Pergola found picked Crow's Nest, in Pergola Area, in 0.2.0)
         S.sel = 0
-        for i, it in ipairs(S.vis) do if not it.head and not it.hint then S.sel = i; break end end
+        local first = 0
+        for i, it in ipairs(S.vis) do
+            if not it.head and not it.hint then
+                if first == 0 then first = i end
+                if it.p.n:lower():find(q, 1, true) then S.sel = i; break end
+            end
+        end
+        if S.sel == 0 then S.sel = first end
     elseif S.sel > #S.vis then
         S.sel = #S.vis
     end
     paint()
+    if filt and S.sel > 0 and S.ui then
+        pcall(function() S.ui.list:ScrollWidgetIntoView(S.vis[S.sel].w, false, 0, 24.0) end)
+    end
 end
 
 local function status(msg, colour)
@@ -851,7 +874,10 @@ local function saveHere()
     local s = boxText():gsub("^%s+", ""):gsub("%s+$", "")
     local name
     if s ~= "" and not s:match("^/?[Tt][Pp]%s") then
-        name = s:sub(1, 48)
+        local n = utf8.len(s)                          -- 48 letters, never half of one (a name typed in any language)
+        if n == nil then name = s:sub(1, 48)
+        elseif n <= 48 then name = s
+        else name = s:sub(1, utf8.offset(s, 49) - 1) end
     else
         local near = nearestName(here.x, here.y, here.z, 3000)
         name = near and ("Near " .. near) or ("Spot at " .. neOf(here.x, here.y))
