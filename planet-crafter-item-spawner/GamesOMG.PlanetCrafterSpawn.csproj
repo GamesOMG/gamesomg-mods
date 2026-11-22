@@ -1,0 +1,48 @@
+<!-- GamesOMG Item Spawner for The Planet Crafter: game and loader binaries are compile references only, never copied to output. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>GamesOMG.PlanetCrafterSpawn</AssemblyName>
+    <!-- the ONE version: the BepInPlugin attribute (PluginVersion.Value), the DLL's FileVersion and manifest.json follow it -->
+    <Version>0.2.0</Version>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NuGetAudit>false</NuGetAudit>
+    <!-- no debug file in a Release DLL: no folder path of the machine that built it ends up inside it -->
+    <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+    <Deterministic>true</Deterministic>
+    <GameManaged Condition="'$(GameManaged)' == ''">$(PLANET_CRAFTER_MANAGED)</GameManaged>
+  </PropertyGroup>
+  <!-- Thunderstore's AI rule: say it in README.md AND in the assembly's metadata, naming the vendor -->
+  <ItemGroup>
+    <AssemblyMetadata Include="AI_Assisted_Creation" Value="This assembly was created with the assistance of Generative AI (Anthropic Claude), directed and tested in game by GamesOMG." />
+    <AssemblyMetadata Include="AI_Model_Vendor" Value="Anthropic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src/*.cs" />
+    <!-- the gear-G mark and the icon strip, shared with GamesOMG Teleport (its brand.py made them) -->
+    <EmbeddedResource Include="data/mark.png;data/icons.png" LogicalName="%(Filename)%(Extension)" />
+    <Reference Include="BepInEx"><HintPath>.deps/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameManaged)/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManaged)/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GameManaged)/UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GameManaged)/UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(GameManaged)/UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.InputSystem"><HintPath>$(GameManaged)/Unity.InputSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Netcode.Runtime"><HintPath>$(GameManaged)/Unity.Netcode.Runtime.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="GeneratePluginVersion" BeforeTargets="BeforeCompile;CoreCompile">
+    <WriteLinesToFile File="$(IntermediateOutputPath)PluginVersion.g.cs" Overwrite="true" WriteOnlyWhenDifferent="true"
+      Lines="// generated from the csproj's &lt;Version&gt;: do not edit;namespace GamesOMG.PlanetCrafterSpawn { internal static class PluginVersion { public const string Value = &quot;$(Version)&quot;%3B } }" />
+    <ItemGroup>
+      <Compile Remove="$(IntermediateOutputPath)PluginVersion.g.cs" />
+      <Compile Include="$(IntermediateOutputPath)PluginVersion.g.cs" />
+      <FileWrites Include="$(IntermediateOutputPath)PluginVersion.g.cs" />
+    </ItemGroup>
+  </Target>
+  <Target Name="CheckPrivateReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManaged)/Assembly-CSharp.dll')" Text="Set GameManaged to the authorized copied Managed directory." />
+    <Error Condition="!Exists('.deps/BepInEx.dll')" Text="Copy the pinned BepInEx.dll compile reference into .deps/." />
+  </Target>
+</Project>

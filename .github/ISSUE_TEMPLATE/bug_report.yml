@@ -1,0 +1,62 @@
+name: Bug report
+description: Something in one of our mods doesn't work
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Which mod?
+      options:
+        - GamesOMG Teleport (The Planet Crafter)
+        - GamesOMG Item Spawner (The Planet Crafter)
+        - GamesOMG Teleport (Grounded 2)
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: In the zip's name, or in your mod manager.
+      placeholder: "0.3.3"
+    validations:
+      required: true
+  - type: input
+    id: game-version
+    attributes:
+      label: Game version
+      placeholder: "v2.104 / 0.6.0.5"
+  - type: input
+    id: language
+    attributes:
+      label: Your game's language
+      placeholder: "English"
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it?
+      options:
+        - Easy install zip (loader included)
+        - Plugin-only / Mod-only zip, into my own BepInEx or UE4SS
+        - A mod manager (r2modman, Gale, Thunderstore Mod Manager)
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: The /tp line, place or item you used helps a lot. Single player or co-op (host or guest)?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Copy diagnostics (optional, Planet Crafter Teleport)
+      description: Places → Settings → Help → Copy diagnostics, then paste here. Versions, settings and recent errors; never your clipboard or your places.
+      render: text
+  - type: textarea
+    id: log
+    attributes:
+      label: Log (optional)
+      description: The end of BepInEx/LogOutput.log (Planet Crafter) or ue4ss/UE4SS.log (Grounded 2). Neither holds your clipboard.
+      render: text

@@ -1,0 +1,42 @@
+<!-- ChatGPT C56: dependency-free executable parser checks; no game or loader execution. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- C56 landing survey: its checks are their own project (Survey.Tests/), never part of this one -->
+    <Compile Remove="Survey.Tests/**" />
+    <None Remove="Survey.Tests/**" />
+    <Compile Include="../src/TeleportRequest.cs" Link="TeleportRequest.cs" />
+    <Compile Include="../src/LandingGeometry.cs" Link="LandingGeometry.cs" />
+    <Compile Include="../src/MiniJson.cs" Link="MiniJson.cs" />
+    <Compile Include="../src/SpotSet.cs" Link="SpotSet.cs" />
+    <Compile Include="../src/PlaceStore.cs" Link="PlaceStore.cs" />
+    <Compile Include="../src/PlaceFile.cs" Link="PlaceFile.cs" />
+    <Compile Include="../src/PoiCatalog.cs" Link="PoiCatalog.cs" />
+    <!-- 0.3.3: the distance line's height rule and its fit on a one-line row -->
+    <Compile Include="../src/RowMeta.cs" Link="RowMeta.cs" />
+    <Compile Include="../src/PlacesTree.cs" Link="PlacesTree.cs" />
+    <Compile Include="../src/FoundSet.cs" Link="FoundSet.cs" />
+    <!-- 0.3.0: the Unity-free half of the look, controls, settings and data pass -->
+    <Compile Include="../src/Strings.cs" Link="Strings.cs" />
+    <Compile Include="../src/Backups.cs" Link="Backups.cs" />
+    <Compile Include="../src/Transfer.cs" Link="Transfer.cs" />
+    <Compile Include="../src/Prefs.cs" Link="Prefs.cs" />
+    <Compile Include="../src/Library.cs" Link="Library.cs" />
+    <Compile Include="../src/KeyCheck.cs" Link="KeyCheck.cs" />
+    <Compile Include="../src/Nav.cs" Link="Nav.cs" />
+    <Compile Include="../src/Diagnostics.cs" Link="Diagnostics.cs" />
+    <!-- 0.3.0 (Codex C61 F8): the real input hold, against stand-ins for the game's window policy (HoldStandIns.cs) -->
+    <Compile Include="../src/InputHold.cs" Link="InputHold.cs" />
+    <!-- 0.3.0 (Codex C61 F7): which far-switched floors the landing check wakes -->
+    <Compile Include="../src/DestinationWake.cs" Link="DestinationWake.cs" />
+    <None Include="bindings-all.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="spotset-fixtures.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../data/pois-*.json.z" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../data/foundset-pc.json.z" Link="foundset-pc.json.z" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="foundset-fixtures.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+; GamesOMG Teleport keys. Any UE4SS key name works: F1-F12, INSERT, HOME, NUM_ZERO...
+; Change one if another mod already uses it, then restart the game.
+PanelKey = F7
+BackKey = F8

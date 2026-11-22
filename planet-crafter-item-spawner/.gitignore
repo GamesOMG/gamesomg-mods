@@ -1,0 +1,11 @@
+# ChatGPT C56: references and package output are local; never ship game DLLs.
+.deps/
+bin/
+obj/
+dist/
+tests/bin/
+tests/obj/
+__pycache__/
+release-out/
+
+

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GamesOMG Planet Crafter map
+    url: https://gamesomg.com/planet-crafter-map/
+    about: The map the Planet Crafter teleport reads from. A wrong or missing pin can go here as an issue too.
+  - name: GamesOMG Grounded 2 map
+    url: https://gamesomg.com/grounded-2-map/
+    about: The map the Grounded 2 teleport reads from.

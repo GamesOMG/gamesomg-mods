@@ -1,0 +1,69 @@
+<!-- ChatGPT C56: game and loader binaries are references only, never copied to output. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>GamesOMG.PlanetCrafterTeleport</AssemblyName>
+    <!-- C56 0.2.6: the ONE version. PluginVersion.Value (the BepInPlugin attribute), the DLL's FileVersion, manifest.json
+         and the package names all follow it; tests/version_test.py fails when any disagree. -->
+    <Version>0.3.3</Version>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NuGetAudit>false</NuGetAudit>
+    <GameManaged Condition="'$(GameManaged)' == ''">$(PLANET_CRAFTER_MANAGED)</GameManaged>
+  </PropertyGroup>
+  <!-- C56 landing survey (2026-11-19): a TEST-ONLY build, -p:Survey=true. Its own DLL name,
+       plugin GUID and output folders; src/Survey/ is compiled only here, and tests/package_test.py fails if the release DLL
+       carries any of it. It replaces the release plugin while it runs (survey-install.ps1), never ships in a package. -->
+  <PropertyGroup Condition="'$(Survey)' == 'true'">
+    <AssemblyName>GamesOMG.PlanetCrafterTeleport.Survey</AssemblyName>
+    <DefineConstants>$(DefineConstants);SURVEY</DefineConstants>
+    <OutputPath>bin/Survey/$(Configuration)/</OutputPath>
+    <IntermediateOutputPath>obj/Survey/$(Configuration)/</IntermediateOutputPath>
+  </PropertyGroup>
+  <!-- Thunderstore's AI rule (wiki.thunderstore.io/llms-and-ai-generated-files, read 2026-11-19): say it in README.md AND in
+       the assembly's metadata, naming the vendor. Codex/ChatGPT (OpenAI) wrote the first versions, Claude (Anthropic) the rest. -->
+  <ItemGroup>
+    <AssemblyMetadata Include="AI_Assisted_Creation" Value="This assembly was partially or fully created with the assistance of Generative AI (OpenAI Codex and ChatGPT, Anthropic Claude), directed and tested in game by GamesOMG." />
+    <AssemblyMetadata Include="AI_Model_Vendor" Value="OpenAI/Anthropic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src/*.cs" />
+    <!-- 0.2.1: each world's POIs and checked landings, out of the map's data by build-pois.mjs, read offline in game -->
+    <EmbeddedResource Include="data/pois-*.json.z" LogicalName="%(Filename)%(Extension)" />
+    <!-- 0.2.4: the map's found list (#foundset=): its pin order and hash, out of the map's own gomg-sets.js by build-foundset.mjs -->
+    <EmbeddedResource Include="data/foundset-pc.json.z" LogicalName="%(Filename)%(Extension)" />
+    <!-- 0.3.0 the look: the gear-G mark and the icon strip (brand.py). 0.3.2: no font of our own (Manrope was hard to read,
+         player feedback 2026-11-21); the panel uses the game's IMGUI font, as 0.2.6 did -->
+    <EmbeddedResource Include="data/mark.png;data/icons.png" LogicalName="%(Filename)%(Extension)" />
+    <Reference Include="BepInEx"><HintPath>.deps/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameManaged)/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManaged)/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(GameManaged)/UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GameManaged)/UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GameManaged)/UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <!-- 0.3.0: the mark and icons (PNG) and the optional tones -->
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(GameManaged)/UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(GameManaged)/UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.InputSystem"><HintPath>$(GameManaged)/Unity.InputSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Netcode.Runtime"><HintPath>$(GameManaged)/Unity.Netcode.Runtime.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <!-- after the release items, so the Remove sees src/Plugin.cs (the survey plugin is the only BepInPlugin in its DLL) -->
+  <ItemGroup Condition="'$(Survey)' == 'true'">
+    <Compile Include="src/Survey/*.cs" />
+    <Compile Remove="src/Plugin.cs" />
+  </ItemGroup>
+  <Target Name="GeneratePluginVersion" BeforeTargets="BeforeCompile;CoreCompile">
+    <WriteLinesToFile File="$(IntermediateOutputPath)PluginVersion.g.cs" Overwrite="true" WriteOnlyWhenDifferent="true"
+      Lines="// generated from the csproj's &lt;Version&gt; (C56 0.2.6): do not edit;namespace GamesOMG.PlanetCrafterTeleport { internal static class PluginVersion { public const string Value = &quot;$(Version)&quot;%3B } }" />
+    <ItemGroup>
+      <Compile Remove="$(IntermediateOutputPath)PluginVersion.g.cs" />
+      <Compile Include="$(IntermediateOutputPath)PluginVersion.g.cs" />
+      <FileWrites Include="$(IntermediateOutputPath)PluginVersion.g.cs" />
+    </ItemGroup>
+  </Target>
+  <Target Name="CheckPrivateReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManaged)/Assembly-CSharp.dll')" Text="Set GameManaged to the authorized copied Managed directory." />
+    <Error Condition="!Exists('.deps/BepInEx.dll')" Text="Run fetch-dependency.ps1 to verify the pinned public compile reference." />
+  </Target>
+</Project>

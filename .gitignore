@@ -1,0 +1,7 @@
+# build output and downloaded build references, in every mod folder
+bin/
+obj/
+.deps/
+release-out/
+dist/
+__pycache__/

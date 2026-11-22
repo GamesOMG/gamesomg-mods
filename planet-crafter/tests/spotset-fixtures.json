@@ -1,0 +1,90 @@
+{
+ "source": "https://gamesomg.com/assets/js/map-spots.js",
+ "made": "2026-11-19",
+ "sets": [
+  {
+   "link": "https://gamesomg.com/planet-crafter-map/#spotset=zTU1BboMwEPzKag89LciGOJRrq-QD7Q1xMGRro4CNbEeof-i9l36g78hb-o8KUlVZjbSaGc1MIwmPwRvoAy9ITfWo8h1VtfqT2ZhI4HxIFuJwYiTs3iFZhlGfVzaHYVq_CcwOCRcpymovxb5GwoMxER4g2cGZiC01mVSqICkrRfis367fcP2Cn49P6HRcW-4Kb3jSkbekLCgrd4Qvs083y16mbuTNEyJXlBVC5IUifF08QJx1z5EAtDsR9H6adERC5xMTLEOyd2LkkR3rdfwS5vF_vRSCZFUrsR3Jtv0F",
+   "from": "Frog crew",
+   "spots": [
+    {
+     "x": 785.4,
+     "z": 795,
+     "name": "Frog eggs, north side",
+     "world": "prime",
+     "colour": "green",
+     "pin": "w103761069",
+     "group": "Eggs & things"
+    },
+    {
+     "x": -1552,
+     "z": 1175,
+     "name": "Café Ü 北 base",
+     "world": "prime",
+     "colour": "",
+     "pin": "",
+     "group": "Bases"
+    },
+    {
+     "x": 12,
+     "z": -34,
+     "name": "Spot",
+     "world": "humble",
+     "colour": "",
+     "pin": "",
+     "group": ""
+    },
+    {
+     "x": 100.5,
+     "z": -200.25,
+     "name": "Two  spaces,  and, commas",
+     "world": "selenea",
+     "colour": "purple",
+     "pin": "",
+     "group": ""
+    }
+   ]
+  },
+  {
+   "link": "https://gamesomg.com/planet-crafter-map/#spotset=jWzEsIkZyb2cgY3JldyIsWzc4NS40LDc5NSwiRnJvZyBlZ2dzLCBub3J0aCBzaWRlIiwiYnkgdGhlIGxha2UiLCJwcmltZSIsImdyZWVuIiwidzEwMzc2MTA2OSIsIkVnZ3MgJiB0aGluZ3MiXSxbLTE1NTIsMTE3NSwiQ2Fmw6kgw5wg5YyXIGJhc2UiLCIiLCJwcmltZSIsIiIsIiIsIkJhc2VzIl0sWzEyLC0zNCwiU3BvdCIsIiIsImh1bWJsZSJdLFsxMDAuNSwtMjAwLjI1LCJUd28gIHNwYWNlcywgIGFuZCwgY29tbWFzIiwibm90ZSwgd2l0aCwgY29tbWFzIiwic2VsZW5lYSIsInB1cnBsZSIsIiIsIiIsMzAwLDE3OTUwMDAwMDAsMV1d",
+   "from": "Frog crew",
+   "spots": [
+    {
+     "x": 785.4,
+     "z": 795,
+     "name": "Frog eggs, north side",
+     "world": "prime",
+     "colour": "green",
+     "pin": "w103761069",
+     "group": "Eggs & things"
+    },
+    {
+     "x": -1552,
+     "z": 1175,
+     "name": "Café Ü 北 base",
+     "world": "prime",
+     "colour": "",
+     "pin": "",
+     "group": "Bases"
+    },
+    {
+     "x": 12,
+     "z": -34,
+     "name": "Spot",
+     "world": "humble",
+     "colour": "",
+     "pin": "",
+     "group": ""
+    },
+    {
+     "x": 100.5,
+     "z": -200.25,
+     "name": "Two  spaces,  and, commas",
+     "world": "selenea",
+     "colour": "purple",
+     "pin": "",
+     "group": ""
+    }
+   ]
+  }
+ ]
+}

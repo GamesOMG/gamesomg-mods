@@ -1,0 +1,9 @@
+{
+  "name": "GamesOMG_Teleport",
+  "version_number": "0.3.3",
+  "website_url": "https://gamesomg.com/planet-crafter-teleport-mod/",
+  "description": "Copy a spot on the GamesOMG Planet Crafter map, press F7 in game, and you're standing there. Checked landings, a places panel (F3, or View/Share on a controller), Return (F10). Free, no app, no account.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305"
+  ]
+}

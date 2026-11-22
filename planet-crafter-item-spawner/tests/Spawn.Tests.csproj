@@ -1,0 +1,21 @@
+<!-- GamesOMG Item Spawner: the Unity-free half of the mod, run as it ships (no game, no loader). Also reads the built DLL's metadata
+     (dotnet run, then the DLL path) to prove what it never calls. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <NuGetAudit>false</NuGetAudit>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../src/Search.cs" Link="Search.cs" />
+    <Compile Include="../src/SpawnPlan.cs" Link="SpawnPlan.cs" />
+    <Compile Include="../src/Palette.cs" Link="Palette.cs" />
+    <Compile Include="../src/Chord.cs" Link="Chord.cs" />
+    <Compile Include="../src/KeyCheck.cs" Link="KeyCheck.cs" />
+    <Compile Include="../src/Strings.cs" Link="Strings.cs" />
+    <Compile Include="../src/InfoText.cs" Link="InfoText.cs" />
+    <None Include="bindings-all.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="building-names.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

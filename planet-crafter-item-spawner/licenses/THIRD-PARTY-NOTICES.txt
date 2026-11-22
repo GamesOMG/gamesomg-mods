@@ -1,0 +1,40 @@
+GamesOMG Item Spawner for The Planet Crafter: third-party software in the Easy install zip
+
+The Easy install zip carries the BepInEx 5 mod loader exactly as its authors release it, unmodified, from:
+  BepInEx_win_x64_5.4.23.5.zip
+  https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5
+  SHA-256 82f9878551030f54657792c0740d9d51a09500eeae1fba21106b0c441e6732c4
+
+Component, the files it covers, its licence, and where its source code is:
+
+UnityDoorstop 4.5.0 (the file that starts BepInEx with the game)
+  winhttp.dll, doorstop_config.ini, .doorstop_version
+  GNU Lesser General Public License 2.1: UnityDoorstop-LICENSE.txt
+  Source: https://github.com/NeighTools/UnityDoorstop/tree/v4.5.0
+
+BepInEx 5.4.23.5
+  BepInEx/core/BepInEx.dll, BepInEx.Preloader.dll, BepInEx.Harmony.dll, HarmonyXInterop.dll, 0Harmony20.dll,
+  their .xml files, changelog.txt
+  MIT License: BepInEx-LICENSE.txt
+  Source: https://github.com/BepInEx/BepInEx/tree/v5.4.23.5
+
+HarmonyX 2.9.0
+  BepInEx/core/0Harmony.dll, 0Harmony.xml
+  MIT License: HarmonyX-LICENSE.txt
+  Source: https://github.com/BepInEx/HarmonyX/tree/v2.9.0
+
+MonoMod 22.01.29.01
+  BepInEx/core/MonoMod.RuntimeDetour.dll, MonoMod.Utils.dll, their .xml files
+  MIT License: MonoMod-LICENSE.txt
+  Source: https://github.com/MonoMod/MonoMod/tree/v22.01.29.01
+
+Mono.Cecil 0.10.4
+  BepInEx/core/Mono.Cecil.dll, Mono.Cecil.Mdb.dll, Mono.Cecil.Pdb.dll, Mono.Cecil.Rocks.dll
+  MIT License: Mono.Cecil-LICENSE.txt
+  Source: https://github.com/jbevain/cecil/tree/0.10.4
+
+GamesOMG Item Spawner itself (BepInEx/plugins/GamesOMGSpawn/) is MIT licensed: its LICENSE file sits beside it.
+Source: https://github.com/GamesOMG/gamesomg-mods/tree/main/planet-crafter
+
+None of these projects made or endorses GamesOMG Item Spawner. The Planet Crafter is a game by Miju Games, who did not make
+or endorse this mod either. No file from the game is in any of our zips.

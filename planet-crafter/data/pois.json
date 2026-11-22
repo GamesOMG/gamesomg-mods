@@ -1,0 +1,53 @@
+{
+ "map": "0575c990f4584b3db886de6dd51f7a1aa85981e7",
+ "build": 26411416,
+ "made": "2026-11-19",
+ "start": [
+  "zeolite",
+  "uranium"
+ ],
+ "worlds": {
+  "prime": {
+   "pins": 3158,
+   "landings": 3037,
+   "cats": 41,
+   "bytes": 153506,
+   "packed": 55634
+  },
+  "humble": {
+   "pins": 4873,
+   "landings": 4692,
+   "cats": 42,
+   "bytes": 231375,
+   "packed": 83637
+  },
+  "selenea": {
+   "pins": 1044,
+   "landings": 981,
+   "cats": 24,
+   "bytes": 51902,
+   "packed": 18894
+  },
+  "aqualis": {
+   "pins": 994,
+   "landings": 983,
+   "cats": 19,
+   "bytes": 49379,
+   "packed": 18411
+  },
+  "toxicity": {
+   "pins": 3722,
+   "landings": 3639,
+   "cats": 41,
+   "bytes": 185272,
+   "packed": 65591
+  },
+  "skeo": {
+   "pins": 1086,
+   "landings": 947,
+   "cats": 26,
+   "bytes": 58251,
+   "packed": 20903
+  }
+ }
+}

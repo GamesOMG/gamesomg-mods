@@ -1,0 +1,694 @@
+{
+ "v": 1,
+ "build": 26411416,
+ "source": "sharedassets0.assets",
+ "sha256": "a29acfa4ce7847a722cc7a05490a0be08056fc734ff0b2afdbc694e70be3f9f8",
+ "scope": "Every original PlayerActions binding with a control path; composites' parts included.",
+ "bindings": [
+  {
+   "map": "PlayerMovable",
+   "action": "LookDirection",
+   "path": "<Mouse>/delta"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/w"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/s"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/a"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/d"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/upArrow"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/downArrow"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/leftArrow"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Keyboard>/rightArrow"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Move",
+   "path": "<Gamepad>/leftStick"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Jump",
+   "path": "<Keyboard>/space"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Jump",
+   "path": "<Gamepad>/rightTrigger"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "VehicleJetpack",
+   "path": "<Keyboard>/space"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "VehicleJetpack",
+   "path": "<Gamepad>/buttonSouth"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Run",
+   "path": "<Keyboard>/shift"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Run",
+   "path": "<Gamepad>/leftTrigger"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "AutoForward",
+   "path": "<Keyboard>/y"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "AutoForward",
+   "path": "<Gamepad>/leftStickPress"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Action",
+   "path": "<Mouse>/leftButton"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Action",
+   "path": "<Keyboard>/u"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenInventory",
+   "path": "<Keyboard>/tab"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenInventory",
+   "path": "<Gamepad>/dpad/up"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenConstruction",
+   "path": "<Keyboard>/q"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenConstruction",
+   "path": "<Gamepad>/dpad/down"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Escape",
+   "path": "<Keyboard>/escape"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Escape",
+   "path": "<Gamepad>/start"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RotateObject",
+   "path": "<Mouse>/scroll"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ShowFeedback",
+   "path": "<Keyboard>/f8"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "PressWishlist",
+   "path": "<Keyboard>/f9"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "BlockView",
+   "path": "<Keyboard>/c"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleLight",
+   "path": "<Keyboard>/f"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleLight",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "PressEnter",
+   "path": "<Keyboard>/enter"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "PressEnter",
+   "path": "<Keyboard>/numpadEnter"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SwitchFlyMode",
+   "path": "<Keyboard>/3"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SwitchFlyMode",
+   "path": "<Gamepad>/dpad/right"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RemoveToxicAreaDebug",
+   "path": "<Keyboard>/t"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "TogglePlayMode",
+   "path": "<Keyboard>/4"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "TogglePlayMode",
+   "path": "<Gamepad>/dpad/left"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SecretDevKey",
+   "path": "<Keyboard>/g"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SecretDevKey",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleUi",
+   "path": "<Keyboard>/5"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleHand",
+   "path": "<Keyboard>/6"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleBalancing",
+   "path": "<Keyboard>/2"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RotateObjectKey",
+   "path": "<Keyboard>/r"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RotateObjectKey",
+   "path": "<Gamepad>/dpad/right"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleTerrainPerf",
+   "path": "<Keyboard>/7"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ToggleCameraSmoothing",
+   "path": "<Keyboard>/8"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ShowMap",
+   "path": "<Keyboard>/m"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ShowMap",
+   "path": "<Gamepad>/dpad/left"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "TogglePlayerNames",
+   "path": "<Keyboard>/9"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "LookDirection",
+   "path": "<Gamepad>/rightStick"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Action",
+   "path": "<Gamepad>/buttonSouth"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "CancelAction",
+   "path": "<Mouse>/rightButton"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "CancelAction",
+   "path": "<Gamepad>/buttonEast"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "PhotoMode",
+   "path": "<Keyboard>/f2"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "PhotoMode",
+   "path": "<Gamepad>/rightStickPress"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Unstuck",
+   "path": "<Keyboard>/f4"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Unstuck",
+   "path": "<Gamepad>/leftStickPress"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "AccessibilityKey",
+   "path": "<Keyboard>/ctrl"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "AccessibilityKey",
+   "path": "<Gamepad>/rightShoulder"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RotateObjectKey2",
+   "path": "<Keyboard>/t"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "RotateObjectKey2",
+   "path": "<Gamepad>/dpad/left"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenChatWindow",
+   "path": "<Keyboard>/enter"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "OpenChatWindow",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote1",
+   "path": "<Keyboard>/1"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote2",
+   "path": "<Keyboard>/2"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote3",
+   "path": "<Keyboard>/3"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote4",
+   "path": "<Keyboard>/4"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote5",
+   "path": "<Keyboard>/5"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote6",
+   "path": "<Keyboard>/6"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "Emote7",
+   "path": "<Keyboard>/7"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "IntroVideoSkip",
+   "path": "<Keyboard>/escape"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "IntroVideoSkip",
+   "path": "<Gamepad>/start"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ThirdPersonLookDirection",
+   "path": "<Mouse>/delta"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "ThirdPersonLookDirection",
+   "path": "<Gamepad>/rightStick"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SwitchThirdPersonView",
+   "path": "<Mouse>/middleButton"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "SwitchThirdPersonView",
+   "path": "<Gamepad>/rightStickPress"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "VehicleGamepadThrottle",
+   "path": "<Gamepad>/rightTrigger"
+  },
+  {
+   "map": "PlayerMovable",
+   "action": "VehicleGamepadBrake",
+   "path": "<Gamepad>/leftTrigger"
+  },
+  {
+   "map": "UI",
+   "action": "Navigate",
+   "path": "<Gamepad>/leftStick/up"
+  },
+  {
+   "map": "UI",
+   "action": "Navigate",
+   "path": "<Gamepad>/leftStick/down"
+  },
+  {
+   "map": "UI",
+   "action": "Navigate",
+   "path": "<Gamepad>/leftStick/left"
+  },
+  {
+   "map": "UI",
+   "action": "Navigate",
+   "path": "<Gamepad>/leftStick/right"
+  },
+  {
+   "map": "UI",
+   "action": "Navigate",
+   "path": "<Gamepad>/dpad"
+  },
+  {
+   "map": "UI",
+   "action": "Submit",
+   "path": "*/{Submit}"
+  },
+  {
+   "map": "UI",
+   "action": "Cancel",
+   "path": "*/{Cancel}"
+  },
+  {
+   "map": "UI",
+   "action": "Point",
+   "path": "<Mouse>/position"
+  },
+  {
+   "map": "UI",
+   "action": "Click",
+   "path": "<Mouse>/leftButton"
+  },
+  {
+   "map": "UI",
+   "action": "ScrollWheel",
+   "path": "<Mouse>/scroll"
+  },
+  {
+   "map": "UI",
+   "action": "ScrollWheel",
+   "path": "<Gamepad>/rightStick"
+  },
+  {
+   "map": "UI",
+   "action": "MiddleClick",
+   "path": "<Mouse>/middleButton"
+  },
+  {
+   "map": "UI",
+   "action": "RightClick",
+   "path": "<Mouse>/rightButton"
+  },
+  {
+   "map": "UI",
+   "action": "SaveDelete",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "UI",
+   "action": "SaveDetails",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "PressF1",
+   "path": "<Keyboard>/f1"
+  },
+  {
+   "map": "UI",
+   "action": "TabLeft",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "TabRight",
+   "path": "<Gamepad>/rightShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "OptionsApply",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "UI",
+   "action": "RecipePin",
+   "path": "<Mouse>/rightButton"
+  },
+  {
+   "map": "UI",
+   "action": "RecipePin",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "InventoryConsume",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "UI",
+   "action": "InventoryDrop",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "InventorySort",
+   "path": "<Gamepad>/leftStickPress"
+  },
+  {
+   "map": "UI",
+   "action": "InventoryMoveAll",
+   "path": "<Gamepad>/rightStickPress"
+  },
+  {
+   "map": "UI",
+   "action": "InventoryOpenLogistic",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "LogisticPriorityPlus",
+   "path": "<Gamepad>/rightShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "LogisticPriorityMinus",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "ColorPickerHue",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "ColorPickerHue",
+   "path": "<Gamepad>/rightShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "LaunchRocket",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "BlueprintDecode",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "MapZoom",
+   "path": "<Gamepad>/leftShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "MapZoom",
+   "path": "<Gamepad>/rightShoulder"
+  },
+  {
+   "map": "UI",
+   "action": "MapZoom",
+   "path": "<Mouse>/scroll/up"
+  },
+  {
+   "map": "UI",
+   "action": "MapZoom",
+   "path": "<Mouse>/scroll/down"
+  },
+  {
+   "map": "UI",
+   "action": "ChatSendText",
+   "path": "<Keyboard>/enter"
+  },
+  {
+   "map": "UI",
+   "action": "ChatSendText",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "UI",
+   "action": "PortalScan",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Gamepad>/leftStick/up"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Gamepad>/leftStick/down"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Gamepad>/leftStick/left"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Gamepad>/leftStick/right"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Gamepad>/dpad"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/upArrow"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/downArrow"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/leftArrow"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/rightArrow"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/w"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/s"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/a"
+  },
+  {
+   "map": "UI",
+   "action": "MapNavigate",
+   "path": "<Keyboard>/d"
+  },
+  {
+   "map": "UI",
+   "action": "ColorPickerCopy",
+   "path": "<Gamepad>/buttonNorth"
+  },
+  {
+   "map": "UI",
+   "action": "ColorPickerPaste",
+   "path": "<Gamepad>/buttonWest"
+  },
+  {
+   "map": "UI",
+   "action": "EquipItem",
+   "path": "<Mouse>/leftButton"
+  },
+  {
+   "map": "UI",
+   "action": "EquipItem",
+   "path": "<Gamepad>/buttonSouth"
+  },
+  {
+   "map": "UI",
+   "action": "RemoveGroup",
+   "path": "<Gamepad>/buttonWest"
+  }
+ ]
+}
