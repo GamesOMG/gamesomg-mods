@@ -1,8 +1,7 @@
 {
  "v": 1,
  "build": 26411416,
- "source": "sharedassets0.assets",
- "sha256": "a29acfa4ce7847a722cc7a05490a0be08056fc734ff0b2afdbc694e70be3f9f8",
+ "source": "the game's default key bindings",
  "scope": "Every original PlayerActions binding with a control path; composites' parts included.",
  "bindings": [
   {

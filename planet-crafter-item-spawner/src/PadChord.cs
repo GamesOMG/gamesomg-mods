@@ -1,6 +1,6 @@
 // GamesOMG Item Spawner: the controller opener, LB + RB together by default. Every single pad button already does something in
-// play (build 26411416's "PlayerMovable" map), and View opens GamesOMG Teleport. LB is the game's SecretDevKey (no game code
-// reads it) and RB its AccessibilityKey (a modifier the game reads only while building or clicking in an inventory), so
+// play (build 26411416's "PlayerMovable" map), and View opens GamesOMG Teleport. LB is the game's SecretDevKey (it does nothing in
+// play) and RB its AccessibilityKey (a modifier the game reads only while building or clicking in an inventory), so
 // both shoulders at once do nothing in normal play. Written as "<Gamepad>/leftShoulder + <Gamepad>/rightShoulder"; one
 // path alone is a single button; empty = no controller opener. Read straight from the device each frame it updates.
 using System;

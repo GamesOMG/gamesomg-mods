@@ -1,6 +1,6 @@
 // GamesOMG Item Spawner: a controller chord as text ("<Gamepad>/leftShoulder + <Gamepad>/rightShoulder"), Unity-free (tests run it).
 // A chord's buttons each do something alone in the game's play map; what matters is that pressing them together does
-// nothing the player would notice. Allowed alone: LB = the game's SecretDevKey (no game code reads it, build 26411416) and
+// nothing the player would notice. Allowed alone: LB = the game's SecretDevKey (it does nothing in play, build 26411416) and
 // RB = AccessibilityKey (a held modifier, read only while building or clicking in an inventory). Any other play action on a
 // chord button is a clash, said once in the log and in a notice.
 using System.Collections.Generic;

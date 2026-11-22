@@ -1,9 +1,9 @@
 // GamesOMG Teleport 0.3.0: key and button clashes, and how a binding reads on screen. Two checks (the brief: "Detect
-// duplicate bindings within the mod and against the game's own bindings (read them from the game code)"):
+// duplicate bindings within the mod and against the game's own bindings"):
 //   · inside the mod: two of our actions on one key or button;
 //   · against the game: the game's own gameplay bindings ("PlayerMovable", the map that is live while you play and our
 //     keys listen), read at run time from its input asset with the player's own rebinds (Plugin), or from build 26411416's
-//     serialized PlayerActions (tests/bindings-all.json) in the tests.
+//     default bindings (tests/bindings-all.json) in the tests.
 // Other mods can still clash; we say so instead of claiming to see them. No Unity here.
 using System;
 using System.Collections.Generic;
