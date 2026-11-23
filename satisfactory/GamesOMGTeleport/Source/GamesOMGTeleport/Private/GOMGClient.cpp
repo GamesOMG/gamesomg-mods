@@ -6,7 +6,6 @@
 #include "SGOMGPanel.h"
 
 #include "Components/CapsuleComponent.h"
-#include "Dom/JsonObject.h"
 #include "Engine/Engine.h"
 #include "Engine/GameViewportClient.h"
 #include "Engine/World.h"
@@ -17,132 +16,11 @@
 #include "Framework/Application/IInputProcessor.h"
 #include "Framework/Application/SlateApplication.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "HAL/FileManager.h"
+#include "HAL/PlatformProcess.h"
 #include "HAL/PlatformApplicationMisc.h"
-#include "Misc/FileHelper.h"
-#include "Misc/Paths.h"
-#include "Serialization/JsonReader.h"
-#include "Serialization/JsonSerializer.h"
-#include "Serialization/JsonWriter.h"
 
 namespace
 {
-	// ── the store: Saved/GamesOMGTeleport/places.json ─────────────────────────────────────────────────────────────────────────
-	struct FWorldStore
-	{
-		TSet<FString> Found;          // place ids the player ticked
-		bool bHasBack = false;
-		FVector Back = FVector::ZeroVector;   // feet
-		float BackYaw = 0;
-	};
-	struct FStore
-	{
-		FKey PanelKey = EKeys::F9;
-		FKey BackKey = EKeys::F10;
-		bool bCloseAfterTeleport = true;
-		TSet<FString> Collapsed;      // heading keys the player closed (or opened, for ones closed by default: "!" prefix)
-		TMap<FString, FWorldStore> Worlds;
-	};
-	FStore GStore;
-	bool GStoreLoaded = false;
-
-	FString StorePath() { return FPaths::ProjectSavedDir() / TEXT("GamesOMGTeleport") / TEXT("places.json"); }
-
-	void SaveStore();
-
-	void LoadStore()
-	{
-		GStoreLoaded = true;
-		FString Text;
-		if (!FFileHelper::LoadFileToString(Text, *StorePath()))
-		{
-			SaveStore();   // the defaults, written once, so the key settings are there to find
-			return;
-		}
-		TSharedPtr<FJsonObject> Root;
-		if (!FJsonSerializer::Deserialize(TJsonReaderFactory<>::Create(Text), Root) || !Root.IsValid())
-		{
-			// never throw a player's file away: keep it beside the new one
-			FFileHelper::SaveStringToFile(Text, *(StorePath() + TEXT(".bad")));
-			UE_LOG(LogGamesOMGTeleport, Warning, TEXT("places.json would not read; kept as places.json.bad"));
-			return;
-		}
-		const TSharedPtr<FJsonObject>* Settings;
-		if (Root->TryGetObjectField(TEXT("settings"), Settings))
-		{
-			FString K;
-			if ((*Settings)->TryGetStringField(TEXT("panelKey"), K) && FKey(*K).IsValid()) GStore.PanelKey = FKey(*K);
-			if ((*Settings)->TryGetStringField(TEXT("backKey"), K) && FKey(*K).IsValid()) GStore.BackKey = FKey(*K);
-			(*Settings)->TryGetBoolField(TEXT("closeAfterTeleport"), GStore.bCloseAfterTeleport);
-			const TArray<TSharedPtr<FJsonValue>>* Arr;
-			if ((*Settings)->TryGetArrayField(TEXT("collapsed"), Arr))
-				for (const TSharedPtr<FJsonValue>& V : *Arr) GStore.Collapsed.Add(V->AsString());
-		}
-		const TSharedPtr<FJsonObject>* Worlds;
-		if (Root->TryGetObjectField(TEXT("worlds"), Worlds))
-		{
-			for (const auto& Pair : (*Worlds)->Values)
-			{
-				const TSharedPtr<FJsonObject> W = Pair.Value->AsObject();
-				if (!W.IsValid()) continue;
-				FWorldStore& S = GStore.Worlds.Add(Pair.Key);
-				const TArray<TSharedPtr<FJsonValue>>* Arr;
-				if (W->TryGetArrayField(TEXT("found"), Arr))
-					for (const TSharedPtr<FJsonValue>& V : *Arr) S.Found.Add(V->AsString());
-				if (W->TryGetArrayField(TEXT("back"), Arr) && Arr->Num() == 4)
-				{
-					S.bHasBack = true;
-					S.Back = FVector((*Arr)[0]->AsNumber(), (*Arr)[1]->AsNumber(), (*Arr)[2]->AsNumber());
-					S.BackYaw = (*Arr)[3]->AsNumber();
-				}
-			}
-		}
-	}
-
-	void SaveStore()
-	{
-		TSharedRef<FJsonObject> Root = MakeShared<FJsonObject>();
-		Root->SetNumberField(TEXT("version"), 1);
-		TSharedRef<FJsonObject> Settings = MakeShared<FJsonObject>();
-		Settings->SetStringField(TEXT("panelKey"), GStore.PanelKey.ToString());
-		Settings->SetStringField(TEXT("backKey"), GStore.BackKey.ToString());
-		Settings->SetBoolField(TEXT("closeAfterTeleport"), GStore.bCloseAfterTeleport);
-		TArray<TSharedPtr<FJsonValue>> Col;
-		for (const FString& K : GStore.Collapsed) Col.Add(MakeShared<FJsonValueString>(K));
-		Settings->SetArrayField(TEXT("collapsed"), Col);
-		Root->SetObjectField(TEXT("settings"), Settings);
-		TSharedRef<FJsonObject> Worlds = MakeShared<FJsonObject>();
-		for (const auto& Pair : GStore.Worlds)
-		{
-			TSharedRef<FJsonObject> W = MakeShared<FJsonObject>();
-			TArray<TSharedPtr<FJsonValue>> F;
-			TArray<FString> Ids = Pair.Value.Found.Array();
-			Ids.Sort();
-			for (const FString& Id : Ids) F.Add(MakeShared<FJsonValueString>(Id));
-			W->SetArrayField(TEXT("found"), F);
-			if (Pair.Value.bHasBack)
-			{
-				TArray<TSharedPtr<FJsonValue>> B;
-				B.Add(MakeShared<FJsonValueNumber>(FMath::RoundToDouble(Pair.Value.Back.X)));
-				B.Add(MakeShared<FJsonValueNumber>(FMath::RoundToDouble(Pair.Value.Back.Y)));
-				B.Add(MakeShared<FJsonValueNumber>(FMath::RoundToDouble(Pair.Value.Back.Z)));
-				B.Add(MakeShared<FJsonValueNumber>(FMath::RoundToDouble(Pair.Value.BackYaw)));
-				W->SetArrayField(TEXT("back"), B);
-			}
-			Worlds->SetObjectField(Pair.Key, W);
-		}
-		Root->SetObjectField(TEXT("worlds"), Worlds);
-		FString Out;
-		const TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&Out);
-		FJsonSerializer::Serialize(Root, Writer);
-		const FString Tmp = StorePath() + TEXT(".tmp");
-		if (!FFileHelper::SaveStringToFile(Out, *Tmp) || !IFileManager::Get().Move(*StorePath(), *Tmp, true, true))
-		{
-			UE_LOG(LogGamesOMGTeleport, Warning, TEXT("could not save %s"), *StorePath());
-			GOMGClient::Toast(FText::FromString(TEXT("Couldn't save your ticks (is the Saved folder read-only?)")), true);
-		}
-	}
-
 	// ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 	TSharedPtr<IInputProcessor> GInput;
 	TSharedPtr<SGOMGRoot> GRoot;
@@ -153,6 +31,7 @@ namespace
 	double GLastFoundRequest = -1000;
 	FText GStatus;
 	bool GServerMissing = false;
+	TFunction<void(FKey)> GCapture;
 
 	struct FPending
 	{
@@ -202,25 +81,33 @@ namespace
 		return PC ? PC->GetRemoteCallObjectOfClass<UGOMGTeleportRCO>() : nullptr;
 	}
 
-	FString WorldKey()
+	FString SessionName()
 	{
 		UWorld* W = GameWorld();
 		AFGGameState* GS = W ? W->GetGameState<AFGGameState>() : nullptr;
 		FString Name = GS ? GS->GetSessionName() : FString();
 		if (Name.IsEmpty()) Name = TEXT("(unnamed session)");
-		if (W && W->GetNetMode() == NM_Client) Name += TEXT(" @ ") + W->URL.Host;   // a guest: per host
 		return Name;
 	}
 
-	FWorldStore& CurrentWorld()
+	bool IsGuest() { UWorld* W = GameWorld(); return W && W->GetNetMode() == NM_Client; }
+
+	FString WorldKey()
 	{
-		if (!GStoreLoaded) LoadStore();
-		return GStore.Worlds.FindOrAdd(WorldKey());
+		FString Name = SessionName();
+		if (IsGuest()) Name += TEXT(" @ ") + GameWorld()->URL.Host;   // a guest: per host
+		return Name;
 	}
 
 	FVector FeetOf(const ACharacter* Ch)
 	{
 		return Ch->GetActorLocation() - FVector(0, 0, Ch->GetCapsuleComponent()->GetScaledCapsuleHalfHeight());
+	}
+
+	// map metres, as the in-game map prints them (world / 100, truncated)
+	FString MapXY(const FVector& V)
+	{
+		return FString::Printf(TEXT("%lld, %lld"), (long long)FMath::TruncToDouble(V.X / 100.0), (long long)FMath::TruncToDouble(V.Y / 100.0));
 	}
 
 	void SetPanelInput(bool bOpen)
@@ -248,6 +135,8 @@ namespace
 		if (!W || !GEngine || !GEngine->GameViewport) return;
 		if (GRoot.IsValid() && GRootWorld.Get() == W) return;
 		if (GRoot.IsValid()) GEngine->GameViewport->RemoveViewportWidgetContent(GRoot.ToSharedRef());
+		GCapture = nullptr;      // a key capture armed in the old world's Settings must not reach the old panel
+		GPending = FPending();   // nor a teleport the old world was waiting on
 		GRoot = SNew(SGOMGRoot);
 		GEngine->GameViewport->AddViewportWidgetContent(GRoot.ToSharedRef(), 50);
 		GRootWorld = W;
@@ -295,6 +184,7 @@ namespace
 			GOMGClient::Toast(FText::FromString(TEXT("Get out of the vehicle first.")), true);
 			return;
 		}
+		ReleaseInputHold();   // a lost request's hold (30-45 s old) must not outlive it
 		GPending = FPending();
 		GPending.Id = GNextId++;
 		GPending.Label = Label;
@@ -302,18 +192,11 @@ namespace
 		GPending.OriginYaw = Ch->GetActorRotation().Yaw;
 		GPending.bIsBack = (Flags & GOMGFlags::IsBack) != 0;
 		GPending.Sent = FPlatformTime::Seconds();
+		const int32 Id = GPending.Id;
 		Rco->Server_Teleport(Target, Hint ? *Hint : FVector::ZeroVector, Flags | (Hint ? GOMGFlags::HasHint : 0), GPending.Id);
+		if (GPending.Id != Id) return;   // solo / host: refused at once, and already said why
+		if (GOMGStore::Settings().bCloseAfterTeleport) GOMGClient::ClosePanel();
 		GOMGClient::Toast(FText::Format(FText::FromString(TEXT("Going to {0}…")), Label));
-		if (GStore.bCloseAfterTeleport) GOMGClient::ClosePanel();
-	}
-
-	FText PlaceLabel(int32 Index)
-	{
-		const FGOMGPlaceDef& P = GOMGPlaces::Get(Index);
-		const FText Region = GOMGPlaces::RegionName(P.Region);
-		const FText Cat = GOMGPlaces::CatName(P.Cat);
-		if (FCString::Strcmp(GOMGPlaces::Cat(P.Cat).Key, TEXT("tapes")) == 0) return GOMGPlaces::PlaceDetail(Index);
-		return Region.IsEmpty() ? Cat : FText::Format(FText::FromString(TEXT("{0}, {1}")), Cat, Region);
 	}
 
 	// ── keys ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -327,23 +210,37 @@ namespace
 		{
 			if (!LocalPC() || !GRoot.IsValid()) return false;
 			const FKey K = E.GetKey();
+			const FGOMGSettings& S = GOMGStore::Settings();
+			if (GCapture)
+			{
+				// Settings › Controls: the next key is the new one (Esc cancels); mouse buttons and modifiers alone don't count
+				if (K.IsMouseButton() || K.IsModifierKey() || E.IsRepeat()) return true;
+				TFunction<void(FKey)> Done = MoveTemp(GCapture);
+				GCapture = nullptr;
+				// a key that types (a letter, Space, the arrows and editing keys) would fire while you type in a box: refused
+				const bool bTyping = E.GetCharacter() != 0 || K == EKeys::BackSpace || K == EKeys::Delete || K == EKeys::Left || K == EKeys::Right
+					|| K == EKeys::Home || K == EKeys::End || K == EKeys::Tab || K == EKeys::SpaceBar;
+				Done(K == EKeys::Escape ? EKeys::Invalid : bTyping ? EKeys::AnyKey : K);
+				return true;
+			}
 			if (GPanelOpen)
 			{
-				if (K == EKeys::Escape || (K == GStore.PanelKey && !E.IsRepeat())) { GOMGClient::ClosePanel(); return true; }
-				if (K == EKeys::Up) { GRoot->MoveSelection(-1); return true; }
-				if (K == EKeys::Down) { GRoot->MoveSelection(+1); return true; }
-				if (K == EKeys::PageUp) { GRoot->MoveSelection(-10); return true; }
-				if (K == EKeys::PageDown) { GRoot->MoveSelection(+10); return true; }
-				if (K == EKeys::Enter && !E.IsRepeat()) { GRoot->ActivateSelection(); return true; }
-				if (K == GStore.BackKey && !E.IsRepeat()) { GOMGClient::GoBack(); return true; }
-				return false;   // typing goes to the search box
+				if (K == EKeys::Escape) { if (!GRoot->Back()) GOMGClient::ClosePanel(); return true; }
+				if (K == S.PanelKey && !E.IsRepeat()) { GOMGClient::ClosePanel(); return true; }
+				if (K == EKeys::Up) { GRoot->MoveFocus(-1); return true; }
+				if (K == EKeys::Down) { GRoot->MoveFocus(+1); return true; }
+				if (K == EKeys::PageUp) { GRoot->MoveFocus(-10); return true; }
+				if (K == EKeys::PageDown) { GRoot->MoveFocus(+10); return true; }
+				if (K == EKeys::Enter && !E.IsRepeat()) { GRoot->Enter(); return true; }
+				if (K == S.BackKey && !E.IsRepeat()) { GOMGClient::GoBack(); return true; }
+				return false;   // typing goes to the text box
 			}
 			if (E.IsRepeat()) return false;
 			// someone typing in chat or a sign: F-keys aren't typed, but don't steal them from a text box anyway
 			const TSharedPtr<SWidget> Focus = App.GetKeyboardFocusedWidget();
 			if (Focus.IsValid() && (Focus->GetType() == FName(TEXT("SEditableText")) || Focus->GetType() == FName(TEXT("SMultiLineEditableText")))) return false;
-			if (K == GStore.PanelKey) { GOMGClient::TogglePanel(); return true; }
-			if (K == GStore.BackKey) { GOMGClient::GoBack(); return true; }
+			if (K == S.PanelKey) { GOMGClient::TogglePanel(); return true; }
+			if (K == S.BackKey) { GOMGClient::GoBack(); return true; }
 			return false;
 		}
 	};
@@ -366,8 +263,8 @@ namespace GOMGClient
 		{
 			GInput = MakeShared<FGOMGInputProcessor>();
 			FSlateApplication::Get().RegisterInputPreProcessor(GInput);
-			if (!GStoreLoaded) LoadStore();
-			UE_LOG(LogGamesOMGTeleport, Log, TEXT("keys: %s opens Places, %s goes back"), *GStore.PanelKey.ToString(), *GStore.BackKey.ToString());
+			const FGOMGSettings& S = GOMGStore::Settings();
+			UE_LOG(LogGamesOMGTeleport, Log, TEXT("keys: %s opens Places, %s returns"), *S.PanelKey.ToString(), *S.BackKey.ToString());
 		}
 		if (!LocalPC()) return;
 		EnsureRoot();
@@ -415,12 +312,20 @@ namespace GOMGClient
 		{
 		case EGOMGResult::Ok:
 		{
-			FWorldStore& S = CurrentWorld();
-			S.bHasBack = true; S.Back = Done.OriginFeet; S.BackYaw = Done.OriginYaw;   // Back swaps: press it again to return
-			SaveStore();
-			Toast(Done.bIsBack ? FText::FromString(TEXT("Back where you were. Press Back again to return."))
+			FGOMGWorld& W = World();
+			// Return swaps: the spot you left, named for what stood there (the model's "Return to Iron Ore, Grass Fields")
+			W.bHasBack = true; W.Back = Done.OriginFeet; W.BackYaw = Done.OriginYaw;
+			W.BackName = NameNear(Done.OriginFeet, 3000.0);
+			if (!Done.bIsBack)
+			{
+				// Recently travelled: where the server stood you (it reports the capsule's centre, 4 cm over the floor)
+				const float HalfH = Ch ? Ch->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() : 90.f;
+				GOMGStore::AddRecent(W, Done.Label.ToString(), Where - FVector(0, 0, HalfH + 4.f), Ch ? Ch->GetActorRotation().Yaw : 0.f);
+			}
+			Persist();
+			Toast(Done.bIsBack ? FText::FromString(TEXT("Back where you were. Press Return again to swap back."))
 				: FText::Format(FText::FromString(TEXT("You're at {0}.")), Done.Label));
-			if (GRoot.IsValid()) GRoot->Rebuild();
+			if (GRoot.IsValid()) { GRoot->OnTeleported(); GRoot->Rebuild(); }
 			break;
 		}
 		case EGOMGResult::NoLanding:
@@ -441,15 +346,18 @@ namespace GOMGClient
 			Toast(FText::FromString(TEXT("The server runs a different version of GamesOMG Teleport: ticks from the save are off until they match.")), true);
 			return;
 		}
-		GGameFound.Init(false, GOMGPlaces::Num());
-		for (int32 i = 0; i < GOMGPlaces::Num(); ++i) GGameFound[i] = (Bits[i / 8] >> (i % 8)) & 1;
+		TBitArray<> Now(false, GOMGPlaces::Num());
+		for (int32 i = 0; i < GOMGPlaces::Num(); ++i) Now[i] = (Bits[i / 8] >> (i % 8)) & 1;
 		const bool bFirst = !GHasGameFound;
+		const bool bChanged = bFirst || Now != GGameFound;
+		GGameFound = MoveTemp(Now);
 		GHasGameFound = true;
-		if (GRoot.IsValid() && (bFirst || GPanelOpen)) GRoot->Rebuild();
+		if (GRoot.IsValid() && bChanged) GRoot->Rebuild();   // the 8 s re-ask while open rebuilds only when something changed
 	}
 
-	void TogglePanel() { if (GPanelOpen) ClosePanel(); else
+	void TogglePanel()
 	{
+		if (GPanelOpen) { ClosePanel(); return; }
 		EnsureRoot();
 		if (!GRoot.IsValid()) return;
 		GOMGPlaces::WarmNames();
@@ -462,14 +370,26 @@ namespace GOMGClient
 		if (IsLine(Clip)) GRoot->PrefillLine(Clip);
 		SetPanelInput(true);
 		RequestFound(true);
-	} }
+	}
 
 	void ClosePanel()
 	{
 		if (!GPanelOpen) return;
 		GPanelOpen = false;
+		GCapture = nullptr;
 		if (GRoot.IsValid()) GRoot->SetPanelOpen(false);
 		SetPanelInput(false);
+	}
+
+	bool IsPanelOpen() { return GPanelOpen; }
+
+	FText PlaceLabel(int32 Index)
+	{
+		const FGOMGPlaceDef& P = GOMGPlaces::Get(Index);
+		const FText Region = GOMGPlaces::RegionName(P.Region);
+		const FText Cat = GOMGPlaces::CatName(P.Cat);
+		if (FCString::Strcmp(GOMGPlaces::Cat(P.Cat).Key, TEXT("tapes")) == 0) return GOMGPlaces::PlaceDetail(Index);
+		return Region.IsEmpty() ? Cat : FText::Format(FText::FromString(TEXT("{0}, {1}")), Cat, Region);
 	}
 
 	void GoToPlace(int32 Index)
@@ -483,20 +403,27 @@ namespace GOMGClient
 		const FVector Target = GOMGPlaces::LocationOf(Index);
 		const bool bHint = GOMGPlaces::HasCheckedLanding(Index);
 		const FVector Hint = GOMGPlaces::LandingOf(Index);
-		const FString Key = GOMGPlaces::Cat(GOMGPlaces::Get(Index).Cat).Key;
 		// nodes, wells and starts are places you stand on; collectibles you stand beside
 		const bool bStandOn = GOMGPlaces::Cat(GOMGPlaces::Get(Index).Cat).Group >= 3;
 		Send(Target, bHint ? &Hint : nullptr, bStandOn ? GOMGFlags::ExactFirst : 0, PlaceLabel(Index));
 	}
 
-	void GoBack()
+	void GoToSpot(const FGOMGSpot& Spot)
 	{
-		FWorldStore& S = CurrentWorld();
-		if (!S.bHasBack) { Toast(FText::FromString(TEXT("Nowhere to go back to yet: teleport somewhere first.")), true); return; }
-		Send(S.Back, nullptr, GOMGFlags::ExactFirst | GOMGFlags::IsBack, FText::FromString(TEXT("where you were")));
+		// a place you stood: try exactly there first, as Return does
+		Send(Spot.Feet, nullptr, GOMGFlags::ExactFirst, FText::FromString(Spot.Name));
 	}
 
-	bool HasBack() { return CurrentWorld().bHasBack; }
+	void GoBack()
+	{
+		FGOMGWorld& W = World();
+		if (!W.bHasBack) { Toast(FText::FromString(TEXT("Nothing to return to yet: a teleport remembers where you stood.")), true); return; }
+		Send(W.Back, nullptr, GOMGFlags::ExactFirst | GOMGFlags::IsBack,
+			W.BackName.IsEmpty() ? FText::FromString(TEXT("where you were")) : FText::FromString(W.BackName));
+	}
+
+	bool HasBack() { return World().bHasBack; }
+	bool IsBusy() { return GPending.Id != 0; }
 
 	bool IsLine(const FString& TextIn)
 	{
@@ -529,41 +456,42 @@ namespace GOMGClient
 		}
 		// the in-game map shows world / 100 (metres); so does our web map's Copy Teleport
 		const FVector Target(V[0] * 100.0, V[1] * 100.0, V[2] * 100.0);
+		const FString Near = NameNear(Target, 3000.0);
 		Send(Target, nullptr, GOMGFlags::ExactFirst | (bSky ? GOMGFlags::FromSky : 0),
-			FText::FromString(FString::Printf(TEXT("%s, %s"), *Parts[0], *Parts[1])));
+			FText::FromString(Near.IsEmpty() ? FString::Printf(TEXT("%s, %s"), *Parts[0], *Parts[1]) : Near));
 		return true;
+	}
+
+	void FromClipboard()
+	{
+		FString Clip;
+		FPlatformApplicationMisc::ClipboardPaste(Clip);
+		Clip.TrimStartAndEndInline();
+		if (Clip.IsEmpty()) { Toast(FText::FromString(TEXT("Your clipboard is empty.")), true); return; }
+		if (!IsLine(Clip))
+		{
+			Toast(FText::FromString(TEXT("Your clipboard doesn't hold a /tp line. Press Copy teleport on a pin on the GamesOMG map first.")), true);
+			return;
+		}
+		SubmitLine(Clip);
 	}
 
 	void ToggleManualFound(int32 Index)
 	{
-		FWorldStore& S = CurrentWorld();
+		FGOMGWorld& W = World();
 		const FString Id = GOMGPlaces::IdOf(Index);
-		if (S.Found.Contains(Id)) S.Found.Remove(Id); else S.Found.Add(Id);
-		SaveStore();
+		const bool bOn = !W.Found.Contains(Id);
+		if (bOn) W.Found.Add(Id); else W.Found.Remove(Id);
+		if (Persist()) Toast(FText::Format(FText::FromString(bOn ? TEXT("Found: {0}") : TEXT("Back in the list: {0}")), PlaceLabel(Index)));
 		if (GRoot.IsValid()) GRoot->Rebuild();
 	}
 
 	bool IsGameFound(int32 Index) { return GHasGameFound && GGameFound.IsValidIndex(Index) && GGameFound[Index]; }
-	bool IsFound(int32 Index) { return IsGameFound(Index) || CurrentWorld().Found.Contains(GOMGPlaces::IdOf(Index)); }
+	bool IsFound(int32 Index) { return IsGameFound(Index) || World().Found.Contains(GOMGPlaces::IdOf(Index)); }
 	bool HasGameState() { return GHasGameFound; }
 
-	bool IsCollapsed(const FString& Key, bool bDefault)
-	{
-		if (!GStoreLoaded) LoadStore();
-		return bDefault ? !GStore.Collapsed.Contains(TEXT("!") + Key) : GStore.Collapsed.Contains(Key);
-	}
-
-	void SetCollapsed(const FString& Key, bool bCollapsed)
-	{
-		// stored as the difference from the default, so changing a default later doesn't flip everyone's choices
-		GStore.Collapsed.Remove(Key);
-		GStore.Collapsed.Remove(TEXT("!") + Key);
-		if (bCollapsed) GStore.Collapsed.Add(Key); else GStore.Collapsed.Add(TEXT("!") + Key);
-		SaveStore();
-	}
-
-	FKey PanelKey() { return GStore.PanelKey; }
-	FKey BackKey() { return GStore.BackKey; }
+	FKey PanelKey() { return GOMGStore::Settings().PanelKey; }
+	FKey BackKey() { return GOMGStore::Settings().BackKey; }
 
 	bool PlayerLocation(FVector& Out)
 	{
@@ -571,13 +499,107 @@ namespace GOMGClient
 		return false;
 	}
 
+	bool PlayerFeet(FVector& Out, float& Yaw)
+	{
+		AFGCharacterPlayer* Ch = LocalCharacter();
+		if (!Ch) return false;
+		Out = FeetOf(Ch);
+		Yaw = Ch->GetActorRotation().Yaw;
+		return true;
+	}
+
 	void Toast(const FText& Message, bool bBad)
 	{
 		GStatus = Message;
 		UE_LOG(LogGamesOMGTeleport, Log, TEXT("%s%s"), bBad ? TEXT("[refused] ") : TEXT(""), *Message.ToString());
-		if (GRoot.IsValid()) GRoot->ShowToast(Message, bBad);
+		if (!GRoot.IsValid()) return;
+		// the model's footer line while the panel is open; a line at the top of the screen when it isn't
+		if (GPanelOpen) GRoot->ShowStatus(Message, bBad);
+		else GRoot->ShowToast(Message, bBad);
 	}
 
 	FText LastStatus() { return GStatus; }
 	bool IsServerMissingMod() { return GServerMissing; }
+
+	FGOMGWorld& World() { return GOMGStore::World(WorldKey()); }
+
+	FString SessionLabel()
+	{
+		if (!GameWorld()) return FString();
+		return IsGuest() ? SessionName() + TEXT(" · co-op") : SessionName();
+	}
+
+	FString NameNear(const FVector& Feet, double RadiusCm)
+	{
+		const FGOMGWorld& W = World();
+		const FGOMGSpot* Best = nullptr;
+		double BestD = RadiusCm;
+		for (const FGOMGSpot& S : W.Saved) { const double D = FVector::Dist2D(S.Feet, Feet); if (D <= BestD) { Best = &S; BestD = D; } }
+		if (Best) return Best->Name;
+		int32 Near = INDEX_NONE;
+		BestD = RadiusCm;
+		for (int32 i = 0; i < GOMGPlaces::Num(); ++i)
+		{
+			const double D = FVector::Dist2D(GOMGPlaces::LocationOf(i), Feet);
+			if (D <= BestD && FMath::Abs(GOMGPlaces::LocationOf(i).Z - Feet.Z) < RadiusCm) { Near = i; BestD = D; }
+		}
+		return Near == INDEX_NONE ? FString() : PlaceLabel(Near).ToString();
+	}
+
+	int32 SaveHere()
+	{
+		FVector Feet; float Yaw = 0;
+		if (!PlayerFeet(Feet, Yaw)) { Toast(FText::FromString(TEXT("Load into a world first.")), true); return INDEX_NONE; }
+		FGOMGWorld& W = World();
+		// the model's name for it: "Near <the map place within 60 m>", else where it is
+		FString Name;
+		int32 Near = INDEX_NONE;
+		double BestD = 6000.0;
+		for (int32 i = 0; i < GOMGPlaces::Num(); ++i)
+		{
+			const double D = FVector::Dist2D(GOMGPlaces::LocationOf(i), Feet);
+			if (D <= BestD) { Near = i; BestD = D; }
+		}
+		if (Near != INDEX_NONE) Name = FText::Format(FText::FromString(TEXT("Near {0}")), PlaceLabel(Near)).ToString();
+		else
+		{
+			// no map place that close: the region of the nearest within 1 km, and the in-game map's X, Y
+			BestD = 100000.0;
+			for (int32 i = 0; i < GOMGPlaces::Num(); ++i)
+			{
+				const double D = FVector::Dist2D(GOMGPlaces::LocationOf(i), Feet);
+				if (D <= BestD && GOMGPlaces::Get(i).Region >= 0) { Near = i; BestD = D; }
+			}
+			const FString Region = Near == INDEX_NONE ? FString() : GOMGPlaces::RegionName(GOMGPlaces::Get(Near).Region).ToString();
+			Name = Region.IsEmpty() ? MapXY(Feet) : Region + TEXT(" ") + MapXY(Feet);
+		}
+		FGOMGSpot* S = GOMGStore::AddSaved(W, Name, Feet, Yaw, TEXT(""));
+		if (!S) { Toast(FText::FromString(TEXT("This world's list is full. Delete a place first.")), true); return INDEX_NONE; }
+		const FString Kept = S->Name;
+		const int32 Index = W.Saved.Num() - 1;
+		if (Persist()) Toast(FText::Format(FText::FromString(TEXT("Saved “{0}”. Rename it any time.")), FText::FromString(Kept)));
+		return Index;
+	}
+
+	bool Persist()
+	{
+		FString Why;
+		if (GOMGStore::Save(&Why)) return true;
+		Toast(FText::Format(FText::FromString(TEXT("Places not saved: {0}. This session's changes stay until you quit.")), FText::FromString(Why)), true);
+		return false;
+	}
+
+	FString MapUrl() { return TEXT("https://gamesomg.com/satisfactory-map/"); }
+
+	void OpenUrl(const FString& Url)
+	{
+		FString Error;
+		FPlatformProcess::LaunchURL(*Url, nullptr, &Error);
+		if (Error.IsEmpty()) Toast(FText::FromString(TEXT("Opened the GamesOMG map in your browser.")));
+		else Toast(FText::FromString(TEXT("Your browser did not open. The map is at gamesomg.com/satisfactory-map.")), true);
+	}
+
+	void CaptureKey(TFunction<void(FKey)> Done) { GCapture = MoveTemp(Done); }
+	void CancelCapture() { GCapture = nullptr; }
+	bool IsCapturing() { return (bool)GCapture; }
 }

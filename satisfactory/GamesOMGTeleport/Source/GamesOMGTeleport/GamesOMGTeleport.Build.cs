@@ -12,7 +12,7 @@ public class GamesOMGTeleport : ModuleRules
 			"Core", "CoreUObject", "Engine", "DeveloperSettings", "PhysicsCore", "InputCore", "EnhancedInput",
 			"GeometryCollectionEngine", "AnimGraphRuntime", "AssetRegistry", "NavigationSystem", "AIModule",
 			"GameplayTasks", "SlateCore", "Slate", "UMG", "RenderCore", "CinematicCamera", "Foliage", "NetCore",
-			"GameplayTags", "Json", "JsonUtilities", "ApplicationCore", "Projects",
+			"GameplayTags", "Json", "JsonUtilities", "ApplicationCore", "Projects", "ImageWrapper",
 			"DummyHeaders", "FactoryGame", "SML"
 		});
 

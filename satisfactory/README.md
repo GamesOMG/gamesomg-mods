@@ -3,7 +3,7 @@
 Every Somersloop, Mercer Sphere, hard drive, Power Slug, boombox tape, resource node, geyser and resource well from the
 [GamesOMG Satisfactory map](https://gamesomg.com/satisfactory-map/), as a list in game. Press **F9**, click one, and you're
 standing beside it. At its own height: inside the cave, under the overhang, under your factory, not on the roof above it.
-**F10** takes you back.
+**F10** takes you back. **Save here** keeps your own spots (your base, that cave entrance) in **My places**, to go back to.
 
 The list reads your save. Slugs, Somersloops and Mercer Spheres you've picked up, hard drives you've taken and tapes you've
 unlocked move into a **Found** drawer by themselves. Nodes, wells and starting areas you tick yourself.
@@ -18,14 +18,16 @@ The code was written with Anthropic's Claude, directed by us and tested in the g
 **Tested in game** on Satisfactory 1.2.5.1 (build 520140) with SML 3.12.1, 23 Nov 2026: solo (the host path: a cave, an
 overhang, under a factory, a far hard drive, Back, a pasted /tp line, from a vehicle, German and Japanese, switching worlds)
 and as a guest on a dedicated server (moved by the server, Found from the server's save, guests turned off, a server without
-the mod).
+the mod). That was 1.0.0. 1.1.0 keeps its teleport and save reading as they were and brings the new panel (My places,
+Settings): drawn and checked outside the game at 1080p and 1440p, its places file checked by tests; its first in-game run is
+still to come.
 
 **Languages:** the list speaks your game's language, in the game's own words. Every place, region, item, tape and purity
-name comes from the game itself, and so do the headings and the Back, Close and Search buttons: set Satisfactory to German
-and you get *Elektroschnecken*, *Festplatten*, *Zurück*; Japanese, *パワー・スラッグ*, *ハードドライブ*, *戻る*. That covers every
-language the game translates (Chinese, Japanese, Korean, Russian, Polish, French, Spanish, Portuguese, Turkish, Arabic and the
-rest). What the game has no word for stays in English: the **Found** drawer, the hints and the messages, and the "Resource
-wells" heading. A `/tp` line is only numbers, so it works in any language.
+name comes from the game itself, and so do the headings, the search box's hint and Close: set Satisfactory to German, and
+the headings say *Elektroschnecken* and *Festplatten*. That covers every language the game translates (Chinese, Japanese,
+Korean, Russian, Polish, French, Spanish, Portuguese, Turkish, Arabic and the rest). What the game has no word for stays in
+English: the buttons (Save here, Return, Teleport), the tabs, the **Found** drawer, Settings, the hints and the messages, and
+the "Resource wells" heading. A `/tp` line is only numbers, so it works in any language.
 
 ## Install
 
@@ -61,22 +63,29 @@ or `SML-LinuxServer.zip` and our `-WindowsServer` or `-LinuxServer` zip, into th
 | Key | What it does |
 |---|---|
 | **F9** | Opens **Places**. Click a place to go there. Up/Down and Enter work too. Esc or F9 closes it. |
-| **F10** | **Back**: to where you stood before your last teleport. Press it again to swap back. |
+| **F10** | **Return to previous spot**: where you stood before your last teleport. Press it again to swap back. |
 
-Other keys: set `panelKey` and `backKey` (Unreal key names, like `F6` or `Insert`) under `settings` in
-`%LOCALAPPDATA%\FactoryGame\Saved\GamesOMGTeleport\places.json` (paste that into the Explorer address bar), then restart
-the game.
+Other keys: **Settings** (the gear at the top of Places) → **Controls** → Change, then press the new key.
 
-**Inside Places:**
-- Headings are the map's: Alien artifacts, Hard drives & tapes, Power Slugs, Resource nodes, Resource wells, Starting areas
-  (in another language, the game's own word for each).
-  Click a heading to open it. Places are listed nearest first, with the region, the distance, and what matters about each
-  (a hard drive's unlock cost, a node's purity, a well's nodes).
-- The box at the left of a place ticks it: it moves to **Found**, under the same heading. Click it again to put it back.
-  A green box means the game says it's collected; that one stays in Found.
+**Inside Places** (the Planet Crafter mod's panel: the same layout and sizes):
+- **From clipboard** goes to a `/tp` line or place id you copied. **Save here** keeps where you stand in **My places**.
+  **Return to …** goes back to the spot you left, and says which one.
+- **My places**: your favourites first, then your saved places, then **Recently travelled** (your last five trips).
+- **Map places**: **Nearest** at the top lists the nearest places on the layers you tick. Under it are the map's headings
+  (Alien artifacts, Hard drives & tapes, Power Slugs, Resource nodes, Resource wells, Starting areas; in another language,
+  the game's own word for each). A heading opens to its layers, a layer to its places, nearest first, 15 at a time.
+  Each row says what matters about the place (a hard drive's unlock cost, a node's purity, a well's nodes) and how far it is.
+- The box at the left of a place marks it found: it moves to **Found**, under the same heading. Click it again to put it
+  back. A green box the game ticked means the save says it's collected; that one stays in Found. **Hide found** hides the
+  drawer; the **Nearest / A–Z** chip sorts.
+- **+** on a row adds a short note ("Come back later", "Locked", or your own words). It never marks the place found.
+- Right-click a place to pick it without going: Teleport, Favourite (or Save to My places), Mark found, Rename, Show on
+  map (the GamesOMG map, at that pin), Delete (with Undo).
 - The search box filters by name, region or cost. Paste a **`/tp X Y Z`** line into it (the map's **Copy Teleport
   Command** gives you one) and press Enter to go there. If a `/tp` line is on your clipboard when you press F9, it's already
   in the box: just press Enter.
+- **Settings**: Controls (keys), Appearance (text and panel size, side, background), Behaviour (what a click does, close
+  after a teleport), Help.
 
 ## How the landing works (read this before you complain)
 
@@ -103,10 +112,12 @@ The server keeps one setting in `server.json`, in the server's own install folde
 
 `false` lets only the host teleport (on a dedicated server, nobody). Restart the server after changing it.
 
-## Where your ticks live
+## Where your places live
 
-`%LOCALAPPDATA%\FactoryGame\Saved\GamesOMGTeleport\places.json`, per session (and per host, as a guest). Ticks the game
-makes for you aren't stored there: they're read from the save each time. The mod makes no network calls of its own.
+`%LOCALAPPDATA%\FactoryGame\Saved\GamesOMGTeleport\places.json` (paste that into the Explorer address bar): your places,
+notes, Recently travelled, found marks and settings, per session (and per host, as a guest). Ticks the game makes for you
+aren't stored there: they're read from the save each time. Show on map opens your browser only when you press it; the mod
+makes no network calls of its own.
 
 ## Uninstall
 
