@@ -2,6 +2,8 @@
 
 ## 1.0.0
 First release.
+- 23 Nov 2026, same day: an **Easy-Install** zip joins the release, the mod and SML 3.12.1 (unmodified) laid out as the
+  game folder, so one download installs both. The mod's files are the `-Windows` zip's, byte for byte.
 - **Places** (F9): every Somersloop, Mercer Sphere, hard drive, Power Slug, boombox tape, resource node, geyser, resource well
   and starting area from the GamesOMG Satisfactory map, by the map's headings, nearest first.
 - Ticks from your save: picked-up slugs, Somersloops and Mercer Spheres, looted hard drives and unlocked tapes move to a

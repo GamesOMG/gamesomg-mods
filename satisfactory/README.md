@@ -30,16 +30,26 @@ wells" heading. A `/tp` line is only numbers, so it works in any language.
 ## Install
 
 Needs Satisfactory on Windows (Steam or Epic) and SML 3.12.1 or newer, the mod loader made by the Satisfactory Modding team.
-Both go in the game's `FactoryGame\Mods` folder (Steam: right-click Satisfactory → Manage → Browse local files, then open
-`FactoryGame`; make the `Mods` folder if it isn't there).
+Satisfactory Mod Manager can't install this mod yet, and you don't need it.
 
-1. **SML:** download `SML-Windows.zip` from [SML 3.12.1](https://github.com/satisfactorymodding/SatisfactoryModLoader/releases/tag/v3.12.1)
-   and unzip it into `FactoryGame\Mods\SML`. Already run mods with Satisfactory Mod Manager? It has put SML there: skip this.
-2. **This mod:** download `Satisfactory-GamesOMG-Teleport-<version>-Windows.zip` from
-   [Releases](https://github.com/GamesOMG/gamesomg-mods/releases) and unzip it into `FactoryGame\Mods\GamesOMGTeleport`.
-3. Start the game, load a world, press **F9**.
+**Easy install** (the mod and SML in one zip):
+1. Download `Satisfactory-GamesOMG-Teleport-<version>-Easy-Install.zip` from
+   [Releases](https://github.com/GamesOMG/gamesomg-mods/releases).
+2. Open your Satisfactory folder, the one with `FactoryGame` in it (Steam: right-click Satisfactory → Manage → Browse local
+   files; Epic: Library → the three dots on Satisfactory → Manage → the folder icon beside Installation).
+3. Open the zip, select everything in it and drag it onto an empty spot in that folder. You now have
+   `FactoryGame\Mods\SML` and `FactoryGame\Mods\GamesOMGTeleport`.
+4. Start the game, load a world, press **F9**.
 
-Satisfactory Mod Manager only removes mod folders it installed itself, so it leaves this one alone.
+The Easy-Install zip is built by `easy-install.ps1` from the two published zips, each file byte for byte: SML 3.12.1's
+`SML-Windows.zip` (GPL-3.0; its licence and source link ride along in the zip) and our `-Windows.zip`.
+
+**Already have SML** (you run mods through Satisfactory Mod Manager): download `Satisfactory-GamesOMG-Teleport-<version>-Windows.zip`
+and unzip it into `FactoryGame\Mods\GamesOMGTeleport`, so your SML stays the version the manager chose. The manager only
+removes mod folders it installed itself, so it leaves this one alone.
+
+**SML by hand:** `SML-Windows.zip` from [SML 3.12.1](https://github.com/satisfactorymodding/SatisfactoryModLoader/releases/tag/v3.12.1),
+unzipped into `FactoryGame\Mods\SML`.
 
 **Multiplayer:** the host or the dedicated server needs the mod, and so does everyone who joins: the server is what moves
 you, so the teleport works the same on a dedicated server as in single player. A dedicated server takes `SML-WindowsServer.zip`
