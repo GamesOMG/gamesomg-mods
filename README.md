@@ -10,8 +10,10 @@ Small, free mods that tie into the maps on [gamesomg.com](https://gamesomg.com/m
 | The Planet Crafter | [GamesOMG Teleport](planet-crafter/) | Copy a spot on our [Planet Crafter map](https://gamesomg.com/planet-crafter-map/), press F7 in game, you're standing there. F10 takes you back. | [Releases](https://github.com/GamesOMG/gamesomg-mods/releases) · [guide](https://gamesomg.com/planet-crafter-teleport-mod/) |
 | The Planet Crafter | [GamesOMG Item Spawner](planet-crafter-item-spawner/) | F6, type an item's name in your game's language, and it goes straight into your backpack. | [Releases](https://github.com/GamesOMG/gamesomg-mods/releases) · [guide](https://gamesomg.com/planet-crafter-item-spawner/) |
 | Grounded 2 | [GamesOMG Teleport](grounded-2/) | Copy a pin on our [Grounded 2 map](https://gamesomg.com/grounded-2-map/), press F7, paste, Enter. F8 takes you back. | [Releases](https://github.com/GamesOMG/gamesomg-mods/releases) · [guide](https://gamesomg.com/grounded-2-teleport-mod/) |
+| Satisfactory | [GamesOMG Teleport](satisfactory/) | Every collectible and resource node on our [Satisfactory map](https://gamesomg.com/satisfactory-map/), as a list in game: F9, click one, you're standing beside it. F10 takes you back. | [Releases](https://github.com/GamesOMG/gamesomg-mods/releases) · [guide](https://gamesomg.com/satisfactory-teleport-mod/) |
 
-Free. No app running beside the game, no account, no network calls. Steam on Windows. Each mod has its own folder with its
+Free. No app running beside the game, no account, no network calls. Steam on Windows (Satisfactory: Steam or Epic, and
+dedicated servers on Windows or Linux). Each mod has its own folder with its
 source, its checks and the script that builds its release zips. Every release is built from a tagged commit and lists the
 SHA-256 of each zip.
 

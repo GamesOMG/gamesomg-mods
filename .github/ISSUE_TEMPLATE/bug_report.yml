@@ -10,6 +10,7 @@ body:
         - GamesOMG Teleport (The Planet Crafter)
         - GamesOMG Item Spawner (The Planet Crafter)
         - GamesOMG Teleport (Grounded 2)
+        - GamesOMG Teleport (Satisfactory)
     validations:
       required: true
   - type: input
@@ -24,7 +25,7 @@ body:
     id: game-version
     attributes:
       label: Game version
-      placeholder: "v2.104 / 0.6.0.5"
+      placeholder: "v2.104 / 0.6.0.5 / 1.2.5.1"
   - type: input
     id: language
     attributes:
@@ -37,6 +38,7 @@ body:
       options:
         - Easy install zip (loader included)
         - Plugin-only / Mod-only zip, into my own BepInEx or UE4SS
+        - The Satisfactory zip by hand, into FactoryGame\Mods with SML
         - A mod manager (r2modman, Gale, Thunderstore Mod Manager)
         - Something else
     validations:
@@ -58,5 +60,5 @@ body:
     id: log
     attributes:
       label: Log (optional)
-      description: The end of BepInEx/LogOutput.log (Planet Crafter) or ue4ss/UE4SS.log (Grounded 2). Neither holds your clipboard.
+      description: The end of BepInEx/LogOutput.log (Planet Crafter), ue4ss/UE4SS.log (Grounded 2), or the LogGamesOMGTeleport lines of %LOCALAPPDATA%\FactoryGame\Saved\Logs\FactoryGame.log (Satisfactory). None of them holds your clipboard.
       render: text
