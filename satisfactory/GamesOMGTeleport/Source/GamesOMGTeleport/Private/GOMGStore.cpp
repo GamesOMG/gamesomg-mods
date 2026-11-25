@@ -1,6 +1,7 @@
 #include "GOMGStore.h"
 
 #include "GamesOMGTeleportModule.h"
+#include "GOMGPlaces.h"
 
 #include "Dom/JsonObject.h"
 #include "HAL/FileManager.h"
@@ -91,6 +92,59 @@ namespace GOMGStore
 	FGOMGWorld& World(const FString& Key) { if (!GLoaded) Load(); return GWorlds.FindOrAdd(Key); }
 	bool IsLoaded() { return GLoaded; }
 	FString Path() { return FPaths::ProjectSavedDir() / TEXT("GamesOMGTeleport") / TEXT("places.json"); }
+	FString MirrorPath() { return FPaths::GetPath(Path()) / TEXT("places.v2.json"); }
+
+	void FlipsFrom10(const TArray<FString>& Collapsed, TSet<FString>& Flipped)
+	{
+		// 1.0.0 kept a heading's key when you closed it and "!" + the key when you opened it: "Mg:<group>" / "Mc:<layer>" in the
+		// list, "F:drawer", "Fg:<group>" / "Fc:<layer>" in the Found drawer. Its defaults: groups open, layers closed, the drawer
+		// closed, the drawer's groups open and its layers closed. 1.1's: list groups and layers closed, the drawer closed, the
+		// drawer's groups and layers open. A choice that lands on 1.1's default needs nothing kept.
+		auto GroupOk = [](const FString& S, int32& G) { G = FCString::Atoi(*S); return S.IsNumeric() && G >= 0 && G < GOMGPlaces::NumGroups(); };
+		auto LayerGroup = [](const FString& Key)
+		{
+			for (int32 C = 0; C < GOMGPlaces::NumCats(); ++C) if (Key == GOMGPlaces::Cat(C).Key) return GOMGPlaces::Cat(C).Group;
+			return -1;
+		};
+		for (const FString& Raw : Collapsed)
+		{
+			const bool bOpened = Raw.StartsWith(TEXT("!"));
+			const FString Key = bOpened ? Raw.Mid(1) : Raw;
+			FString Kind, Rest;
+			if (!Key.Split(TEXT(":"), &Kind, &Rest)) continue;
+			int32 G = -1;
+			if (Kind == TEXT("Mg") && bOpened && GroupOk(Rest, G)) Flipped.Add(FString::Printf(TEXT("g:%d"), G));
+			else if (Kind == TEXT("Mc") && bOpened && (G = LayerGroup(Rest)) >= 0)
+			{
+				// a layer you opened showed its places under its open group: open both, unless you'd closed the group
+				Flipped.Add(TEXT("l:") + Rest);
+				if (!Collapsed.Contains(FString::Printf(TEXT("Mg:%d"), G))) Flipped.Add(FString::Printf(TEXT("g:%d"), G));
+			}
+			else if (Kind == TEXT("F") && Rest == TEXT("drawer") && bOpened) Flipped.Add(TEXT("found"));
+			else if (Kind == TEXT("Fg") && !bOpened && GroupOk(Rest, G)) Flipped.Add(FString::Printf(TEXT("fg:%d"), G));
+			else if (Kind == TEXT("Fc") && !bOpened && LayerGroup(Rest) >= 0) Flipped.Add(TEXT("fl:") + Rest);
+		}
+	}
+
+	bool TypesInBoxes(const FKey& K, uint32 Typed)
+	{
+		return Typed >= 32 || K == EKeys::BackSpace || K == EKeys::Delete || K == EKeys::Left || K == EKeys::Right
+			|| K == EKeys::Home || K == EKeys::End || K == EKeys::Tab || K == EKeys::SpaceBar;
+	}
+
+	bool PanelOwnKey(const FKey& K)
+	{
+		return K == EKeys::Enter || K == EKeys::Up || K == EKeys::Down || K == EKeys::PageUp || K == EKeys::PageDown;
+	}
+
+	TArray<FKey> FreeKeys(int32 Count)
+	{
+		const FGOMGSettings& S = Settings();
+		TArray<FKey> Out;
+		for (const FKey& K : { EKeys::F6, EKeys::Insert, EKeys::F7, EKeys::F8 })
+			if (Out.Num() < Count && K != S.PanelKey && K != S.BackKey) Out.Add(K);
+		return Out;
+	}
 
 	FString Clean(const FString& In, int32 Max)
 	{
@@ -186,6 +240,12 @@ namespace GOMGStore
 		S->SetStringField(TEXT("sort"), GSettings.bByName ? TEXT("az") : TEXT("near"));
 		S->SetArrayField(TEXT("flipped"), SortedSet(GSettings.Flipped));
 		S->SetArrayField(TEXT("on"), SortedSet(GSettings.On));
+		if (GSettings.Collapsed10.Num() > 0)
+		{
+			TArray<TSharedPtr<FJsonValue>> Col;
+			for (const FString& K : GSettings.Collapsed10) Col.Add(MakeShared<FJsonValueString>(K));
+			S->SetArrayField(TEXT("collapsed"), Col);
+		}
 		Root->SetObjectField(TEXT("settings"), S);
 		TSharedRef<FJsonObject> Worlds = MakeShared<FJsonObject>();
 		TArray<FString> Keys;
@@ -254,8 +314,13 @@ namespace GOMGStore
 			if ((*S)->TryGetStringField(TEXT("side"), K)) GSettings.bLeft = K == TEXT("left");
 			(*S)->TryGetBoolField(TEXT("hideFound"), GSettings.bHideFound);
 			if ((*S)->TryGetStringField(TEXT("sort"), K)) GSettings.bByName = K == TEXT("az");
-			StringSet(*S, TEXT("flipped"), GSettings.Flipped);   // 1.0.0's "collapsed" keys name a tree that is gone: left out
+			StringSet(*S, TEXT("flipped"), GSettings.Flipped);
 			StringSet(*S, TEXT("on"), GSettings.On);
+			const TArray<TSharedPtr<FJsonValue>>* Col;
+			if ((*S)->TryGetArrayField(TEXT("collapsed"), Col))
+				for (const TSharedPtr<FJsonValue>& CV : *Col) { FString C; if (CV.IsValid() && CV->TryGetString(C) && !C.IsEmpty()) GSettings.Collapsed10.AddUnique(C); }
+			// 1.0.0's file: its fold state becomes 1.1's (a version-2 file already has its own)
+			if (Version == 1) FlipsFrom10(GSettings.Collapsed10, GSettings.Flipped);
 		}
 		const TSharedPtr<FJsonObject>* Worlds;
 		if (Root->TryGetObjectField(TEXT("worlds"), Worlds))
@@ -291,6 +356,39 @@ namespace GOMGStore
 				const TSharedPtr<FJsonObject>* N;
 				if ((*WO)->TryGetObjectField(TEXT("notes"), N))
 					for (const auto& NP : (*N)->Values) { FString T; if (NP.Value.IsValid() && NP.Value->TryGetString(T)) SetNote(W, NP.Key, T); }
+			}
+		}
+		return true;
+	}
+
+	bool TakeBack(const FString& MirrorText)
+	{
+		// what 1.0.0 left, as just read
+		const FGOMGSettings Old = GSettings;
+		TMap<FString, FGOMGWorld> OldWorlds = GWorlds;
+		int32 V = 0;
+		if (!FromJson(MirrorText, V) || V < 2 || V > FileVersion)
+		{
+			GSettings = Old;
+			GWorlds = MoveTemp(OldWorlds);
+			return false;
+		}
+		// 1.0.0 had a say in these: keep its word
+		GSettings.PanelKey = Old.PanelKey;
+		GSettings.BackKey = Old.BackKey;
+		GSettings.bCloseAfterTeleport = Old.bCloseAfterTeleport;
+		GSettings.Collapsed10 = Old.Collapsed10;
+		for (const TPair<FString, FGOMGWorld>& P : OldWorlds)
+		{
+			FGOMGWorld& W = GWorlds.FindOrAdd(P.Key);
+			W.Found.Append(P.Value.Found);   // a tick made in either version stays ticked
+			// Return as 1.0.0 left it; the name only while it's the same spot (both versions round it to the centimetre)
+			if (P.Value.bHasBack && !(W.bHasBack && W.Back.Equals(P.Value.Back, 1.0)))
+			{
+				W.bHasBack = true;
+				W.Back = P.Value.Back;
+				W.BackYaw = P.Value.BackYaw;
+				W.BackName.Reset();
 			}
 		}
 		return true;
@@ -336,6 +434,24 @@ namespace GOMGStore
 				GBlocked = TEXT("your places file is from a newer version of GamesOMG Teleport");
 				UE_LOG(LogGamesOMGTeleport, Warning, TEXT("places.json is version %d, newer than this mod's %d: read only this session"), Version, FileVersion);
 			}
+			else if (Version < FileVersion && FM.FileExists(*MirrorPath()))
+			{
+				// 1.0.0 wrote over a file this version wrote (it keeps only keys, ticks and Return): the rest comes back from the copy
+				FString Mirror;
+				if (FFileHelper::LoadFileToString(Mirror, *MirrorPath()) && TakeBack(Mirror))
+				{
+					UE_LOG(LogGamesOMGTeleport, Log, TEXT("places.json was written by 1.0.0: your places, notes and settings put back from places.v2.json"));
+				}
+				else
+				{
+					UE_LOG(LogGamesOMGTeleport, Warning, TEXT("places.json was written by 1.0.0 and places.v2.json would not read: read as 1.0.0 left it"));
+				}
+			}
+			else if (Version == FileVersion && !FM.FileExists(*MirrorPath()))
+			{
+				// a 1.1.0 file: the copy 1.0.0 doesn't touch starts now, not at the first change
+				FM.Copy(*MirrorPath(), *Path());
+			}
 			return;
 		}
 		// never throw a player's file away: keep it beside the new one; if even that fails, write nothing over it
@@ -369,13 +485,18 @@ namespace GOMGStore
 			}
 			GBackedUpOld = true;
 		}
+		const FString Json = ToJson();
 		const FString Tmp = Path() + TEXT(".tmp");
-		if (!FFileHelper::SaveStringToFile(ToJson(), *Tmp, FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM) || !IFileManager::Get().Move(*Path(), *Tmp, true, true))
+		if (!FFileHelper::SaveStringToFile(Json, *Tmp, FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM) || !IFileManager::Get().Move(*Path(), *Tmp, true, true))
 		{
 			UE_LOG(LogGamesOMGTeleport, Warning, TEXT("could not save %s"), *Path());
 			if (Why) *Why = TEXT("the Saved folder may be read-only");
 			return false;
 		}
+		// the same text where 1.0.0 never writes, so going back to 1.0.0 and returning loses nothing (TakeBack)
+		const FString MirrorTmp = MirrorPath() + TEXT(".tmp");
+		if (!FFileHelper::SaveStringToFile(Json, *MirrorTmp, FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM) || !IFileManager::Get().Move(*MirrorPath(), *MirrorTmp, true, true))
+			UE_LOG(LogGamesOMGTeleport, Warning, TEXT("could not save %s (places.json is saved)"), *MirrorPath());
 		return true;
 	}
 }

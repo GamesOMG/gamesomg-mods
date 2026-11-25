@@ -3,6 +3,9 @@
 // favourite star, a note), "recent" (the last few teleports), the map places' notes by pin id, and the Return spot with
 // the name of what stood there. The file is version 2; a 1.0.0 file (version 1) reads as it is and is copied to
 // places.v1.json before the first write over it. A file from a newer version is read and never written over.
+// 1.1.1: every write also leaves places.v2.json, a copy 1.0.0 never touches. 1.0.0 reads a version-2 file but writes back
+// only its keys, ticks and Return, so going back to it dropped your own places; when places.json comes back at version 1
+// and places.v2.json is there, what 1.0.0 couldn't keep is taken from it (GOMGStore::TakeBack).
 #pragma once
 
 #include "CoreMinimal.h"
@@ -43,6 +46,7 @@ struct FGOMGSettings
 	bool bByName = false;                 // Sort: A-Z, else nearest
 	TSet<FString> Flipped;                // tree headings folded the other way from their default
 	TSet<FString> On;                     // layers ticked on (they feed Nearest), by layer key
+	TArray<FString> Collapsed10;          // 1.0.0's own fold state, written back as it came so a return to 1.0.0 finds it
 };
 
 namespace GOMGStore
@@ -58,6 +62,7 @@ namespace GOMGStore
 	/** Writes the file. False (and Why says what to tell the player) when it couldn't, or mustn't */
 	bool Save(FString* Why = nullptr);
 	FString Path();
+	FString MirrorPath();                 // places.v2.json, beside it
 
 	// ── the rules, no file or world needed (GOMGStoreTest.cpp runs them) ──
 	FString Clean(const FString& In, int32 Max);                 // one line, spaces squeezed, cut at Max letters
@@ -70,8 +75,23 @@ namespace GOMGStore
 	FString SetNote(FGOMGWorld& W, const FString& Pin, const FString& Note);   // "" deletes it; returns what is kept
 	bool SameName(const FString& A, const FString& B);
 
+	/** 1.0.0's "collapsed" fold keys as 1.1's "flipped" ones: only the headings you turned, each to the same open or closed */
+	void FlipsFrom10(const TArray<FString>& Collapsed, TSet<FString>& Flipped);
+
+	/** A key Settings › Controls refuses because it types in the panel's boxes. Typed = the character the key makes (0 for none);
+	 *  Enter, Tab and Esc make control characters, which type nothing */
+	bool TypesInBoxes(const FKey& K, uint32 Typed);
+	/** Keys the panel answers itself while it's open (Enter, the arrows, Page Up/Down): never a binding */
+	bool PanelOwnKey(const FKey& K);
+	/** Keys to suggest for a binding: the first Count of F6, Insert, F7, F8 that neither action is on now */
+	TArray<FKey> FreeKeys(int32 Count = 2);
+
 	FString ToJson();
 	/** Replaces everything in memory with the file's text. Version comes back as the file said it (0 = not ours) */
 	bool FromJson(const FString& Text, int32& Version);
+	/** After a version-1 places.json has been read: put back from places.v2.json's text what 1.0.0 can't keep (your places,
+	 *  recent trips, notes, the other settings, Return's name). 1.0.0's keys, close-after and fold state stand, a tick from
+	 *  either file stays, and 1.0.0's Return wins when it moved. False (memory untouched) when the text isn't a version-2 file */
+	bool TakeBack(const FString& MirrorText);
 	void ResetForTest();
 }

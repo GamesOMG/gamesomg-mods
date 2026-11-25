@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
-	"Version": 2,
-	"VersionName": "1.1.0",
-	"SemVersion": "1.1.0",
+	"Version": 3,
+	"VersionName": "1.1.1",
+	"SemVersion": "1.1.1",
 	"GameVersion": ">=520140",
 	"FriendlyName": "GamesOMG Teleport",
 	"Description": "Every hard drive, Somersloop, Mercer Sphere, Power Slug, resource node and well from the GamesOMG Satisfactory map, as a list in game. Ticks what this save has already collected. Click one and you're standing beside it, at the right height. Save your own spots and go back to them. F9 opens it, F10 takes you back.",

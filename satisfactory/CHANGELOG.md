@@ -1,5 +1,20 @@
 # Changelog: GamesOMG Teleport for Satisfactory
 
+## 1.1.1
+Fixes from the first in-game runs of 1.1.0.
+- **Going back to 1.0.0 no longer costs you your places.** 1.0.0 reads 1.1's `places.json` but writes back only keys,
+  ticks and Return, so a trip back to 1.0.0 dropped My places, notes, Recently travelled and the other settings. Every save
+  now also leaves `places.v2.json`, a copy 1.0.0 never touches. Come back to 1.1.1 and what 1.0.0 dropped is put back;
+  ticks and a Return spot from your 1.0.0 run are kept. (Already went 1.1.0 → 1.0.0? That copy didn't exist yet.)
+- **1.0.0's folded headings carry over.** 1.1.0 dropped them when it moved your file to version 2. A layer you opened in
+  1.0.0 opens, with its group; what you closed was closed in 1.1 already. 1.0.0's own list stays in the file, for 1.0.0.
+- **Return's message names the key:** "Back where you were. Press F10 again to swap back." It said "Press Return", which
+  reads as the Enter key. Picking the other action's key in Settings says "F10 already does Return to previous spot."
+- **Settings › Controls:** Enter is refused as a key the panel uses itself, not as a typing key, and "pick one that
+  doesn't, like …" never suggests a key you're already on.
+- After you change a key, the Places list says the new one ("F6 closes this.") as soon as you leave Settings, not on the
+  next open.
+
 ## 1.1.0
 Made to look and work like the Planet Crafter mod's panel, the model for every GamesOMG Teleport mod.
 - **Save a spot.** Save here keeps where you stand in **My places** (named for the nearest map place: "Near Iron Ore, Grass

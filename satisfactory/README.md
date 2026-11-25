@@ -18,9 +18,10 @@ The code was written with Anthropic's Claude, directed by us and tested in the g
 **Tested in game** on Satisfactory 1.2.5.1 (build 520140) with SML 3.12.1, 23 Nov 2026: solo (the host path: a cave, an
 overhang, under a factory, a far hard drive, Back, a pasted /tp line, from a vehicle, German and Japanese, switching worlds)
 and as a guest on a dedicated server (moved by the server, Found from the server's save, guests turned off, a server without
-the mod). That was 1.0.0. 1.1.0 keeps its teleport and save reading as they were and brings the new panel (My places,
-Settings): drawn and checked outside the game at 1080p and 1440p, its places file checked by tests; its first in-game run is
-still to come.
+the mod). That was 1.0.0. 1.1.0 kept its teleport and save reading and brought the new panel (My places, Settings),
+run in game on 24 Nov 2026: Save here, Rename, a map place, a saved spot, Return both ways, Recently travelled, and a key
+changed in Settings (F9 to F6 and back). 1.1.1 fixes what those runs found; its places file and key rules are checked by
+tests outside the game.
 
 **Languages:** the list speaks your game's language, in the game's own words. Every place, region, item, tape and purity
 name comes from the game itself, and so do the headings, the search box's hint and Close: set Satisfactory to German, and
@@ -116,7 +117,9 @@ The server keeps one setting in `server.json`, in the server's own install folde
 
 `%LOCALAPPDATA%\FactoryGame\Saved\GamesOMGTeleport\places.json` (paste that into the Explorer address bar): your places,
 notes, Recently travelled, found marks and settings, per session (and per host, as a guest). Ticks the game makes for you
-aren't stored there: they're read from the save each time. Show on map opens your browser only when you press it; the mod
+aren't stored there: they're read from the save each time. `places.v2.json` beside it is the same file, kept where 1.0.0
+never writes: go back to 1.0.0 and return, and your places come back from it. `places.v1.json` is your 1.0.0 file as it
+was before 1.1 first wrote over it. Show on map opens your browser only when you press it; the mod
 makes no network calls of its own.
 
 ## Uninstall

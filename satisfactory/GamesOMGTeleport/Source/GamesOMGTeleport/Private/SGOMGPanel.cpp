@@ -438,7 +438,7 @@ TSharedRef<SWidget> SGOMGRoot::MakeHeader()
 			[
 				IconButton(TAttribute<uint8>::CreateLambda([this]() { return (uint8)(View == EView::Places ? EGOMGIcon::Gear : EGOMGIcon::Close); }),
 					TAttribute<FText>::CreateLambda([this]() { return Tx(View == EView::Places ? TEXT("Settings") : TEXT("Back to Places")); }),
-					[this]() { CancelNote(); GOMGClient::CancelCapture(); View = View == EView::Places ? EView::Settings : EView::Places; RebuildSettings(); RebuildPrompts(); })
+					[this]() { CancelNote(); GOMGClient::CancelCapture(); View = View == EView::Places ? EView::Settings : EView::Places; if (View == EView::Places) Rebuild(); RebuildSettings(); RebuildPrompts(); })
 			]
 			+ SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(FMargin(4, 0, 0, 0))
 			[
@@ -1476,7 +1476,8 @@ bool SGOMGRoot::Back()
 {
 	if (!NoteKey.IsEmpty()) { CancelNote(); return true; }
 	if (View == EView::Rename) { View = EView::Places; RebuildPrompts(); FSlateApplication::Get().SetKeyboardFocus(Search, EFocusCause::SetDirectly); return true; }
-	if (View == EView::Settings) { GOMGClient::CancelCapture(); View = EView::Places; RebuildPrompts(); return true; }
+	// the list is made again: a row that names a key ("F9 closes this.") was written before the key changed
+	if (View == EView::Settings) { GOMGClient::CancelCapture(); View = EView::Places; Rebuild(); RebuildPrompts(); return true; }
 	return false;
 }
 
@@ -1764,9 +1765,17 @@ void SGOMGRoot::RebuildSettings()
 								FGOMGSettings& St = GOMGStore::Settings();
 								const FKey Other = bPanel ? St.BackKey : St.PanelKey;
 								if (!K.IsValid()) ShowStatus(Tx(TEXT("Nothing changed.")), false);
-								else if (K == EKeys::AnyKey) ShowStatus(Tx(TEXT("That key types in the panel's boxes. Pick one that doesn't, like F6 or Insert. Nothing changed.")), true);
-								else if (K == Other) ShowStatus(Fmt(TEXT("That's already {0}. Change that one first. Nothing changed."), Tx(bPanel ? TEXT("Return") : TEXT("Open Places"))), true);
-								else if (K == EKeys::Enter || K == EKeys::Up || K == EKeys::Down || K == EKeys::PageUp || K == EKeys::PageDown)
+								else if (K == EKeys::AnyKey)
+								{
+									// suggest two keys neither action is on ("like F6" while F6 opened Places read as a typo)
+									const TArray<FKey> Free = GOMGStore::FreeKeys(2);
+									ShowStatus(Fmt(TEXT("That key types in the panel's boxes. Pick one that doesn't, like {0} or {1}. Nothing changed."),
+										Free[0].GetDisplayName(), Free[1].GetDisplayName()), true);
+								}
+								// the action by its full name: "That's already Return" read as the Enter key
+								else if (K == Other) ShowStatus(Fmt(TEXT("{0} already does {1}. Change that one first. Nothing changed."), K.GetDisplayName(),
+									Tx(bPanel ? TEXT("Return to previous spot") : TEXT("Open Places"))), true);
+								else if (GOMGStore::PanelOwnKey(K))
 									ShowStatus(Tx(TEXT("The panel uses that key itself. Pick another. Nothing changed.")), true);
 								else
 								{

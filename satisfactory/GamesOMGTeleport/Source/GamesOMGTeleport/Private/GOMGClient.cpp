@@ -217,9 +217,9 @@ namespace
 				if (K.IsMouseButton() || K.IsModifierKey() || E.IsRepeat()) return true;
 				TFunction<void(FKey)> Done = MoveTemp(GCapture);
 				GCapture = nullptr;
-				// a key that types (a letter, Space, the arrows and editing keys) would fire while you type in a box: refused
-				const bool bTyping = E.GetCharacter() != 0 || K == EKeys::BackSpace || K == EKeys::Delete || K == EKeys::Left || K == EKeys::Right
-					|| K == EKeys::Home || K == EKeys::End || K == EKeys::Tab || K == EKeys::SpaceBar;
+				// a key that types (a letter, Space, the arrows and editing keys) would fire while you type in a box: refused.
+				// Enter makes '\r', which types nothing: it reaches the panel's own-key refusal instead
+				const bool bTyping = GOMGStore::TypesInBoxes(K, E.GetCharacter());
 				Done(K == EKeys::Escape ? EKeys::Invalid : bTyping ? EKeys::AnyKey : K);
 				return true;
 			}
@@ -323,7 +323,8 @@ namespace GOMGClient
 				GOMGStore::AddRecent(W, Done.Label.ToString(), Where - FVector(0, 0, HalfH + 4.f), Ch ? Ch->GetActorRotation().Yaw : 0.f);
 			}
 			Persist();
-			Toast(Done.bIsBack ? FText::FromString(TEXT("Back where you were. Press Return again to swap back."))
+			// the key by its name ("Press F10 again"): "Press Return" read as the Enter key
+			Toast(Done.bIsBack ? FText::Format(FText::FromString(TEXT("Back where you were. Press {0} again to swap back.")), GOMGStore::Settings().BackKey.GetDisplayName())
 				: FText::Format(FText::FromString(TEXT("You're at {0}.")), Done.Label));
 			if (GRoot.IsValid()) { GRoot->OnTeleported(); GRoot->Rebuild(); }
 			break;
