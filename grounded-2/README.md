@@ -31,8 +31,9 @@ add-ons) and this mod.
    the exe.
 3. Start the game from Steam as normal and load a world. Press **F7**: the GamesOMG Teleport panel opens.
 
-**Already run UE4SS 4?** Take `…-Mod-Only.zip` and drop its `ue4ss` folder into `Augusta\Binaries\Win64`. It adds one mod
-folder (`ue4ss\Mods\GamesOMGTeleport`, with an `enabled.txt` so it loads) and touches nothing else.
+**Already run UE4SS 4?** Take `…-Mod-Only.zip` and drag its `Augusta` folder into your Grounded 2 folder (Steam: Manage,
+Browse local files), letting Windows merge it. It adds one mod folder (`Augusta\Binaries\Win64\ue4ss\Mods\GamesOMGTeleport`,
+with an `enabled.txt` so it loads) and touches nothing else. It's laid out from the game's root so mod managers place it.
 
 ## Use it
 

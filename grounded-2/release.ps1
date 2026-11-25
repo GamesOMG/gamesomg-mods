@@ -3,7 +3,11 @@
 # Writes release-out\<version>\:
 #   Grounded2-GamesOMG-Teleport-<v>-Easy-Install.zip   UE4SS 4.0.0 (its DLLs, licence, shared Lua helpers; NO stock mods)
 #                                                     + this mod. Unzip into Grounded2\Augusta\Binaries\Win64.
-#   Grounded2-GamesOMG-Teleport-<v>-Mod-Only.zip       just ue4ss\Mods\GamesOMGTeleport, for players who already run UE4SS 4.
+#   Grounded2-GamesOMG-Teleport-<v>-Mod-Only.zip       just Augusta\Binaries\Win64\ue4ss\Mods\GamesOMGTeleport, for players who
+#                                                     already run UE4SS 4. Unzip into the Grounded 2 folder. The game's own
+#                                                     layout from its root, because Vortex's Grounded 2 installer cancels a zip
+#                                                     whose root is ue4ss\Mods (night runner's Vortex test, 11-24). Written
+#                                                     with / in its entry names (.NET ZipFile), not Compress-Archive's \.
 #   SHA256SUMS.txt
 # Refuses: a UE4SS zip that isn't the v4.0.0 release (hash), a version mismatch, a provisional places.lua, any file not on
 # the exact lists below (dev harness, survey files, logs, recent places never ship).
@@ -59,7 +63,7 @@ foreach ($f in $files) {
 foreach ($f in "README.md", "LICENSE") { Copy-Item (Join-Path $here $f) (Join-Path $modDst $f) }
 Copy-Item (Join-Path $tmp "ue4ss\LICENSE") (Join-Path $modDst "UE4SS-LICENSE.txt")
 
-$mo = Join-Path $stage "modonly\ue4ss\Mods"
+$mo = Join-Path $stage "modonly\Augusta\Binaries\Win64\ue4ss\Mods"
 New-Item -ItemType Directory -Force $mo | Out-Null
 Copy-Item $modDst $mo -Recurse
 
@@ -70,13 +74,14 @@ $easyWant = @("dwmapi.dll", "ue4ss/LICENSE", "ue4ss/Mods/mods.txt", "ue4ss/UE4SS
 $easyGot = Listing $ue
 if (Compare-Object $easyWant $easyGot) { Compare-Object $easyWant $easyGot | Format-Table | Out-String | Write-Host; throw "Easy zip file list is not the expected one" }
 $moGot = Listing (Join-Path $stage "modonly")
-if (Compare-Object ($modList | Sort-Object) $moGot) { throw "Mod-only zip file list is not the expected one" }
+if (Compare-Object ($modList | ForEach-Object { "Augusta/Binaries/Win64/$_" } | Sort-Object) $moGot) { throw "Mod-only zip file list is not the expected one" }
 foreach ($f in $easyGot) { if ($f -match 'dev\.lua|survey|verify_targets|gomg_|\.log$') { throw "dev file in the zip: $f" } }
 
 $easy = Join-Path $out "Grounded2-GamesOMG-Teleport-$v-Easy-Install.zip"
 $only = Join-Path $out "Grounded2-GamesOMG-Teleport-$v-Mod-Only.zip"
 Compress-Archive -Path (Join-Path $ue "*") -DestinationPath $easy
-Compress-Archive -Path (Join-Path $stage "modonly\*") -DestinationPath $only
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[IO.Compression.ZipFile]::CreateFromDirectory((Join-Path $stage "modonly"), $only, [IO.Compression.CompressionLevel]::Optimal, $false)
 Remove-Item $stage, $tmp -Recurse -Force
 $sums = foreach ($z in $easy, $only) { "{0}  {1}" -f (Get-FileHash $z -Algorithm SHA256).Hash.ToLower(), (Split-Path $z -Leaf) }
 [IO.File]::WriteAllText((Join-Path $out "SHA256SUMS.txt"), ($sums -join "`n") + "`n", (New-Object Text.ASCIIEncoding))
