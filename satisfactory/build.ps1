@@ -4,6 +4,8 @@
 # Needs: Coffee Stain's engine (UE 5.6.1-CSS) registered as "5.6.1-CSS", VS 2022 with MSVC 14.38, the Linux cross toolchain
 # (LINUX_MULTIARCH_ROOT), Wwise integrated into the starter project (D:\Tools\sml-toolchain\wwise.ps1), the SML starter
 # project at D:\SatisfactoryModding\SML (SML 3.12.1). Same commands SML's own CI runs (SatisfactoryModLoader .github/workflows/build.yml).
+# The uplugin's integer "Version" must equal SemVersion's major (1 for 1.x.y): ficsit.app refuses an upload where they
+# differ ("SemVer major version should match Version"). 1.1.0 and 1.1.1 on GitHub carry 2 and 3; SMR's 1.1.1 carries 1.
 param([switch]$Package, [string]$Project = 'D:\SatisfactoryModding\SML')
 $ErrorActionPreference = 'Stop'
 
