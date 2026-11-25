@@ -481,5 +481,9 @@ Console.WriteLine("0.3.2 checks: passed");
 var fails033 = Polish033.Run(w => PoiWorld.Read(System.IO.File.ReadAllBytes(System.IO.Path.Combine(AppContext.BaseDirectory, "pois-" + w + ".json.z"))));
 if (fails033.Count > 0) throw new Exception("FAIL " + fails033.Count + " of the 0.3.3 checks:\n  FAIL " + string.Join("\n  FAIL ", fails033));
 Console.WriteLine("0.3.3 checks: passed");
+// Return's name: the place you teleported to while you're within 30 m of its landing (tests/ReturnName.cs)
+var failsRN = ReturnName.Run(w => PoiWorld.Read(System.IO.File.ReadAllBytes(System.IO.Path.Combine(AppContext.BaseDirectory, "pois-" + w + ".json.z"))));
+if (failsRN.Count > 0) throw new Exception("FAIL " + failsRN.Count + " of the Return name checks:\n  FAIL " + string.Join("\n  FAIL ", failsRN));
+Console.WriteLine("Return name checks: passed");
 CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 Console.WriteLine(checks + " parser/geometry checks passed; no game assembly loaded");

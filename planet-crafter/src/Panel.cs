@@ -372,16 +372,12 @@ namespace GamesOMG.PlanetCrafterTeleport
             return new Vector3(pos.x, centre.y - body.height * .5f * Mathf.Abs(player.transform.lossyScale.y), pos.z);
         }
 
-        // the name of where someone stands, for "Return to …": one of your places within 30 m, else a map place within 30 m
+        // the name of where someone stands, for "Return to …": the place you teleported to while you're within 30 m of where
+        // it landed you, else one of your places within 30 m, else a map place within 30 m (PlaceStore.NameForSpot)
         public string NameForSpot(string w, float x, float z)
         {
-            Place best = null;
-            float bestD = 30;
-            foreach (var p in Store.For(w).Saved) { float d = p.Distance2D(x, z); if (d <= bestD) { best = p; bestD = d; } }
-            if (best != null) return best.Name;
             var pw = PoisFor(w);
-            var poi = pw?.Closest(x, z, 30);
-            return poi != null ? pw.NameOf(poi) : "";
+            return Store.NameForSpot(w, x, z, (px, pz) => pw?.Closest(px, pz, PlaceStore.SpotNameReach) is Poi poi ? pw.NameOf(poi) : null);
         }
 
         // ── a map link pasted: spots (#spotset=), found marks (#foundset=), or both (the map's Send to game) ──

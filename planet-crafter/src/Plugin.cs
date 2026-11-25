@@ -664,6 +664,7 @@ namespace GamesOMG.PlanetCrafterTeleport
             {
                 var store = panel.Store;
                 store.Teleported(planet.id, from.x, from.y, from.z, fromName);
+                store.Arrived(planet.id, label, landing.x, landing.z);   // the next teleport's Return is named for it
                 if (!back) store.AddRecent(planet.id, string.IsNullOrEmpty(label) ? L.T("recent.teleport") : label, landing.x, landing.y, landing.z);
                 string failed = panel.Lib.Save();
                 if (failed != null) Notice(failed, 8f, true);

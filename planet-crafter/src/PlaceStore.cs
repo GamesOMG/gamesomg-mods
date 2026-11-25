@@ -273,6 +273,35 @@ namespace GamesOMG.PlanetCrafterTeleport
             return (w.Length > 0 ? char.ToUpperInvariant(w[0]) + w.Substring(1) + " " : "") + (int)Math.Round(x) + ", " + (int)Math.Round(z);
         }
 
+        // ── "Return to …": the name of where you stand when you teleport away ──
+        // (in game on 0.3.3, 2026-11-24: Floating Rocks, then Offline drone, and Return said "Return to Osmium"): the place
+        // you teleported to names it while you're still within 30 m of where it landed you, even when a vein sits closer.
+        // Else one of your places within 30 m, else a map place within 30 m (mapNear), else "". The landing is kept in
+        // memory only, per save and planet: a restart falls back to the nearest-name rule.
+        public const float SpotNameReach = 30f;
+        private string arrivedSave, arrivedWorld, arrivedName;
+        private float arrivedX, arrivedZ;
+
+        // each completed move, Return's too; a move with no name (a pasted /tp line) forgets the last one
+        public void Arrived(string world, string name, float x, float z)
+        {
+            name = SpotSet.Clean(name ?? "", NameMax);
+            if (name.Length == 0) { arrivedName = null; return; }
+            arrivedSave = Current; arrivedWorld = WorldOf(world); arrivedName = name; arrivedX = x; arrivedZ = z;
+        }
+
+        public string NameForSpot(string world, float x, float z, Func<float, float, string> mapNear)
+        {
+            if (arrivedName != null && arrivedSave == Current && arrivedWorld == WorldOf(world)
+                && Math.Sqrt((arrivedX - x) * (arrivedX - x) + (arrivedZ - z) * (arrivedZ - z)) <= SpotNameReach)
+                return arrivedName;
+            Place best = null;
+            float bestD = SpotNameReach;
+            foreach (var p in For(world).Saved) { float d = p.Distance2D(x, z); if (d <= bestD) { best = p; bestD = d; } }
+            if (best != null) return best.Name;
+            return mapNear?.Invoke(x, z) ?? "";
+        }
+
         // ── 0.3.0 export/import: whole saves, by the game's own save name ──
         public List<string> SaveNames
         {

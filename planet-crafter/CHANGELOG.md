@@ -1,5 +1,12 @@
 # Changelog
 
+## Next (not released yet)
+
+- **Return names the place you went to.** Floating Rocks, then an Offline drone, and the Return button said "Return to
+  Osmium": it named the nearest map place to where you stood, and an Osmium vein sat closer than the rocks' own pin. Now
+  the place you teleported to names it while you're still within 30 m of where it landed you; walk off and it's the
+  nearest place, as before.
+
 ## 0.3.3
 
 - **Distance first, height only when it matters.** 0.3.0 to 0.3.2 added "N m above / below you" to every place 3 m or more
