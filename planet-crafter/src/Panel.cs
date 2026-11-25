@@ -1,7 +1,7 @@
 // GamesOMG Teleport 0.3.0: the Places panel, rebuilt for the look, controls, settings and data pass (2026-11-19:
 // more appealing, easier controls, a settings screen to reset, export and save, before the first public release;
 // ChatGPT's review the spec). "Pick a place. Go there. Get back." The hierarchy, top to bottom:
-//   header           gear-G mark · Places · planet and save · Settings · Close
+//   header           G Emblem mark · Places · planet and save · Settings · Close
 //   main actions     From clipboard · Save here · Return to <the spot you left>
 //   navigation       My places | Map places
 //   search, filters  search · Hide found · Sort (Nearest / A-Z)

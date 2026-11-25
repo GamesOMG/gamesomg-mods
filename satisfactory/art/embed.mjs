@@ -1,4 +1,4 @@
-// GamesOMG Teleport for Satisfactory: the gear-G mark and the icon sheet, as bytes in the DLL (the Planet Crafter mod embeds
+// GamesOMG Teleport for Satisfactory: the G Emblem mark and the icon sheet, as bytes in the DLL (the Planet Crafter mod embeds
 // the same two PNGs as resources). A Slate brush is made from them at runtime (GOMGTheme.cpp), so the mod needs no .pak.
 //   node satisfactory/art/embed.mjs   → GamesOMGTeleport/Source/GamesOMGTeleport/Private/GOMGArt.inl
 // mark.png and icons.png are the Planet Crafter mod's (planet-crafter/data), byte for byte. icons.png is one row of 64 px

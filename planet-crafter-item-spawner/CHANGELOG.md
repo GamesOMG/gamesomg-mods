@@ -1,5 +1,9 @@
 # Changelog
 
+## Next (not released yet)
+
+- **The new GamesOMG logo.** The header's mark is the G Emblem the site has worn since 11-22, not the old gear.
+
 ## 0.2.0 (2026-11-21)
 
 - **Pick an item and see what it does**, in small print under its name: the game's own description in your game's

@@ -1,5 +1,8 @@
 # Changelog: GamesOMG Teleport for Satisfactory
 
+## Next (not released yet)
+- **The new GamesOMG logo.** The header's mark is the G Emblem the site has worn since 11-22, not the old gear.
+
 ## 1.1.1
 Fixes from the first in-game runs of 1.1.0.
 - **Going back to 1.0.0 no longer costs you your places.** 1.0.0 reads 1.1's `places.json` but writes back only keys,

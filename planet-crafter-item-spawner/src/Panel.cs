@@ -1,6 +1,6 @@
 // GamesOMG Item Spawner: the panel. The shape (2026-11-21): a grid of the game's item icons with a search box;
 // the search matches the in-game names; an amount field with Add, ×1, ×10 and Fill; items go straight into the backpack.
-// Drawn with IMGUI as GamesOMG Teleport is (the same plates, the gear-G mark, the game's font), held like a game text box
+// Drawn with IMGUI as GamesOMG Teleport is (the same plates, the G Emblem mark, the game's font), held like a game text box
 // (InputHold) so no key also fires in the game. Keyboard: type to search, arrows move the selection (always: Left/Right
 // never move the caret), Enter adds, Esc clears the search, then closes. Controller: D-pad / left stick move, A adds,
 // X ×10, Y Fill, LB/RB tabs, LT/RT a page, B closes.

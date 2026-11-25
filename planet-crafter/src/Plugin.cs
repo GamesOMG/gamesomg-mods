@@ -683,7 +683,7 @@ namespace GamesOMG.PlanetCrafterTeleport
             messageUntil = Time.realtimeSinceStartup + seconds;
         }
 
-        // the notice card: top centre, dark, the gear-G mark, solid text at any panel opacity; a refusal has a red edge
+        // the notice card: top centre, dark, the G Emblem mark, solid text at any panel opacity; a refusal has a red edge
         private void OnGUI()
         {
             panel.OnGUI();

@@ -4,7 +4,7 @@
 //   · the same text sizes. Planet Crafter's sizes are pixels (Unity IMGUI); Slate's are points at 96 DPI, so a Slate size
 //     draws 4/3 as tall. 1.0.0 used Slate sizes as if they were pixels, so every word was a third bigger than the model's.
 //     Font(Px) takes the model's pixel size and does the conversion.
-//   · the same gear-G mark and icon sheet (Planet Crafter's mark.png and icons.png, embedded: GOMGArt.inl)
+//   · the same G Emblem mark and icon sheet (Planet Crafter's mark.png and icons.png, embedded: GOMGArt.inl)
 //   · the game's own font, as the model uses its game's (Satisfactory's covers CJK, Arabic, Thai and Bengali)
 #pragma once
 

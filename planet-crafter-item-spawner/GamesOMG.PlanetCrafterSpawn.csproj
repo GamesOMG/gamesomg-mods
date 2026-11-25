@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src/*.cs" />
-    <!-- the gear-G mark and the icon strip, shared with GamesOMG Teleport (its brand.py made them) -->
+    <!-- the G Emblem mark and the icon strip, shared with GamesOMG Teleport (its brand.py made them) -->
     <EmbeddedResource Include="data/mark.png;data/icons.png" LogicalName="%(Filename)%(Extension)" />
     <Reference Include="BepInEx"><HintPath>.deps/BepInEx.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>

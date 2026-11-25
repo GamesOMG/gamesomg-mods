@@ -1,5 +1,5 @@
 // GamesOMG Item Spawner: how the panel looks. The same look as GamesOMG Teleport 0.3.2 (the game's own IMGUI font, the dark plates,
-// the gear-G mark and icon strip, orange for the main action, blue for focus, compact sizes that scale with the screen
+// the G Emblem mark and icon strip, orange for the main action, blue for focus, compact sizes that scale with the screen
 // height), with two changes from the start: the panel is opaque, and every text colour is one Palette.Pairs proves ≥ 4.5:1.
 using System;
 using System.Collections.Generic;

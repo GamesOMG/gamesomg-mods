@@ -4,7 +4,7 @@
 //   · brand orange #f08000 for the main action, brand blue #3be3ff for focus, exactly (0.2.x used a near-orange #FF9E33)
 //   · a dark panel; background opacity is a setting, text and focus stay solid at any opacity
 //   · Manrope (OFL, the site's own font) for every word; a glyph Manrope lacks falls back to the game's font per label
-//   · one small gear-G mark in the header; icons drawn as tinted textures, so nothing depends on a font having ✓ or ★
+//   · one small G Emblem mark in the header; icons drawn as tinted textures, so nothing depends on a font having ✓ or ★
 //   · comfortable rows 44 px at 1080p, compact 32; everything scales with the screen height and the Text size setting
 // 0.3.2 (player feedback 2026-11-21 08:19: "the font is hard to read now", "should we focus on keeping it more compact?"): the game's
 //   own IMGUI font again, as 0.2.6 drew it (GUI.skin's font, bold by FontStyle), not Manrope; Manrope is no longer embedded.

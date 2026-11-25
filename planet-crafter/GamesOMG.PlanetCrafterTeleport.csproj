@@ -32,7 +32,7 @@
     <EmbeddedResource Include="data/pois-*.json.z" LogicalName="%(Filename)%(Extension)" />
     <!-- 0.2.4: the map's found list (#foundset=): its pin order and hash, out of the map's own gomg-sets.js by build-foundset.mjs -->
     <EmbeddedResource Include="data/foundset-pc.json.z" LogicalName="%(Filename)%(Extension)" />
-    <!-- 0.3.0 the look: the gear-G mark and the icon strip (brand.py). 0.3.2: no font of our own (Manrope was hard to read,
+    <!-- 0.3.0 the look: the gear-G mark (the G Emblem since 0.3.4) and the icon strip (brand.py). 0.3.2: no font of our own (Manrope was hard to read,
          player feedback 2026-11-21); the panel uses the game's IMGUI font, as 0.2.6 did -->
     <EmbeddedResource Include="data/mark.png;data/icons.png" LogicalName="%(Filename)%(Extension)" />
     <Reference Include="BepInEx"><HintPath>.deps/BepInEx.dll</HintPath><Private>false</Private></Reference>
