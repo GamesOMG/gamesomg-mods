@@ -1,8 +1,11 @@
 # Changelog
 
-## Next (not released yet)
+## 0.2.1 (2026-11-27)
 
-- **The new GamesOMG logo.** The header's mark is the G Emblem the site has worn since 11-22, not the old gear.
+- **The new GamesOMG logo.** The header's mark is the G Emblem the site has worn since 2026-11-22, not the old gear.
+  Nothing else changed: same search, same backpack rules, same keys, same settings file.
+- Tested in game on v2.104 (Steam build 26411416) from this release's own zip: search by name, Enter / ×10 / Fill into
+  the backpack, a full and a part-full backpack with nothing dropped, every game language, achievements on.
 
 ## 0.2.0 (2026-11-21)
 
