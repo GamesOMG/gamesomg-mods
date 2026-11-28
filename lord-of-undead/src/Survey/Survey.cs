@@ -34,12 +34,27 @@ namespace GamesOMG.LordOfUndeadTeleport
         Vector3 went;
         string mode;
         HashSet<string> done = new HashSet<string>();
+        string firstFail;               // why the planned spot failed, kept on the row of the spot found in game
+        bool godWas;
+        GamePlayer godOn;               // whose infinite health the survey switched on (put back when it stops)
+
+        // the game's own god-mode health flag (PlayerStats.InfinityHealth, what its console's "set godmode 1" sets), so a
+        // level-1 character survives standing in every bandit camp and troll den; put back when the survey stops
+        void God(GamePlayer p, bool on)
+        {
+            try
+            {
+                if (on) { godWas = p.Stats.InfinityHealth; p.Stats.InfinityHealth = true; godOn = p; }
+                else if (godOn != null) { godOn.Stats.InfinityHealth = godWas; godOn = null; }
+            }
+            catch (Exception e) { log.LogWarning("survey god mode: " + e.Message); }
+        }
 
         public Survey(ManualLogSource log, Teleporter tp, List<Place> places) { this.log = log; this.tp = tp; this.places = places; }
 
         public void Toggle(GamePlayer p, Action<string, bool> say)
         {
-            if (running) { running = false; cur = null; say("Survey stopped. F9 resumes where it was.", false); return; }
+            if (running) { running = false; cur = null; God(p, false); say("Survey stopped. F9 resumes where it was.", false); return; }
             if (p == null) { say("Load a world first.", true); return; }
             done = new HashSet<string>();
             if (File.Exists(file))
@@ -49,6 +64,7 @@ namespace GamesOMG.LordOfUndeadTeleport
             }
             else File.WriteAllText(file, Header + "\n");
             index = 0; running = true; cur = null; ok = bad = 0;
+            God(p, true);
             say("Survey started: " + (places.Count - done.Count) + " landings to stand on (" + done.Count + " already in the file). F9 stops.", false);
             log.LogInfo("survey -> " + file);
         }
@@ -64,7 +80,7 @@ namespace GamesOMG.LordOfUndeadTeleport
         public void Update(GamePlayer p, Action<string, bool> say)
         {
             if (!running) return;
-            if (p == null) { running = false; cur = null; say("Survey stopped: no world.", true); return; }
+            if (p == null) { running = false; cur = null; godOn = null; say("Survey stopped: no world.", true); return; }
             if (cur != null)
             {
                 if (Time.unscaledTime < measureAt) return;
@@ -72,7 +88,8 @@ namespace GamesOMG.LordOfUndeadTeleport
                 if (pass || tries >= 1) { Write(row, pass); return; }
                 // the planned spot failed: find one in game, stand on it, measure that instead
                 tries++;
-                log.LogInfo("survey " + cur.Id + " planned failed (" + row.Split('\t')[16] + "); searching in game");
+                firstFail = row.Split('\t')[16];
+                log.LogInfo("survey " + cur.Id + " planned failed (" + firstFail + "); searching in game");
                 if (GameLanding(cur, out var alt)) { mode = "game"; Go(p, alt); return; }
                 Write(row, false);
                 return;
@@ -81,16 +98,19 @@ namespace GamesOMG.LordOfUndeadTeleport
             if (index >= places.Count)
             {
                 running = false;
+                God(p, false);
                 say("Survey done: " + ok + " pass, " + bad + " fail. File: " + file, bad > 0);
                 log.LogInfo("survey done: pass " + ok + ", fail " + bad);
                 return;
             }
             cur = places[index++];
             tries = 0;
+            firstFail = null;
             mode = "planned";
             if ((ok + bad) % 25 == 0) say("Survey: " + (ok + bad) + " stood on (" + ok + " pass, " + bad + " fail), " + (places.Count - done.Count) + " to go. F9 stops.", false);
             if (tp.Resolve(p, cur.Target, out var land, out string why)) { Go(p, land); return; }
             tries = 1;
+            firstFail = "planned refused: " + why;
             if (GameLanding(cur, out var alt2)) { mode = "game"; Go(p, alt2); return; }
             went = default;
             Write(Row(cur, "refused", "", "", false, 0, 0, false, false, "none", 0, 0, false, why), false);
@@ -119,6 +139,7 @@ namespace GamesOMG.LordOfUndeadTeleport
             string note = !grounded ? "not grounded" : death ? "death fall" : water ? "in water" : drop >= 1.5f ? "dropped" :
                           drift >= 3f ? "drifted" : path != "complete" ? "no walking path to the pin (" + path + ")" :
                           pathM > 25f ? "the walk to the pin is long" : pinM < 1.5f ? "on top of the pin" : "";
+            if (mode == "game" && firstFail != null) note = (note.Length > 0 ? note + "; " : "") + "planned failed: " + firstFail;
             row = Row(cur, mode, Teleporter.Fmt(went), Teleporter.Fmt(pos), grounded, drop, drift, death, water, path, pathM, pinM, pass, note);
             return pass;
         }
