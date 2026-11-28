@@ -17,12 +17,18 @@ Full guide: **[gamesomg.com/planet-crafter-item-spawner](https://gamesomg.com/pl
 - **Enter** adds the amount in the box (1 to start). **×1**, **×10** and **Fill** are one click (X and Y on a controller).
 - **Backpack full?** What fits goes in, the rest isn't made, and the panel says how many didn't fit. Nothing is ever dropped
   on the ground.
-- **Decoration** (LB/RB to the middle tab): every effigy, poster and spacesuit skin the game hands out in crates. Effigies and
-  posters are buildings in the game, so they go into your backpack and you put them down the way you would a found one:
-  right-click it in your inventory. **One of each** (the button above the grid, or Y on a controller) adds one of every
-  decoration shown that your world doesn't have yet (not on you, in a container or built). Search first to narrow it
-  ("poster"). It follows the same backpack rule as everything else: what doesn't fit isn't made, so put some away and press it
-  again for the rest.
+- **Decoration** (LB/RB to the second tab): every effigy, poster and spacesuit skin the game hands out in crates, and the
+  game's furniture that only changes how a base looks (beds, sofas, tables, lamps, the arcade machine…). Effigies, posters and
+  furniture are buildings in the game, so they go into your backpack and you put them down the way you would a found one:
+  right-click it in your inventory, no recipe or unlock needed. Take a piece of furniture down and you get its parts back
+  (and, for one the game unlocks from wrecks, its blueprint chip while it's still locked). **One of each** (the button above
+  the grid, or Y on a controller) adds one of every decoration shown that your world doesn't have yet (not on you, in a
+  container or built). Search first to narrow it ("poster"). It follows the same backpack rule as everything else: what
+  doesn't fit isn't made, so put some away and press it again for the rest.
+- **Blueprints** (LB/RB, the tab wears the game's own word for it): every blueprint chip, under the name of the building or
+  item it unlocks, as the game itself shows them. Search by that name, or "blueprint". Decode one at the game's Blueprint
+  screen and that blueprint is unlocked for good; the line under it says what it unlocks, or that your world already has it.
+  There's no "one of each" here: it would be an unlock-everything button.
 - **Recent** (LB/RB) holds what you spawned last. The open key then Enter adds your last item again.
 - **Esc** clears the search, then closes. **B** closes on a controller. The panel holds your character still while it's
   open, like any text box in the game; the world keeps going (it's not a pause).

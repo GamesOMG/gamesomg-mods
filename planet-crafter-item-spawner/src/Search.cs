@@ -19,12 +19,18 @@ namespace GamesOMG.PlanetCrafterSpawn
         public int Order;       // the game's own list order, the tie-break of last resort
         public object Group;    // the game's Group (Unity side only)
         // the game gives it no name in any language (build 26411416: the growing and hatched states seeds and eggs turn into
-        // inside planters and aquariums, Tree5Growable / Fish1Hatched, and some Blueprint… chips). Its game would show the raw
-        // id; here it reads as the id split into words, is left out of browsing, and comes up only when a search matches its id
+        // inside planters and aquariums, Tree5Growable / Fish1Hatched; until 0.4.0 the Blueprint… chips too, now named after
+        // what they unlock). Its game would show the raw id; here it reads as the id split into words, is left out of
+        // browsing, and comes up only when a search matches its id
         public bool Unnamed;
         // 0.3.0: one of the things the game hands out for a base's looks (Decor.cs): an effigy or a poster (the game files
         // those as buildings: Placeable, put down from the backpack) or a spacesuit skin
         public bool Decoration, Placeable;
+        // 0.4.0: Building = a piece of furniture for looks (Decor.IsDecorBuilding: Decoration and Placeable too). Chip = a
+        // blueprint chip (Decor.IsChip): named after what it unlocks, UnlocksId / Unlocks = that group (the game's, Unity side)
+        public bool Building, Chip;
+        public string UnlocksId = "";
+        public object Unlocks;
 
         public static ItemEntry Make(string id, string name, string english, int order, object group = null, bool unnamed = false)
         {

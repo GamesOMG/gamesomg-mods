@@ -13,6 +13,13 @@
 // Built once per game language (building names change with it) and per world (the game makes its Groups anew each load), and
 // cached per item. A building's item filter is read from its prefab's saved categories, never through
 // InventoryAuthorizedGroups.GetAuthorizedGroups(): that caches a set of this world's Groups on the prefab itself.
+// 0.4.0: a blueprint chip (Kind "chip"): the description is its target's (Readable.GetGroupDescription(target): what it unlocks),
+// the line says what decoding it does, with the game's own words put in: its name for a chip (GROUP_NAME_BlueprintT1,
+// "Blueprint microchip") and for the screen that decodes one (GROUP_NAME_ScreenUnlockables, "Screen - Blueprints"), and the
+// target's name. Decoding (UnlockedGroupsHandler.DecodeBlueprintServerRpc → UnlocksChip) destroys the chip and unlocks the
+// target for the whole world; when the target already is (Group.GetIsGloballyUnlocked, a set lookup), the line says the chip
+// adds nothing. That state is read each time the line is asked for, never cached: it changes when any chip is decoded.
+// A piece of furniture is Placeable, so it reads as an effigy does: the game's own "Right Click to build".
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -25,7 +32,7 @@ namespace GamesOMG.PlanetCrafterSpawn
     internal sealed class Info
     {
         public string Description = "", Stat = "";
-        public string Kind = "none";          // none · fuse · gauge · multiplier (the sitting checks the numbers by kind)
+        public string Kind = "none";          // none · fuse · gauge · multiplier · place · chip (the sitting checks them by kind)
         public string Unit = "";              // the world unit a fuse or multiplier works on
         public float Percent;                 // a multiplier's or a fuse's percent
         public int Value;                     // a gauge amount
@@ -33,6 +40,10 @@ namespace GamesOMG.PlanetCrafterSpawn
         public List<string> Elsewhere = new List<string>();  // multiplier: named buildings that take it and multiply nothing
         public List<Tier> Tiers = new List<Tier>();          // fuse: each optimizer's reach
         public bool AddUp;
+        public string Target = "";            // chip: the id of what it unlocks
+        public bool Unlocked;                 // chip: that is already unlocked in this world (read when the line is asked for)
+        internal string ChipNew = "", ChipDone = "";
+        internal object TargetGroup;
     }
 
     internal static class ItemInfo
@@ -91,7 +102,7 @@ namespace GamesOMG.PlanetCrafterSpawn
             List<GroupConstructible> now = null;
             try { now = GroupsHandler.GetGroupsConstructible(); } catch (Exception) { }
             if (language != builtFor || !ReferenceEquals(now, builtFrom)) { cache.Clear(); buildings = null; builtFor = language; builtFrom = now; }
-            if (cache.TryGetValue(e.Id, out var hit)) return hit;
+            if (cache.TryGetValue(e.Id, out var hit)) return Now(hit);
             Info info;
             try { info = Make(e); }
             catch (Exception error)
@@ -100,7 +111,26 @@ namespace GamesOMG.PlanetCrafterSpawn
                 if (!warned) { warned = true; log?.LogWarning("Item info unreadable for " + e.Id + " (" + error.GetType().Name + ": " + error.Message + "): the panel shows the name only."); }
             }
             cache[e.Id] = info;
+            return Now(info);
+        }
+
+        // a chip's line follows the world: unlocked or not, as of now
+        private static Info Now(Info info)
+        {
+            if (info.Kind != "chip" || !(info.TargetGroup is Group target)) return info;
+            bool done = false;
+            try { done = target.GetIsGloballyUnlocked(); } catch (Exception) { }
+            info.Unlocked = done;
+            info.Stat = done ? info.ChipDone : info.ChipNew;
             return info;
+        }
+
+        // the game's own words for a key, in its language (the English stand-in only if this build has none)
+        private static string GameWord(string key, string english)
+        {
+            string s = null;
+            try { s = Localization.GetLocalizedString(key); } catch (Exception) { }
+            return string.IsNullOrEmpty(s) || s == key ? english : s;
         }
 
         private static List<Building> Buildings()
@@ -160,9 +190,24 @@ namespace GamesOMG.PlanetCrafterSpawn
         {
             var info = new Info();
             if (!(e.Group is Group group)) return info;
+            // 0.4.0: a blueprint chip, said with what it unlocks
+            if (e.Chip && e.Unlocks is Group target)
+            {
+                string targetName = Readable.GetGroupName(target);
+                info.Description = InfoText.Description(Readable.GetGroupDescription(target), targetName);
+                info.Kind = "chip";
+                info.Target = target.GetId();
+                info.TargetGroup = target;
+                string chip = GameWord(GameConfig.localizationGroupNameId + "BlueprintT1", "Blueprint microchip");
+                string screen = GameWord(GameConfig.localizationGroupNameId + "ScreenUnlockables", "Screen - Blueprints");
+                info.ChipNew = L.T("info.chip", chip, screen, targetName);
+                info.ChipDone = L.T("info.chipDone", targetName);
+                return info;
+            }
             info.Description = InfoText.Description(Readable.GetGroupDescription(group), e.Name);
-            // 0.3.0: an effigy or a poster is put down from the backpack: the game's own card line for it, in its language
-            // ("Right Click to build", Ui_clickbuildable; the game shows it to mouse players only, so does the panel)
+            // 0.3.0: an effigy or a poster (0.4.0: or a piece of furniture) is put down from the backpack: the game's own card line
+            // for it, in its language ("Right Click to build", Ui_clickbuildable; the game shows it to mouse players only, so does
+            // the panel)
             if (e.Placeable)
             {
                 string place = null;

@@ -10,6 +10,11 @@
 // (0.2.0: in the second world of a game run, "In your backpack" read 0).
 // 0.3.0: plus the effigies and posters, which the game files as buildings (GroupsHandler.GetGroupsConstructible(); the rule is
 // Decor.IsPlaceable), after every item; spacesuit skins and those are marked Decoration (the Decoration tab, "one of each").
+// 0.4.0: plus the furniture for looks (Decor.IsDecorBuilding, read off each GroupConstructible: GetGroupCategory, its inventories,
+// GetGroupUnitGeneration in every world unit, and whether a chip unlocks it), after the crate finds: Decoration, Placeable and
+// Building. And the blueprint chips (GroupItem.GetUnlocksGroup() != null) get their target's name, as the game shows them
+// (Readable.GetGroupName(target); English: localizationDictionary["english"]["GROUP_NAME_" + target id]): Chip, browsed on the
+// Blueprints tab and found by what they unlock.
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -33,6 +38,10 @@ namespace GamesOMG.PlanetCrafterSpawn
         private static bool warned;
         public static int Skipped { get; private set; }
         public static int Decorations { get; private set; }
+        public static int Buildings { get; private set; }
+        public static int Chips { get; private set; }
+        // every world unit of THIS game build (Enum.GetValues at run time: a unit a later build adds is read too)
+        private static readonly DataConfig.WorldUnitType[] AllUnits = (DataConfig.WorldUnitType[])Enum.GetValues(typeof(DataConfig.WorldUnitType));
 
         public static string CurrentLanguage()
         {
@@ -63,14 +72,21 @@ namespace GamesOMG.PlanetCrafterSpawn
             var english = English(log);
             var list = new List<ItemEntry>(groups.Count + 64);
             var seen = new HashSet<string>(StringComparer.Ordinal);
-            int order = 0, skipped = 0, unnamedCount = 0, skins = 0, placeable = 0;
+            // what a chip unlocks: every item's link, icon or not (a building one links to goes by the chip, never as decoration)
+            var chipTargets = new HashSet<string>(StringComparer.Ordinal);
+            int order = 0, skipped = 0, unnamedCount = 0, skins = 0, placeable = 0, furniture = 0, chips = 0;
             foreach (var g in groups)
             {
                 if (g == null) continue;
                 string id = g.GetId();
                 if (string.IsNullOrEmpty(id) || !seen.Add(id)) continue;
+                Group target = null;
+                try { target = g.GetUnlocksGroup(); } catch (Exception) { }
+                if (target != null && !string.IsNullOrEmpty(target.GetId())) chipTargets.Add(target.GetId());
                 if (g.GetImage() == null) { skipped++; continue; }
-                var e = Entry(g, id, english, order++, ref unnamedCount);
+                ItemEntry e;
+                if (target != null && Decor.IsChip(true, target.GetId())) { e = ChipEntry(g, id, target, english, order++, ref unnamedCount); chips++; }
+                else e = Entry(g, id, english, order++, ref unnamedCount);
                 if (Decor.IsSkin(true, g.GetEquipableType().ToString())) { e.Decoration = true; skins++; }
                 list.Add(e);
             }
@@ -87,16 +103,32 @@ namespace GamesOMG.PlanetCrafterSpawn
                     placeable++;
                     list.Add(e);
                 }
+            // 0.4.0: the furniture for looks, after the crate finds
+            if (buildings != null)
+                foreach (var g in buildings)
+                {
+                    if (g == null) continue;
+                    string id = g.GetId();
+                    if (string.IsNullOrEmpty(id) || seen.Contains(id) || !DecorBuilding(g, chipTargets)) continue;
+                    seen.Add(id);
+                    var e = Entry(g, id, english, order++, ref unnamedCount);
+                    e.Decoration = e.Placeable = e.Building = true;
+                    furniture++;
+                    list.Add(e);
+                }
             cache = list;
             cachedLanguage = language;
             cachedGroups = groups.Count;
             cachedList = groups;
             cachedBuildings = buildings;
             Skipped = skipped;
-            Decorations = skins + placeable;
+            Decorations = skins + placeable + furniture;
+            Buildings = furniture;
+            Chips = chips;
             log.LogInfo("Item list: " + list.Count + " items (language " + language + ", " + skipped + " without an icon left out, "
                 + unnamedCount + " the game never names: shown only when a search matches their id). Decoration: " + placeable
-                + " effigies and posters (buildings the game hands out in crates), " + skins + " spacesuit skins.");
+                + " effigies and posters (buildings the game hands out in crates), " + furniture + " furniture buildings for looks, "
+                + skins + " spacesuit skins. Blueprints: " + chips + " blueprint chips, each named after what it unlocks.");
             return cache;
         }
 
@@ -109,6 +141,33 @@ namespace GamesOMG.PlanetCrafterSpawn
             bool unnamed = english != null && string.IsNullOrEmpty(en) && (string.IsNullOrEmpty(name) || name == id);
             if (unnamed) unnamedCount++;
             return ItemEntry.Make(id, name, en, order, g, unnamed);
+        }
+
+        // a chip under its target's name (Decor.ChipEntry): the game's own name for the target, and its English one
+        private static ItemEntry ChipEntry(GroupItem g, string id, Group target, Dictionary<string, string> english, int order, ref int unnamedCount)
+        {
+            string targetId = target.GetId(), name = null, en = null;
+            try { name = Readable.GetGroupName(target); } catch (Exception) { }
+            if (english != null) english.TryGetValue(GameConfig.localizationGroupNameId + targetId, out en);
+            // no English table to read (a renamed field): the shown name stands in, as for any item
+            if (english == null && string.IsNullOrEmpty(en)) en = name;
+            var e = Decor.ChipEntry(id, targetId, name, en, order, g, target);
+            if (e.Unnamed) unnamedCount++;
+            return e;
+        }
+
+        // Decor.IsDecorBuilding on the game's Group: furniture, no inventory of its own, makes nothing, no chip unlocks it
+        private static bool DecorBuilding(GroupConstructible g, HashSet<string> chipTargets)
+        {
+            try
+            {
+                var more = g.GetSecondaryInventoriesSize();
+                var made = new List<float>(AllUnits.Length);
+                foreach (var u in AllUnits) made.Add(g.GetGroupUnitGeneration(u));
+                return Decor.IsDecorBuilding(true, g.GetImage() != null, g.GetGroupCategory().ToString(), g.GetInventorySize(), more?.Count ?? 0,
+                    Decor.Generates(made), chipTargets.Contains(g.GetId()));
+            }
+            catch (Exception) { return false; }
         }
 
         // Decor.IsPlaceable on the game's Group: an icon, no recipe, no inventory of its own

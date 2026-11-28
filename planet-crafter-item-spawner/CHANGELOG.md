@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.4.0 (not released yet)
+
+- **Furniture on the Decoration tab.** Beds, sofas, chairs, tables, lamps, the arcade machine, the pool table, the planet
+  viewer: the game's furniture that only changes how a base looks, under the game's own names. Each piece goes into your
+  backpack and you put it down like an effigy: right-click it in your inventory, no recipe and no unlock needed. Take one down
+  and you get its parts back; for furniture the game unlocks from wrecks, you also get its blueprint chip while it's still
+  locked. One of each covers furniture too.
+- Furniture that does something stays out: storage, pots and planters, display cases, anything that makes heat, oxygen or
+  plants, and anything the game unlocks with a blueprint chip of its own (that comes as its chip, below).
+- **Blueprints tab: every blueprint chip, named.** The game gives its chips no name of their own and shows each one under the
+  name of what it unlocks; the panel now does the same (before, a chip only came up when you searched its id). Search by that
+  name, or "blueprint". Decode one at the game's Blueprint screen and that blueprint is unlocked for good. The line under it
+  says what it unlocks, or that your world already has it. No "one of each" here: it would be an unlock-everything button.
+- All, Decoration, Blueprints and Recent (LB/RB step through them). The Blueprints tab wears the game's own word for it, in
+  your language.
+- **Fixed:** an empty Recent tab said `Nothing matches ""` instead of "Items you spawn show up here."
+- Nothing is a fixed list: furniture and chips come from the game's own data when a world loads, so new ones in a game update
+  show up without a mod update.
+- Help's Decoration section covers furniture, and there's a Blueprints section. Every new line is in every game language.
+
 ## 0.3.0 (2026-11-28)
 
 - **Fixed: effigies and posters were missing.** An item spawner that couldn't spawn them: the game files effigies and posters

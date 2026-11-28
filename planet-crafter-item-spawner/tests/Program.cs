@@ -61,7 +61,8 @@ var de = new List<ItemEntry> { ItemEntry.Make("Seed0", "Lirmalsamen", "Lirma See
 Check(Search.Filter(de, "dunger")[0].Id == "Fertilizer1" && Search.Filter(de, "DÜNGER")[0].Id == "Fertilizer1", "German: dunger / DÜNGER find Dünger");
 Check(Search.Filter(de, "ice")[0].Id == "Ice" && Search.Filter(de, "eis")[0].Id == "Ice", "German: Eis by German or English");
 
-// items the game never names (build 26411416: Fish1Hatched, Tree5Growable, BlueprintAutocrafter…): out of browsing, found by id
+// items the game never names (build 26411416: Fish1Hatched, Tree5Growable…; the Blueprint… chips until 0.4.0 named them after
+// what they unlock, so these two stand in for any nameless id): out of browsing, found by id
 var withUnnamed = new List<ItemEntry>(items)
 {
     ItemEntry.Make("Fish1Hatched", "Fish1Hatched", null, 10, null, true),
@@ -155,7 +156,8 @@ using (var doc = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.Bas
         var families = new SortedSet<string>();
         foreach (var c in build.Value.GetProperty("constructibles").EnumerateObject())
         {
-            var f = c.Value.EnumerateArray().Select(x => x.GetInt32()).ToArray();
+            // 0.4.0: the row carries more (category, generation, chip-linked, loot) after these four
+            var f = c.Value.EnumerateArray().Take(4).Select(x => x.GetInt32()).ToArray();
             if (Decor.IsPlaceable(true, f[0] == 1, f[1], f[2], f[3])) { placeable.Add(c.Name); families.Add(System.Text.RegularExpressions.Regex.Replace(c.Name, @"\d+$", "")); }
             else Check(!familyRe.IsMatch(c.Name), build.Name + ": the rule leaves out " + c.Name);
         }
@@ -225,6 +227,148 @@ p = new SpawnPlan(5, false); p.NextBatch(30, 30); p.Answered(0, 1);
 Check(p.SetResultId() == "set.fullNone", "a full backpack: nothing added, said so");
 p = new SpawnPlan(5, false); p.NextBatch(30, 0); p.TimedOut(2);
 Check(p.SetResultId() == "set.partialTimeout" && new Func<SpawnPlan>(() => { var q = new SpawnPlan(5, false); q.NextBatch(30, 0); q.TimedOut(0); return q; })().SetResultId() == "result.timeout", "no answer: said so");
+
+// ── 0.4.0: furniture for looks and the blueprint chips, against the same fixture (both builds, tests/decoration-groups.json).
+// The rule is Decor's; what it must pick, and every piece of furniture it leaves out with its reason, are written here by id,
+// so a rule that drifts, or a game update that adds furniture or a chip, goes red ──
+string[] furniturePick =
+{
+    "ArcadeMachine1", "BedDouble", "BedSimple", "Chair1", "Chair2", "Desktop1", "Desktop2", "ExerciseBike1", "Faucet1", "InsideLamp1",
+    "InsideLamp2", "LavaLamp1", "Library1", "PlanetViewer1", "Pooltable1", "Server1", "Shelves1", "Sofa", "SofaAngle", "SofaAngleColored",
+    "Table1", "TableSmall", "TableSmall2", "TableSmall3", "Toilet1", "Treadmill1", "VendingMachine1",
+};
+// furniture left out on purpose: inventory = storage, a pot or planter, a display case; generates = it terraforms; chip = the
+// game unlocks it with a blueprint chip of its own (it comes as that chip). A power draw (FountainBig, HologramGenerator,
+// LightBoxMedium) is not generating
+var furnitureOut = new Dictionary<string, string[]>
+{
+    ["AquariumTube1"] = new[] { "generates" }, ["Ivy1"] = new[] { "generates" },
+    ["Fireplace"] = new[] { "generates", "chip" },
+    ["BedDoubleColored"] = new[] { "chip" }, ["CookingStation1"] = new[] { "chip" }, ["FountainBig"] = new[] { "chip" },
+    ["LightBoxMedium"] = new[] { "chip" }, ["Shower1"] = new[] { "chip" }, ["SofaColored"] = new[] { "chip" },
+    ["ToxicityDiorama1"] = new[] { "chip" }, ["ToxicityDiorama2"] = new[] { "chip" },
+    ["HologramGenerator"] = new[] { "inventory", "chip" }, ["Container3"] = new[] { "inventory", "chip" },
+    ["TreePlanter"] = new[] { "inventory", "generates", "chip" },
+    ["TreePlanter2"] = new[] { "inventory", "generates" }, ["TreePlanter3"] = new[] { "inventory", "generates" },
+    ["FlowerPot1"] = new[] { "inventory", "generates" }, ["FlowerPot2"] = new[] { "inventory", "generates" }, ["FlowerPot3"] = new[] { "inventory", "generates" },
+    ["Container1"] = new[] { "inventory" }, ["Container2"] = new[] { "inventory" }, ["Locker1"] = new[] { "inventory" }, ["Vault1"] = new[] { "inventory" },
+    ["Fridge1"] = new[] { "inventory" }, ["Counter1"] = new[] { "inventory" }, ["Counter2"] = new[] { "inventory" }, ["Trashcan1"] = new[] { "inventory" },
+    ["DisplayCase"] = new[] { "inventory" }, ["ButterflyDisplayer1"] = new[] { "inventory" }, ["FishDisplayer1"] = new[] { "inventory" },
+    ["FrogDisplayer1"] = new[] { "inventory" }, ["SkinDisplayer"] = new[] { "inventory" },
+};
+string[] drawOnly = { "FountainBig", "HologramGenerator", "LightBoxMedium" };
+string[] chipIds =
+{
+    "BlueprintAutocrafter", "BlueprintBedDoubleColored", "BlueprintContainer3", "BlueprintCookingStation", "BlueprintDeparturePlatform",
+    "BlueprintDrone2", "BlueprintEquipmentIncrease2", "BlueprintEquipmentIncrease5", "BlueprintFireplace", "BlueprintFlare",
+    "BlueprintFountainBig", "BlueprintHologramGenerator", "BlueprintLightBoxMedium", "BlueprintPod9xA", "BlueprintPod9xB",
+    "BlueprintPod9xC", "BlueprintShower", "BlueprintSmartFabric", "BlueprintSofaColored", "BlueprintSolarQuartz",
+    "BlueprintToxicityDiorama1", "BlueprintToxicityDiorama2", "BlueprintTradePlatform", "BlueprintTreePlanter",
+    "BlueprintVehicleJetpack1", "BlueprintWallWaterLife", "BlueprintWardensChip",
+};
+// the rule as it reads one fixture row (Catalog.DecorBuilding reads the same off the game's Group)
+bool DecorRow(JsonElement[] r, bool chipLinked, bool noInventory = false, bool noGeneration = false, bool noChip = false)
+{
+    var gen = r[5].EnumerateObject().Select(u => (float)u.Value.GetDouble()).ToList();
+    return Decor.IsDecorBuilding(true, r[0].GetInt32() == 1, r[4].GetString(), noInventory ? 0 : r[2].GetInt32(), noInventory ? 0 : r[3].GetInt32(),
+        !noGeneration && Decor.Generates(gen), !noChip && chipLinked);
+}
+using (var doc = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "decoration-groups.json"))))
+{
+    var english = doc.RootElement.GetProperty("english").EnumerateObject().ToDictionary(x => x.Name, x => x.Value.GetString());
+    foreach (var build in doc.RootElement.GetProperty("builds").EnumerateObject())
+    {
+        var rows = build.Value.GetProperty("constructibles").EnumerateObject().ToDictionary(x => x.Name, x => x.Value.EnumerateArray().ToArray());
+        var itemRows = build.Value.GetProperty("items").EnumerateObject().ToDictionary(x => x.Name, x => x.Value.EnumerateArray().ToArray());
+        // what a chip unlocks: every item's link (Catalog reads GroupItem.GetUnlocksGroup the same way)
+        var targets = new HashSet<string>(itemRows.Where(x => Decor.IsChip(true, x.Value[2].ValueKind == JsonValueKind.String ? x.Value[2].GetString() : null)).Select(x => x.Value[2].GetString()));
+        foreach (var kv in rows) Check((kv.Value[6].GetInt32() == 1) == targets.Contains(kv.Key), build.Name + ": the fixture's chip-linked flag agrees with the items' links: " + kv.Key);
+        var picked = rows.Where(kv => DecorRow(kv.Value, targets.Contains(kv.Key))).Select(kv => kv.Key).OrderBy(x => x, StringComparer.Ordinal).ToList();
+        var want = furniturePick.OrderBy(x => x, StringComparer.Ordinal).ToList();
+        Check(picked.SequenceEqual(want), build.Name + ": the rule picks exactly the furniture written here (extra: " + string.Join(", ", picked.Except(want)) + "; missing: " + string.Join(", ", want.Except(picked)) + ")");
+        Check(picked.All(id => rows[id][4].GetString() == "Furnitures"), build.Name + ": every pick is in the game's Furnitures category: no machine, no structure, no screen");
+        Check(!picked.Any(id => Decor.IsPlaceable(true, rows[id][0].GetInt32() == 1, rows[id][1].GetInt32(), rows[id][2].GetInt32(), rows[id][3].GetInt32())), build.Name + ": no pick is also an effigy or poster (each comes once)");
+        Check(picked.All(id => rows[id][1].GetInt32() > 0), build.Name + ": every pick has a recipe: taking it down gives parts back");
+        // Help's "for furniture the game unlocks from wrecks, its blueprint chip": some picks carry lootRecipeOnDeconstruct, some don't
+        Check(picked.Any(id => rows[id][7].GetInt32() == 1) && picked.Any(id => rows[id][7].GetInt32() == 0), build.Name + ": some picks give a chip back on deconstruction and some don't (Help says 'for furniture the game unlocks from wrecks')");
+        // every piece of the game's furniture is either picked or out for a reason written here: a new one goes red
+        var furniture = rows.Where(kv => kv.Value[4].GetString() == "Furnitures").Select(kv => kv.Key).ToList();
+        var unaccounted = furniture.Where(id => !furniturePick.Contains(id) && !furnitureOut.ContainsKey(id)).ToList();
+        Check(unaccounted.Count == 0, build.Name + ": every piece of the game's furniture is picked or out for a stated reason: " + string.Join(", ", unaccounted));
+        foreach (var kv in furnitureOut)
+        {
+            Check(rows.ContainsKey(kv.Key), build.Name + ": the game has " + kv.Key);
+            if (!rows.ContainsKey(kv.Key)) continue;
+            var r = rows[kv.Key];
+            var gen = r[5].EnumerateObject().Select(u => (float)u.Value.GetDouble()).ToList();
+            var why = new List<string>();
+            if (r[2].GetInt32() > 0 || r[3].GetInt32() > 0) why.Add("inventory");
+            if (Decor.Generates(gen)) why.Add("generates");
+            if (targets.Contains(kv.Key)) why.Add("chip");
+            Check(why.SequenceEqual(kv.Value), build.Name + ": " + kv.Key + " is out for " + string.Join(" + ", kv.Value) + ", the data says " + string.Join(" + ", why));
+            Check(!DecorRow(r, targets.Contains(kv.Key)), build.Name + ": the rule leaves out " + kv.Key);
+            // and for that reason alone: with it gone, the rule would take it
+            Check(DecorRow(r, targets.Contains(kv.Key), kv.Value.Contains("inventory"), kv.Value.Contains("generates"), kv.Value.Contains("chip")), build.Name + ": " + kv.Key + " is out for exactly " + string.Join(" + ", kv.Value));
+        }
+        foreach (var id in drawOnly)
+            Check(rows[id][5].EnumerateObject().Any(u => u.Value.GetDouble() < 0) && !Decor.Generates(rows[id][5].EnumerateObject().Select(u => (float)u.Value.GetDouble())), build.Name + ": " + id + " draws power, which is not generating");
+        // everything outside the furniture category is out, the screens (the Sign among them) included
+        var other = rows.Where(kv => kv.Value[4].GetString() != "Furnitures").ToList();
+        Check(other.All(kv => !DecorRow(kv.Value, targets.Contains(kv.Key))), build.Name + ": no building outside Furnitures is decoration furniture");
+        Check(rows["Sign"][4].GetString() == "Screens" && !DecorRow(rows["Sign"], targets.Contains("Sign")), build.Name + ": the Sign is a screen, out");
+        foreach (var cat in new[] { "BaseBuilding", "Machines", "Screens", "Biomass", "Purification" })
+            Check(other.Any(kv => kv.Value[4].GetString() == cat), build.Name + ": the fixture holds the game's " + cat);
+
+        // the chips: exactly the items with an unlocksGroup, each named after its target
+        var chips = itemRows.Where(x => Decor.IsChip(true, x.Value[2].ValueKind == JsonValueKind.String ? x.Value[2].GetString() : null)).Select(x => x.Key).OrderBy(x => x, StringComparer.Ordinal).ToList();
+        Check(chips.SequenceEqual(chipIds.OrderBy(x => x, StringComparer.Ordinal)), build.Name + ": the chips are exactly the items written here (extra: " + string.Join(", ", chips.Except(chipIds)) + "; missing: " + string.Join(", ", chipIds.Except(chips)) + ")");
+        Check(itemRows.Where(x => x.Value[2].ValueKind == JsonValueKind.Null).All(x => !Decor.IsChip(true, null)), build.Name + ": an item with no link is no chip");
+        var entries = new List<ItemEntry>();
+        int order = 0;
+        foreach (var id in chips)
+        {
+            string target = itemRows[id][2].GetString();
+            Check(itemRows[id][0].GetInt32() == 1, build.Name + ": the chip " + id + " has an icon (it is browsed)");
+            Check(rows.ContainsKey(target) || itemRows.ContainsKey(target), build.Name + ": " + id + "'s target " + target + " is one of the game's groups");
+            Check(english.TryGetValue(target, out var en) && !string.IsNullOrEmpty(en), build.Name + ": " + id + "'s target " + target + " has an English name");
+            // in English, the game's shown name and its English name are the same
+            var e = Decor.ChipEntry(id, target, english[target], english[target], order++);
+            Check(e.Chip && !e.Unnamed && e.Name == english[target] && e.English == english[target] && e.UnlocksId == target && e.Id == id, build.Name + ": " + id + " is named after its target: " + e.Name + " (" + target + ")");
+            entries.Add(e);
+        }
+        foreach (var e in entries)
+            Check(Search.Filter(entries, e.English).First().FoldEnglish == e.FoldEnglish, build.Name + ": its target's name finds the chip first: " + e.English);
+        Check(Search.Filter(entries, "blueprint").Count == entries.Count, build.Name + ": \"blueprint\" (the ids) finds every chip");
+        Check(Search.Filter(entries, "").Count == entries.Count, build.Name + ": browsing shows every chip (none is unnamed now)");
+        Console.WriteLine("0.4.0 " + build.Name + ": " + picked.Count + " furniture picked, " + furnitureOut.Count + " out on purpose, " + chips.Count + " blueprint chips named");
+    }
+}
+// a chip in another language: the game's name in it, the English one for search, its own id still matches
+var fireChip = Decor.ChipEntry("BlueprintFireplace", "Fireplace", "Cheminée", "Fireplace", 0);
+Check(fireChip.Name == "Cheminée" && fireChip.English == "Fireplace" && !fireChip.Unnamed, "a French chip: the game's French name, the English one beside it");
+var mixed = new List<ItemEntry>(items) { fireChip, Decor.ChipEntry("BlueprintLightBoxMedium", "LightBoxMedium", "Boîte à lumière", "Light Box", 99) };
+Check(Search.Filter(mixed, "cheminee").First().Id == "BlueprintFireplace" && Search.Filter(mixed, "fireplace").First().Id == "BlueprintFireplace", "a chip found by its target's name, French or English");
+Check(Search.Filter(mixed, "blueprint").Select(e => e.Id).OrderBy(x => x).SequenceEqual(new[] { "BlueprintFireplace", "BlueprintLightBoxMedium" }), "\"blueprint\" finds the chips by their ids, nothing else");
+Check(Decor.Chips(mixed).Select(e => e.Id).SequenceEqual(new[] { "BlueprintFireplace", "BlueprintLightBoxMedium" }) && Decor.Chips(null).Count == 0, "the Blueprints tab: chips only");
+Check(!Decor.Only(mixed).Any(e => e.Chip), "a chip is not decoration (no one of each for chips)");
+var nameless = Decor.ChipEntry("BlueprintSomething", "Something", "Something", null, 0);
+Check(nameless.Unnamed && nameless.Chip && nameless.Name == "Blueprint Something", "a chip whose target has no name either reads as its own id, out of browsing");
+Check(Decor.ChipEntry("BlueprintSomething", "Something", "Un truc", null, 0) is var shown && !shown.Unnamed && shown.Name == "Un truc", "a target named only in the game's language is still a name");
+Check(!Decor.IsChip(false, "Fireplace") && !Decor.IsChip(true, "") && Decor.IsChip(true, "Fireplace"), "a chip is an item with a target");
+Check(!Decor.Generates(null) && !Decor.Generates(new float[] { 0, -30 }) && Decor.Generates(new float[] { 0, 0.5f }), "generating = more than nothing in some unit; a draw is not");
+Check(!Decor.IsDecorBuilding(true, true, "Machines", 0, 0, false, false) && !Decor.IsDecorBuilding(true, false, "Furnitures", 0, 0, false, false)
+    && !Decor.IsDecorBuilding(false, true, "Furnitures", 0, 0, false, false) && Decor.IsDecorBuilding(true, true, "Furnitures", 0, 0, false, false), "furniture with an icon, as a building, only");
+// the chip's info line (ItemInfo puts in the game's own words: GROUP_NAME_BlueprintT1, GROUP_NAME_ScreenUnlockables, the target)
+L.Language = () => "english";
+Check(L.T("info.chip", "Blueprint microchip", "Screen - Blueprints", "Fireplace") == "Blueprint microchip: decode it at a \"Screen - Blueprints\" to unlock Fireplace for good.", "a chip's line, English");
+Check(L.T("info.chipDone", "Fireplace") == "Already unlocked in this world: Fireplace. Decoding this chip adds nothing.", "an already unlocked chip's line");
+// the Blueprints tab's stand-in is the game's own BLUEPRINTS word in each language (Localization, build 26411416)
+var gameBlueprints = new Dictionary<string, string>
+{
+    ["english"] = "Blueprints", ["french"] = "Plans", ["spanish"] = "Planos", ["portuguese"] = "Diagramas", ["german"] = "Baupläne", ["schinese"] = "蓝图",
+    ["tchinese"] = "藍圖", ["japanese"] = "設計図", ["korean"] = "설계도", ["polish"] = "Schematy", ["russian"] = "Чертежи", ["turk"] = "Planlar", ["italian"] = "Progetti",
+};
+foreach (var lang in L.Languages) Check(gameBlueprints.TryGetValue(lang, out var word) && L.In(lang, "tab.blue") == word, lang + ": the Blueprints stand-in is the game's own word (" + L.In(lang, "tab.blue") + ")");
 
 // ── every result line exists and fills its blanks ──
 foreach (var id in new[] { "result.added", "result.partial", "result.fullNone", "result.filled", "result.fillCap", "result.timeout", "result.partialTimeout" })
@@ -373,13 +517,15 @@ if (args.Length == 1)
     string ascii = System.Text.Encoding.ASCII.GetString(raw), utf16 = System.Text.Encoding.Unicode.GetString(raw) + System.Text.Encoding.Unicode.GetString(raw, 1, raw.Length - 1);
     refs.Add("raw " + ascii);
     refs.Add("raw " + utf16);
-    string[] never = { "SetFreeCraft", "SetEverythingUnlocked", "CreateAndDropOnFloor", "DropObjectsIfNotEnoughSpace", "SetInventorySize" };
+    // 0.4.0: and it never unlocks or decodes anything itself (a chip is decoded by the player, at the game's own screen)
+    string[] never = { "SetFreeCraft", "SetEverythingUnlocked", "CreateAndDropOnFloor", "DropObjectsIfNotEnoughSpace", "SetInventorySize", "UnlockGroupGlobally", "DecodeBlueprint" };
     foreach (var name in never)
         Check(!refs.Any(r => r.EndsWith("::" + name) || r.Contains(name)), "the DLL never references " + name);
     Check(!refs.Any(r => r.Contains("GameSettingsHandler") || r.Contains("JsonableGameState")), "the DLL never touches the world's settings (GameSettingsHandler, JsonableGameState)");
     Check(refs.Any(r => r == "SpaceCraft.InventoriesHandler::AddItemToInventory"), "the DLL puts items in through InventoriesHandler.AddItemToInventory");
     Check(refs.Any(r => r == "SpaceCraft.WorldObjectsHandler::DestroyWorldObject"), "the DLL cleans refused items up with WorldObjectsHandler.DestroyWorldObject");
     Check(!refs.Any(r => r.StartsWith("type HarmonyLib")), "no Harmony patch anywhere");
+    Check(refs.Any(r => r == "SpaceCraft.GroupItem::GetUnlocksGroup") && refs.Any(r => r == "SpaceCraft.GroupConstructible::GetGroupCategory") && refs.Any(r => r == "SpaceCraft.GroupConstructible::GetGroupUnitGeneration"), "the DLL reads the chips' links and the furniture rule's fields from the game");
     Console.WriteLine("DLL scan: " + (refs.Count - 2) + " references and the raw bytes read; none to the achievement settings or a ground drop.");
 }
 
