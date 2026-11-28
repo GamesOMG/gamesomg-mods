@@ -1,0 +1,32 @@
+<!-- Offline twin of BepInEx be.793's first-run step (Il2CppInteropManager.GenerateInteropAssemblies, decompiled 2026-11-27):
+     Cpp2IL turns GameAssembly.dll + global-metadata.dat into dummy assemblies, Il2CppInterop turns those into the interop
+     assemblies a plugin compiles against. Same libraries (BepInEx's own core folder), same steps, the game never runs. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <Core>../../.deps/bepinex/BepInEx/core</Core>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(Core)/Cpp2IL.Core.dll" />
+    <Reference Include="$(Core)/LibCpp2IL.dll" />
+    <Reference Include="$(Core)/AsmResolver.dll" />
+    <Reference Include="$(Core)/AsmResolver.DotNet.dll" />
+    <Reference Include="$(Core)/AsmResolver.PE.dll" />
+    <Reference Include="$(Core)/AsmResolver.PE.File.dll" />
+    <Reference Include="$(Core)/AssetRipper.Primitives.dll" />
+    <Reference Include="$(Core)/AssetRipper.CIL.dll" />
+    <Reference Include="$(Core)/Il2CppInterop.Generator.dll" />
+    <Reference Include="$(Core)/Il2CppInterop.Common.dll" />
+    <Reference Include="$(Core)/Iced.dll" />
+    <Reference Include="$(Core)/Disarm.dll" />
+    <Reference Include="$(Core)/Gee.External.Capstone.dll" />
+    <Reference Include="$(Core)/WasmDisassembler.dll" />
+    <Reference Include="$(Core)/StableNameDotNet.dll" />
+    <Reference Include="$(Core)/Mono.Cecil.dll" />
+    <Reference Include="$(Core)/Mono.Cecil.Rocks.dll" />
+    <Reference Include="../../.deps/bepinex/dotnet/Microsoft.Extensions.Logging.Abstractions.dll" />
+  </ItemGroup>
+</Project>

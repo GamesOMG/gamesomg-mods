@@ -1,0 +1,1002 @@
+# GamesOMG Teleport for Lord of Undead: every pin of gamesomg.com/lord-of-undead-map/ with a landing.
+# Written by gamesomg-site tools/lord-of-undead-map/tp/landings.py (client build 26969408). Do not hand-edit.
+# id	layer	layer name	name	near	region	x	y	z (the landing)	pin_x	pin_y	pin_z (the thing itself)
+a69hpe	place	Places	Ambush		Swamp	1255	5	858	1257.2	5.3	860.0
+s7c3kf	place	Places	Bandit ambush		Swamp	1656	5	756	1655.0	5.0	759.2
+08bvp7	place	Places	Bandit camp		Valley	198	19	756	200.5	19.7	758.3
+cjjvts	place	Places	Bandit camp		Valley	690	97	197	689.5	96.7	194.5
+hdovmi	place	Places	Bandit camp		Swamp	1251	9	806	1248.0	9.7	806.1
+r3yast	place	Places	Bandit camp		Swamp	1175	6	877	1177.6	6.0	875.5
+r9ej88	place	Places	Bandit camp		Valley	200	11	689	202.6	12.1	688.1
+tpve42	place	Places	Bandit camp		Valley	117	18	725	114.0	19.2	726.0
+lbw9e5	place	Places	Bandit stash		Valley	128	34	821	126.3	33.8	818.8
+gf9yrd	place	Places	Bandit tower		Swamp	1116	6	822	1116.4	5.7	819.3
+k4y05z	place	Places	Bandit tower		Swamp	1272	6	932	1271.8	6.5	934.7
+zl0hpf	place	Places	Big bandit camp		Valley	656	32	491	653.4	32.0	493.4
+ahlw4l	place	Places	Big fish		Swamp	1797	6	903	1798.2	7.1	905.4
+sc25eg	place	Places	Boar farm		Valley	483	7	436	480.6	6.1	437.8
+hb6x6k	place	Places	Boar shed		Valley	125	81	275	122.4	80.9	273.9
+3wxhem	place	Places	Copper mine		Valley	863	34	591	860.1	50.6	591.4
+p7u72y	place	Places	Crypt		Valley	523	48	801	519.8	48.1	802.3
+stvqos	place	Places	Crypt		Swamp	1942	7	773	1941.3	7.0	770.3
+o7fpok	place	Places	Cultist		Valley	142	85	490	142.0	82.2	493.4
+hi9a2i	place	Places	Dead fisherman		Swamp	1128	5	968	1130.9	4.8	968.1
+c5fka8	place	Places	Dead man		Valley	250	68	424	247.4	68.5	421.6
+cs8jj0	place	Places	Farmhouse		Valley	235	54	297	237.6	53.9	296.9
+ywz671	place	Places	Farmhouse		Valley	508	15	614	508.1	17.9	611.4
+08293t	place	Places	Field of bones		Valley	106	105	337	103.7	104.6	338.2
+f0444f	place	Places	Fishing camp		Swamp	1188	5	796	1185.6	5.3	797.4
+cb3v29	place	Places	Gallows		Valley	326	26	312	325.3	27.7	314.7
+341d23	place	Places	Gate outpost		Valley	966	17	753	965.6	17.3	750.7
+9obl39	place	Places	Giant bones		Swamp	1950	1	922	1949.6	0.7	919.7
+f9xw50	place	Places	Graveyard		Swamp	1076	46	677	1073.7	46.3	674.7
+vl3vaa	place	Places	Graveyard		Valley	219	34	812	220.6	33.1	809.6
+1v5va6	place	Places	Guard tower		Valley	456	46	191	455.7	46.4	188.7
+3vc0kq	place	Places	Guard tower		Valley	294	62	159	294.0	62.0	156.3
+4zf0s1	place	Places	Guard tower		Valley	580	46	375	579.9	46.4	372.4
+aw4re0	place	Places	Herbalist's hut		Valley	316	40	871	318.0	41.5	869.3
+dueoh9	place	Places	Hidden cave		Swamp	1341	5	860	1341.9	9.0	862.7
+gcguev	place	Places	Hidden cave		Valley	168	69	328	171.2	69.7	329.1
+i2jpue	place	Places	Hidden cave		Swamp	1494	37	645	1494.5	37.2	642.3
+q1uqna	place	Places	Hidden cave		Valley	645	1	615	646.4	9.2	612.1
+u5jr0f	place	Places	Hidden cave		Valley	352	16	731	354.5	14.3	728.9
+y9kkwd	place	Places	Hidden cave		Valley	644	38	785	643.6	37.5	782.4
+tu8nzs	place	Places	Hidden corner		Valley	796	62	444	796.0	61.7	442.0
+33at20	place	Places	Hidden crypt		Valley	867	129	795	867.0	128.7	792.7
+b6vyb9	place	Places	House		Valley	122	56	608	119.2	58.9	606.5
+wwtg91	place	Places	House on the rock		Valley	539	49	254	536.4	82.4	251.5
+bv8fdp	place	Places	Hunter camp		Valley	359	44	224	356.0	46.4	224.1
+o0gll1	place	Places	Hunter camp		Valley	196	71	503	193.6	72.0	504.4
+ecmgwk	place	Places	Knights' tower		Swamp	1045	115	611	1043.1	115.2	609.0
+r1wwcm	place	Places	Labyrinth		Swamp	1398	24	646	1400.3	33.4	645.2
+cmbnef	place	Places	Logging site		Valley	226	62	208	226.2	62.0	206.0
+olcogg	place	Places	Lone coffin		Swamp	1651	10	996	1649.8	9.8	994.7
+iltrsy	place	Places	Lone grave		Valley	564	18	713	563.5	18.2	710.8
+jk63c7	place	Places	Lone grave		Valley	65	106	532	63.7	106.3	535.1
+w9rg14	place	Places	Lone grave		Valley	772	38	732	772.3	38.0	729.4
+7u9pps	place	Places	Lone house		Valley	653	53	354	653.0	53.3	351.3
+wbevgn	place	Places	Loot spot		Valley	715	26	646	713.0	27.0	648.5
+fvdz5d	place	Places	Militia camp		Swamp	1097	26	735	1095.4	26.4	737.5
+nrmb3w	place	Places	Militia camp		Valley	411	28	856	410.6	29.8	853.3
+8mqp6n	place	Places	Morkanite mine		Swamp	1180	9	684	1180.5	8.9	680.6
+jki0mi	place	Places	Open mine		Valley	283	23	451	280.1	23.3	452.1
+qeygyw	place	Places	Open mine		Swamp	1325	42	607	1322.2	41.2	607.1
+llfcau	place	Places	Ponds		Valley	706	97	89	705.9	96.7	86.9
+7fja9d	place	Places	Ruined house		Valley	215	84	451	212.3	88.5	449.7
+r6r6tm	place	Places	Ruined house		Valley	753	21	535	749.9	24.6	533.5
+ug3oll	place	Places	Ruined tower		Valley	208	47	573	208.9	47.7	576.1
+8mihfr	place	Places	Ruins with skeletons		Valley	457	25	696	458.8	33.7	698.6
+bi6fzc	place	Places	Sawmill		Swamp	1172	49	603	1171.8	48.6	599.9
+zz0b3h	place	Places	Sawmill		Valley	290	42	288	288.1	50.7	285.5
+jvttmt	place	Places	Shaman's cave		Swamp	1624	5	687	1620.9	9.7	687.9
+hg67ad	place	Places	Sky totem		Swamp	1539	9	858	1536.1	39.2	859.3
+bf1kxv	place	Places	Small cave		Valley	731	85	345	730.6	84.7	342.2
+bg9ddq	place	Places	Small cave		Valley	276	10	619	275.2	12.2	616.3
+gleots	place	Places	Small cave		Valley	131	74	542	132.1	77.0	538.8
+78vrdn	place	Places	Spider ambush		Swamp	1342	30	673	1343.5	30.6	675.8
+n7vnfo	place	Places	Spider cave		Swamp	1029	9	931	1026.3	9.3	932.4
+xpfpzr	place	Places	Spider nest		Swamp	1474	7	783	1475.8	9.0	785.4
+m0zkmr	place	Places	Spider queen's lair		Swamp	1764	52	444	1761.5	67.4	442.9
+kwd1og	place	Places	Starting point		Valley	130	89	442	133.5	89.2	441.9
+yqh2s5	place	Places	Stone circle		Valley	310	34	806	312.2	34.0	803.4
+m2sa46	place	Places	Stone tower		Valley	218	70	362	221.4	70.0	362.1
+a4yts5	place	Places	Tower ruins		Swamp	1682	32	596	1679.3	32.3	594.4
+xk6565	place	Places	Troll arena		Swamp	1721	5	807	1723.5	4.5	805.1
+9117qg	place	Places	Troll camp		Swamp	1912	10	490	1914.5	8.9	488.7
+eat4ub	place	Places	Troll camp		Valley	695	44	858	695.1	44.4	855.1
+eqvnnw	place	Places	Troll camp		Swamp	1849	5	782	1846.0	8.9	780.5
+utx74y	place	Places	Troll camp		Swamp	1769	11	665	1766.8	11.1	663.1
+zkkbzx	place	Places	Troll camp		Swamp	1624	6	879	1621.2	6.1	879.3
+8zt0od	place	Places	Troll fishing camp		Swamp	1923	5	641	1921.6	6.5	643.3
+ty9ayj	place	Places	Troll hut		Valley	276	47	379	278.1	47.4	380.8
+sxhh0y	place	Places	Troll pyramid		Swamp	1723	4	695	1722.3	5.2	697.6
+ave6hw	place	Places	Troll sacrifice site		Swamp	1659	9	856	1658.8	8.4	853.1
+7o9o69	place	Places	Troll tower		Swamp	1834	11	618	1836.7	11.8	617.2
+jqjy36	place	Places	Troll tower		Swamp	1519	5	914	1515.9	5.6	914.3
+xdkvrq	place	Places	Urn		Valley	185	68	287	186.7	66.8	285.1
+2w2xbx	place	Places	Watchtower		Valley	856	33	591	854.0	33.5	593.6
+0z6odo	camp	Camps to destroy	Bandit camp		Swamp	1355	1	761	1355.0	0.8	758.1
+a7vgb5	camp	Camps to destroy	Militia camp		Swamp	1371	60	526	1370.8	59.7	523.1
+o6mjzt	camp	Camps to destroy	Troll camp		Swamp	1827	-11	764	1826.7	-10.6	761.1
+5ozo10	camp	Camps to destroy	Village		Valley	524	97	118	523.6	101.2	121.4
+a7uu3t	quest	Quest spots	Black Marsh	Bandit tower	Swamp	1097	6	805	1095.9	6.5	802.7
+kd0tzl	quest	Quest spots	Find the artifact	Troll pyramid	Swamp	1713	6	705	1711.1	6.8	702.9
+wxn351	quest	Quest spots	Paladins	Crypt	Valley	529	52	828	526.3	51.4	828.3
+5gd6ky	cave	Caves	Cave	House on the rock	Valley	553	53	250	552.9	52.6	248.0
+boo7dk	cave	Caves	Cave	Troll pyramid	Swamp	1720	0	712	1719.9	-0.2	709.4
+031k4v	cave	Caves	Copper mine	Copper mine	Valley	889	24	591	889.4	23.8	588.4
+tzrfqs	cave	Caves	Hidden cave	Hidden cave	Valley	357	5	729	357.4	4.7	726.8
+pkhfa7	cave	Caves	Morkanite mine	Morkanite mine	Swamp	1162	5	693	1159.8	10.8	695.2
+rgu7hl	cave	Caves	Morkanite mine	Morkanite mine	Swamp	1185	11	651	1184.6	10.8	648.3
+czuvxk	cave	Caves	Small cave	Small cave	Valley	728	91	343	730.0	91.6	340.8
+pg9h43	cave	Caves	Small cave	Small cave	Valley	269	4	608	269.2	4.2	605.4
+e3js7h	cave	Caves	Spider cave	Spider cave	Swamp	1009	-8	926	1009.3	-7.9	924.0
+491j0b	cave	Caves	Spider queen's lair	Spider queen's lair	Swamp	1756	25	432	1756.5	24.7	429.4
+0vgeyz	rare	Rare chests	Rare chest	Crypt	Valley	542	54	831	541.0	54.6	834.1
+7w0zg6	rare	Rare chests	Rare chest	Spider queen's lair	Swamp	1753	52	466	1750.2	52.3	465.2
+at8iy1	rare	Rare chests	Rare chest	Copper mine	Valley	878	35	572	880.9	43.8	570.4
+gtp3o6	rare	Rare chests	Rare chest	House on the rock	Valley	548	54	252	545.6	53.7	250.8
+j8209m	rare	Rare chests	Rare chest	Gate outpost	Valley	970	30	746	972.9	30.1	747.5
+qgnr71	rare	Rare chests	Rare chest	Graveyard	Valley	209	33	838	207.5	33.5	841.0
+rdb2ml	rare	Rare chests	Rare chest	Tower ruins	Swamp	1677	32	590	1680.1	38.8	590.2
+ungla7	rare	Rare chests	Rare chest	Village	Valley	511	97	83	509.1	97.2	85.1
+0fojhg	mid	Mid chests	Mid chest		Valley	438	14	315	435.5	14.0	313.2
+1vq9p7	mid	Mid chests	Mid chest		Valley	864	106	867	866.5	107.3	869.6
+6z2mm0	mid	Mid chests	Mid chest	Sawmill	Valley	291	42	290	288.4	42.0	288.8
+9j85ny	mid	Mid chests	Mid chest	Hidden cave	Swamp	1476	47	671	1477.2	47.3	673.6
+f51sq3	mid	Mid chests	Mid chest	Spider nest	Swamp	1468	9	774	1464.9	10.1	774.8
+g9rwfb	mid	Mid chests	Mid chest		Valley	490	18	335	490.2	17.8	337.7
+ikorml	mid	Mid chests	Mid chest	Bandit camp	Valley	116	18	726	114.2	18.1	723.7
+mov37t	mid	Mid chests	Mid chest	Loot spot	Valley	714	26	646	710.6	24.5	646.5
+oebu9i	mid	Mid chests	Mid chest	Troll arena	Swamp	1741	6	812	1739.2	7.0	814.3
+pqztdi	mid	Mid chests	Mid chest	Boar farm	Valley	460	3	418	458.9	3.8	421.2
+snedq7	mid	Mid chests	Mid chest	Sawmill	Swamp	1156	49	598	1154.4	53.0	594.8
+t7n2hd	mid	Mid chests	Mid chest		Valley	402	7	492	401.5	6.7	488.8
+vf4mfv	mid	Mid chests	Mid chest	Troll sacrifice site	Swamp	1664	14	872	1663.8	6.8	876.9
+vhpsxb	mid	Mid chests	Mid chest	Sawmill	Valley	291	42	288	288.4	42.1	285.8
+xcd1j2	mid	Mid chests	Mid chest	Bandit camp	Swamp	1350	6	745	1347.5	29.2	744.2
+xdqkr8	mid	Mid chests	Mid chest	Tower ruins	Swamp	1676	12	645	1673.4	12.5	643.9
+zykrba	mid	Mid chests	Mid chest	Bandit tower	Swamp	1274	12	948	1277.2	33.3	948.0
+1uhhli	low	Low chests	Low chest	Hidden cave	Valley	348	9	726	346.9	8.6	728.7
+4le6p8	low	Low chests	Low chest	Hidden cave	Valley	168	69	329	168.1	68.0	326.1
+4z980a	low	Low chests	Low chest		Valley	168	37	872	169.0	36.0	875.0
+64zq9d	low	Low chests	Low chest	Open mine	Swamp	1282	47	586	1284.1	46.8	583.6
+6wsgwj	low	Low chests	Low chest	Gate outpost	Valley	983	38	734	985.6	62.1	732.6
+8pyt73	low	Low chests	Low chest		Valley	202	63	954	202.2	89.3	950.9
+8z1agl	low	Low chests	Low chest	Bandit stash	Valley	127	34	821	124.5	33.8	820.3
+9l0gz9	low	Low chests	Low chest	Stone tower	Valley	230	67	367	227.3	83.2	366.8
+9xqw2r	low	Low chests	Low chest	Ruined house	Valley	752	21	534	749.7	24.8	532.8
+ag1fl4	low	Low chests	Low chest	Boar shed	Valley	116	79	285	112.7	78.8	284.7
+almqy3	low	Low chests	Low chest	Sawmill	Swamp	1156	49	604	1156.3	53.0	601.4
+bba7sh	low	Low chests	Low chest	Ruined tower	Valley	208	47	574	207.7	52.5	577.5
+bcrhvy	low	Low chests	Low chest	Herbalist's hut	Valley	317	40	871	314.5	41.5	868.8
+e7f5cg	low	Low chests	Low chest	Gallows	Valley	325	26	313	324.6	26.0	309.6
+fybwu2	low	Low chests	Low chest	Bandit stash	Valley	126	34	823	125.8	33.8	820.1
+hh9cnp	low	Low chests	Low chest	Guard tower	Valley	468	58	219	465.6	59.0	216.8
+jijn4s	low	Low chests	Low chest	Militia camp	Swamp	1076	30	738	1074.4	30.2	735.4
+jt0iog	low	Low chests	Low chest	Bandit ambush	Swamp	1668	5	763	1667.7	5.0	759.9
+lgaqm7	low	Low chests	Low chest	House on the rock	Valley	532	40	296	529.6	39.5	293.7
+ncswww	low	Low chests	Low chest	Troll fishing camp	Swamp	1930	5	661	1928.1	6.2	659.0
+pkp3yv	low	Low chests	Low chest	Shaman's cave	Swamp	1570	5	692	1570.0	7.2	694.5
+ryom2z	low	Low chests	Low chest	Farmhouse	Valley	514	15	609	510.8	15.0	608.9
+s8q6c8	low	Low chests	Low chest	Knights' tower	Swamp	1048	115	622	1047.8	115.2	618.8
+w507xk	low	Low chests	Low chest	Bandit stash	Valley	143	34	818	144.9	33.8	820.6
+wdwe8i	low	Low chests	Low chest	House	Valley	118	56	607	115.0	56.1	608.6
+xhqp7v	low	Low chests	Low chest	Troll tower	Swamp	1523	4	915	1524.6	4.8	912.2
+xwg0vc	low	Low chests	Low chest	Troll camp	Swamp	1936	8	467	1937.9	10.0	469.5
+0qkif5	lootbox	Lootboxes	Lootbox	Hidden cave	Valley	639	52	780	638.7	51.7	782.7
+355r7p	lootbox	Lootboxes	Lootbox	Knights' tower	Swamp	1047	116	636	1044.6	129.0	636.8
+3aj3vz	lootbox	Lootboxes	Lootbox	Troll camp	Swamp	1637	5	874	1634.8	7.2	872.3
+8lvc6j	lootbox	Lootboxes	Lootbox	Small cave	Valley	130	74	543	128.6	74.4	540.4
+93evxh	lootbox	Lootboxes	Lootbox	Lone house	Valley	662	88	337	663.6	86.7	340.0
+a5vxnv	lootbox	Lootboxes	Lootbox	Labyrinth	Swamp	1397	24	646	1399.5	33.9	645.0
+abn3dy	lootbox	Lootboxes	Lootbox	Morkanite mine	Swamp	1158	5	690	1156.8	5.5	687.3
+edug5u	lootbox	Lootboxes	Lootbox	House on the rock	Valley	527	56	254	529.5	127.5	256.7
+ei60vk	lootbox	Lootboxes	Lootbox	Guard tower	Valley	463	69	192	461.1	92.5	194.1
+f91f7v	lootbox	Lootboxes	Lootbox	Sky totem	Swamp	1540	7	864	1538.1	40.2	861.7
+g9k2g6	lootbox	Lootboxes	Lootbox	Ruins with skeletons	Valley	463	25	694	462.1	29.6	697.0
+gz8nkr	lootbox	Lootboxes	Lootbox	Troll hut	Valley	275	47	378	272.8	47.2	380.2
+hrbapy	lootbox	Lootboxes	Lootbox		Swamp	1304	9	1001	1304.0	9.2	999.1
+iaxtmj	lootbox	Lootboxes	Lootbox	Guard tower	Valley	584	87	375	582.7	111.7	378.2
+j38woj	lootbox	Lootboxes	Lootbox	Ponds	Valley	721	160	88	719.5	160.8	90.3
+lh5u3u	lootbox	Lootboxes	Lootbox	Field of bones	Valley	104	105	336	100.9	104.7	335.9
+lwmnd9	lootbox	Lootboxes	Lootbox	Bandit camp	Swamp	1251	9	806	1247.8	9.6	805.2
+qdt5mb	lootbox	Lootboxes	Lootbox	Spider cave	Swamp	1033	9	932	1033.3	9.2	934.7
+quenol	lootbox	Lootboxes	Lootbox	Starting point	Valley	129	89	439	131.8	89.3	440.6
+r5a0yt	lootbox	Lootboxes	Lootbox	Hidden cave	Valley	647	4	604	643.8	2.8	605.3
+scf6fi	lootbox	Lootboxes	Lootbox	Guard tower	Valley	295	80	160	297.5	104.7	158.9
+t92i3k	lootbox	Lootboxes	Lootbox	Bandit camp	Swamp	1180	6	888	1179.5	6.1	884.9
+unx8kl	lootbox	Lootboxes	Lootbox	Troll camp	Valley	727	81	862	723.7	156.4	861.7
+ur79d0	lootbox	Lootboxes	Lootbox	Ponds	Valley	720	163	119	720.2	162.6	115.8
+xqlcyf	lootbox	Lootboxes	Lootbox		Valley	201	63	960	199.6	94.5	957.2
+y14w0j	lootbox	Lootboxes	Lootbox	Bandit tower	Swamp	1115	6	833	1115.0	5.7	829.8
+yv10ep	lootbox	Lootboxes	Lootbox	Bandit camp	Swamp	1358	6	755	1357.0	6.2	752.4
+j2uar7	gear	Weapons and armour	Clanking Boots	Knights' tower	Swamp	1050	115	620	1049.3	115.3	622.3
+8de6dw	gear	Weapons and armour	Copper Pickaxe	Open mine	Swamp	1308	40	612	1305.5	40.1	611.3
+w0vgt8	gear	Weapons and armour	Copper Pickaxe	Hidden corner	Valley	794	65	444	794.2	65.0	440.8
+upjwxm	gear	Weapons and armour	Deadwalkers	Lone grave	Valley	772	90	736	769.7	90.3	733.5
+decl45	gear	Weapons and armour	Executioner	Hidden crypt	Valley	862	143	794	864.5	144.9	796.5
+u5xpfa	gear	Weapons and armour	Golem's Spine	Giant bones	Swamp	1928	5	941	1927.0	5.1	943.9
+71trde	gear	Weapons and armour	Hemill's Sin	Lone coffin	Swamp	1648	10	994	1649.2	9.9	995.5
+zn9win	gear	Weapons and armour	Morkanite Flayer		Swamp	1955	10	369	1952.2	10.3	369.1
+1p73yu	gear	Weapons and armour	Morkanite Greataxe	Troll arena	Swamp	1720	5	800	1719.0	5.4	797.1
+ywsr07	gear	Weapons and armour	Ring of Luck	Dead fisherman	Swamp	1129	4	968	1131.7	4.9	967.1
+ut7w4c	gear	Weapons and armour	Rogor's Shadow	Bandit tower	Swamp	1277	10	942	1277.1	35.0	945.0
+rrj14u	gear	Weapons and armour	Rotting Fingers	Big fish	Swamp	1797	6	903	1799.0	7.2	905.2
+n32txq	gear	Weapons and armour	Rusty Blade	Lone grave	Valley	65	108	545	63.2	108.3	542.9
+az2om3	gear	Weapons and armour	Skinner	Hidden cave	Swamp	1341	5	866	1337.9	4.6	866.2
+o6tnux	gear	Weapons and armour	Spearbreaker	Spider ambush	Swamp	1329	27	668	1327.3	26.8	669.8
+wavgyp	gear	Weapons and armour	Traveler's Pendant	Dead man	Valley	251	68	420	248.8	67.9	422.1
+1k65o3	pickup	Other pickups	Bones	Stone circle	Valley	305	33	803	307.5	33.1	801.4
+49hc70	pickup	Other pickups	Bones	Stone circle	Valley	318	33	800	315.6	33.0	801.5
+kx8fft	pickup	Other pickups	Bones	Stone circle	Valley	313	32	793	311.2	32.3	790.4
+v0auhe	pickup	Other pickups	Bones	Stone circle	Valley	325	33	800	321.9	32.8	799.5
+yw2fv5	pickup	Other pickups	Bones	Stone circle	Valley	313	32	789	315.6	32.6	786.9
+zl03w0	pickup	Other pickups	Dark Essence	Urn	Valley	185	68	287	186.7	68.0	285.1
+450vxa	pickup	Other pickups	Firebloom	Farmhouse	Valley	233	54	306	233.3	54.2	302.9
+lioosv	pickup	Other pickups	Firebloom	Farmhouse	Valley	234	54	305	233.7	54.2	301.7
+woapsf	pickup	Other pickups	Firebloom	Farmhouse	Valley	234	54	306	234.4	54.2	302.9
+64uje2	pickup	Other pickups	Health Potion	Shaman's cave	Swamp	1624	5	685	1621.4	4.3	684.0
+mn0kfz	pickup	Other pickups	Magicka Potion	Shaman's cave	Swamp	1618	5	692	1620.4	4.3	689.8
+3o056z	pickup	Other pickups	Meadowflare	Farmhouse	Valley	230	54	310	229.8	54.2	306.5
+6oq3qh	pickup	Other pickups	Meadowflare	Farmhouse	Valley	234	54	299	231.3	54.0	300.6
+7jr9qj	pickup	Other pickups	Meadowflare	Farmhouse	Valley	233	54	306	230.0	54.2	304.6
+894e39	pickup	Other pickups	Meadowflare	Farmhouse	Valley	233	54	305	231.3	54.1	303.3
+it45zp	pickup	Other pickups	Meadowflare	Farmhouse	Valley	231	54	311	231.1	54.1	307.8
+kovcph	pickup	Other pickups	Meadowflare	Farmhouse	Valley	234	54	306	231.2	54.1	305.5
+o7ncvc	pickup	Other pickups	Meadowflare	Farmhouse	Valley	233	54	299	231.3	54.1	301.4
+65x7kj	pickup	Other pickups	Teleport Stone	Cultist	Valley	142	82	498	141.9	82.2	495.4
+8edahr	pickup	Other pickups	Veil Potion	Herbalist's hut	Valley	313	40	864	313.3	39.8	861.1
+07l0jm	copper	Copper Ore	Copper Ore	Watchtower	Valley	816	17	624	818.9	19.0	623.7
+0o4c38	copper	Copper Ore	Copper Ore	Graveyard	Valley	264	38	834	261.0	38.0	834.3
+0q5bdw	copper	Copper Ore	Copper Ore	Ruins with skeletons	Valley	427	23	684	429.9	23.4	684.5
+46bisj	copper	Copper Ore	Copper Ore	Copper mine	Valley	876	35	574	875.6	35.3	570.6
+4lahh5	copper	Copper Ore	Copper Ore	Watchtower	Valley	807	21	595	809.2	23.1	592.8
+54ycxa	copper	Copper Ore	Copper Ore	Guard tower	Valley	306	80	158	310.1	78.5	159.8
+56xrxq	copper	Copper Ore	Copper Ore	Hidden cave	Valley	640	2	616	643.5	2.0	615.5
+65dnlz	copper	Copper Ore	Copper Ore	Copper mine	Valley	878	35	595	880.3	35.0	595.9
+66jllq	copper	Copper Ore	Copper Ore	House on the rock	Valley	515	42	298	515.2	41.5	300.7
+78zm00	copper	Copper Ore	Copper Ore	Guard tower	Valley	470	62	211	467.0	62.4	210.2
+9bbcgm	copper	Copper Ore	Copper Ore	Small cave	Valley	730	91	344	733.0	91.8	343.6
+9dsg69	copper	Copper Ore	Copper Ore	Hidden cave	Valley	672	5	611	669.3	5.7	609.7
+9j7591	copper	Copper Ore	Copper Ore	Graveyard	Valley	189	33	845	187.6	34.1	847.6
+9yx0vc	copper	Copper Ore	Copper Ore	Copper mine	Valley	871	35	593	867.9	35.2	593.3
+akdyst	copper	Copper Ore	Copper Ore	Troll camp	Valley	707	81	857	707.0	81.2	854.1
+bgr593	copper	Copper Ore	Copper Ore	Open mine	Valley	266	21	459	265.6	21.8	455.8
+ch2pe3	copper	Copper Ore	Copper Ore	Guard tower	Valley	326	77	139	325.0	79.1	136.1
+dd1q6p	copper	Copper Ore	Copper Ore	Lone grave	Valley	718	75	725	720.5	75.9	727.2
+dfrqhi	copper	Copper Ore	Copper Ore	Copper mine	Valley	864	35	583	861.0	35.3	584.3
+dwulg3	copper	Copper Ore	Copper Ore	Small cave	Valley	254	6	636	252.1	7.4	634.2
+ehxl2r	copper	Copper Ore	Copper Ore	Ponds	Valley	653	154	77	651.7	154.6	74.0
+eik5ws	copper	Copper Ore	Copper Ore	Copper mine	Valley	884	35	597	885.8	35.5	598.7
+enlkrx	copper	Copper Ore	Copper Ore	Copper mine	Valley	881	35	589	878.6	35.3	590.5
+f0txpg	copper	Copper Ore	Copper Ore	Hidden cave	Valley	672	4	602	674.3	5.7	603.6
+frr6kt	copper	Copper Ore	Copper Ore		Valley	919	25	686	921.3	25.5	684.1
+g6myj0	copper	Copper Ore	Copper Ore	Ruined house	Valley	702	7	562	704.5	7.6	561.0
+gdhhuu	copper	Copper Ore	Copper Ore	Big bandit camp	Valley	625	41	449	622.5	43.0	447.3
+h0zwjq	copper	Copper Ore	Copper Ore	Guard tower	Valley	418	60	195	418.4	60.1	197.9
+hc7bmm	copper	Copper Ore	Copper Ore	Crypt	Valley	492	40	842	494.7	42.7	841.0
+iexy18	copper	Copper Ore	Copper Ore	Militia camp	Valley	398	35	852	401.2	34.1	853.3
+ikp9x6	copper	Copper Ore	Copper Ore	Open mine	Valley	256	13	504	254.9	13.2	500.9
+j2hiao	copper	Copper Ore	Copper Ore	Copper mine	Valley	876	35	578	876.0	36.0	581.3
+j59yij	copper	Copper Ore	Copper Ore		Valley	412	32	779	411.2	33.0	781.6
+jw529f	copper	Copper Ore	Copper Ore	Bandit camp	Valley	209	24	777	210.8	24.9	774.7
+k4kd0o	copper	Copper Ore	Copper Ore	Open mine	Valley	258	15	483	258.8	15.6	485.8
+krfemq	copper	Copper Ore	Copper Ore	Stone circle	Valley	332	34	806	332.5	33.7	808.7
+lczqai	copper	Copper Ore	Copper Ore		Valley	396	26	779	397.8	27.3	781.5
+lnzbwn	copper	Copper Ore	Copper Ore	Graveyard	Valley	175	38	838	178.2	38.4	838.7
+lzgyju	copper	Copper Ore	Copper Ore	Open mine	Valley	280	23	445	280.2	23.8	442.0
+m4fiaa	copper	Copper Ore	Copper Ore		Valley	898	33	722	893.6	30.6	720.3
+nfagiu	copper	Copper Ore	Copper Ore	Small cave	Valley	275	10	606	277.6	11.0	604.2
+ob2mq4	copper	Copper Ore	Copper Ore	Watchtower	Valley	796	17	582	798.4	17.8	579.7
+oqnbl6	copper	Copper Ore	Copper Ore		Valley	227	54	950	223.9	56.2	949.9
+p0dkm3	copper	Copper Ore	Copper Ore		Valley	608	49	858	606.7	49.8	855.3
+pxcc2b	copper	Copper Ore	Copper Ore	Copper mine	Valley	871	35	582	868.5	36.6	582.9
+q640r9	copper	Copper Ore	Copper Ore	Dead man	Valley	256	68	414	257.8	68.4	412.0
+qghwoj	copper	Copper Ore	Copper Ore	Watchtower	Valley	832	14	641	830.5	14.9	638.5
+qjvykx	copper	Copper Ore	Copper Ore	Hidden cave	Valley	646	1	614	647.0	2.2	617.0
+qo8wlj	copper	Copper Ore	Copper Ore	Bandit camp	Valley	148	7	693	145.6	8.1	695.2
+qv8hxq	copper	Copper Ore	Copper Ore	Hidden corner	Valley	796	65	444	797.7	65.5	441.5
+qvjd72	copper	Copper Ore	Copper Ore	Watchtower	Valley	823	28	591	825.8	28.5	592.1
+rgg256	copper	Copper Ore	Copper Ore	Hidden corner	Valley	792	65	441	791.9	66.1	437.9
+subud4	copper	Copper Ore	Copper Ore		Valley	284	15	717	280.8	24.9	716.7
+szemml	copper	Copper Ore	Copper Ore		Valley	609	49	868	607.6	50.2	871.2
+t2emkd	copper	Copper Ore	Copper Ore	Hidden corner	Valley	767	57	450	769.3	58.4	447.9
+tlesbe	copper	Copper Ore	Copper Ore	Copper mine	Valley	876	35	594	873.7	35.2	592.5
+upto3k	copper	Copper Ore	Copper Ore	Small cave	Valley	276	10	604	275.5	11.7	600.5
+vhrnm4	copper	Copper Ore	Copper Ore	Hidden corner	Valley	792	65	443	789.4	65.5	445.1
+vzelw1	copper	Copper Ore	Copper Ore	Small cave	Valley	282	10	613	281.9	11.0	609.7
+yi855d	copper	Copper Ore	Copper Ore	Hidden cave	Valley	632	6	567	630.0	6.8	565.3
+zog0mf	copper	Copper Ore	Copper Ore	Urn	Valley	209	59	308	206.2	60.8	308.5
+06zye3	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1193	10	658	1195.2	10.4	655.5
+0kyq2s	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1185	9	723	1186.3	8.9	720.7
+0tgft6	morkanite	Morkanite Ore	Morkanite Ore	Spider cave	Swamp	1028	9	931	1026.9	9.8	928.5
+1o90qb	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1749	52	437	1750.8	52.9	439.3
+5drxve	morkanite	Morkanite Ore	Morkanite Ore		Swamp	1265	49	570	1262.6	49.3	567.6
+5mre8h	morkanite	Morkanite Ore	Morkanite Ore	Spider cave	Swamp	1059	9	949	1057.1	10.6	946.4
+6isxe6	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1275	42	591	1277.9	42.6	590.1
+76yo30	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1777	52	431	1774.7	52.5	429.9
+7wqamt	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1746	52	452	1742.6	52.9	451.8
+8cth1n	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1759	52	436	1759.1	52.6	433.0
+8h6cb3	morkanite	Morkanite Ore	Morkanite Ore	Spider cave	Swamp	1064	9	941	1063.8	10.0	943.7
+9w30b1	morkanite	Morkanite Ore	Morkanite Ore		Swamp	1089	9	906	1086.5	10.3	906.9
+bmyg3n	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1313	44	583	1316.2	44.4	582.2
+ci1acg	morkanite	Morkanite Ore	Morkanite Ore	Spider nest	Swamp	1473	6	779	1474.7	7.1	776.9
+e3jz9s	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1195	9	663	1197.4	9.7	661.4
+e86g1c	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1756	52	418	1752.7	52.6	418.0
+ixikmf	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1301	44	586	1298.4	44.4	583.8
+jd21dk	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1193	9	670	1196.1	10.2	669.8
+kxjtzm	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1179	9	709	1181.3	10.1	710.0
+lkuled	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1287	42	623	1284.3	42.2	622.8
+m9rrvo	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1305	47	581	1302.6	47.7	579.5
+oaluly	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1323	43	626	1324.6	41.4	622.9
+op5gvo	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1290	42	624	1290.3	42.0	626.5
+qnw3pe	morkanite	Morkanite Ore	Morkanite Ore	Spider cave	Swamp	1069	9	924	1069.8	9.9	927.1
+rclf0d	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1161	5	712	1164.1	6.3	712.8
+rps4mh	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1184	9	666	1181.4	9.6	663.8
+rxwhc1	morkanite	Morkanite Ore	Morkanite Ore	Spider cave	Swamp	1033	9	931	1031.2	9.9	933.2
+sua6f1	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1179	9	696	1177.9	9.8	693.3
+sy6h6c	morkanite	Morkanite Ore	Morkanite Ore	Open mine	Swamp	1309	40	613	1309.1	39.8	617.9
+ti4904	morkanite	Morkanite Ore	Morkanite Ore	Morkanite mine	Swamp	1186	9	682	1187.1	9.8	685.1
+u2bkq1	morkanite	Morkanite Ore	Morkanite Ore	Spider queen's lair	Swamp	1738	52	425	1734.6	52.6	425.3
+x7ic19	morkanite	Morkanite Ore	Morkanite Ore	Spider nest	Swamp	1474	8	762	1473.0	9.0	764.8
+xqllbe	morkanite	Morkanite Ore	Morkanite Ore	Spider nest	Swamp	1481	4	800	1479.7	5.5	796.9
+0d317z	stone	Cobblestone	Cobblestone	Hidden corner	Valley	769	56	453	768.0	55.8	455.4
+0iftc7	stone	Cobblestone	Cobblestone	Sawmill	Valley	281	40	318	283.6	40.6	319.4
+0u1rgr	stone	Cobblestone	Cobblestone		Valley	276	10	698	277.1	10.5	700.4
+191h7y	stone	Cobblestone	Cobblestone	Guard tower	Valley	459	67	199	457.8	65.5	202.0
+1jhwut	stone	Cobblestone	Cobblestone	Big bandit camp	Valley	650	19	521	648.8	21.0	518.6
+1t86io	stone	Cobblestone	Cobblestone	Troll hut	Valley	291	32	358	289.6	32.0	355.3
+1u5f0b	stone	Cobblestone	Cobblestone		Valley	225	55	955	222.5	56.8	957.6
+1ufo9x	stone	Cobblestone	Cobblestone	Gate outpost	Valley	972	33	716	975.0	33.9	714.6
+274jln	stone	Cobblestone	Cobblestone	Spider queen's lair	Swamp	1773	52	433	1774.3	52.6	435.4
+2e2gsz	stone	Cobblestone	Cobblestone	Stone circle	Valley	340	32	800	340.4	33.3	802.9
+2raesg	stone	Cobblestone	Cobblestone		Valley	513	23	328	515.3	24.1	330.2
+30p0tm	stone	Cobblestone	Cobblestone		Valley	646	47	422	647.6	48.2	419.6
+356o4t	stone	Cobblestone	Cobblestone		Valley	747	155	159	748.9	156.0	161.3
+44bl8r	stone	Cobblestone	Cobblestone		Valley	511	39	304	509.7	37.3	307.0
+4d4dvn	stone	Cobblestone	Cobblestone	Big bandit camp	Valley	599	28	515	601.6	28.3	516.1
+4f9603	stone	Cobblestone	Cobblestone	Hidden cave	Valley	618	8	577	619.7	8.0	579.0
+4oibnt	stone	Cobblestone	Cobblestone	Open mine	Swamp	1287	42	626	1284.2	42.0	626.3
+4qe9fq	stone	Cobblestone	Cobblestone	Bandit camp	Valley	657	140	158	655.7	140.4	160.6
+4uvviy	stone	Cobblestone	Cobblestone	Ruined house	Valley	796	35	517	793.5	34.8	519.4
+556ym5	stone	Cobblestone	Cobblestone	Small cave	Valley	701	96	312	698.6	96.6	314.5
+57k1o9	stone	Cobblestone	Cobblestone		Valley	272	11	705	272.1	11.2	701.6
+5cgb4o	stone	Cobblestone	Cobblestone	Guard tower	Valley	469	69	192	472.4	69.9	192.0
+6efhmz	stone	Cobblestone	Cobblestone	Crypt	Valley	488	39	838	489.9	40.0	835.6
+6xv2da	stone	Cobblestone	Cobblestone	Hidden cave	Valley	615	8	581	616.2	8.2	583.5
+75wnno	stone	Cobblestone	Cobblestone	Guard tower	Valley	477	55	230	476.6	56.4	226.9
+7cmzyv	stone	Cobblestone	Cobblestone	Spider cave	Swamp	1056	9	914	1057.8	9.7	915.8
+7jl6dy	stone	Cobblestone	Cobblestone	Ruined house	Valley	767	17	557	769.1	17.0	555.2
+7vxqdz	stone	Cobblestone	Cobblestone		Valley	396	29	788	397.2	31.6	790.9
+88fy80	stone	Cobblestone	Cobblestone		Valley	199	63	962	196.2	63.7	961.7
+8eu092	stone	Cobblestone	Cobblestone	Small cave	Valley	258	6	635	255.6	6.7	633.7
+8hcw80	stone	Cobblestone	Cobblestone	Small cave	Valley	300	7	572	302.9	6.7	573.5
+8hd56q	stone	Cobblestone	Cobblestone	Bandit camp	Valley	247	25	755	245.8	25.9	752.7
+9i9lxg	stone	Cobblestone	Cobblestone	Hidden cave	Valley	353	8	724	350.5	9.3	726.2
+9jnppl	stone	Cobblestone	Cobblestone	Hidden cave	Valley	642	51	784	640.6	52.5	786.3
+9m30o4	stone	Cobblestone	Cobblestone		Valley	599	124	267	596.7	124.0	266.2
+9yvjxq	stone	Cobblestone	Cobblestone	Troll hut	Valley	272	47	365	274.7	48.3	364.9
+aps0bo	stone	Cobblestone	Cobblestone		Valley	495	12	375	498.1	13.8	374.9
+avwsvr	stone	Cobblestone	Cobblestone	Boar farm	Valley	493	11	404	494.0	13.7	401.1
+bi0hju	stone	Cobblestone	Cobblestone	Sawmill	Valley	277	41	325	274.0	41.1	323.5
+bj0tob	stone	Cobblestone	Cobblestone	Boar farm	Valley	500	18	401	500.5	18.6	398.4
+cbyc6a	stone	Cobblestone	Cobblestone	Logging site	Valley	168	82	208	167.0	83.5	204.9
+cjedrj	stone	Cobblestone	Cobblestone	Bandit camp	Valley	173	15	671	169.9	16.2	670.2
+cr5npp	stone	Cobblestone	Cobblestone	Graveyard	Valley	192	39	855	193.9	38.6	853.0
+dmo0zn	stone	Cobblestone	Cobblestone		Valley	503	25	320	504.9	24.7	322.1
+e3ge6x	stone	Cobblestone	Cobblestone	House on the rock	Valley	526	39	292	528.6	40.0	289.5
+efmujw	stone	Cobblestone	Cobblestone	Guard tower	Valley	412	54	206	413.1	53.0	208.3
+ehnr6m	stone	Cobblestone	Cobblestone	Boar farm	Valley	493	12	412	494.8	13.6	409.4
+ewyvmg	stone	Cobblestone	Cobblestone	Spider queen's lair	Swamp	1740	52	438	1737.9	52.6	436.3
+f24ha0	stone	Cobblestone	Cobblestone		Valley	939	26	691	939.3	27.0	694.3
+fbphga	stone	Cobblestone	Cobblestone	Small cave	Valley	274	11	620	271.6	12.2	618.8
+gdbyzr	stone	Cobblestone	Cobblestone	Watchtower	Valley	805	20	604	808.2	21.0	602.9
+ggsxh0	stone	Cobblestone	Cobblestone	Hidden cave	Valley	172	80	372	174.5	81.1	374.3
+gy2wy1	stone	Cobblestone	Cobblestone	Ruins with skeletons	Valley	426	23	685	427.5	22.6	687.5
+h2uxg8	stone	Cobblestone	Cobblestone		Swamp	1086	9	914	1088.8	9.7	915.1
+hmerto	stone	Cobblestone	Cobblestone	Guard tower	Valley	331	77	138	329.6	77.1	140.8
+holsr7	stone	Cobblestone	Cobblestone	Farmhouse	Valley	269	41	322	266.4	42.2	322.3
+hrru3b	stone	Cobblestone	Cobblestone	Guard tower	Valley	470	62	212	468.1	61.0	213.9
+i7fgrw	stone	Cobblestone	Cobblestone	Hidden corner	Valley	795	65	444	792.6	65.4	445.0
+i99q0m	stone	Cobblestone	Cobblestone	Spider cave	Swamp	1041	9	912	1041.2	9.7	909.4
+insgk4	stone	Cobblestone	Cobblestone	Ruined house	Valley	794	28	536	794.5	27.0	538.9
+io3m3d	stone	Cobblestone	Cobblestone		Valley	299	9	556	296.8	9.0	557.7
+isor5a	stone	Cobblestone	Cobblestone	Big bandit camp	Valley	696	21	502	693.9	22.0	499.5
+iy8nm9	stone	Cobblestone	Cobblestone	Hidden cave	Valley	401	28	722	401.9	27.5	719.7
+j21lbm	stone	Cobblestone	Cobblestone	Open mine	Swamp	1284	41	594	1283.7	41.8	591.4
+j69276	stone	Cobblestone	Cobblestone	Open mine	Swamp	1310	42	588	1307.5	42.1	586.9
+jaq78p	stone	Cobblestone	Cobblestone	Open mine	Swamp	1288	40	607	1288.7	40.2	609.4
+ju3q4c	stone	Cobblestone	Cobblestone		Valley	936	25	689	935.3	24.6	686.7
+kega3o	stone	Cobblestone	Cobblestone	Boar farm	Valley	494	11	387	496.6	12.8	384.4
+kimvg4	stone	Cobblestone	Cobblestone	Ruins with skeletons	Valley	410	23	697	413.4	22.7	696.9
+l0zsb5	stone	Cobblestone	Cobblestone	Ruined house	Valley	724	12	559	726.3	13.7	557.7
+lm4e7u	stone	Cobblestone	Cobblestone	Boar farm	Valley	503	25	490	505.6	26.5	489.9
+lq7vkc	stone	Cobblestone	Cobblestone	Guard tower	Valley	607	57	424	606.8	58.7	421.3
+ls98c9	stone	Cobblestone	Cobblestone	Hidden cave	Valley	616	8	578	617.6	8.2	580.9
+lup3s5	stone	Cobblestone	Cobblestone		Valley	609	123	236	606.0	123.0	236.8
+m69x9y	stone	Cobblestone	Cobblestone	Open mine	Valley	259	15	480	258.6	15.8	476.9
+mh5ixe	stone	Cobblestone	Cobblestone	Hidden cave	Valley	656	11	617	654.9	11.9	619.8
+mi41ld	stone	Cobblestone	Cobblestone		Valley	412	33	775	414.5	33.8	774.0
+mieusl	stone	Cobblestone	Cobblestone	Small cave	Valley	102	89	509	100.0	90.7	511.6
+ml7fiy	stone	Cobblestone	Cobblestone	Lone grave	Valley	100	89	505	97.5	90.8	506.9
+mynp0t	stone	Cobblestone	Cobblestone	Troll hut	Valley	296	33	387	297.8	31.1	389.6
+njp5ll	stone	Cobblestone	Cobblestone		Valley	364	7	650	362.0	8.3	651.8
+nwxbul	stone	Cobblestone	Cobblestone	Hidden cave	Valley	400	29	754	399.2	29.1	756.9
+nxfdaz	stone	Cobblestone	Cobblestone	Loot spot	Valley	748	18	620	745.5	18.8	619.6
+nyxg18	stone	Cobblestone	Cobblestone	Watchtower	Valley	805	20	602	807.5	20.8	604.6
+oisa2b	stone	Cobblestone	Cobblestone	Big bandit camp	Valley	661	28	502	657.8	28.4	500.9
+oo419q	stone	Cobblestone	Cobblestone	Hidden cave	Valley	167	68	327	169.4	68.7	325.3
+otlvzp	stone	Cobblestone	Cobblestone	Ruined house	Valley	180	88	432	178.7	88.3	435.2
+ovxb8x	stone	Cobblestone	Cobblestone		Valley	653	49	710	656.3	50.4	709.8
+p5jk2z	stone	Cobblestone	Cobblestone		Valley	384	7	627	385.8	8.6	629.3
+ppkg6h	stone	Cobblestone	Cobblestone	Ruins with skeletons	Valley	427	23	684	428.7	22.7	686.3
+pqcq11	stone	Cobblestone	Cobblestone	Farmhouse	Valley	211	59	311	208.2	60.1	310.8
+ps26v4	stone	Cobblestone	Cobblestone	Bandit camp	Valley	156	7	693	158.3	7.6	692.1
+qb3nwh	stone	Cobblestone	Cobblestone		Valley	606	122	239	602.9	123.7	239.2
+qfq4xh	stone	Cobblestone	Cobblestone	Ruined house	Valley	185	86	442	184.0	87.1	439.3
+qiq3cm	stone	Cobblestone	Cobblestone		Valley	382	4	621	383.2	5.3	623.6
+qrhr2x	stone	Cobblestone	Cobblestone	Field of bones	Valley	130	95	367	129.7	95.6	363.9
+qrx03v	stone	Cobblestone	Cobblestone	Troll camp	Valley	707	81	862	706.2	80.7	859.1
+qxpadf	stone	Cobblestone	Cobblestone	Bandit camp	Valley	648	141	162	644.9	140.6	163.5
+r72h9y	stone	Cobblestone	Cobblestone	Ruined house	Valley	780	33	511	783.3	35.0	510.9
+rctni6	stone	Cobblestone	Cobblestone	Farmhouse	Valley	515	17	666	515.1	17.9	668.7
+rheidn	stone	Cobblestone	Cobblestone	House on the rock	Valley	529	41	285	531.4	40.9	286.9
+rj0sng	stone	Cobblestone	Cobblestone	Loot spot	Valley	696	11	642	695.5	12.7	644.9
+rmv3vj	stone	Cobblestone	Cobblestone	Open mine	Valley	258	15	480	259.2	16.1	482.3
+roqi4f	stone	Cobblestone	Cobblestone		Valley	399	27	771	401.6	28.5	773.0
+rv7azd	stone	Cobblestone	Cobblestone	Bandit camp	Valley	175	15	672	173.3	16.2	669.5
+sfz1ax	stone	Cobblestone	Cobblestone	Bandit camp	Valley	651	142	159	648.6	142.8	156.8
+snvcod	stone	Cobblestone	Cobblestone	Open mine	Valley	260	13	501	260.4	13.1	498.1
+tulmjp	stone	Cobblestone	Cobblestone	Ruins with skeletons	Valley	412	21	690	411.1	22.2	687.1
+tyssg5	stone	Cobblestone	Cobblestone	Ruined house	Valley	183	86	447	181.9	87.0	444.1
+ud94yx	stone	Cobblestone	Cobblestone	Field of bones	Valley	141	96	380	138.4	96.7	379.1
+uq3lzq	stone	Cobblestone	Cobblestone	Stone tower	Valley	216	70	375	215.3	70.4	378.2
+uu0177	stone	Cobblestone	Cobblestone	Hidden cave	Valley	648	1	615	650.2	2.7	612.4
+v7iuqd	stone	Cobblestone	Cobblestone	Small cave	Valley	275	10	608	273.6	11.0	604.9
+vdvnzc	stone	Cobblestone	Cobblestone	Ponds	Valley	694	148	122	696.5	149.9	122.5
+vyewud	stone	Cobblestone	Cobblestone	Lone grave	Valley	71	95	476	68.5	96.8	477.3
+w6stjf	stone	Cobblestone	Cobblestone	Loot spot	Valley	678	10	640	676.2	12.6	642.5
+wgvfcx	stone	Cobblestone	Cobblestone	Troll camp	Valley	713	83	851	711.1	84.5	849.0
+wki7h6	stone	Cobblestone	Cobblestone	Bandit camp	Valley	247	23	745	243.6	22.9	744.9
+x0fhu9	stone	Cobblestone	Cobblestone	Hidden corner	Valley	749	36	475	749.3	37.5	471.9
+x8hbo1	stone	Cobblestone	Cobblestone		Valley	70	95	473	67.5	97.5	474.8
+xngn5j	stone	Cobblestone	Cobblestone	Watchtower	Valley	799	17	601	801.9	18.5	601.9
+xweew0	stone	Cobblestone	Cobblestone	Open mine	Valley	269	14	508	266.4	14.6	506.3
+y392hs	stone	Cobblestone	Cobblestone	Bandit stash	Valley	171	40	842	173.0	39.5	839.6
+y5fspl	stone	Cobblestone	Cobblestone	Lone house	Valley	618	103	321	618.0	101.5	324.2
+ydww7a	stone	Cobblestone	Cobblestone	Troll hut	Valley	276	41	339	277.5	41.3	341.3
+yopkna	stone	Cobblestone	Cobblestone	Watchtower	Valley	830	24	613	831.0	24.4	615.8
+yubcl1	stone	Cobblestone	Cobblestone	Open mine	Valley	269	23	451	271.1	23.7	449.1
+yuvjl7	stone	Cobblestone	Cobblestone		Valley	393	15	649	390.4	14.9	648.2
+z1shbn	stone	Cobblestone	Cobblestone	Guard tower	Valley	422	61	197	424.4	60.7	199.3
+z63ieq	stone	Cobblestone	Cobblestone	Hidden cave	Valley	641	2	610	643.9	2.1	608.5
+zcq51l	stone	Cobblestone	Cobblestone	Copper mine	Valley	874	35	582	871.2	36.0	583.4
+zmi505	stone	Cobblestone	Cobblestone	Small cave	Valley	695	95	316	697.3	94.6	318.6
+zowknk	stone	Cobblestone	Cobblestone	Boar farm	Valley	503	25	490	505.1	26.8	487.5
+2m0vkw	gem	Gems	Ruby	Morkanite mine	Swamp	1183	9	685	1182.2	9.5	681.8
+edc2q0	gem	Gems	Ruby	Labyrinth	Swamp	1412	24	656	1413.6	26.3	658.7
+fhzvsb	gem	Gems	Ruby	Knights' tower	Swamp	1088	77	608	1091.4	77.3	608.2
+pf2dhu	gem	Gems	Ruby	Spider nest	Swamp	1518	16	806	1514.6	16.3	805.8
+u1e3yn	gem	Gems	Ruby	Spider queen's lair	Swamp	1758	52	437	1755.1	52.4	436.9
+2nrwt7	gem	Gems	Sapphire	Spider queen's lair	Swamp	1758	52	466	1758.3	52.1	462.6
+9swcja	gem	Gems	Sapphire	Spider cave	Swamp	1035	9	923	1035.1	9.8	925.6
+gvzew4	gem	Gems	Sapphire	Labyrinth	Swamp	1397	24	646	1399.3	24.7	645.2
+mqnt4q	gem	Gems	Sapphire	Open mine	Swamp	1326	41	616	1326.2	41.1	619.3
+qqm0ir	gem	Gems	Sapphire	Troll camp	Swamp	1580	5	912	1582.6	5.5	909.7
+2h54ms	gem	Gems	Topaz	Morkanite mine	Swamp	1170	7	731	1166.7	4.8	734.0
+f1ybxr	gem	Gems	Topaz	Labyrinth	Swamp	1401	27	683	1398.7	26.5	684.4
+nbh751	gem	Gems	Topaz	Knights' tower	Swamp	1024	116	566	1024.5	117.3	563.1
+sd9v9j	gem	Gems	Topaz	Hidden cave	Swamp	1479	47	664	1479.3	47.9	660.6
+ztjt2s	gem	Gems	Topaz		Swamp	1953	10	541	1955.2	10.1	538.8
+adktv0	moldcap	Moldcap	Moldcap	Hidden cave	Valley	641	51	784	643.6	51.2	781.9
+bbu000	moldcap	Moldcap	Moldcap	Graveyard	Valley	226	34	842	226.7	34.2	845.1
+dkrb11	moldcap	Moldcap	Moldcap	Lone grave	Valley	772	90	735	769.0	88.7	735.3
+e3z312	moldcap	Moldcap	Moldcap	Stone circle	Valley	313	33	800	312.3	34.0	797.5
+fkvs64	moldcap	Moldcap	Moldcap	Crypt	Valley	523	49	816	525.0	49.0	818.0
+hmrlhj	moldcap	Moldcap	Moldcap	Ruins with skeletons	Valley	450	28	705	450.2	26.7	701.7
+mtb2tw	moldcap	Moldcap	Moldcap	Ruins with skeletons	Valley	477	26	697	473.9	25.0	696.9
+o9vefb	moldcap	Moldcap	Moldcap	Lone grave	Valley	554	38	714	554.4	37.3	711.2
+w8jagc	moldcap	Moldcap	Moldcap	Ruins with skeletons	Valley	465	25	691	467.2	24.5	689.1
+wnv1v1	moldcap	Moldcap	Moldcap	Graveyard	Swamp	1076	46	676	1077.7	47.3	673.8
+0s4kdn	toadstool	Marsh Toadstool	Marsh Toadstool	Troll camp	Swamp	1912	6	517	1914.0	3.1	518.7
+1uxsh8	toadstool	Marsh Toadstool	Marsh Toadstool		Swamp	1523	5	706	1526.0	5.4	705.6
+5gnlw3	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit ambush	Swamp	1612	5	772	1612.9	3.1	769.6
+5uhvpj	toadstool	Marsh Toadstool	Marsh Toadstool	Ambush	Swamp	1281	5	869	1283.8	4.0	868.7
+7krfz3	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit camp	Swamp	1386	5	723	1385.6	4.0	720.0
+anszc0	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit camp	Swamp	1190	6	892	1193.1	4.0	893.0
+bj9l8j	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit camp	Swamp	1278	5	782	1275.0	4.0	781.7
+dl2swn	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit tower	Swamp	1143	5	847	1144.1	3.3	844.0
+fikawy	toadstool	Marsh Toadstool	Marsh Toadstool	Troll arena	Swamp	1756	5	828	1759.0	3.1	827.3
+gioh10	toadstool	Marsh Toadstool	Marsh Toadstool	Fishing camp	Swamp	1208	4	765	1210.7	4.0	765.1
+m0yc3j	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit ambush	Swamp	1658	5	802	1657.5	3.1	805.2
+tugehi	toadstool	Marsh Toadstool	Marsh Toadstool	Bandit camp	Swamp	1396	4	788	1398.7	5.4	787.7
+yu0lw8	toadstool	Marsh Toadstool	Marsh Toadstool	Troll tower	Swamp	1837	3	592	1837.3	3.1	589.7
+5erxa1	meadowflare	Meadowflare	Meadowflare	Bandit camp	Valley	719	118	241	719.3	118.5	238.2
+arg4l3	meadowflare	Meadowflare	Meadowflare	Ruined house	Valley	784	19	555	785.0	22.5	552.2
+gqlqn5	meadowflare	Meadowflare	Meadowflare	Big bandit camp	Valley	599	29	510	601.6	29.1	512.1
+iispj2	meadowflare	Meadowflare	Meadowflare	Gallows	Valley	358	9	316	357.6	8.7	314.0
+m1evgr	meadowflare	Meadowflare	Meadowflare	Open mine	Valley	308	23	426	310.6	22.0	427.4
+of9vcb	meadowflare	Meadowflare	Meadowflare		Valley	628	114	256	628.4	114.3	253.8
+ohh6tg	meadowflare	Meadowflare	Meadowflare		Valley	418	20	246	418.4	20.1	243.3
+pjzxoo	meadowflare	Meadowflare	Meadowflare	Troll camp	Valley	731	82	823	731.3	81.5	820.9
+rqttnv	meadowflare	Meadowflare	Meadowflare	Sawmill	Valley	284	40	311	284.7	40.5	307.8
+ttg2lu	meadowflare	Meadowflare	Meadowflare		Valley	799	16	648	802.4	15.6	647.5
+x09528	meadowflare	Meadowflare	Meadowflare	Big bandit camp	Valley	682	12	531	684.2	12.3	528.4
+5iusep	firebloom	Firebloom	Firebloom		Valley	596	52	855	595.6	51.7	852.3
+d0esy9	firebloom	Firebloom	Firebloom	Bandit camp	Valley	738	147	193	735.4	145.6	195.1
+f8efga	firebloom	Firebloom	Firebloom	Ruined house	Valley	201	85	440	202.9	84.7	438.0
+fbs0p4	firebloom	Firebloom	Firebloom	Logging site	Valley	279	46	212	279.4	46.5	209.4
+gtzy88	firebloom	Firebloom	Firebloom	Boar farm	Valley	484	18	479	480.8	18.0	480.2
+jjqm8j	firebloom	Firebloom	Firebloom		Valley	626	49	716	626.2	48.5	718.7
+knopan	firebloom	Firebloom	Firebloom	Ruins with skeletons	Valley	474	21	666	471.1	20.4	667.5
+wvj1yd	firebloom	Firebloom	Firebloom	Hidden cave	Valley	331	22	763	332.4	21.8	760.0
+xe3c6r	firebloom	Firebloom	Firebloom		Valley	134	33	922	134.1	32.8	919.0
+xzya2b	firebloom	Firebloom	Firebloom	Big bandit camp	Valley	695	36	459	695.0	36.0	456.8
+0ek2c8	thorn	Marsh Thorn	Marsh Thorn	Militia camp	Swamp	1134	23	735	1136.9	23.3	736.0
+0is4uq	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1450	15	819	1447.7	16.2	818.0
+304772	thorn	Marsh Thorn	Marsh Thorn		Swamp	1095	9	906	1095.2	9.2	903.1
+3bx3fp	thorn	Marsh Thorn	Marsh Thorn	Militia camp	Swamp	1107	22	718	1104.7	22.4	715.9
+3inzig	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1420	23	664	1418.0	24.2	666.2
+3n5t4p	thorn	Marsh Thorn	Marsh Thorn		Swamp	1541	11	794	1541.4	11.7	797.1
+3ownpk	thorn	Marsh Thorn	Marsh Thorn	Sky totem	Swamp	1516	16	834	1513.3	14.8	835.0
+5jp83z	thorn	Marsh Thorn	Marsh Thorn		Swamp	1093	9	912	1090.8	9.2	910.3
+5k5m4b	thorn	Marsh Thorn	Marsh Thorn		Swamp	1027	32	833	1029.7	29.9	825.9
+6c16m8	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1485	4	806	1488.1	5.8	805.2
+7s0hix	thorn	Marsh Thorn	Marsh Thorn	Sky totem	Swamp	1530	11	864	1529.0	10.8	866.7
+80pfja	thorn	Marsh Thorn	Marsh Thorn	Fishing camp	Swamp	1156	15	765	1156.5	17.1	761.9
+9kbki0	thorn	Marsh Thorn	Marsh Thorn	Spider queen's lair	Swamp	1758	52	466	1760.9	51.6	466.7
+9ni8su	thorn	Marsh Thorn	Marsh Thorn		Swamp	1752	31	544	1754.6	31.4	544.3
+a4er6s	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1422	14	703	1423.6	14.5	700.5
+bbn4ws	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1501	15	799	1497.9	14.2	800.1
+bnchzm	thorn	Marsh Thorn	Marsh Thorn		Swamp	1116	8	881	1113.5	7.9	880.7
+c0sx9i	thorn	Marsh Thorn	Marsh Thorn	Militia camp	Swamp	1044	37	757	1047.0	34.8	758.0
+d02550	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1405	24	646	1402.6	25.3	647.7
+di9j6q	thorn	Marsh Thorn	Marsh Thorn		Swamp	1009	32	810	1012.1	32.2	811.4
+fides7	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1449	18	795	1447.9	18.5	798.1
+g957zu	thorn	Marsh Thorn	Marsh Thorn	Bandit tower	Swamp	1099	9	860	1097.3	7.2	858.1
+h0lthd	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1466	6	780	1466.1	6.2	783.2
+hk08t5	thorn	Marsh Thorn	Marsh Thorn	Tower ruins	Swamp	1695	35	608	1697.6	35.1	607.6
+hlxyps	thorn	Marsh Thorn	Marsh Thorn	Graveyard	Swamp	1086	37	689	1083.2	39.2	689.1
+hrnzxq	thorn	Marsh Thorn	Marsh Thorn	Sky totem	Swamp	1540	14	807	1540.1	14.2	804.2
+m84oa7	thorn	Marsh Thorn	Marsh Thorn	Militia camp	Swamp	1141	20	753	1138.4	19.5	755.5
+mjibxd	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1396	22	663	1397.1	22.4	665.5
+nboci1	thorn	Marsh Thorn	Marsh Thorn	Militia camp	Swamp	1086	33	714	1092.0	33.8	711.7
+nk3dom	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1474	6	787	1476.4	7.1	786.0
+qhk6cm	thorn	Marsh Thorn	Marsh Thorn	Graveyard	Swamp	1128	46	646	1127.5	46.4	649.0
+qhzkor	thorn	Marsh Thorn	Marsh Thorn	Graveyard	Swamp	1092	35	687	1091.0	36.6	684.4
+qyn2t4	thorn	Marsh Thorn	Marsh Thorn	Bandit tower	Swamp	1080	7	846	1077.8	7.8	848.5
+rom5s3	thorn	Marsh Thorn	Marsh Thorn		Swamp	1110	7	910	1109.1	6.6	907.2
+s3wtog	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1410	24	663	1409.5	24.1	665.8
+s6otc9	thorn	Marsh Thorn	Marsh Thorn	Spider nest	Swamp	1496	17	793	1492.9	16.1	794.5
+sbnupd	thorn	Marsh Thorn	Marsh Thorn	Fishing camp	Swamp	1159	14	767	1161.6	16.2	765.3
+tuvjt0	thorn	Marsh Thorn	Marsh Thorn	Spider queen's lair	Swamp	1804	36	482	1801.3	38.1	481.8
+u0svm3	thorn	Marsh Thorn	Marsh Thorn	Sky totem	Swamp	1526	13	857	1523.2	12.8	857.9
+vwc0l9	thorn	Marsh Thorn	Marsh Thorn	Tower ruins	Swamp	1699	48	544	1696.6	50.3	542.7
+w5044e	thorn	Marsh Thorn	Marsh Thorn	Troll tower	Swamp	1549	5	906	1550.5	4.8	902.2
+x8mos1	thorn	Marsh Thorn	Marsh Thorn		Swamp	1044	30	768	1043.2	28.6	771.2
+xnryer	thorn	Marsh Thorn	Marsh Thorn		Swamp	1716	47	547	1717.1	48.5	543.8
+xrulxy	thorn	Marsh Thorn	Marsh Thorn	Labyrinth	Swamp	1421	20	685	1422.5	19.6	687.4
+yzk20d	thorn	Marsh Thorn	Marsh Thorn	Tower ruins	Swamp	1686	40	566	1682.8	40.2	566.1
+pv187g	boss	Bosses and named enemies	Commander Wingmer	Gate outpost	Valley	972	25	762	969.9	25.1	760.1
+81guy0	boss	Bosses and named enemies	Edd the Boar	Hidden cave	Valley	666	59	772	664.5	58.5	774.6
+r5iqix	boss	Bosses and named enemies	Edric Thorn	Village	Valley	578	104	103	575.1	104.1	101.7
+q5lkiv	boss	Bosses and named enemies	Farmer Jacob		Valley	402	7	493	399.6	6.2	494.2
+2o2230	boss	Bosses and named enemies	Felkis Bonebreaker	Bandit camp	Valley	130	17	722	127.6	17.4	724.1
+vnnrxy	boss	Bosses and named enemies	Forester Schmiller	Logging site	Valley	171	81	213	169.8	81.1	210.2
+lfzfpv	boss	Bosses and named enemies	Garrick the Forgotten	Hidden cave	Valley	353	9	740	353.7	8.0	736.8
+drrw54	boss	Bosses and named enemies	High Chieftain Kill'Zob	Troll camp	Swamp	1840	5	768	1837.7	4.8	769.2
+sy3891	boss	Bosses and named enemies	Hobart Coppergut	Morkanite mine	Swamp	1188	9	671	1187.5	8.9	668.1
+0hml3w	boss	Bosses and named enemies	Kevin Hawkeye	Militia camp	Swamp	1357	66	524	1353.7	66.5	523.6
+i617x6	boss	Bosses and named enemies	Knight Zoldick	Crypt	Swamp	1940	7	769	1940.8	6.2	766.2
+mn23vn	boss	Bosses and named enemies	Knight captain Ullius	Crypt	Valley	529	52	828	526.3	51.4	828.3
+ntaijb	boss	Bosses and named enemies	Lord Morkant Wingard	Graveyard	Valley	214	34	855	212.8	33.9	852.1
+nmguvw	boss	Bosses and named enemies	Shift supervisor Roger	Sawmill	Valley	269	41	312	271.9	40.8	312.5
+84ruw4	boss	Bosses and named enemies	Smegg the Malicious	Bandit camp	Swamp	1354	6	768	1354.2	5.9	764.7
+khb2gz	boss	Bosses and named enemies	Spider queen	Spider queen's lair	Swamp	1742	52	428	1742.5	51.9	424.5
+biseeu	boss	Bosses and named enemies	Tervon the Digger	Copper mine	Valley	880	35	578	882.4	34.7	580.2
+60pirr	boss	Bosses and named enemies	Witch Zinja	Troll camp	Swamp	1821	6	781	1818.6	4.8	779.2
+4j2yza	humans	Villagers and militia	Hunter	Village	Valley	506	97	94	504.9	98.0	96.6
+5a3oyy	humans	Villagers and militia	Hunter	Village	Valley	518	97	124	520.9	96.2	125.3
+64ce4o	humans	Villagers and militia	Hunter	Village	Valley	508	97	118	508.4	96.9	121.5
+azq182	humans	Villagers and militia	Hunter	Ruined house	Valley	752	33	484	754.6	33.2	484.3
+brguo4	humans	Villagers and militia	Hunter	Boar shed	Valley	152	84	243	149.2	84.1	243.4
+e4q27y	humans	Villagers and militia	Hunter	Hunter camp	Valley	195	71	511	191.9	71.2	509.8
+goa7as	humans	Villagers and militia	Hunter	Boar shed	Valley	147	85	231	147.9	85.4	233.9
+jn5fsj	humans	Villagers and militia	Hunter	Hunter camp	Valley	393	43	226	390.0	42.2	227.6
+kx48i5	humans	Villagers and militia	Hunter	Gate outpost	Valley	983	28	777	980.2	28.6	775.6
+oup6ma	humans	Villagers and militia	Hunter	Village	Valley	510	97	102	512.9	97.1	102.4
+p8kp9j	humans	Villagers and militia	Hunter	Gate outpost	Valley	975	39	725	977.1	38.2	726.8
+qizlgb	humans	Villagers and militia	Hunter	Village	Valley	545	100	85	542.0	99.9	83.8
+r6me37	humans	Villagers and militia	Hunter	Hunter camp	Valley	393	43	226	390.0	42.2	227.6
+r8dp9a	humans	Villagers and militia	Hunter	Village	Valley	510	97	103	508.5	97.1	105.7
+t5w7hm	humans	Villagers and militia	Hunter	Village	Valley	476	96	125	474.9	97.1	121.9
+ub46rh	humans	Villagers and militia	Hunter	Gate outpost	Valley	996	28	770	995.5	27.5	767.0
+ur9y7i	humans	Villagers and militia	Hunter	Village	Valley	510	97	103	508.5	97.1	105.7
+15nmpo	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1149	49	607	1146.2	48.0	605.9
+25gwgr	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1145	49	599	1143.6	48.0	596.2
+65fvrj	humans	Villagers and militia	Lumberjack	Ruined tower	Valley	176	54	558	178.8	52.6	558.7
+7f1mm6	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1196	49	598	1198.5	48.0	597.8
+d5dsk5	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1132	49	606	1131.5	48.0	603.0
+gllpfp	humans	Villagers and militia	Lumberjack	Sawmill	Valley	304	43	275	304.3	43.6	272.2
+gwu9ka	humans	Villagers and militia	Lumberjack	Logging site	Valley	227	81	198	226.1	80.5	201.1
+hwuvn2	humans	Villagers and militia	Lumberjack	Logging site	Valley	265	68	214	262.1	69.2	212.5
+ib6r9v	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1169	49	593	1168.8	48.0	589.6
+kn23of	humans	Villagers and militia	Lumberjack	Urn	Valley	174	71	294	170.9	71.5	293.1
+qcd1hp	humans	Villagers and militia	Lumberjack	Sawmill	Valley	289	42	283	285.9	42.3	283.4
+qun7bx	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1150	49	588	1152.8	49.0	586.4
+sg96xe	humans	Villagers and militia	Lumberjack	Sawmill	Valley	294	42	282	294.1	41.9	279.3
+ubb31s	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1166	49	595	1164.9	48.0	591.8
+w9gj0m	humans	Villagers and militia	Lumberjack	Boar shed	Valley	136	89	239	137.8	88.3	236.4
+x9u2eu	humans	Villagers and militia	Lumberjack	Sawmill	Valley	274	40	309	271.7	40.8	308.1
+xmt4jf	humans	Villagers and militia	Lumberjack	Sawmill	Swamp	1150	49	606	1150.1	48.0	603.3
+1l5ono	humans	Villagers and militia	Militiaman	Gate outpost	Valley	981	27	760	981.1	28.6	756.5
+2q6tze	humans	Villagers and militia	Militiaman	Village	Valley	528	97	93	526.6	97.3	95.9
+7h68op	humans	Villagers and militia	Militiaman	Village	Valley	537	88	158	534.5	87.6	159.1
+81i3tr	humans	Villagers and militia	Militiaman	Militia camp	Valley	413	28	854	413.1	27.8	850.5
+ag0rz3	humans	Villagers and militia	Militiaman	Village	Valley	528	97	93	526.6	97.3	95.9
+aoq7zw	humans	Villagers and militia	Militiaman	Guard tower	Valley	499	66	202	496.8	66.1	200.3
+e0n3hh	humans	Villagers and militia	Militiaman	Guard tower	Valley	600	82	388	597.7	82.2	389.1
+eel4ki	humans	Villagers and militia	Militiaman	Village	Valley	528	97	93	526.6	97.3	95.9
+h6k3a6	humans	Villagers and militia	Militiaman	Gate outpost	Valley	971	27	770	973.8	26.3	768.7
+rq2657	humans	Villagers and militia	Militiaman	Village	Valley	496	97	74	498.6	97.1	72.6
+vl8mlf	humans	Villagers and militia	Militiaman	Village	Valley	528	97	93	526.6	97.3	95.9
+z9jq0z	humans	Villagers and militia	Militiaman	Guard tower	Valley	300	81	166	301.7	80.3	168.1
+0cdfkq	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1196	9	661	1194.5	8.9	658.4
+1cp5po	humans	Villagers and militia	Miner	Open mine	Swamp	1282	41	594	1279.8	41.6	592.3
+7ykk5q	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1182	9	724	1183.6	8.4	721.6
+84k180	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1181	9	669	1181.3	8.9	665.8
+au4vrt	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1178	9	714	1180.2	8.9	711.7
+av3yg6	humans	Villagers and militia	Miner	Open mine	Swamp	1308	40	612	1308.4	40.2	615.1
+c5cjui	humans	Villagers and militia	Miner		Valley	707	46	447	708.8	45.5	449.6
+j703my	humans	Villagers and militia	Miner	Village	Valley	542	95	135	539.4	94.4	136.8
+ls6s4p	humans	Villagers and militia	Miner		Valley	293	13	521	290.1	13.9	522.0
+n4woae	humans	Villagers and militia	Miner	Open mine	Swamp	1309	40	599	1306.3	39.6	600.1
+qr2vh2	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1175	10	695	1176.1	8.9	692.6
+r2edyn	humans	Villagers and militia	Miner	Open mine	Swamp	1290	42	624	1286.8	41.6	624.4
+rfsez9	humans	Villagers and militia	Miner	Open mine	Valley	283	23	452	282.2	23.3	448.8
+s83ukn	humans	Villagers and militia	Miner	Open mine	Swamp	1326	41	617	1324.4	40.8	619.6
+t7c32c	humans	Villagers and militia	Miner		Swamp	1263	40	611	1260.1	40.4	612.2
+ti26f4	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1169	7	708	1166.5	7.0	710.4
+uc9ork	humans	Villagers and militia	Miner	Open mine	Swamp	1275	40	605	1274.2	38.5	607.5
+x7mrgb	humans	Villagers and militia	Miner	Morkanite mine	Swamp	1184	9	684	1183.9	8.9	680.5
+1e024y	humans	Villagers and militia	Peasant	Village	Valley	509	97	102	508.0	97.1	99.2
+4w3ipi	humans	Villagers and militia	Peasant	Ponds	Valley	687	162	70	683.8	161.4	70.4
+5inrnh	humans	Villagers and militia	Peasant	Boar farm	Valley	481	7	451	477.9	6.6	451.7
+5nhxxw	humans	Villagers and militia	Peasant		Valley	383	5	367	380.6	4.8	368.1
+6yn26c	humans	Villagers and militia	Peasant	Farmhouse	Valley	507	15	613	509.6	14.8	613.4
+7c72qk	humans	Villagers and militia	Peasant	Village	Valley	528	97	108	527.1	97.1	105.3
+8t8wat	humans	Villagers and militia	Peasant	Village	Valley	514	97	98	516.9	97.1	99.5
+97g50k	humans	Villagers and militia	Peasant	Village	Valley	514	97	98	516.9	97.1	99.5
+bv3f1v	humans	Villagers and militia	Peasant	Farmhouse	Valley	230	54	299	228.8	54.9	296.0
+ccybgk	humans	Villagers and militia	Peasant		Valley	478	15	343	481.0	14.9	343.1
+frqz6p	humans	Villagers and militia	Peasant	Farmhouse	Valley	239	55	271	239.8	54.3	273.5
+fwg4d6	humans	Villagers and militia	Peasant	Farmhouse	Valley	236	54	298	238.1	53.9	300.5
+gus3j1	humans	Villagers and militia	Peasant	Village	Valley	514	97	98	516.9	97.1	99.5
+hdh3n9	humans	Villagers and militia	Peasant	Boar farm	Valley	440	8	468	439.0	7.3	464.9
+hmtx17	humans	Villagers and militia	Peasant	House on the rock	Valley	540	49	255	537.6	127.0	253.8
+hwqksc	humans	Villagers and militia	Peasant		Valley	470	39	264	466.9	38.2	262.8
+iprkqa	humans	Villagers and militia	Peasant		Valley	489	18	345	488.0	17.5	348.0
+itmk27	humans	Villagers and militia	Peasant	Ponds	Valley	745	160	121	746.9	160.5	118.4
+jj9qsp	humans	Villagers and militia	Peasant	Ruined tower	Valley	175	51	563	175.4	53.8	560.1
+jvajb1	humans	Villagers and militia	Peasant		Valley	427	8	344	429.7	8.3	343.9
+ms9bah	humans	Villagers and militia	Peasant		Valley	415	3	550	416.7	3.5	548.1
+n5apy8	humans	Villagers and militia	Peasant	Boar farm	Valley	442	4	400	439.0	3.7	401.0
+qdrbws	humans	Villagers and militia	Peasant		Valley	399	7	486	400.9	6.0	484.2
+rtrich	humans	Villagers and militia	Peasant		Valley	425	4	546	425.1	4.1	548.5
+rvyheo	humans	Villagers and militia	Peasant	Ponds	Valley	687	162	78	690.1	161.8	78.7
+s218yd	humans	Villagers and militia	Peasant	House	Valley	121	56	602	120.8	56.1	599.1
+ufj0ct	humans	Villagers and militia	Peasant	Lone house	Valley	644	90	343	642.1	90.1	345.1
+wbgj27	humans	Villagers and militia	Peasant	House on the rock	Valley	540	46	259	537.8	127.0	257.1
+x674ta	humans	Villagers and militia	Peasant		Valley	364	2	545	364.5	2.2	548.2
+x67wup	humans	Villagers and militia	Peasant		Valley	708	46	452	705.4	46.0	449.8
+xhr9cp	humans	Villagers and militia	Peasant		Valley	382	3	436	379.2	3.3	437.2
+yk9otv	humans	Villagers and militia	Peasant		Valley	370	3	514	366.9	3.0	514.7
+6gc65m	humans	Villagers and militia	Scout	Guard tower	Valley	594	84	389	592.7	84.7	386.4
+93ys40	humans	Villagers and militia	Scout	Village	Valley	524	97	113	522.9	96.9	115.9
+fk6mbg	humans	Villagers and militia	Scout	Ponds	Valley	689	162	73	688.6	161.7	70.4
+gqj2rt	humans	Villagers and militia	Scout	Ruined house	Valley	752	21	534	748.2	21.8	532.0
+ujs8zu	humans	Villagers and militia	Scout	Militia camp	Swamp	1354	65	541	1352.5	64.1	544.1
+57drmk	humans	Villagers and militia	Veteran Watchman	Militia camp	Swamp	1120	24	713	1117.4	24.1	712.1
+aepbw8	humans	Villagers and militia	Veteran Watchman	Militia camp	Swamp	1371	66	530	1372.2	66.7	527.3
+j7ka84	humans	Villagers and militia	Veteran Watchman	Militia camp	Swamp	1345	67	513	1345.3	66.7	509.6
+m9w3rm	humans	Villagers and militia	Veteran Watchman	Militia camp	Swamp	1361	65	539	1360.6	66.7	536.4
+mzaauu	humans	Villagers and militia	Veteran Watchman	Militia camp	Swamp	1373	66	530	1375.1	66.7	527.4
+27x52o	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1354	67	504	1353.8	66.8	507.5
+er1lff	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1371	66	543	1373.0	66.7	545.2
+lnqwq0	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1354	67	504	1353.8	66.8	507.5
+mexi87	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1354	67	504	1353.8	66.8	507.5
+xhe1zz	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1119	24	712	1118.3	24.1	708.9
+xoy56w	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1354	67	504	1353.8	66.8	507.5
+z7j0vy	humans	Villagers and militia	Watch Ranger	Militia camp	Swamp	1358	67	516	1361.3	66.7	516.2
+3alt7y	humans	Villagers and militia	Watch Sergeant	Militia camp	Swamp	1377	67	528	1375.2	66.7	524.0
+mt1uhl	humans	Villagers and militia	Watch Sergeant	Militia camp	Swamp	1370	65	562	1372.0	67.3	563.7
+p27obp	humans	Villagers and militia	Watch Sergeant	Sawmill	Swamp	1143	49	608	1142.9	48.8	610.5
+qwcp1d	humans	Villagers and militia	Watch Sergeant	Open mine	Swamp	1347	56	578	1349.8	55.9	576.9
+xqdab7	humans	Villagers and militia	Watch Sergeant	Militia camp	Swamp	1361	65	539	1360.6	66.7	536.4
+5jt9yk	humans	Villagers and militia	Watchman	Sawmill	Swamp	1159	49	615	1159.2	48.8	612.1
+8o63qs	humans	Villagers and militia	Watchman	Militia camp	Swamp	1081	29	730	1084.1	28.0	729.1
+ab3nd9	humans	Villagers and militia	Watchman	Militia camp	Swamp	1354	67	519	1350.8	66.7	520.5
+ba9zyu	humans	Villagers and militia	Watchman	Militia camp	Swamp	1371	66	530	1372.2	66.7	527.3
+ifsw7g	humans	Villagers and militia	Watchman	Militia camp	Swamp	1373	66	530	1375.1	66.7	527.4
+iymi59	humans	Villagers and militia	Watchman	Militia camp	Swamp	1329	70	520	1329.7	69.4	522.5
+ni6nqk	humans	Villagers and militia	Watchman	Militia camp	Swamp	1093	26	730	1095.5	25.9	731.2
+teemsf	humans	Villagers and militia	Watchman	Open mine	Swamp	1346	56	576	1347.5	56.3	573.7
+70tera	knights	Knights of the Order	Knight paladin	Knights' tower	Swamp	1031	115	604	1030.3	114.4	601.0
+crsp4r	knights	Knights of the Order	Knight paladin	Hidden cave	Swamp	1520	6	688	1517.4	6.9	687.0
+j4nztg	knights	Knights of the Order	Knight paladin		Valley	808	100	826	804.5	100.1	825.6
+m5tw15	knights	Knights of the Order	Knight paladin	Crypt	Valley	531	52	820	530.9	51.4	822.9
+nt00s2	knights	Knights of the Order	Knight paladin	Knights' tower	Swamp	1036	115	610	1039.3	114.4	609.5
+y344p5	knights	Knights of the Order	Knight paladin	Knights' tower	Swamp	1036	115	619	1035.9	114.4	621.9
+05qt7n	knights	Knights of the Order	Knight recruit	Knights' tower	Swamp	1047	116	628	1045.3	116.3	630.6
+1pnok8	knights	Knights of the Order	Knight recruit	Hidden cave	Swamp	1524	5	687	1521.4	6.2	686.6
+5e8apa	knights	Knights of the Order	Knight recruit	Crypt	Valley	528	53	833	529.3	52.4	830.6
+6bqv83	knights	Knights of the Order	Knight recruit	Crypt	Valley	531	52	825	528.3	51.4	825.8
+6f2ws1	knights	Knights of the Order	Knight recruit		Valley	169	34	913	166.4	34.5	914.9
+b2014m	knights	Knights of the Order	Knight recruit	Knights' tower	Swamp	1034	115	617	1033.8	114.4	613.7
+ceapdr	knights	Knights of the Order	Knight recruit	Knights' tower	Swamp	1042	117	631	1043.8	128.6	632.7
+naddne	knights	Knights of the Order	Knight recruit	Knights' tower	Swamp	1026	115	592	1025.0	114.4	594.4
+yi3k8z	knights	Knights of the Order	Knight recruit	Knights' tower	Swamp	1031	115	603	1033.9	114.4	603.0
+04wefc	bandits	Bandits	Bandit	Bandit stash	Valley	135	34	819	132.0	33.2	820.6
+6ze3l8	bandits	Bandits	Bandit	Ruined house	Valley	207	84	452	210.1	84.7	450.6
+8uqasp	bandits	Bandits	Bandit	Copper mine	Valley	880	35	589	879.3	34.7	586.4
+b43zpz	bandits	Bandits	Bandit	Bandit camp	Valley	121	18	723	122.5	17.5	725.6
+bcijnf	bandits	Bandits	Bandit	Big bandit camp	Valley	666	32	487	668.0	31.9	489.6
+c45o9x	bandits	Bandits	Bandit	Copper mine	Valley	885	35	591	882.8	34.5	593.5
+eei5bx	bandits	Bandits	Bandit		Valley	832	14	658	829.4	13.2	658.1
+febma9	bandits	Bandits	Bandit	Big bandit camp	Valley	660	32	490	660.1	31.8	492.9
+iykocy	bandits	Bandits	Bandit	Watchtower	Valley	838	26	601	838.2	26.8	598.0
+lh0os3	bandits	Bandits	Bandit	Bandit stash	Valley	159	33	812	158.2	33.2	809.6
+og4iiz	bandits	Bandits	Bandit	Bandit camp	Valley	197	11	693	197.0	11.3	689.8
+qepkwk	bandits	Bandits	Bandit	Bandit camp	Valley	121	18	724	119.9	17.9	721.5
+ri43vp	bandits	Bandits	Bandit	Small cave	Valley	729	91	343	727.5	90.8	339.9
+rwoa3r	bandits	Bandits	Bandit	Bandit camp	Valley	118	19	734	121.0	18.8	733.9
+t7ry0d	bandits	Bandits	Bandit		Valley	713	71	766	711.7	71.2	769.2
+tcxv0q	bandits	Bandits	Bandit	Bandit camp	Valley	202	11	696	200.5	11.2	693.7
+ts7npb	bandits	Bandits	Bandit	Bandit camp	Valley	684	130	196	687.5	129.7	196.3
+x46dyl	bandits	Bandits	Bandit		Valley	709	71	763	711.5	71.2	765.4
+yyp9dm	bandits	Bandits	Bandit	Bandit stash	Valley	137	34	819	139.6	33.2	818.2
+zcz1hs	bandits	Bandits	Bandit		Valley	704	105	285	706.7	106.2	285.2
+zsygqv	bandits	Bandits	Bandit	Copper mine	Valley	878	35	574	879.7	34.7	576.5
+sn25ik	bandits	Bandits	Bandit, Poacher	Sawmill	Valley	285	42	287	283.4	42.0	284.4
+tcbgh7	bandits	Bandits	Bandit, Poacher		Valley	399	7	486	398.1	6.3	483.4
+0e2nv4	bandits	Bandits	Flayer	Small cave	Valley	701	101	298	701.1	99.6	300.9
+2hlxoc	bandits	Bandits	Flayer	Hidden cave	Valley	680	61	767	678.5	61.8	769.7
+7nmvl2	bandits	Bandits	Poacher	Watchtower	Valley	826	24	603	824.6	24.9	600.5
+95suva	bandits	Bandits	Poacher	Bandit camp	Valley	118	19	734	119.5	19.1	736.6
+gkica6	bandits	Bandits	Poacher	Bandit camp	Valley	696	131	196	694.0	131.1	198.5
+lctl9l	bandits	Bandits	Poacher	Bandit stash	Valley	157	33	811	154.1	33.0	811.4
+nw0rv0	bandits	Bandits	Poacher	Small cave	Valley	281	9	633	282.0	9.2	635.9
+rpghu8	bandits	Bandits	Poacher	Bandit camp	Valley	685	130	195	683.9	129.7	198.2
+scfm6n	bandits	Bandits	Poacher	Bandit camp	Valley	197	19	756	200.1	18.8	755.8
+sf6pw8	bandits	Bandits	Poacher	Copper mine	Valley	885	35	591	883.6	34.7	588.3
+voyghg	bandits	Bandits	Poacher	Small cave	Valley	730	91	338	728.5	92.3	334.8
+vq3xq9	bandits	Bandits	Poacher	Big bandit camp	Valley	648	32	492	645.4	31.1	490.6
+vry4n3	bandits	Bandits	Poacher	Bandit camp	Valley	124	17	727	122.9	17.4	729.8
+bg2e69	bandits	Bandits	Swamp Bruiser		Swamp	1673	12	659	1672.9	11.7	656.0
+hc6n9v	bandits	Bandits	Swamp Bruiser	Bandit camp	Swamp	1348	6	754	1346.8	6.5	751.5
+qxx279	bandits	Bandits	Swamp Bruiser	Bandit camp	Swamp	1254	9	815	1255.3	8.9	811.9
+rg2ek0	bandits	Bandits	Swamp Bruiser	Bandit camp	Swamp	1359	6	767	1359.1	5.5	764.3
+rsfqg2	bandits	Bandits	Swamp Bruiser	Bandit camp	Swamp	1359	6	767	1359.1	5.5	764.3
+46q8i6	bandits	Bandits	Swamp Cutthroat	Bandit tower	Swamp	1108	7	813	1108.3	7.1	816.4
+475uv8	bandits	Bandits	Swamp Cutthroat	Bandit camp	Swamp	1364	6	767	1364.1	5.5	763.9
+69v3kq	bandits	Bandits	Swamp Cutthroat	Bandit camp	Swamp	1238	7	813	1239.1	6.2	815.4
+cltiuw	bandits	Bandits	Swamp Cutthroat	Shaman's cave	Swamp	1661	12	674	1658.5	11.8	673.1
+gf1oj7	bandits	Bandits	Swamp Cutthroat	Bandit tower	Swamp	1282	6	936	1281.5	5.7	932.6
+l3fjud	bandits	Bandits	Swamp Cutthroat	Bandit camp	Swamp	1352	6	751	1350.7	6.3	748.7
+qcaf52	bandits	Bandits	Swamp Cutthroat	Bandit camp	Swamp	1349	6	751	1346.2	6.5	752.5
+wuyjsa	bandits	Bandits	Swamp Cutthroat	Bandit camp	Swamp	1359	6	767	1359.1	5.5	764.3
+yz8dl0	bandits	Bandits	Swamp Cutthroat	Troll arena	Swamp	1721	5	800	1723.2	4.7	797.6
+05anhc	bandits	Bandits	Swamp Marksman	Bandit tower	Swamp	1277	6	943	1274.3	5.7	943.7
+8qsl9s	bandits	Bandits	Swamp Marksman	Bandit tower	Swamp	1120	6	822	1119.6	5.7	819.3
+8wxhkv	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1260	7	802	1257.6	7.1	803.2
+cw9eki	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1364	6	767	1364.1	5.5	763.9
+htrw2n	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1364	6	767	1364.1	5.5	763.9
+ic5m8v	bandits	Bandits	Swamp Marksman	Bandit ambush	Swamp	1650	5	748	1647.5	4.6	749.7
+j1xx5b	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1360	6	772	1359.5	5.5	769.1
+k67hvp	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1359	6	761	1357.5	6.5	757.8
+mte5yy	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1366	6	776	1365.5	6.5	772.9
+onntzl	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1360	6	772	1359.5	5.5	769.1
+qajcm0	bandits	Bandits	Swamp Marksman	Bandit tower	Swamp	1274	12	949	1275.2	33.3	945.9
+vhovah	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1238	7	811	1235.6	6.2	809.2
+ym9t6m	bandits	Bandits	Swamp Marksman	Bandit camp	Swamp	1176	6	878	1175.5	6.0	874.8
+1fyu27	bandits	Bandits	Swamp Raider	Bandit tower	Swamp	1259	5	901	1261.9	5.7	899.8
+2tn8ap	bandits	Bandits	Swamp Raider	Bandit ambush	Swamp	1641	5	741	1642.2	5.4	738.1
+5gk0nr	bandits	Bandits	Swamp Raider	Bandit tower	Swamp	1272	6	931	1269.0	5.7	932.0
+9xc513	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1364	6	767	1364.1	5.5	763.9
+b2dv6y	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1359	6	767	1359.1	5.5	764.3
+bhiik2	bandits	Bandits	Swamp Raider	Ambush	Swamp	1239	5	899	1239.3	4.8	895.9
+c3n6a4	bandits	Bandits	Swamp Raider	Bandit tower	Swamp	1109	6	822	1109.0	6.5	819.2
+g6osyl	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1365	6	751	1365.4	6.3	748.3
+lhhuxc	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1359	6	767	1359.1	5.5	764.3
+ppxbzb	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1364	6	767	1364.1	5.5	763.9
+u2sl0l	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1368	6	770	1369.0	6.1	772.7
+yrg2b0	bandits	Bandits	Swamp Raider	Bandit tower	Swamp	1114	6	823	1111.4	6.7	820.9
+z9kuv3	bandits	Bandits	Swamp Raider	Bandit camp	Swamp	1366	6	775	1364.6	6.1	777.9
+18zcj2	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1351	6	756	1350.6	6.5	752.8
+2by4wa	bandits	Bandits	Swamp Sorcerer	Troll pyramid	Swamp	1676	12	658	1678.3	11.7	659.6
+50lqba	bandits	Bandits	Swamp Sorcerer	Hidden cave	Swamp	1317	7	852	1317.2	7.1	855.2
+5rofbn	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1360	6	772	1359.5	5.5	769.1
+7o82nq	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1360	6	772	1359.5	5.5	769.1
+8d9bph	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1251	9	808	1250.8	8.7	811.0
+9hu9lp	bandits	Bandits	Swamp Sorcerer	Fishing camp	Swamp	1194	5	797	1193.7	5.8	800.4
+ike0yz	bandits	Bandits	Swamp Sorcerer	Labyrinth	Swamp	1414	13	699	1416.5	12.8	698.9
+o2u2re	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1358	6	756	1355.5	6.7	755.0
+qpo3y6	bandits	Bandits	Swamp Sorcerer	Shaman's cave	Swamp	1665	12	668	1662.0	11.8	668.4
+wsg6ok	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1360	6	772	1359.5	5.5	769.1
+x7esvu	bandits	Bandits	Swamp Sorcerer	Bandit camp	Swamp	1180	6	878	1179.7	6.0	874.9
+9f4uo4	bandits	Bandits	Villain	Small cave	Valley	705	101	299	706.5	99.6	302.0
+k1r2g2	bandits	Bandits	Villain	Hidden cave	Valley	672	60	770	671.9	60.6	773.3
+m00wso	bandits	Bandits	Villain	Small cave	Valley	714	99	305	711.5	99.6	303.8
+dgyxl0	bandits	Bandits	Villain, Bandit, Flayer	Village	Valley	519	96	124	521.9	96.7	124.4
+4ngy4g	undead	Skeletons	Cursed Archer	Troll tower	Swamp	1790	6	595	1787.6	5.9	596.9
+osg8kp	undead	Skeletons	Cursed Archer	Graveyard	Swamp	1077	46	668	1074.0	46.2	669.5
+s79afe	undead	Skeletons	Cursed Archer	Crypt	Swamp	1972	5	764	1969.0	5.1	764.1
+6dtuyp	undead	Skeletons	Cursed Swordsman	Troll tower	Swamp	1826	7	576	1823.2	9.4	577.3
+9880wg	undead	Skeletons	Cursed Swordsman	Crypt	Swamp	1943	7	765	1940.6	6.2	762.4
+fpnmur	undead	Skeletons	Cursed Swordsman	Troll tower	Swamp	1877	7	621	1880.3	6.8	620.7
+h5esi9	undead	Skeletons	Cursed Swordsman	Crypt	Swamp	1970	6	784	1967.7	6.6	782.4
+hwgo5o	undead	Skeletons	Cursed Swordsman	Graveyard	Swamp	1076	46	675	1079.0	46.2	673.7
+k9r00q	undead	Skeletons	Cursed Swordsman	Crypt	Swamp	1969	5	752	1965.8	5.1	751.0
+15oskw	undead	Skeletons	Risen skeleton	Lone grave	Valley	771	90	737	768.6	90.7	734.7
+27qu53	undead	Skeletons	Risen skeleton	Stone circle	Valley	313	32	790	315.4	32.3	792.0
+7bsn5d	undead	Skeletons	Risen skeleton	Lone grave	Valley	555	38	714	553.8	37.2	711.1
+8fs9ss	undead	Skeletons	Risen skeleton		Valley	222	35	877	219.6	34.4	875.4
+9uam35	undead	Skeletons	Risen skeleton	Ruins with skeletons	Valley	463	25	694	465.9	24.9	692.7
+a5k1xu	undead	Skeletons	Risen skeleton	Lone grave	Valley	764	80	779	762.4	79.9	775.8
+a62r88	undead	Skeletons	Risen skeleton		Valley	241	35	867	240.7	35.5	869.9
+duyamm	undead	Skeletons	Risen skeleton	Graveyard	Valley	215	34	845	216.9	33.9	847.5
+fn4cxr	undead	Skeletons	Risen skeleton	Field of bones	Valley	108	105	334	108.0	104.8	330.9
+h862ym	undead	Skeletons	Risen skeleton	Crypt	Valley	526	49	816	527.6	51.3	818.5
+i81kiv	undead	Skeletons	Risen skeleton	Lone grave	Valley	736	76	750	733.4	75.3	751.1
+il1i4t	undead	Skeletons	Risen skeleton	Graveyard	Valley	241	33	799	242.3	32.1	796.3
+lsmawb	undead	Skeletons	Risen skeleton	Graveyard	Valley	216	33	835	214.8	33.7	837.8
+myqna4	undead	Skeletons	Risen skeleton	Ruins with skeletons	Valley	464	25	697	463.6	25.1	699.7
+oj39oi	undead	Skeletons	Risen skeleton	Graveyard	Valley	237	34	845	235.1	34.0	842.9
+pic1jo	undead	Skeletons	Risen skeleton	Small cave	Valley	140	73	538	143.1	72.6	537.7
+w40fda	undead	Skeletons	Risen skeleton	Stone circle	Valley	314	32	793	314.7	32.3	795.3
+wg3yud	undead	Skeletons	Risen skeleton	Graveyard	Valley	223	33	866	219.8	33.4	865.8
+1v5uk2	spiders	Spiders	Blight-creeper	Spider queen's lair	Swamp	1746	52	439	1748.9	51.9	439.3
+4awwhx	spiders	Spiders	Blight-creeper	Spider queen's lair	Swamp	1743	52	444	1740.1	51.9	442.8
+6ww260	spiders	Spiders	Blight-creeper		Swamp	1824	8	552	1821.6	6.2	549.6
+73x7uo	spiders	Spiders	Blight-creeper	Spider cave	Swamp	1034	9	923	1033.6	9.1	920.3
+htxpjd	spiders	Spiders	Blight-creeper		Swamp	1820	31	482	1821.7	31.0	480.0
+iqxsxw	spiders	Spiders	Blight-creeper	Spider ambush	Swamp	1306	31	660	1307.2	32.3	657.1
+lo0w5d	spiders	Spiders	Blight-creeper		Swamp	1818	36	471	1820.4	35.7	469.8
+pmgbip	spiders	Spiders	Blight-creeper		Swamp	1742	37	571	1739.8	36.8	568.6
+qmcxpo	spiders	Spiders	Blight-creeper	Spider queen's lair	Swamp	1756	52	453	1752.8	51.6	454.1
+sp0mqg	spiders	Spiders	Blight-creeper	Spider nest	Swamp	1484	4	811	1481.7	4.2	808.5
+vszner	spiders	Spiders	Blight-creeper	Spider queen's lair	Swamp	1764	52	455	1765.7	51.6	453.1
+2gvqnr	spiders	Spiders	Hollow-weaver		Swamp	1735	38	563	1737.6	37.3	564.5
+6hntt4	spiders	Spiders	Hollow-weaver		Swamp	1092	9	908	1088.8	9.1	909.0
+743fpv	spiders	Spiders	Hollow-weaver	Shaman's cave	Swamp	1573	6	659	1572.7	6.2	656.9
+7fuvsc	spiders	Spiders	Hollow-weaver	Spider cave	Swamp	1050	9	920	1049.5	9.2	916.5
+8hi5rn	spiders	Spiders	Hollow-weaver	Spider queen's lair	Swamp	1809	42	455	1808.3	41.8	458.0
+9tmmii	spiders	Spiders	Hollow-weaver	Spider ambush	Swamp	1356	37	672	1358.4	36.0	674.4
+bp2en4	spiders	Spiders	Hollow-weaver	Spider queen's lair	Swamp	1757	52	467	1759.5	51.6	464.6
+c43s55	spiders	Spiders	Hollow-weaver	Spider queen's lair	Swamp	1779	51	450	1781.9	50.2	450.0
+cgo0yk	spiders	Spiders	Hollow-weaver	Dead fisherman	Swamp	1162	6	937	1161.7	6.2	940.2
+gg6urz	spiders	Spiders	Hollow-weaver	Bandit camp	Swamp	1136	4	903	1139.4	4.8	899.4
+hj1jbo	spiders	Spiders	Hollow-weaver	Troll tower	Swamp	1790	8	588	1790.9	6.2	591.2
+i1l35y	spiders	Spiders	Hollow-weaver	Spider cave	Swamp	1078	9	923	1076.2	9.1	925.0
+jhzw02	spiders	Spiders	Hollow-weaver		Swamp	1832	45	443	1829.4	44.5	443.4
+k7m9yh	spiders	Spiders	Hollow-weaver	Spider nest	Swamp	1470	6	785	1471.5	5.6	782.0
+oymxd9	spiders	Spiders	Hollow-weaver		Swamp	1817	35	473	1816.9	34.0	475.7
+pj9sni	spiders	Spiders	Hollow-weaver	Spider cave	Swamp	1059	9	939	1056.6	9.1	937.9
+t4m2c3	spiders	Spiders	Hollow-weaver	Dead fisherman	Swamp	1100	8	961	1100.4	6.2	958.3
+vkphtj	spiders	Spiders	Hollow-weaver	Shaman's cave	Swamp	1626	6	654	1625.7	6.2	651.3
+y4s4lm	spiders	Spiders	Hollow-weaver	Labyrinth	Swamp	1415	23	664	1412.7	22.7	666.2
+yhhg0v	spiders	Spiders	Hollow-weaver	Spider queen's lair	Swamp	1790	49	455	1791.9	47.3	452.7
+bhporg	spiders	Spiders	Hollow-weaver, Blight-creeper	Spider nest	Swamp	1486	5	821	1486.5	3.5	818.4
+zdom9b	spiders	Spiders	Hollow-weaver, Blight-creeper		Swamp	1408	5	915	1403.6	3.5	917.0
+t1tfn8	trolls	Trolls	Enraged Berserker Spirit, Enraged Spirit	Troll pyramid	Swamp	1734	5	727	1735.8	4.8	728.7
+a5fr32	trolls	Trolls	Tamed Mirelurker	Troll camp	Swamp	1869	5	794	1867.1	4.8	789.3
+giq3p5	trolls	Trolls	Tamed Mirelurker	Troll camp	Swamp	1877	4	802	1881.6	4.8	802.4
+00c7uf	trolls	Trolls	Troll	Troll camp	Swamp	1922	8	478	1922.4	8.5	474.6
+1ww529	trolls	Trolls	Troll	Troll camp	Swamp	1774	10	667	1772.2	10.1	664.5
+2aa4wi	trolls	Trolls	Troll	Shaman's cave	Swamp	1563	5	699	1562.6	5.5	696.2
+2b86if	trolls	Trolls	Troll	Troll camp	Swamp	1846	5	760	1846.3	7.6	755.8
+5jtpgf	trolls	Trolls	Troll	Troll tower	Swamp	1521	4	924	1521.0	27.1	920.5
+7tv6fd	trolls	Trolls	Troll	Troll camp	Valley	724	81	858	722.5	159.0	855.3
+9hsdu3	trolls	Trolls	Troll	Troll camp	Swamp	1829	7	808	1831.8	5.9	807.6
+cv077m	trolls	Trolls	Troll	Troll tower	Swamp	1528	5	903	1525.8	4.9	900.8
+ibw12k	trolls	Trolls	Troll	Troll fishing camp	Swamp	1922	5	630	1922.2	5.0	633.5
+imrduy	trolls	Trolls	Troll	Sky totem	Swamp	1528	21	820	1526.8	20.4	817.0
+l9f2zx	trolls	Trolls	Troll	Troll tower	Swamp	1841	10	615	1839.1	11.3	617.2
+lf7okj	trolls	Trolls	Troll	Troll camp	Swamp	1836	5	781	1834.7	6.7	783.9
+n8ai7g	trolls	Trolls	Troll	Troll camp	Swamp	1617	7	861	1620.0	5.9	862.0
+pdelpg	trolls	Trolls	Troll	Troll camp	Swamp	1624	6	866	1624.0	5.9	862.8
+rgdn7y	trolls	Trolls	Troll	Troll camp	Swamp	1838	5	748	1840.5	26.8	748.0
+ttig6a	trolls	Trolls	Troll	Troll camp	Swamp	1838	5	748	1840.5	5.6	748.0
+tyb1l8	trolls	Trolls	Troll	Troll camp	Swamp	1838	5	748	1840.5	5.6	748.0
+uggpb3	trolls	Trolls	Troll	Troll camp	Swamp	1846	5	771	1844.5	4.8	768.6
+ugy0qa	trolls	Trolls	Troll	Troll camp	Swamp	1932	8	472	1931.5	8.5	468.7
+wcy8dv	trolls	Trolls	Troll	Troll arena	Swamp	1706	6	829	1707.2	6.2	826.4
+wo4zas	trolls	Trolls	Troll	Troll camp	Swamp	1838	5	748	1840.5	5.6	748.0
+0eda03	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1814	5	749	1814.5	5.1	752.1
+cxt9ip	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1843	4	793	1847.0	6.9	791.6
+fom874	trolls	Trolls	Troll Berserker	Troll arena	Swamp	1720	5	801	1717.3	4.7	800.9
+is1e4w	trolls	Trolls	Troll Berserker		Swamp	1547	5	693	1546.9	28.1	690.3
+lkcshn	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1827	6	754	1829.4	4.8	755.3
+nriee9	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1838	5	748	1840.5	5.6	748.0
+qld33b	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1851	5	769	1853.4	7.1	766.6
+t1y8cr	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1851	5	769	1853.4	7.1	766.6
+t3vupy	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1625	6	868	1627.2	5.9	865.6
+vwkr2w	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1761	13	647	1763.6	12.0	648.9
+wimf57	trolls	Trolls	Troll Berserker	Troll camp	Swamp	1821	6	731	1819.6	5.9	733.8
+zpio6s	trolls	Trolls	Troll Berserker	Troll tower	Swamp	1838	10	622	1839.0	9.8	624.4
+1p6n4e	trolls	Trolls	Troll Chieftain	Troll camp	Swamp	1773	10	657	1770.2	11.2	656.8
+a17efa	trolls	Trolls	Troll Chieftain	Troll camp	Swamp	1851	5	770	1853.6	7.1	766.8
+p8envu	trolls	Trolls	Troll Chieftain	Troll camp	Swamp	1851	5	769	1853.4	7.1	766.6
+ziuopt	trolls	Trolls	Troll Chieftain	Troll fishing camp	Swamp	1928	5	646	1927.8	4.5	642.6
+5t5a8f	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1834	5	778	1832.8	6.9	775.3
+680nw4	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1832	7	806	1835.1	6.3	805.6
+den1o4	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1822	5	750	1820.2	7.3	753.8
+e78f4n	trolls	Trolls	Troll Hunter	Troll tower	Swamp	1518	5	909	1516.9	4.5	911.5
+l43yql	trolls	Trolls	Troll Hunter		Swamp	1551	5	696	1551.3	5.0	692.5
+lxg1ie	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1775	10	658	1777.4	10.1	657.2
+mmnlrt	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1625	5	856	1623.5	5.9	858.3
+q7kdli	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1834	5	778	1832.8	6.9	775.3
+rbovei	trolls	Trolls	Troll Hunter	Sky totem	Swamp	1529	21	809	1527.9	20.4	811.6
+rflfcr	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1818	6	776	1820.7	5.1	777.2
+spebws	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1834	5	778	1832.8	6.9	775.3
+tvnitb	trolls	Trolls	Troll Hunter	Troll camp	Swamp	1628	6	875	1627.5	5.0	877.8
+889a5d	trolls	Trolls	Troll Scout	Troll camp	Swamp	1845	7	750	1841.8	16.1	751.2
+ultu1p	trolls	Trolls	Troll Scout	Troll camp	Swamp	1852	6	759	1855.1	6.7	757.5
+1797yp	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1834	5	778	1832.8	6.9	775.3
+2ek8je	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1847	5	786	1846.8	6.8	789.5
+4i0vye	trolls	Trolls	Troll Witch Doctor	Troll arena	Swamp	1743	6	818	1741.1	7.7	815.8
+d7v68n	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1819	6	778	1818.9	5.1	774.6
+g5bdbo	trolls	Trolls	Troll Witch Doctor	Fishing camp	Swamp	1190	5	796	1188.0	5.8	798.0
+je4nc7	trolls	Trolls	Troll Witch Doctor	Shaman's cave	Swamp	1610	5	688	1612.5	5.1	690.6
+l5ycbg	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1834	5	778	1832.8	6.9	775.3
+lhuvnn	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1928	8	478	1927.9	8.5	474.6
+tnge6j	trolls	Trolls	Troll Witch Doctor	Big fish	Swamp	1800	6	904	1802.6	5.9	903.5
+ut1gct	trolls	Trolls	Troll Witch Doctor		Swamp	1566	5	711	1563.2	5.5	710.7
+v9m0zx	trolls	Trolls	Troll Witch Doctor	Troll camp	Swamp	1825	6	731	1823.1	5.9	733.5
+vp095o	trolls	Trolls	Troll Witch Doctor	Troll tower	Swamp	1834	12	614	1835.8	34.3	616.4
+ygh8vz	trolls	Trolls	Troll Witch Doctor	Shaman's cave	Swamp	1565	5	704	1565.2	5.0	701.1
+zzldue	trolls	Trolls	Troll Witch Doctor	Troll fishing camp	Swamp	1928	5	652	1928.4	4.5	648.8
+67p5jz	animals	Animals	Boar	Ruined house	Valley	182	88	432	179.5	88.8	429.7
+d6fhqk	animals	Animals	Boar	Boar farm	Valley	481	7	443	481.3	6.6	440.1
+fs7m2b	animals	Animals	Boar	Boar shed	Valley	126	81	278	123.5	81.1	276.6
+iw7706	animals	Animals	Boar	Boar farm	Valley	482	7	448	481.9	6.6	444.6
+l4tp7x	animals	Animals	Boar	Hunter camp	Valley	182	83	476	179.3	82.8	474.7
+mlm80q	animals	Animals	Boar	Small cave	Valley	160	64	542	158.4	65.0	539.4
+1cr1i0	animals	Animals	Boar, Deer	Farmhouse	Valley	228	54	306	227.8	64.2	302.8
+5t5iya	animals	Animals	Boar, Deer	Ruins with skeletons	Valley	467	18	647	466.9	17.7	650.3
+6em8cy	animals	Animals	Boar, Deer	Logging site	Valley	228	83	186	231.4	82.8	186.0
+6ntojv	animals	Animals	Boar, Deer	Stone tower	Valley	240	66	372	239.3	64.9	368.9
+6oomf5	animals	Animals	Boar, Deer		Valley	502	4	521	505.4	3.2	520.7
+7ousyi	animals	Animals	Boar, Deer	Hidden cave	Valley	152	88	349	155.4	86.7	348.9
+a6bb3z	animals	Animals	Boar, Deer	Bandit camp	Valley	178	17	740	175.9	16.7	737.8
+dfuhbu	animals	Animals	Boar, Deer	House on the rock	Valley	498	50	258	497.1	48.0	260.5
+e9nyek	animals	Animals	Boar, Deer	Logging site	Valley	248	59	241	246.4	60.7	238.1
+flmdnd	animals	Animals	Boar, Deer		Valley	147	38	917	144.0	39.8	915.7
+g3ls4y	animals	Animals	Boar, Deer	Big bandit camp	Valley	681	24	499	679.0	25.2	496.6
+g857u1	animals	Animals	Boar, Deer		Valley	590	24	520	587.0	21.8	521.6
+i7usng	animals	Animals	Boar, Deer	Urn	Valley	162	77	262	164.5	77.0	260.2
+mbvjp5	animals	Animals	Boar, Deer	Hidden cave	Valley	598	6	613	596.1	6.2	615.6
+s4avii	animals	Animals	Boar, Deer	Stone circle	Valley	338	29	786	340.4	28.3	785.0
+u9xsxb	animals	Animals	Boar, Deer	Hunter camp	Valley	319	46	227	319.0	47.2	224.1
+vwyxoo	animals	Animals	Boar, Deer	Small cave	Valley	300	9	597	302.3	8.1	595.6
+wtagm8	animals	Animals	Boar, Deer	Open mine	Valley	295	23	448	292.0	22.1	449.5
+xhx6qd	animals	Animals	Boar, Deer		Valley	784	16	631	782.4	15.8	628.7
+003dg6	animals	Animals	Deer	House	Valley	153	45	614	150.2	45.9	613.9
+bg3ls0	animals	Animals	Deer	Starting point	Valley	104	89	457	106.3	88.1	458.6
+fst91n	animals	Animals	Deer		Valley	649	118	256	646.7	117.0	257.1
+mq7vzv	animals	Animals	Deer	Bandit camp	Valley	85	23	773	87.7	21.6	773.2
+vtrm84	animals	Animals	Deer	Hunter camp	Valley	176	79	492	174.7	78.0	494.4
+2ypoin	animals	Animals	Deer, Boar	Lone grave	Valley	554	38	714	551.5	36.9	713.0
+cs7181	animals	Animals	Deer, Boar	Hidden cave	Valley	612	50	750	610.2	51.0	752.5
+fsncgd	animals	Animals	Deer, Boar		Valley	752	143	206	750.4	143.3	208.7
+m00xrm	animals	Animals	Deer, Boar	Ruined tower	Valley	205	31	614	207.7	31.4	613.0
+ratvjt	animals	Animals	Deer, Boar		Valley	727	84	804	728.7	84.2	801.6
+zg3h1k	animals	Animals	Deer, Boar		Valley	700	62	398	699.7	63.2	395.4
+ztua9k	animals	Animals	Deer, Boar		Valley	713	119	250	716.4	119.2	249.9
+4xhglt	animals	Animals	Dragonfly	Bandit tower	Swamp	1073	8	832	1075.7	7.9	830.4
+8dcg5m	animals	Animals	Dragonfly	Ambush	Swamp	1238	5	901	1235.1	5.3	900.1
+bm7u70	animals	Animals	Dragonfly	Troll camp	Swamp	1610	6	826	1607.8	6.2	828.1
+cacc3i	animals	Animals	Dragonfly		Swamp	1895	5	710	1892.5	6.2	709.3
+ykac3e	animals	Animals	Dragonfly	Troll tower	Swamp	1475	4	884	1477.6	6.2	883.6
+b82pec	animals	Animals	Mirelurker	Bandit tower	Swamp	1142	5	845	1142.2	8.2	841.6
+cnvgt6	animals	Animals	Mirelurker	Troll camp	Swamp	1610	6	826	1607.8	6.2	828.1
+mslis2	animals	Animals	Mirelurker	Ambush	Swamp	1238	5	901	1235.1	5.3	900.1
+t73zg6	animals	Animals	Mirelurker	Troll tower	Swamp	1475	4	884	1477.6	6.2	883.6
+xii3xu	animals	Animals	Mirelurker	Hidden cave	Swamp	1342	6	841	1341.3	5.8	843.9
+1pg8ul	animals	Animals	Mirelurker, Dragonfly	Big fish	Swamp	1755	8	875	1756.3	6.2	877.8
+43lfow	animals	Animals	Mirelurker, Dragonfly	Hidden cave	Swamp	1359	5	906	1361.6	7.7	904.2
+67glva	animals	Animals	Mirelurker, Dragonfly	Hidden cave	Swamp	1364	6	822	1364.5	6.2	818.5
+73d87y	animals	Animals	Mirelurker, Dragonfly	Bandit camp	Swamp	1152	5	911	1153.8	8.2	905.3
+8g6kxa	animals	Animals	Mirelurker, Dragonfly	Bandit camp	Swamp	1310	5	796	1312.4	4.9	798.0
+8x2ki7	animals	Animals	Mirelurker, Dragonfly	Fishing camp	Swamp	1187	6	800	1188.6	6.2	802.4
+bfwypp	animals	Animals	Mirelurker, Dragonfly		Swamp	1404	7	811	1407.5	6.2	810.8
+fyqsoy	animals	Animals	Mirelurker, Dragonfly		Swamp	1461	5	889	1458.6	3.6	887.5
+fz2lhx	animals	Animals	Mirelurker, Dragonfly	Militia camp	Swamp	1107	15	775	1110.0	15.7	774.2
+hohaq6	animals	Animals	Mirelurker, Dragonfly		Swamp	1906	6	569	1906.3	6.2	566.5
+iaha1x	animals	Animals	Mirelurker, Dragonfly	Hidden cave	Swamp	1301	6	855	1304.1	6.9	856.2
+lizqyn	animals	Animals	Mirelurker, Dragonfly	Shaman's cave	Swamp	1644	5	718	1641.5	6.2	718.9
+v7cjdr	animals	Animals	Mirelurker, Dragonfly		Swamp	1275	6	744	1273.6	6.1	741.6
+v7mofj	animals	Animals	Mirelurker, Dragonfly	Big fish	Swamp	1850	5	880	1853.1	6.2	881.6
+vv3tqr	animals	Animals	Mirelurker, Dragonfly	Troll sacrifice site	Swamp	1695	5	878	1692.1	6.2	879.0
+wgw0o1	animals	Animals	Mirelurker, Dragonfly	Hidden cave	Swamp	1343	9	908	1343.3	9.2	911.1

@@ -1,0 +1,42 @@
+GamesOMG Teleport for Lord of Undead: third-party software in the Easy install zip
+
+The Easy install zip carries the BepInEx 6 mod loader (IL2CPP build) exactly as its authors publish it, every file of its
+zip, unmodified, from:
+  BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.793+dbc82f0.zip
+  https://builds.bepinex.dev/projects/bepinex_be (build 793, commit dbc82f05b8ea34833de5b6a723eb60dd8398e0b1)
+  SHA-256 5b63d7d0e92a2448ccd13b738ff95ff1cc1026c6d718555d4df8e6c824953ac4
+
+Component, the files it covers, and where its source and licence are. Each licence's own text is in this folder.
+
+BepInEx 6.0.0-be.793 (the loader)
+  BepInEx/core/BepInEx.*.dll and their .xml files, changelog.txt
+  BepInEx-LICENSE.txt. Source: https://github.com/BepInEx/BepInEx (commit dbc82f0)
+
+UnityDoorstop (starts BepInEx with the game)
+  winhttp.dll, doorstop_config.ini, .doorstop_version
+  UnityDoorstop-LICENSE.txt. Source: https://github.com/NeighTools/UnityDoorstop
+
+Il2CppInterop (lets a mod talk to an IL2CPP game)
+  BepInEx/core/Il2CppInterop.*.dll
+  Il2CppInterop-LICENSE.txt. Source: https://github.com/BepInEx/Il2CppInterop
+
+Cpp2IL and LibCpp2IL (read the game's code layout on the first start)
+  BepInEx/core/Cpp2IL.Core.dll, LibCpp2IL.dll, Disarm.dll, WasmDisassembler.dll, StableNameDotNet.dll
+  Cpp2IL-LICENSE.txt. Source: https://github.com/SamboyCoding/Cpp2IL
+
+HarmonyX, MonoMod (method patching)
+  BepInEx/core/0Harmony.dll, MonoMod.*.dll
+  HarmonyX-LICENSE.txt, MonoMod-LICENSE.txt. Source: https://github.com/BepInEx/HarmonyX, https://github.com/MonoMod/MonoMod
+
+Dobby (native hooks)
+  BepInEx/core/dobby.dll
+  Dobby-LICENSE.txt. Source: https://github.com/jmpews/Dobby
+
+The .NET 6 runtime BepInEx runs on
+  dotnet/
+  dotnet-runtime-LICENSE.txt. Source: https://github.com/dotnet/runtime
+
+Also in BepInEx/core: AsmResolver, AssetRipper.CIL and AssetRipper.Primitives, Iced, Gee.External.Capstone, Mono.Cecil,
+SemanticVersioning, each under its own licence as published by its authors (see each project's repository).
+
+The mod itself (BepInEx/plugins/GamesOMGTeleport/) is MIT licensed: LICENSE.txt beside the DLL.

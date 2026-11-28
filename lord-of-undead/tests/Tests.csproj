@@ -1,0 +1,16 @@
+<!-- The checks that run without the game: the /tp parser, the place list and its search, and the landing rule over every
+     place (never on the pin, always near it). Run: dotnet run, project tests. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../src/TpLine.cs" />
+    <Compile Include="../src/Places.cs" />
+  </ItemGroup>
+</Project>

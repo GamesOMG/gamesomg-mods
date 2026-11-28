@@ -1,0 +1,9 @@
+# references and package output are local; never ship game DLLs or generated interop.
+.deps/
+bin/
+obj/
+tests/bin/
+tests/obj/
+tools/interop-gen/bin/
+tools/interop-gen/obj/
+release-out/
