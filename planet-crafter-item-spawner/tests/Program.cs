@@ -351,6 +351,12 @@ Check(Search.Filter(mixed, "cheminee").First().Id == "BlueprintFireplace" && Sea
 Check(Search.Filter(mixed, "blueprint").Select(e => e.Id).OrderBy(x => x).SequenceEqual(new[] { "BlueprintFireplace", "BlueprintLightBoxMedium" }), "\"blueprint\" finds the chips by their ids, nothing else");
 Check(Decor.Chips(mixed).Select(e => e.Id).SequenceEqual(new[] { "BlueprintFireplace", "BlueprintLightBoxMedium" }) && Decor.Chips(null).Count == 0, "the Blueprints tab: chips only");
 Check(!Decor.Only(mixed).Any(e => e.Chip), "a chip is not decoration (no one of each for chips)");
+// one of each covers furniture as it covers the crate finds (Catalog marks a piece Decoration, Placeable and Building)
+var lamp = ItemEntry.Make("LavaLamp1", "Lampe à lave", "Lava lamp", 7);
+lamp.Decoration = lamp.Placeable = lamp.Building = true;
+var decoPlus = new List<ItemEntry>(deco) { lamp };
+Check(Decor.Only(decoPlus).Contains(lamp) && Decor.Only(decoPlus).Count(e => e.Building) == 1, "the Decoration tab holds furniture beside the crate finds");
+Check(Decor.Missing(decoPlus, new HashSet<string>()).Contains(lamp) && !Decor.Missing(decoPlus, new HashSet<string> { "LavaLamp1" }).Contains(lamp), "one of each adds a piece of furniture the world lacks, and skips one it has");
 var nameless = Decor.ChipEntry("BlueprintSomething", "Something", "Something", null, 0);
 Check(nameless.Unnamed && nameless.Chip && nameless.Name == "Blueprint Something", "a chip whose target has no name either reads as its own id, out of browsing");
 Check(Decor.ChipEntry("BlueprintSomething", "Something", "Un truc", null, 0) is var shown && !shown.Unnamed && shown.Name == "Un truc", "a target named only in the game's language is still a name");
