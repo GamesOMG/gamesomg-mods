@@ -1,17 +1,24 @@
 # Changelog
 
-## 0.3.0 (not released yet: waits on its in-game sitting)
+## 0.3.0 (2026-11-28)
 
+- **Fixed: effigies and posters were missing.** An item spawner that couldn't spawn them: the game files effigies and posters
+  as buildings, not items, so 0.2.x's list never had them (a player on Nexus found the gap). They're in now. They go into your
+  backpack and you put them down the same way as one you found: right-click it in your inventory.
 - **Decoration tab: effigies, posters and spacesuits.** All, Decoration and Recent (LB/RB step through them). Decoration holds
   every effigy, poster and spacesuit skin the game hands out in crates, under the game's own names, searchable like All.
-- **Effigies and posters are new to the list.** The game files them as buildings, not items, so 0.2.x never had them. They go
-  into your backpack and you put them down the same way as one you found: right-click it in your inventory.
 - **One of each.** The button above the Decoration grid (Y on a controller) adds one of every decoration shown that your world
   doesn't have yet: not on you, not in a container, not built. Search first to narrow it ("poster", "effigy"). Same rules as
   Add: what fits goes in, the rest isn't made, nothing is dropped. Put some away and press it again for the rest.
 - Nothing is a fixed list: the mod picks decorations from the game's own data when a world loads, so new effigies and skins in a
   game update show up without a mod update.
 - Help has a Decoration section. Every new line is in all 13 game languages.
+- Tested in game on v2.104 (Steam build 26411416), on this release's code: the Decoration tab against the game's own list, a
+  poster into the backpack, a spawned golden effigy put down from the backpack, One of each into a part-full backpack, a full
+  one and again after making room (each decoration once, nothing dropped), every check of 0.2.1 again, every game language,
+  achievements on.
+
+## 0.2.1 (2026-11-27)
 
 - **The new GamesOMG logo.** The header's mark is the G Emblem the site has worn since 2026-11-22, not the old gear.
   Nothing else changed: same search, same backpack rules, same keys, same settings file.
