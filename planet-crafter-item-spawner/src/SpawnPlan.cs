@@ -73,5 +73,13 @@ namespace GamesOMG.PlanetCrafterSpawn
             if (Full) return Added > 0 ? "result.partial" : "result.fullNone";
             return "result.added";
         }
+
+        // 0.3.0, "one of each" (Wanted = how many decorations were missing; {0} how many went in, {1} how many didn't fit)
+        public string SetResultId()
+        {
+            if (Failed) return Added > 0 ? "set.partialTimeout" : "result.timeout";
+            if (Full) return Added > 0 ? "set.partial" : "set.fullNone";
+            return "set.added";
+        }
     }
 }

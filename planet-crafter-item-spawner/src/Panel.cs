@@ -8,6 +8,10 @@
 // does (ItemInfo); every word of the mod's own in the game's language (Strings.cs). The status line holds two lines, Help takes
 // the grid and the detail bar, and with MeasureFit on (the sitting) every text is measured where it is drawn: what doesn't fit
 // lands in Overflow, a description cut short in Truncated.
+// 0.3.0: a Decoration tab (All | Decoration | Recent; LB/RB step through them): the effigies, posters and spacesuit skins
+// (Decor.cs), searchable like All, with a strip above the grid: "One of each: n" adds every one shown that the world doesn't
+// have yet, through the same backpack path, batching and full-backpack rule as Add. On that tab the controller's Y is that
+// button (Fill stays on the mouse).
 using System;
 using System.Collections.Generic;
 using BepInEx.Logging;
@@ -27,6 +31,7 @@ namespace GamesOMG.PlanetCrafterSpawn
         IList<string> Recent { get; }
         string LastId { get; }
         void Spawn(ItemEntry item, Inventory backpack, int amount, bool fill);
+        void SpawnSet(List<ItemEntry> items, Inventory backpack);
         string GameBuild { get; }
     }
 
@@ -46,7 +51,13 @@ namespace GamesOMG.PlanetCrafterSpawn
         private List<ItemEntry> all = new List<ItemEntry>();
         private List<ItemEntry> shown = new List<ItemEntry>();
         private string query = "", shownFor;
+        public const int TabAll = 0, TabDeco = 1, TabRecent = 2, Tabs = 3;
+        private static readonly string[] TabIds = { "tab.all", "tab.deco", "tab.recent" };
         private int tab, shownTab = -1;
+        // the Decoration tab: what this world has (Catalog.Owned, read when it can have changed) and what "one of each" would add
+        private HashSet<string> owned = new HashSet<string>(StringComparer.Ordinal);
+        private List<ItemEntry> missing = new List<ItemEntry>();
+        private bool ownedStale = true;
         private int sel, top, cols = 1, visRows = 1;
         private string amountText = "1";
         private string status;
@@ -76,6 +87,8 @@ namespace GamesOMG.PlanetCrafterSpawn
         public int ShownCount => shown.Count;
         public string Status => status;
         public bool StatusBad => statusBad;
+        public int MissingCount => missing.Count;
+        public IList<ItemEntry> Shown => shown;
 
         public bool Show(PlayerMainController who, Inventory inventory, bool viaPad)
         {
@@ -95,6 +108,7 @@ namespace GamesOMG.PlanetCrafterSpawn
             amountText = SpawnPlan.Clamp(host.LastAmount).ToString(System.Globalization.CultureInfo.InvariantCulture);
             focusSearch = true;
             ignoreTabs = viaPad;
+            ownedStale = true;
             Refresh();
             // the last item spawned is selected, so the open key then Enter adds it again
             int last = host.LastId == null ? -1 : shown.FindIndex(e => e.Id == host.LastId);
@@ -119,6 +133,16 @@ namespace GamesOMG.PlanetCrafterSpawn
             string id = plan.ResultId();
             status = L.T(id, plan.Added, item.Name, plan.DidNotFit);
             statusBad = id != "result.added" && id != "result.filled";
+            ownedStale = true;
+        }
+
+        // "one of each": {0} went in, {1} didn't fit
+        public void SetResult(SpawnPlan plan)
+        {
+            string id = plan.SetResultId();
+            status = L.T(id, plan.Added, plan.DidNotFit);
+            statusBad = id != "set.added";
+            ownedStale = true;
         }
 
         public void Say(string text, bool bad) { status = text; statusBad = bad; }
@@ -128,7 +152,7 @@ namespace GamesOMG.PlanetCrafterSpawn
         {
             if (!Open || id == null) return false;
             query = "";
-            tab = 0;
+            tab = TabAll;
             help = false;
             Refresh();
             int i = shown.FindIndex(e => e.Id == id);
@@ -170,11 +194,12 @@ namespace GamesOMG.PlanetCrafterSpawn
                 case Cmd.PageDown: Move(cols * Math.Max(1, visRows - 1)); break;
                 case Cmd.Home: sel = 0; Visible(); break;
                 case Cmd.End: sel = Math.Max(0, shown.Count - 1); Visible(); break;
-                case Cmd.TabLeft: case Cmd.TabRight: SetTab(tab == 0 ? 1 : 0); break;
+                case Cmd.TabLeft: SetTab((tab + Tabs - 1) % Tabs); break;
+                case Cmd.TabRight: SetTab((tab + 1) % Tabs); break;
                 case Cmd.Next: case Cmd.Prev: switchFocus = true; break;   // Tab: the search box <-> the amount
                 case Cmd.Activate: Add(null, false); break;
                 case Cmd.Ten: Add(10, false); break;
-                case Cmd.Fill: Add(null, true); break;
+                case Cmd.Fill: if (tab == TabDeco) AddSet(); else Add(null, true); break;
                 case Cmd.Back:
                     if (help) help = false;
                     else if (query.Length > 0 && !input.UsingPad) { query = ""; focusSearch = true; }
@@ -213,19 +238,37 @@ namespace GamesOMG.PlanetCrafterSpawn
 
         private void Refresh()
         {
-            if (query == shownFor && tab == shownTab) return;
+            // what the world has is read again only when it can have changed (open, a spawn done, the Decoration tab picked)
+            bool ownedNow = false;
+            if (tab == TabDeco && ownedStale && !host.Busy) { owned = Catalog.Owned(all); ownedStale = false; ownedNow = true; }
+            if (query == shownFor && tab == shownTab && !ownedNow) return;
             bool newQuery = query != shownFor;
             shownFor = query;
             shownTab = tab;
-            if (tab == 1)
+            if (tab == TabRecent)
             {
                 var recent = new List<ItemEntry>();
                 foreach (var id in host.Recent) { var e = Catalog.Find(all, id); if (e != null) recent.Add(e); }
                 shown = query.Trim().Length == 0 ? recent : Search.Filter(recent, query);
             }
+            else if (tab == TabDeco) shown = Search.Filter(Decor.Only(all), query);
             else shown = Search.Filter(all, query);
+            missing = tab == TabDeco ? Decor.Missing(shown, owned) : new List<ItemEntry>();
             if (newQuery) { sel = 0; top = 0; }
             if (sel >= shown.Count) sel = Math.Max(0, shown.Count - 1);
+        }
+
+        // "one of each": every decoration shown that this world doesn't have yet
+        private void AddSet()
+        {
+            if (tab != TabDeco || help) return;
+            if (host.Busy) { Say(L.T("spawn.busy"), true); return; }
+            owned = Catalog.Owned(all);
+            ownedStale = false;
+            missing = Decor.Missing(shown, owned);
+            if (missing.Count == 0) { Say(L.T("set.none"), false); return; }
+            Say(L.T("set.adding", missing.Count), false);
+            host.SpawnSet(new List<ItemEntry>(missing), backpack);
         }
 
         private void Add(int? amount, bool fill)
@@ -308,9 +351,9 @@ namespace GamesOMG.PlanetCrafterSpawn
 
             // tabs + count
             float tx = x;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < Tabs; i++)
             {
-                string label = L.T(i == 0 ? "tab.all" : "tab.recent");
+                string label = L.T(TabIds[i]);
                 var st = i == tab ? t.TabOn : t.Tab;
                 float tw = st.CalcSize(new GUIContent(label)).x + t.Px(4);
                 if (GUI.Button(new Rect(tx, y, tw, t.TabH), label, st) && i != tab) SetTab(i);
@@ -321,8 +364,26 @@ namespace GamesOMG.PlanetCrafterSpawn
             GUI.Label(new Rect(r.xMax - pad - cw, y + (t.TabH - t.Small.lineHeight) / 2, cw + 2, t.TabH), count, t.Small);
             // the tabs and the longest count ("999 items") side by side
             if (MeasureFit && e.type == EventType.Repaint && tx + t.Px(8) > r.xMax - pad - t.Small.CalcSize(new GUIContent(L.N("count", 999))).x)
-                Overflow.Add(L.Current + " tabs + count: " + L.T("tab.all") + " | " + L.T("tab.recent") + " | " + L.N("count", 999));
+                Overflow.Add(L.Current + " tabs + count: " + L.T("tab.all") + " | " + L.T("tab.deco") + " | " + L.T("tab.recent") + " | " + L.N("count", 999));
             y += t.TabH + t.Px(8);
+
+            // the Decoration tab's strip: what "one of each" does, and the button (its count = what it would add now)
+            if (tab == TabDeco && !help)
+            {
+                string setLabel = L.T("set.button", missing.Count);
+                float bw = Mathf.Max(t.Px(120), t.Primary.CalcSize(new GUIContent(L.T("set.button", 999))).x + t.Px(8));
+                float noteW = inner - bw - t.Px(12);
+                string note = L.T("set.note");
+                float stripH = Mathf.Max(t.ButtonH, LinesTall(helpStyle, 2));
+                var noteR = new Rect(x, y + (stripH - LinesTall(helpStyle, 2)) / 2, noteW, LinesTall(helpStyle, 2));
+                GUI.Label(noteR, note, helpStyle);
+                Fits("set.note", helpStyle, note, noteR, true);
+                bool was = GUI.enabled;
+                GUI.enabled = !host.Busy && missing.Count > 0;
+                if (GUI.Button(new Rect(r.xMax - pad - bw, y + (stripH - t.ButtonH) / 2, bw, t.ButtonH), setLabel, t.Primary)) AddSet();
+                GUI.enabled = was;
+                y += stripH + t.Px(8);
+            }
 
             // the foot first (fixed heights), the grid takes what is left
             float promptH = t.Px(22), statusH = LinesTall(t.Status, 2) + t.Px(2), detailH = DetailHeight();
@@ -447,6 +508,7 @@ namespace GamesOMG.PlanetCrafterSpawn
             {
                 new[] { "help.keysHead", L.T("help.keys", host.KeyLabel, host.PadLabel(PlayStation)) },
                 new[] { "help.searchHead", L.T("help.search") },
+                new[] { "help.decoHead", L.T("help.deco", GameLabel("Ui_clickbuildable", "Right Click to build")) },
                 new[] { "help.infoHead", L.T("help.info") },
                 new[] { "help.backpackHead", L.T("help.backpack") },
                 new[] { "help.achievementsHead", L.T("help.achievements", GameLabel("GameSettings_freeCraft", "Free build"), GameLabel("GameSettings_unlockedEverything", "All unlocked")) },
@@ -540,8 +602,10 @@ namespace GamesOMG.PlanetCrafterSpawn
             var info = ItemInfo.For(item, log);
             SelectedInfo = info;
             var ir = new Rect(d.x + p, d.y + p + s + t.Px(6), d.width - p * 2, InfoHeight());
-            float statH = string.IsNullOrEmpty(info.Stat) ? 0 : t.Info.CalcHeight(new GUIContent(info.Stat), ir.width);
-            if (MeasureFit && e.type == EventType.Repaint && statH > ir.height + 1) Overflow.Add(L.Current + " info " + item.Id + ": " + info.Stat);
+            // the game's "Right Click to build" is a mouse player's line (the game shows it only to them)
+            string stat = info.Kind == "place" && input.UsingPad ? "" : info.Stat;
+            float statH = string.IsNullOrEmpty(stat) ? 0 : t.Info.CalcHeight(new GUIContent(stat), ir.width);
+            if (MeasureFit && e.type == EventType.Repaint && statH > ir.height + 1) Overflow.Add(L.Current + " info " + item.Id + ": " + stat);
             float descRoom = ir.height - statH - (statH > 0 ? t.Px(2) : 0);
             float iy = ir.y;
             if (!string.IsNullOrEmpty(info.Description) && descRoom >= helpStyle.lineHeight)
@@ -552,7 +616,7 @@ namespace GamesOMG.PlanetCrafterSpawn
                 iy += dh + t.Px(2);
             }
             else if (!string.IsNullOrEmpty(info.Description) && MeasureFit && e.type == EventType.Repaint) Truncated.Add(L.Current + " description " + item.Id + " (no room)");
-            if (statH > 0) GUI.Label(new Rect(ir.x, iy, ir.width, statH), info.Stat, t.Info);
+            if (statH > 0) GUI.Label(new Rect(ir.x, iy, ir.width, statH), stat, t.Info);
 
             // the action row: amount, Add, ×1, ×10, Fill
             float by = d.yMax - p - t.ButtonH;
@@ -637,14 +701,14 @@ namespace GamesOMG.PlanetCrafterSpawn
         }
 
         // the prompts for a device: keyboard (with or without a search typed), Xbox or PlayStation names
-        private List<KeyValuePair<string, string>> PromptItems(bool pad, bool ps, bool searching)
+        private List<KeyValuePair<string, string>> PromptItems(bool pad, bool ps, bool searching, bool deco)
         {
             var items = new List<KeyValuePair<string, string>>();
             if (pad)
             {
                 items.Add(new KeyValuePair<string, string>(ps ? L.T("pad.cross") : "A", L.T("prompt.add")));
                 items.Add(new KeyValuePair<string, string>(ps ? L.T("pad.square") : "X", L.T("prompt.ten")));
-                items.Add(new KeyValuePair<string, string>(ps ? L.T("pad.triangle") : "Y", L.T("prompt.fill")));
+                items.Add(new KeyValuePair<string, string>(ps ? L.T("pad.triangle") : "Y", L.T(deco ? "prompt.set" : "prompt.fill")));
                 items.Add(new KeyValuePair<string, string>(ps ? "L1/R1" : "LB/RB", L.T("prompt.tabs")));
                 items.Add(new KeyValuePair<string, string>(ps ? L.T("pad.circle") : "B", L.T("prompt.close")));
             }
@@ -673,14 +737,14 @@ namespace GamesOMG.PlanetCrafterSpawn
         private void DrawPrompts(Rect f)
         {
             var t = Theme;
-            var items = PromptItems(input.UsingPad, input.PlayStation, query.Length > 0);
-            // every variant measured, not only the device in hand: a controller player's row must fit too
+            var items = PromptItems(input.UsingPad, input.PlayStation, query.Length > 0, tab == TabDeco);
+            // every variant measured, not only the device in hand: a controller player's row must fit too, on either tab
             if (MeasureFit && Event.current.type == EventType.Repaint)
-                foreach (var v in new[] { new[] { false, false, false }, new[] { false, false, true }, new[] { true, false, false }, new[] { true, true, false } })
+                foreach (var v in new[] { new[] { false, false, false, false }, new[] { false, false, true, false }, new[] { true, false, false, false }, new[] { true, true, false, false }, new[] { true, false, false, true }, new[] { true, true, false, true } })
                 {
-                    var row = PromptItems(v[0], v[1], v[2]);
+                    var row = PromptItems(v[0], v[1], v[2], v[3]);
                     if (PromptsWidth(row) > f.width + 1)
-                        Overflow.Add(L.Current + " prompts (" + (v[0] ? v[1] ? "PlayStation" : "Xbox" : v[2] ? "keyboard, searching" : "keyboard") + "): " + string.Join(" ", row.ConvertAll(kv => kv.Key + " " + kv.Value).ToArray()));
+                        Overflow.Add(L.Current + " prompts (" + (v[0] ? v[1] ? "PlayStation" : "Xbox" : v[2] ? "keyboard, searching" : "keyboard") + (v[3] ? ", Decoration" : "") + "): " + string.Join(" ", row.ConvertAll(kv => kv.Key + " " + kv.Value).ToArray()));
                 }
             float x = f.x;
             foreach (var kv in items)

@@ -161,6 +161,15 @@ namespace GamesOMG.PlanetCrafterSpawn
             var info = new Info();
             if (!(e.Group is Group group)) return info;
             info.Description = InfoText.Description(Readable.GetGroupDescription(group), e.Name);
+            // 0.3.0: an effigy or a poster is put down from the backpack: the game's own card line for it, in its language
+            // ("Right Click to build", Ui_clickbuildable; the game shows it to mouse players only, so does the panel)
+            if (e.Placeable)
+            {
+                string place = null;
+                try { place = Localization.GetLocalizedString("Ui_clickbuildable"); } catch (Exception) { }
+                if (!string.IsNullOrEmpty(place) && place != "Ui_clickbuildable") { info.Kind = "place"; info.Stat = InfoText.Description(place, ""); }
+                return info;
+            }
             if (!(group is GroupItem item)) return info;
 
             // a fuse

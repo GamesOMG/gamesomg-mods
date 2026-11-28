@@ -1,0 +1,7237 @@
+{
+ "about": "GamesOMG Item Spawner 0.3.0 test fixture: every GroupData of The Planet Crafter, read from the game files offline (resources.assets + sharedassets*.assets: the GroupDataConstructible / GroupDataItem fields). constructibles: id -> [has icon, recipe ingredients, inventorySize, secondary inventories]; items: id -> [has icon, equipableType]. 26411416 = v2.104 (public); 26763323 = the Magnetaris preview (v2.202).",
+ "builds": {
+  "26411416": {
+   "constructibles": {
+    "AirPurificationMachine1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine3": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AlgaeGenerator1": [
+     1,
+     5,
+     0,
+     1
+    ],
+    "AlgaeGenerator2": [
+     1,
+     7,
+     0,
+     1
+    ],
+    "AmphibiansFarm1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "AnimalEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie10": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalFeeder1": [
+     1,
+     5,
+     10,
+     0
+    ],
+    "AnimalShelter1": [
+     1,
+     6,
+     5,
+     0
+    ],
+    "Aquarium1": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Aquarium2": [
+     1,
+     6,
+     2,
+     0
+    ],
+    "AquariumTube1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ArcadeMachine1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Arch1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "AutoCrafter1": [
+     1,
+     3,
+     8,
+     0
+    ],
+    "Beacon": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "BedDouble": [
+     1,
+     7,
+     0,
+     0
+    ],
+    "BedDoubleColored": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "BedSimple": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "Beehive1": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Beehive2": [
+     1,
+     4,
+     4,
+     0
+    ],
+    "Biodome2": [
+     1,
+     6,
+     2,
+     0
+    ],
+    "Biolab": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "ButterflyDisplayer1": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "ButterflyDome1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "ButterflyFarm1": [
+     1,
+     3,
+     2,
+     0
+    ],
+    "ButterflyFarm2": [
+     1,
+     5,
+     3,
+     0
+    ],
+    "ButterflyFarm3": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "Chair1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Chair2": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ComAntenna": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Container1": [
+     1,
+     1,
+     15,
+     0
+    ],
+    "Container2": [
+     1,
+     3,
+     35,
+     0
+    ],
+    "Container3": [
+     1,
+     3,
+     80,
+     0
+    ],
+    "ContainerAqualis": [
+     0,
+     2,
+     3,
+     0
+    ],
+    "ContainerGoldenAqualis": [
+     0,
+     3,
+     5,
+     0
+    ],
+    "ContainerToxic1": [
+     1,
+     2,
+     88,
+     0
+    ],
+    "CookingStation1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Counter1": [
+     1,
+     2,
+     25,
+     0
+    ],
+    "Counter2": [
+     1,
+     2,
+     25,
+     0
+    ],
+    "CraftStation1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "CraftStation2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "DeparturePlatform": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Desktop1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Desktop2": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Destructor1": [
+     1,
+     4,
+     30,
+     0
+    ],
+    "DetoxificationMachine1": [
+     1,
+     6,
+     20,
+     1
+    ],
+    "DetoxificationMachine2": [
+     1,
+     6,
+     40,
+     1
+    ],
+    "DetoxificationMachine3": [
+     1,
+     6,
+     70,
+     1
+    ],
+    "DisplayCase": [
+     1,
+     3,
+     6,
+     0
+    ],
+    "Drill0": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Drill1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Drill2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Drill3": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Drill4": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "DroneExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "DroneStation1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "Ecosystem1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "Elevator": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EndingExplosives": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "EnergyGenerator1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "EnergyGenerator2": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "EnergyGenerator3": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "EnergyGenerator4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "EnergyGenerator5": [
+     1,
+     8,
+     0,
+     0
+    ],
+    "EnergyGenerator6": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "EscapePod": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EscapePodHumble": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EscapePodInterplanetary": [
+     0,
+     0,
+     20,
+     0
+    ],
+    "EscapePodToxicity": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ExerciseBike1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Farm1": [
+     1,
+     6,
+     1,
+     1
+    ],
+    "Farm2": [
+     1,
+     6,
+     1,
+     1
+    ],
+    "Faucet1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Fence": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FenceRounded": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Fireplace": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "FishDisplayer1": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "FishFarm1": [
+     1,
+     6,
+     3,
+     0
+    ],
+    "FishFarm2": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "FloorAngleGlass": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FloorGlass": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FlowerPot1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "FlowerPot2": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "FlowerPot3": [
+     1,
+     2,
+     3,
+     0
+    ],
+    "Foundation": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FoundationAngle": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FoundationSlope": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FountainBig": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Fridge1": [
+     1,
+     3,
+     30,
+     0
+    ],
+    "FrogDisplayer1": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "FusionGenerator1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "GasExtractor1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "GasExtractor2": [
+     1,
+     6,
+     8,
+     0
+    ],
+    "GenerationGroupVein": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "GeneticExtractor1": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "GeneticManipulator1": [
+     1,
+     5,
+     3,
+     0
+    ],
+    "GeneticSynthetizer1": [
+     1,
+     6,
+     10,
+     1
+    ],
+    "GoldenContainer": [
+     1,
+     2,
+     30,
+     0
+    ],
+    "GoldenEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GrassSpreader1": [
+     1,
+     5,
+     0,
+     0
+    ],
+    "HarvestingRobot1": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "Heater1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Heater2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Heater3": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "Heater4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Heater5": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "HologramGenerator": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "Incubator1": [
+     1,
+     4,
+     3,
+     0
+    ],
+    "Incubator2": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "InsideLamp1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "InsideLamp2": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "InteriorStairs1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "InterplanetaryExchangePlatform1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "Ivy1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Ladder": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "LaunchPlatform": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "LavaLamp1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Library1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "LightBoxMedium": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Locker1": [
+     1,
+     1,
+     30,
+     0
+    ],
+    "Megadome1": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Optimizer1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Optimizer2": [
+     1,
+     6,
+     3,
+     0
+    ],
+    "OreBreaker1": [
+     1,
+     6,
+     12,
+     1
+    ],
+    "OreBreaker2": [
+     1,
+     6,
+     20,
+     1
+    ],
+    "OreBreaker3": [
+     1,
+     6,
+     30,
+     1
+    ],
+    "OreExtractor1": [
+     1,
+     6,
+     20,
+     0
+    ],
+    "OreExtractor2": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "OreExtractor3": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "OutsideLamp1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "PlanetViewer1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "PlanetaryDeliveryDepot1": [
+     1,
+     3,
+     40,
+     0
+    ],
+    "Pod4x": [
+     1,
+     8,
+     0,
+     0
+    ],
+    "Pod9xA": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pod9xB": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pod9xC": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "PodUnderground": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pooltable1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "PortalGenerator1": [
+     1,
+     9,
+     10,
+     0
+    ],
+    "Poster1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster10": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster11": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster12": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster13": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "ProceduralInstanceGenerator": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ProceduralWreckSafe": [
+     0,
+     1,
+     30,
+     0
+    ],
+    "QuartzCraftStation1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "RecyclingMachine": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "RecyclingMachine2": [
+     1,
+     6,
+     35,
+     1
+    ],
+    "RockExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ScreenBiomass": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenEnergy": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenMap1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenMessage": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ScreenRockets": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenSystem1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenTerraStage": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ScreenTerraformation": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenToxic1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenUnlockables": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "SeedSpreader1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "SeedSpreader2": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Server1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Shelves1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Shower1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Sign": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "SilkGenerator": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "SkinDisplayer": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "Sofa": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaAngle": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaAngleColored": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaColored": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SpaceMultiplierAnimals": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierBiomass": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierHeat": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierInsects": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierOxygen": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPlants": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPressure": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPurification": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "Stairs": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "StarformContainer": [
+     1,
+     2,
+     15,
+     0
+    ],
+    "StarformEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Table1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall2": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall3": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Teleporter1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Toilet1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "ToxicRefinementCraftStation1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ToxicWaterCollector1": [
+     1,
+     3,
+     5,
+     0
+    ],
+    "ToxicWaterCollector2": [
+     1,
+     3,
+     15,
+     0
+    ],
+    "ToxicWaterCollector3": [
+     1,
+     3,
+     48,
+     0
+    ],
+    "ToxicityDiorama1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ToxicityDiorama2": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "TradePlatform1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "TrashAluminiumScraps1": [
+     0,
+     3,
+     0,
+     0
+    ],
+    "TrashElectronics1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashMetalsCanisters1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashMetalsScraps1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashUraniumScraps1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "Trashcan1": [
+     1,
+     1,
+     15,
+     0
+    ],
+    "Treadmill1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TreePlanter": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreePlanter2": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreePlanter3": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreeSpreader0": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "TreeSpreader1": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "TreeSpreader2": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Vault1": [
+     1,
+     1,
+     48,
+     0
+    ],
+    "VegetableGrower1": [
+     1,
+     3,
+     1,
+     1
+    ],
+    "VegetableGrower2": [
+     1,
+     3,
+     1,
+     1
+    ],
+    "Vegetube1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "Vegetube2": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "VegetubeOutside1": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "VehicleCrafter1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "VendingMachine1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "WallInside": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "WallWaterLife": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "WardenAustel": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "WaterCollector1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "WaterCollector2": [
+     1,
+     6,
+     8,
+     0
+    ],
+    "WaterLifeCollector1": [
+     1,
+     6,
+     10,
+     0
+    ],
+    "WindTurbine1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "WreckEntryLocked1": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "WreckEntryLocked2": [
+     0,
+     1,
+     2,
+     0
+    ],
+    "WreckFusionGenerator": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "WreckRockExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "WreckSafe": [
+     0,
+     1,
+     30,
+     0
+    ],
+    "WreckServer": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "WreckWardrobe": [
+     0,
+     0,
+     8,
+     0
+    ],
+    "biodome": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "canister": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "door": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "pod": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "podAngle": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "wallplain": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "window": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "wreckpilar": [
+     0,
+     1,
+     0,
+     0
+    ]
+   },
+   "items": {
+    "AirFilter1": [
+     1,
+     "AirFilter"
+    ],
+    "Algae1Growable": [
+     0,
+     "Null"
+    ],
+    "Algae1Seed": [
+     1,
+     "Null"
+    ],
+    "Alloy": [
+     1,
+     "Null"
+    ],
+    "Aluminium": [
+     1,
+     "Null"
+    ],
+    "Amber": [
+     1,
+     "Null"
+    ],
+    "AnimalBones": [
+     1,
+     "Null"
+    ],
+    "AnimalFood1": [
+     1,
+     "Null"
+    ],
+    "AnimalFood2": [
+     1,
+     "Null"
+    ],
+    "AnimalFood3": [
+     1,
+     "Null"
+    ],
+    "AntiToxinsExplosive1": [
+     1,
+     "Null"
+    ],
+    "AntiToxinsExplosive2": [
+     1,
+     "Null"
+    ],
+    "Backpack1": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack2": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack3": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack4": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack5": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack6": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack7": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Bacteria1": [
+     1,
+     "Null"
+    ],
+    "BalzarQuartz": [
+     1,
+     "Null"
+    ],
+    "Bauxite": [
+     1,
+     "Null"
+    ],
+    "Bee1Hatched": [
+     1,
+     "Null"
+    ],
+    "Bee1Larvae": [
+     1,
+     "Null"
+    ],
+    "Bioplastic1": [
+     1,
+     "Null"
+    ],
+    "BlueprintAutocrafter": [
+     1,
+     "Null"
+    ],
+    "BlueprintBedDoubleColored": [
+     1,
+     "Null"
+    ],
+    "BlueprintContainer3": [
+     1,
+     "Null"
+    ],
+    "BlueprintCookingStation": [
+     1,
+     "Null"
+    ],
+    "BlueprintDeparturePlatform": [
+     1,
+     "Null"
+    ],
+    "BlueprintDrone2": [
+     1,
+     "Null"
+    ],
+    "BlueprintEquipmentIncrease2": [
+     1,
+     "Null"
+    ],
+    "BlueprintEquipmentIncrease5": [
+     1,
+     "Null"
+    ],
+    "BlueprintFireplace": [
+     1,
+     "Null"
+    ],
+    "BlueprintFlare": [
+     1,
+     "Null"
+    ],
+    "BlueprintFountainBig": [
+     1,
+     "Null"
+    ],
+    "BlueprintHologramGenerator": [
+     1,
+     "Null"
+    ],
+    "BlueprintLightBoxMedium": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xA": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xB": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xC": [
+     1,
+     "Null"
+    ],
+    "BlueprintShower": [
+     1,
+     "Null"
+    ],
+    "BlueprintSmartFabric": [
+     1,
+     "Null"
+    ],
+    "BlueprintSofaColored": [
+     1,
+     "Null"
+    ],
+    "BlueprintSolarQuartz": [
+     1,
+     "Null"
+    ],
+    "BlueprintT1": [
+     1,
+     "Null"
+    ],
+    "BlueprintToxicityDiorama1": [
+     1,
+     "Null"
+    ],
+    "BlueprintToxicityDiorama2": [
+     1,
+     "Null"
+    ],
+    "BlueprintTradePlatform": [
+     1,
+     "Null"
+    ],
+    "BlueprintTreePlanter": [
+     1,
+     "Null"
+    ],
+    "BlueprintVehicleJetpack1": [
+     1,
+     "Null"
+    ],
+    "BlueprintWallWaterLife": [
+     1,
+     "Null"
+    ],
+    "BlueprintWardensChip": [
+     1,
+     "Null"
+    ],
+    "BootsSpeed1": [
+     1,
+     "Speed"
+    ],
+    "BootsSpeed2": [
+     1,
+     "Speed"
+    ],
+    "BootsSpeed3": [
+     1,
+     "Speed"
+    ],
+    "Butterfly10Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly10Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly11Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly11Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly12Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly12Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly13Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly13Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly14Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly14Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly15Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly15Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly16Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly16Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly17Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly17Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly18Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly18Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly19Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly19Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly1Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly1Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly20Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly20Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly21Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly21Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly2Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly2Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly3Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly3Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly4Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly4Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly5Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly5Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly6Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly6Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly7Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly7Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly8Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly8Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly9Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly9Larvae": [
+     1,
+     "Null"
+    ],
+    "ChlorineCapsule1": [
+     1,
+     "Null"
+    ],
+    "CircuitBoard1": [
+     1,
+     "Null"
+    ],
+    "Cobalt": [
+     1,
+     "Null"
+    ],
+    "CookCake1": [
+     1,
+     "Null"
+    ],
+    "CookChocolate": [
+     1,
+     "Null"
+    ],
+    "CookCocoaGrowable": [
+     1,
+     "Null"
+    ],
+    "CookCocoaSeed": [
+     1,
+     "Null"
+    ],
+    "CookCookie1": [
+     1,
+     "Null"
+    ],
+    "CookCroissant": [
+     1,
+     "Null"
+    ],
+    "CookFlour": [
+     1,
+     "Null"
+    ],
+    "CookStew1": [
+     1,
+     "Null"
+    ],
+    "CookStewFish1": [
+     1,
+     "Null"
+    ],
+    "CookWheatGrowable": [
+     1,
+     "Null"
+    ],
+    "CookWheatSeed": [
+     1,
+     "Null"
+    ],
+    "CosmicQuartz": [
+     1,
+     "Null"
+    ],
+    "DNASequence": [
+     1,
+     "Null"
+    ],
+    "DebrisContainer1": [
+     0,
+     "Null"
+    ],
+    "Dolomite": [
+     1,
+     "Null"
+    ],
+    "Drone1": [
+     1,
+     "Null"
+    ],
+    "Drone2": [
+     1,
+     "Null"
+    ],
+    "Drone3": [
+     1,
+     "Null"
+    ],
+    "DroneLog": [
+     1,
+     "Null"
+    ],
+    "EquipmentIncrease1": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease2": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease3": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease4": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease5": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "Explosive": [
+     1,
+     "Null"
+    ],
+    "FabricBlue": [
+     1,
+     "Null"
+    ],
+    "Fertilizer1": [
+     1,
+     "Null"
+    ],
+    "Fertilizer2": [
+     1,
+     "Null"
+    ],
+    "Fertilizer3": [
+     1,
+     "Null"
+    ],
+    "Fish10Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish10Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish11Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish11Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish12Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish12Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish13Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish13Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish14Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish14Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish15Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish15Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish1Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish1Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish2Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish2Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish3Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish3Hatched": [
+     0,
+     "Null"
+    ],
+    "Fish4Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish4Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish5Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish5Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish6Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish6Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish7Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish7Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish8Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish8Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish9Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish9Hatched": [
+     0,
+     "Null"
+    ],
+    "Flare": [
+     1,
+     "Null"
+    ],
+    "Frog10Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog10Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog11Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog11Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog12Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog12Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog13Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog13Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog14Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog14Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog15Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog15Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog16Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog16Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog1Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog1Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog2Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog2Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog3Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog3Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog4Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog4Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog5Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog5Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog6Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog6Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog7Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog7Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog8Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog8Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog9Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog9Hatched": [
+     1,
+     "Null"
+    ],
+    "FrogGoldEggs": [
+     1,
+     "Null"
+    ],
+    "FrogGoldHatched": [
+     1,
+     "Null"
+    ],
+    "FuseAnimals1": [
+     1,
+     "Null"
+    ],
+    "FuseCartridge": [
+     1,
+     "Null"
+    ],
+    "FuseEnergy1": [
+     1,
+     "Null"
+    ],
+    "FuseGrowth1": [
+     1,
+     "Null"
+    ],
+    "FuseHeat1": [
+     1,
+     "Null"
+    ],
+    "FuseInsects1": [
+     1,
+     "Null"
+    ],
+    "FuseOxygen1": [
+     1,
+     "Null"
+    ],
+    "FusePlants1": [
+     1,
+     "Null"
+    ],
+    "FusePressure1": [
+     1,
+     "Null"
+    ],
+    "FuseProduction1": [
+     1,
+     "Null"
+    ],
+    "FusePurification1": [
+     1,
+     "Null"
+    ],
+    "FuseTradeRocketsSpeed1": [
+     1,
+     "Null"
+    ],
+    "FusionEnergyCell": [
+     1,
+     "Null"
+    ],
+    "GeneticTrait": [
+     1,
+     "Null"
+    ],
+    "HudChipCleanConstruction": [
+     1,
+     "MultiToolCleanConstruction"
+    ],
+    "HudCompass": [
+     1,
+     "CompassHUD"
+    ],
+    "Iridium": [
+     1,
+     "Null"
+    ],
+    "Iron": [
+     1,
+     "Null"
+    ],
+    "Jetpack1": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack2": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack3": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack4": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack5": [
+     1,
+     "Jetpack"
+    ],
+    "KeyCard2": [
+     1,
+     "Null"
+    ],
+    "Keycard1": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase1": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase2": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase3": [
+     1,
+     "Null"
+    ],
+    "Magnesium": [
+     1,
+     "Null"
+    ],
+    "MagnetarQuartz": [
+     1,
+     "Null"
+    ],
+    "MapChip": [
+     1,
+     "MapChip"
+    ],
+    "MethanCapsule1": [
+     1,
+     "Null"
+    ],
+    "MicroPlastics": [
+     1,
+     "Null"
+    ],
+    "Minable-Tungsten": [
+     1,
+     "Null"
+    ],
+    "MultiBuild": [
+     1,
+     "MultiToolBuild"
+    ],
+    "MultiDeconstruct": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolCleaningGooChip1": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip2": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip3": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip4": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolDeconstruct2": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolDeconstruct3": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolLight": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolLight2": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolLight3": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolMineSpeed1": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed2": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed3": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed4": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "Mutagen1": [
+     1,
+     "Null"
+    ],
+    "Mutagen2": [
+     1,
+     "Null"
+    ],
+    "Mutagen3": [
+     1,
+     "Null"
+    ],
+    "Mutagen4": [
+     1,
+     "Null"
+    ],
+    "NitrogenCapsule1": [
+     1,
+     "Null"
+    ],
+    "Obsidian": [
+     1,
+     "Null"
+    ],
+    "Osmium": [
+     1,
+     "Null"
+    ],
+    "OxygenCapsule1": [
+     1,
+     "Null"
+    ],
+    "OxygenTank1": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank2": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank3": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank4": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank5": [
+     1,
+     "OxygenTank"
+    ],
+    "Phosphorus": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton1": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton2": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton3": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton4": [
+     1,
+     "Null"
+    ],
+    "PinChip1": [
+     1,
+     "PinChip"
+    ],
+    "PinChip2": [
+     1,
+     "PinChip"
+    ],
+    "PinChip3": [
+     1,
+     "PinChip"
+    ],
+    "PlasticPolymer": [
+     1,
+     "Null"
+    ],
+    "PristineMushroom": [
+     1,
+     "Null"
+    ],
+    "ProceduralWreckContainer1": [
+     0,
+     "Null"
+    ],
+    "ProceduralWreckContainer2": [
+     0,
+     "Null"
+    ],
+    "PulsarQuartz": [
+     1,
+     "Null"
+    ],
+    "PurificationCapsule": [
+     1,
+     "Null"
+    ],
+    "PurificationGel": [
+     1,
+     "Null"
+    ],
+    "PurifiedWater": [
+     1,
+     "Null"
+    ],
+    "QuasarQuartz": [
+     1,
+     "Null"
+    ],
+    "RedPowder1": [
+     1,
+     "Null"
+    ],
+    "RocketAnimals1": [
+     1,
+     "Null"
+    ],
+    "RocketAnimals2": [
+     1,
+     "Null"
+    ],
+    "RocketBiomass1": [
+     1,
+     "Null"
+    ],
+    "RocketBiomass2": [
+     1,
+     "Null"
+    ],
+    "RocketDeparture1": [
+     1,
+     "Null"
+    ],
+    "RocketDrones1": [
+     1,
+     "Null"
+    ],
+    "RocketHeat1": [
+     1,
+     "Null"
+    ],
+    "RocketHeat2": [
+     1,
+     "Null"
+    ],
+    "RocketInformations1": [
+     1,
+     "Null"
+    ],
+    "RocketInformations2": [
+     1,
+     "Null"
+    ],
+    "RocketInsects1": [
+     1,
+     "Null"
+    ],
+    "RocketInsects2": [
+     1,
+     "Null"
+    ],
+    "RocketMap1": [
+     1,
+     "Null"
+    ],
+    "RocketMap2": [
+     1,
+     "Null"
+    ],
+    "RocketMap3": [
+     1,
+     "Null"
+    ],
+    "RocketMap4": [
+     1,
+     "Null"
+    ],
+    "RocketOxygen1": [
+     1,
+     "Null"
+    ],
+    "RocketOxygen2": [
+     1,
+     "Null"
+    ],
+    "RocketPressure1": [
+     1,
+     "Null"
+    ],
+    "RocketPressure2": [
+     1,
+     "Null"
+    ],
+    "RocketPurification1": [
+     1,
+     "Null"
+    ],
+    "RocketReactor": [
+     1,
+     "Null"
+    ],
+    "RocketReactor2": [
+     1,
+     "Null"
+    ],
+    "RocketToxicInformations1": [
+     1,
+     "Null"
+    ],
+    "RocketTravel1": [
+     1,
+     "Null"
+    ],
+    "Rod-alloy": [
+     1,
+     "Null"
+    ],
+    "Rod-iridium": [
+     1,
+     "Null"
+    ],
+    "Rod-osmium": [
+     1,
+     "Null"
+    ],
+    "Rod-plastic": [
+     1,
+     "Null"
+    ],
+    "Rod-tungsten": [
+     1,
+     "Null"
+    ],
+    "Rod-uranium": [
+     1,
+     "Null"
+    ],
+    "Seed0": [
+     1,
+     "Null"
+    ],
+    "Seed0Growable": [
+     1,
+     "Null"
+    ],
+    "Seed1": [
+     1,
+     "Null"
+    ],
+    "Seed10Humble": [
+     1,
+     "Null"
+    ],
+    "Seed10HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed11Humble": [
+     1,
+     "Null"
+    ],
+    "Seed11HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed1Growable": [
+     1,
+     "Null"
+    ],
+    "Seed2": [
+     1,
+     "Null"
+    ],
+    "Seed2Growable": [
+     1,
+     "Null"
+    ],
+    "Seed3": [
+     1,
+     "Null"
+    ],
+    "Seed3Growable": [
+     1,
+     "Null"
+    ],
+    "Seed4": [
+     1,
+     "Null"
+    ],
+    "Seed4Growable": [
+     1,
+     "Null"
+    ],
+    "Seed5": [
+     1,
+     "Null"
+    ],
+    "Seed5Growable": [
+     1,
+     "Null"
+    ],
+    "Seed6": [
+     1,
+     "Null"
+    ],
+    "Seed6Growable": [
+     1,
+     "Null"
+    ],
+    "Seed7Humble": [
+     1,
+     "Null"
+    ],
+    "Seed7HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed8Humble": [
+     1,
+     "Null"
+    ],
+    "Seed8HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed9Humble": [
+     1,
+     "Null"
+    ],
+    "Seed9HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "SeedGold": [
+     1,
+     "Null"
+    ],
+    "SeedGoldGrowable": [
+     1,
+     "Null"
+    ],
+    "Selenium": [
+     1,
+     "Null"
+    ],
+    "Silicon": [
+     1,
+     "Null"
+    ],
+    "Silk": [
+     1,
+     "Null"
+    ],
+    "SilkWorm": [
+     1,
+     "Null"
+    ],
+    "Skin-01": [
+     1,
+     "Skin"
+    ],
+    "Skin-02": [
+     1,
+     "Skin"
+    ],
+    "Skin-03": [
+     1,
+     "Skin"
+    ],
+    "Skin-04": [
+     1,
+     "Skin"
+    ],
+    "Skin-05": [
+     1,
+     "Skin"
+    ],
+    "Skin-06": [
+     1,
+     "Skin"
+    ],
+    "Skin-07": [
+     1,
+     "Skin"
+    ],
+    "Skin-08": [
+     1,
+     "Skin"
+    ],
+    "Skin-09": [
+     1,
+     "Skin"
+    ],
+    "Skin-10": [
+     1,
+     "Skin"
+    ],
+    "Skin-11": [
+     1,
+     "Skin"
+    ],
+    "Skin-12": [
+     1,
+     "Skin"
+    ],
+    "Skin-13": [
+     1,
+     "Skin"
+    ],
+    "Skin-14": [
+     1,
+     "Skin"
+    ],
+    "Skin-15": [
+     1,
+     "Skin"
+    ],
+    "Skin-16": [
+     1,
+     "Skin"
+    ],
+    "Skin-17": [
+     1,
+     "Skin"
+    ],
+    "Skin-18": [
+     1,
+     "Skin"
+    ],
+    "Skin-19": [
+     1,
+     "Skin"
+    ],
+    "Skin-20": [
+     1,
+     "Skin"
+    ],
+    "Skin-21": [
+     1,
+     "Skin"
+    ],
+    "Skin-22": [
+     1,
+     "Skin"
+    ],
+    "Skin-23": [
+     1,
+     "Skin"
+    ],
+    "Skin-24": [
+     1,
+     "Skin"
+    ],
+    "SmartFabric": [
+     1,
+     "Null"
+    ],
+    "SolarQuartz": [
+     1,
+     "Null"
+    ],
+    "Sulfur": [
+     1,
+     "Null"
+    ],
+    "TerraTokens100": [
+     1,
+     "Null"
+    ],
+    "TerraTokens1000": [
+     1,
+     "Null"
+    ],
+    "TerraTokens500": [
+     1,
+     "Null"
+    ],
+    "TerraTokens5000": [
+     1,
+     "Null"
+    ],
+    "Titanium": [
+     1,
+     "Null"
+    ],
+    "ToxicGoo": [
+     1,
+     "Null"
+    ],
+    "ToxicSpores": [
+     1,
+     "Null"
+    ],
+    "ToxicWater": [
+     1,
+     "Null"
+    ],
+    "ToxicZoneHudDisplayer": [
+     1,
+     "ToxinsHUD"
+    ],
+    "ToxicZoneHudDisplayer2": [
+     1,
+     "ToxinsHUD"
+    ],
+    "ToxicityAmmo": [
+     1,
+     "Null"
+    ],
+    "ToxicityAmmoPack": [
+     1,
+     "Null"
+    ],
+    "ToxicityMedecine": [
+     1,
+     "Null"
+    ],
+    "ToxicityMedecinePack": [
+     1,
+     "Null"
+    ],
+    "Toxins": [
+     1,
+     "Null"
+    ],
+    "ToxinsFilter1": [
+     1,
+     "ToxinsFilter"
+    ],
+    "ToxinsFilter2": [
+     1,
+     "ToxinsFilter"
+    ],
+    "ToxinsFilter3": [
+     1,
+     "ToxinsFilter"
+    ],
+    "Tree0Growable": [
+     1,
+     "Null"
+    ],
+    "Tree0Seed": [
+     1,
+     "Null"
+    ],
+    "Tree10Growable": [
+     1,
+     "Null"
+    ],
+    "Tree10Seed": [
+     1,
+     "Null"
+    ],
+    "Tree11Growable": [
+     1,
+     "Null"
+    ],
+    "Tree11Seed": [
+     1,
+     "Null"
+    ],
+    "Tree12Growable": [
+     1,
+     "Null"
+    ],
+    "Tree12Seed": [
+     1,
+     "Null"
+    ],
+    "Tree13Growable": [
+     1,
+     "Null"
+    ],
+    "Tree13Seed": [
+     1,
+     "Null"
+    ],
+    "Tree14Growable": [
+     1,
+     "Null"
+    ],
+    "Tree14Seed": [
+     1,
+     "Null"
+    ],
+    "Tree15Growable": [
+     1,
+     "Null"
+    ],
+    "Tree15Seed": [
+     1,
+     "Null"
+    ],
+    "Tree16Growable": [
+     1,
+     "Null"
+    ],
+    "Tree16Seed": [
+     1,
+     "Null"
+    ],
+    "Tree17Growable": [
+     1,
+     "Null"
+    ],
+    "Tree17Seed": [
+     1,
+     "Null"
+    ],
+    "Tree18Growable": [
+     1,
+     "Null"
+    ],
+    "Tree18Seed": [
+     1,
+     "Null"
+    ],
+    "Tree1Growable": [
+     1,
+     "Null"
+    ],
+    "Tree1Seed": [
+     1,
+     "Null"
+    ],
+    "Tree2Growable": [
+     1,
+     "Null"
+    ],
+    "Tree2Seed": [
+     1,
+     "Null"
+    ],
+    "Tree3Growable": [
+     1,
+     "Null"
+    ],
+    "Tree3Seed": [
+     1,
+     "Null"
+    ],
+    "Tree4Growable": [
+     1,
+     "Null"
+    ],
+    "Tree4Seed": [
+     1,
+     "Null"
+    ],
+    "Tree5Growable": [
+     1,
+     "Null"
+    ],
+    "Tree5Seed": [
+     1,
+     "Null"
+    ],
+    "Tree6Growable": [
+     1,
+     "Null"
+    ],
+    "Tree6Seed": [
+     1,
+     "Null"
+    ],
+    "Tree7Growable": [
+     1,
+     "Null"
+    ],
+    "Tree7Seed": [
+     1,
+     "Null"
+    ],
+    "Tree8Growable": [
+     1,
+     "Null"
+    ],
+    "Tree8Seed": [
+     1,
+     "Null"
+    ],
+    "Tree9Growable": [
+     1,
+     "Null"
+    ],
+    "Tree9Seed": [
+     1,
+     "Null"
+    ],
+    "TreeRoot": [
+     1,
+     "Null"
+    ],
+    "Uranim": [
+     1,
+     "Null"
+    ],
+    "Uraninite": [
+     1,
+     "Null"
+    ],
+    "Vegetable0Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable0Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable1Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable1Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable2Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable2Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable3Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable3Seed": [
+     1,
+     "Null"
+    ],
+    "VehicleBeacon1": [
+     1,
+     "MapChip"
+    ],
+    "VehicleEquipmentSize1": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "VehicleEquipmentSize2": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "VehicleInventorySize1": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleInventorySize2": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleInventorySize3": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleJetpack1": [
+     1,
+     "Jetpack"
+    ],
+    "VehicleLights1": [
+     1,
+     "MultiToolLight"
+    ],
+    "VehicleLights2": [
+     1,
+     "MultiToolLight"
+    ],
+    "VehicleLogistic1": [
+     1,
+     "LogisticChip"
+    ],
+    "VehicleOxygen1": [
+     1,
+     "OxygenTank"
+    ],
+    "VehicleSpeed1": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed2": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed3": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed4": [
+     1,
+     "Speed"
+    ],
+    "VehicleTruck": [
+     1,
+     "Null"
+    ],
+    "WardenKey": [
+     1,
+     "Null"
+    ],
+    "WardensChip": [
+     1,
+     "Null"
+    ],
+    "WaterBottle1": [
+     1,
+     "Null"
+    ],
+    "WaterFilter": [
+     1,
+     "Null"
+    ],
+    "Zeolite": [
+     1,
+     "Null"
+    ],
+    "astrofood": [
+     1,
+     "Null"
+    ],
+    "astrofood2": [
+     1,
+     "Null"
+    ],
+    "honey": [
+     1,
+     "Null"
+    ],
+    "ice": [
+     1,
+     "Null"
+    ]
+   }
+  },
+  "26763323": {
+   "constructibles": {
+    "AirPurificationMachine1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine3": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AirPurificationMachine4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "AlgaeGenerator1": [
+     1,
+     5,
+     0,
+     1
+    ],
+    "AlgaeGenerator2": [
+     1,
+     7,
+     0,
+     1
+    ],
+    "AmphibiansFarm1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "AnimalEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie10": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie11": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalEffigie9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "AnimalFeeder1": [
+     1,
+     5,
+     10,
+     0
+    ],
+    "AnimalShelter1": [
+     1,
+     6,
+     5,
+     0
+    ],
+    "Aquarium1": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Aquarium2": [
+     1,
+     6,
+     2,
+     0
+    ],
+    "AquariumTube1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ArcadeMachine1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Arch1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "AutoCrafter1": [
+     1,
+     3,
+     8,
+     0
+    ],
+    "Beacon": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "BedDouble": [
+     1,
+     7,
+     0,
+     0
+    ],
+    "BedDoubleColored": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "BedSimple": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "Beehive1": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Beehive2": [
+     1,
+     4,
+     4,
+     0
+    ],
+    "Biodome2": [
+     1,
+     6,
+     2,
+     0
+    ],
+    "Biolab": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "ButterflyDisplayer1": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "ButterflyDome1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "ButterflyFarm1": [
+     1,
+     3,
+     2,
+     0
+    ],
+    "ButterflyFarm2": [
+     1,
+     5,
+     3,
+     0
+    ],
+    "ButterflyFarm3": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "Chair1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Chair2": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ComAntenna": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "Container1": [
+     1,
+     1,
+     15,
+     0
+    ],
+    "Container2": [
+     1,
+     3,
+     35,
+     0
+    ],
+    "Container3": [
+     1,
+     3,
+     80,
+     0
+    ],
+    "ContainerAqualis": [
+     0,
+     2,
+     3,
+     0
+    ],
+    "ContainerGoldenAqualis": [
+     0,
+     3,
+     5,
+     0
+    ],
+    "ContainerMagnetism1": [
+     1,
+     3,
+     140,
+     0
+    ],
+    "ContainerToxic1": [
+     1,
+     2,
+     88,
+     0
+    ],
+    "CookingStation1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Counter1": [
+     1,
+     2,
+     25,
+     0
+    ],
+    "Counter2": [
+     1,
+     2,
+     25,
+     0
+    ],
+    "CraftStation1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "CraftStation2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "DeparturePlatform": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Desktop1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Desktop2": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Destructor1": [
+     1,
+     4,
+     30,
+     0
+    ],
+    "DetoxificationMachine1": [
+     1,
+     6,
+     20,
+     1
+    ],
+    "DetoxificationMachine2": [
+     1,
+     6,
+     40,
+     1
+    ],
+    "DetoxificationMachine3": [
+     1,
+     6,
+     70,
+     1
+    ],
+    "DisplayCase": [
+     1,
+     3,
+     6,
+     0
+    ],
+    "Drill0": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Drill1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Drill2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Drill3": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Drill4": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "DroneExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "DroneStation1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "Ecosystem1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "Elevator": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EndingExplosives": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "EnergyGenerator1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "EnergyGenerator2": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "EnergyGenerator3": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "EnergyGenerator4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "EnergyGenerator5": [
+     1,
+     8,
+     0,
+     0
+    ],
+    "EnergyGenerator6": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "EscapePod": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EscapePodHumble": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EscapePodInterplanetary": [
+     0,
+     0,
+     20,
+     0
+    ],
+    "EscapePodMagnetaris": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "EscapePodToxicity": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ExerciseBike1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Farm1": [
+     1,
+     6,
+     1,
+     1
+    ],
+    "Farm2": [
+     1,
+     6,
+     1,
+     1
+    ],
+    "Faucet1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Fence": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FenceRounded": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Fireplace": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "FishDisplayer1": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "FishFarm1": [
+     1,
+     6,
+     3,
+     0
+    ],
+    "FishFarm2": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "FloorAngleGlass": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FloorGlass": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FlowerPot1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "FlowerPot2": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "FlowerPot3": [
+     1,
+     2,
+     3,
+     0
+    ],
+    "Foundation": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FoundationAngle": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "FoundationSlope": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "FountainBig": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Fridge1": [
+     1,
+     3,
+     30,
+     0
+    ],
+    "FrogDisplayer1": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "FusionGenerator1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "GasExtractor1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "GasExtractor2": [
+     1,
+     6,
+     8,
+     0
+    ],
+    "GenerationGroupVein": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "GeneticExtractor1": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "GeneticManipulator1": [
+     1,
+     5,
+     3,
+     0
+    ],
+    "GeneticSynthetizer1": [
+     1,
+     6,
+     10,
+     1
+    ],
+    "GoldenContainer": [
+     1,
+     2,
+     30,
+     0
+    ],
+    "GoldenEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenEffigie9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenMagnetarisEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GoldenToxicityEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "GrassSpreader1": [
+     1,
+     5,
+     0,
+     0
+    ],
+    "HarvestingRobot1": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "Heater1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Heater2": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Heater3": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "Heater4": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Heater5": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "HologramGenerator": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "Incubator1": [
+     1,
+     4,
+     3,
+     0
+    ],
+    "Incubator2": [
+     1,
+     4,
+     1,
+     0
+    ],
+    "InsideLamp1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "InsideLamp2": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "InteriorStairs1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "InterplanetaryExchangePlatform1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "Ivy1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Ladder": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "LaunchPlatform": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "LaunchPlatform2": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "LavaLamp1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Library1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "LightBoxMedium": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "LightingCollector1": [
+     1,
+     3,
+     5,
+     0
+    ],
+    "LightingCollector2": [
+     1,
+     3,
+     15,
+     0
+    ],
+    "LightingCollector3": [
+     1,
+     3,
+     40,
+     0
+    ],
+    "Locker1": [
+     1,
+     1,
+     30,
+     0
+    ],
+    "MagnetarWaterCollector1": [
+     1,
+     3,
+     20,
+     0
+    ],
+    "MagnetismCraftStation1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Megadome1": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Optimizer1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Optimizer2": [
+     1,
+     6,
+     3,
+     0
+    ],
+    "OreBreaker1": [
+     1,
+     6,
+     12,
+     1
+    ],
+    "OreBreaker2": [
+     1,
+     6,
+     20,
+     1
+    ],
+    "OreBreaker3": [
+     1,
+     6,
+     30,
+     1
+    ],
+    "OreExtractor1": [
+     1,
+     6,
+     20,
+     0
+    ],
+    "OreExtractor2": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "OreExtractor3": [
+     1,
+     6,
+     15,
+     0
+    ],
+    "OutsideLamp1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "PlanetViewer1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "PlanetaryDeliveryDepot1": [
+     1,
+     3,
+     40,
+     0
+    ],
+    "PlasmaCollector1": [
+     1,
+     3,
+     3,
+     0
+    ],
+    "PlasmaCollector2": [
+     1,
+     4,
+     15,
+     0
+    ],
+    "PlasmaCollector3": [
+     1,
+     4,
+     36,
+     0
+    ],
+    "PlasmaCollector4": [
+     1,
+     3,
+     56,
+     0
+    ],
+    "Pod4x": [
+     1,
+     8,
+     0,
+     0
+    ],
+    "Pod9xA": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pod9xB": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pod9xC": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "PodUnderground": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "Pooltable1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "PortalGenerator1": [
+     1,
+     9,
+     10,
+     0
+    ],
+    "Poster1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster10": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster11": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster12": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster13": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster7": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster8": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Poster9": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "ProceduralInstanceGenerator": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ProceduralWreckSafe": [
+     0,
+     1,
+     30,
+     0
+    ],
+    "QuartzCraftStation1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "ReactivableFoodGenerator": [
+     0,
+     0,
+     4,
+     0
+    ],
+    "ReactivableLaunchPlatform2": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ReactivableOreExtractor2Aluminium": [
+     0,
+     0,
+     10,
+     0
+    ],
+    "ReactivableOreExtractor2Ice": [
+     0,
+     0,
+     10,
+     0
+    ],
+    "ReactivableOreExtractor2RocketReactor": [
+     0,
+     0,
+     5,
+     0
+    ],
+    "RecyclingMachine": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "RecyclingMachine2": [
+     1,
+     6,
+     35,
+     1
+    ],
+    "RockExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ScreenBiomass": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenEnergy": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenMagnetism1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenMap1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenMessage": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ScreenRockets": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenSystem1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenTerraStage": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ScreenTerraformation": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenToxic1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ScreenUnlockables": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "SeedSpreader1": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "SeedSpreader2": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Server1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Shelves1": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "Shower1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "Sign": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "SilkGenerator": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "SkinDisplayer": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "Sofa": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaAngle": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaAngleColored": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SofaColored": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "SpaceMultiplierAnimals": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierBiomass": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierHeat": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierInsects": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierMagneticStabilization": [
+     0,
+     0,
+     50000,
+     0
+    ],
+    "SpaceMultiplierOxygen": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPlants": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPressure": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "SpaceMultiplierPurification": [
+     0,
+     0,
+     10000,
+     0
+    ],
+    "Stairs": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "StarformContainer": [
+     1,
+     2,
+     15,
+     0
+    ],
+    "StarformEffigie1": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie2": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie3": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie4": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie5": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "StarformEffigie6": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "Table1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall2": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TableSmall3": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "Teleporter1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "Toilet1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "ToxicRefinementCraftStation1": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "ToxicWaterCollector1": [
+     1,
+     3,
+     5,
+     0
+    ],
+    "ToxicWaterCollector2": [
+     1,
+     3,
+     15,
+     0
+    ],
+    "ToxicWaterCollector3": [
+     1,
+     3,
+     48,
+     0
+    ],
+    "ToxicityDiorama1": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "ToxicityDiorama2": [
+     1,
+     4,
+     0,
+     0
+    ],
+    "TradePlatform1": [
+     1,
+     6,
+     25,
+     0
+    ],
+    "TrashAluminiumScraps1": [
+     0,
+     3,
+     0,
+     0
+    ],
+    "TrashElectronics1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashMetalsCanisters1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashMetalsScraps1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "TrashUraniumScraps1": [
+     0,
+     2,
+     0,
+     0
+    ],
+    "Trashcan1": [
+     1,
+     1,
+     15,
+     0
+    ],
+    "Treadmill1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "TreePlanter": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreePlanter2": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreePlanter3": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "TreeSpreader0": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "TreeSpreader1": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "TreeSpreader2": [
+     1,
+     6,
+     1,
+     0
+    ],
+    "Vault1": [
+     1,
+     1,
+     48,
+     0
+    ],
+    "VegetableGrower1": [
+     1,
+     3,
+     1,
+     1
+    ],
+    "VegetableGrower2": [
+     1,
+     3,
+     1,
+     1
+    ],
+    "Vegetube1": [
+     1,
+     3,
+     1,
+     0
+    ],
+    "Vegetube2": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "VegetubeOutside1": [
+     1,
+     5,
+     1,
+     0
+    ],
+    "VehicleCrafter1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "VendingMachine1": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "WallInside": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "WallWaterLife": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "WardenAustel": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "WaterCollector1": [
+     1,
+     6,
+     4,
+     0
+    ],
+    "WaterCollector2": [
+     1,
+     6,
+     8,
+     0
+    ],
+    "WaterLifeCollector1": [
+     1,
+     6,
+     10,
+     0
+    ],
+    "WindTurbine1": [
+     1,
+     6,
+     0,
+     0
+    ],
+    "WreckEntryLocked1": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "WreckEntryLocked2": [
+     0,
+     1,
+     2,
+     0
+    ],
+    "WreckFusionGenerator": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "WreckRockExplodable": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "WreckSafe": [
+     0,
+     1,
+     30,
+     0
+    ],
+    "WreckServer": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "WreckWardrobe": [
+     0,
+     0,
+     8,
+     0
+    ],
+    "biodome": [
+     1,
+     9,
+     0,
+     0
+    ],
+    "canister": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "door": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "pod": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "podAngle": [
+     1,
+     3,
+     0,
+     0
+    ],
+    "wallplain": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "window": [
+     1,
+     2,
+     0,
+     0
+    ],
+    "wreckpilar": [
+     0,
+     1,
+     0,
+     0
+    ]
+   },
+   "items": {
+    "AirFilter1": [
+     1,
+     "AirFilter"
+    ],
+    "Algae1Growable": [
+     0,
+     "Null"
+    ],
+    "Algae1Seed": [
+     1,
+     "Null"
+    ],
+    "Alloy": [
+     1,
+     "Null"
+    ],
+    "Aluminium": [
+     1,
+     "Null"
+    ],
+    "Amber": [
+     1,
+     "Null"
+    ],
+    "AnimalBones": [
+     1,
+     "Null"
+    ],
+    "AnimalFood1": [
+     1,
+     "Null"
+    ],
+    "AnimalFood2": [
+     1,
+     "Null"
+    ],
+    "AnimalFood3": [
+     1,
+     "Null"
+    ],
+    "AntiToxinsExplosive1": [
+     1,
+     "Null"
+    ],
+    "AntiToxinsExplosive2": [
+     1,
+     "Null"
+    ],
+    "Backpack1": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack2": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack3": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack4": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack5": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack6": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Backpack7": [
+     1,
+     "BackpackIncrease"
+    ],
+    "Bacteria1": [
+     1,
+     "Null"
+    ],
+    "BalzarQuartz": [
+     1,
+     "Null"
+    ],
+    "Bauxite": [
+     1,
+     "Null"
+    ],
+    "Bee1Hatched": [
+     1,
+     "Null"
+    ],
+    "Bee1Larvae": [
+     1,
+     "Null"
+    ],
+    "Bioplastic1": [
+     1,
+     "Null"
+    ],
+    "BlueprintAutocrafter": [
+     1,
+     "Null"
+    ],
+    "BlueprintBedDoubleColored": [
+     1,
+     "Null"
+    ],
+    "BlueprintContainer3": [
+     1,
+     "Null"
+    ],
+    "BlueprintCookingStation": [
+     1,
+     "Null"
+    ],
+    "BlueprintDeparturePlatform": [
+     1,
+     "Null"
+    ],
+    "BlueprintDrone2": [
+     1,
+     "Null"
+    ],
+    "BlueprintEquipmentIncrease2": [
+     1,
+     "Null"
+    ],
+    "BlueprintEquipmentIncrease5": [
+     1,
+     "Null"
+    ],
+    "BlueprintFireplace": [
+     1,
+     "Null"
+    ],
+    "BlueprintFlare": [
+     1,
+     "Null"
+    ],
+    "BlueprintFountainBig": [
+     1,
+     "Null"
+    ],
+    "BlueprintHologramGenerator": [
+     1,
+     "Null"
+    ],
+    "BlueprintLightBoxMedium": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xA": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xB": [
+     1,
+     "Null"
+    ],
+    "BlueprintPod9xC": [
+     1,
+     "Null"
+    ],
+    "BlueprintShower": [
+     1,
+     "Null"
+    ],
+    "BlueprintSmartFabric": [
+     1,
+     "Null"
+    ],
+    "BlueprintSofaColored": [
+     1,
+     "Null"
+    ],
+    "BlueprintSolarQuartz": [
+     1,
+     "Null"
+    ],
+    "BlueprintT1": [
+     1,
+     "Null"
+    ],
+    "BlueprintToxicityDiorama1": [
+     1,
+     "Null"
+    ],
+    "BlueprintToxicityDiorama2": [
+     1,
+     "Null"
+    ],
+    "BlueprintTradePlatform": [
+     1,
+     "Null"
+    ],
+    "BlueprintTreePlanter": [
+     1,
+     "Null"
+    ],
+    "BlueprintVehicleJetpack1": [
+     1,
+     "Null"
+    ],
+    "BlueprintWallWaterLife": [
+     1,
+     "Null"
+    ],
+    "BlueprintWardensChip": [
+     1,
+     "Null"
+    ],
+    "BootsSpeed1": [
+     1,
+     "Speed"
+    ],
+    "BootsSpeed2": [
+     1,
+     "Speed"
+    ],
+    "BootsSpeed3": [
+     1,
+     "Speed"
+    ],
+    "Butterfly10Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly10Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly11Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly11Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly12Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly12Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly13Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly13Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly14Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly14Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly15Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly15Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly16Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly16Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly17Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly17Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly18Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly18Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly19Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly19Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly1Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly1Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly20Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly20Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly21Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly21Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly2Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly2Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly3Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly3Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly4Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly4Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly5Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly5Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly6Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly6Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly7Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly7Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly8Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly8Larvae": [
+     1,
+     "Null"
+    ],
+    "Butterfly9Hatched": [
+     0,
+     "Null"
+    ],
+    "Butterfly9Larvae": [
+     1,
+     "Null"
+    ],
+    "ChlorineCapsule1": [
+     1,
+     "Null"
+    ],
+    "CircuitBoard1": [
+     1,
+     "Null"
+    ],
+    "Cobalt": [
+     1,
+     "Null"
+    ],
+    "CookCake1": [
+     1,
+     "Null"
+    ],
+    "CookChocolate": [
+     1,
+     "Null"
+    ],
+    "CookCocoaGrowable": [
+     1,
+     "Null"
+    ],
+    "CookCocoaSeed": [
+     1,
+     "Null"
+    ],
+    "CookCookie1": [
+     1,
+     "Null"
+    ],
+    "CookCroissant": [
+     1,
+     "Null"
+    ],
+    "CookFlour": [
+     1,
+     "Null"
+    ],
+    "CookStew1": [
+     1,
+     "Null"
+    ],
+    "CookStewFish1": [
+     1,
+     "Null"
+    ],
+    "CookWheatGrowable": [
+     1,
+     "Null"
+    ],
+    "CookWheatSeed": [
+     1,
+     "Null"
+    ],
+    "CosmicQuartz": [
+     1,
+     "Null"
+    ],
+    "DNASequence": [
+     1,
+     "Null"
+    ],
+    "DebrisContainer1": [
+     0,
+     "Null"
+    ],
+    "Dolomite": [
+     1,
+     "Null"
+    ],
+    "Drone1": [
+     1,
+     "Null"
+    ],
+    "Drone2": [
+     1,
+     "Null"
+    ],
+    "Drone3": [
+     1,
+     "Null"
+    ],
+    "DroneLog": [
+     1,
+     "Null"
+    ],
+    "EquipmentIncrease1": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease2": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease3": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease4": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "EquipmentIncrease5": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "Explosive": [
+     1,
+     "Null"
+    ],
+    "FabricBlue": [
+     1,
+     "Null"
+    ],
+    "Fertilizer1": [
+     1,
+     "Null"
+    ],
+    "Fertilizer2": [
+     1,
+     "Null"
+    ],
+    "Fertilizer3": [
+     1,
+     "Null"
+    ],
+    "Fish10Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish10Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish11Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish11Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish12Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish12Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish13Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish13Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish14Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish14Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish15Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish15Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish1Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish1Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish2Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish2Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish3Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish3Hatched": [
+     0,
+     "Null"
+    ],
+    "Fish4Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish4Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish5Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish5Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish6Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish6Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish7Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish7Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish8Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish8Hatched": [
+     1,
+     "Null"
+    ],
+    "Fish9Eggs": [
+     1,
+     "Null"
+    ],
+    "Fish9Hatched": [
+     0,
+     "Null"
+    ],
+    "Flare": [
+     1,
+     "Null"
+    ],
+    "FloatingWater": [
+     1,
+     "Null"
+    ],
+    "Frog10Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog10Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog11Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog11Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog12Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog12Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog13Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog13Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog14Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog14Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog15Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog15Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog16Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog16Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog17Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog17Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog1Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog1Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog2Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog2Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog3Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog3Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog4Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog4Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog5Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog5Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog6Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog6Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog7Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog7Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog8Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog8Hatched": [
+     1,
+     "Null"
+    ],
+    "Frog9Eggs": [
+     1,
+     "Null"
+    ],
+    "Frog9Hatched": [
+     1,
+     "Null"
+    ],
+    "FrogGoldEggs": [
+     1,
+     "Null"
+    ],
+    "FrogGoldHatched": [
+     1,
+     "Null"
+    ],
+    "FuseAnimals1": [
+     1,
+     "Null"
+    ],
+    "FuseCartridge": [
+     1,
+     "Null"
+    ],
+    "FuseEnergy1": [
+     1,
+     "Null"
+    ],
+    "FuseGrowth1": [
+     1,
+     "Null"
+    ],
+    "FuseHeat1": [
+     1,
+     "Null"
+    ],
+    "FuseInsects1": [
+     1,
+     "Null"
+    ],
+    "FuseOxygen1": [
+     1,
+     "Null"
+    ],
+    "FusePlants1": [
+     1,
+     "Null"
+    ],
+    "FusePressure1": [
+     1,
+     "Null"
+    ],
+    "FuseProduction1": [
+     1,
+     "Null"
+    ],
+    "FusePurification1": [
+     1,
+     "Null"
+    ],
+    "FuseTradeRocketsSpeed1": [
+     1,
+     "Null"
+    ],
+    "FusionEnergyCell": [
+     1,
+     "Null"
+    ],
+    "GeneticTrait": [
+     1,
+     "Null"
+    ],
+    "HudChipCleanConstruction": [
+     1,
+     "MultiToolCleanConstruction"
+    ],
+    "HudCompass": [
+     1,
+     "CompassHUD"
+    ],
+    "Iridium": [
+     1,
+     "Null"
+    ],
+    "Iron": [
+     1,
+     "Null"
+    ],
+    "Jetpack1": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack2": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack3": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack4": [
+     1,
+     "Jetpack"
+    ],
+    "Jetpack5": [
+     1,
+     "Jetpack"
+    ],
+    "KeyCard2": [
+     1,
+     "Null"
+    ],
+    "Keycard1": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase1": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase2": [
+     1,
+     "Null"
+    ],
+    "LarvaeBase3": [
+     1,
+     "Null"
+    ],
+    "LightningProtection1": [
+     1,
+     21
+    ],
+    "LightningProtection2": [
+     1,
+     21
+    ],
+    "LightningProtection3": [
+     1,
+     21
+    ],
+    "Magnesium": [
+     1,
+     "Null"
+    ],
+    "MagnetarEnergyCell": [
+     1,
+     "Null"
+    ],
+    "MagnetarEnergyCell2": [
+     1,
+     "Null"
+    ],
+    "MagnetarLightning": [
+     1,
+     "Null"
+    ],
+    "MagnetarOrganic": [
+     1,
+     "Null"
+    ],
+    "MagnetarPlasma": [
+     1,
+     "Null"
+    ],
+    "MagnetarQuantic": [
+     1,
+     "Null"
+    ],
+    "MagnetarQuartz": [
+     1,
+     "Null"
+    ],
+    "MagnetarWater": [
+     1,
+     "Null"
+    ],
+    "Magnets1": [
+     1,
+     "Null"
+    ],
+    "Magnets2": [
+     1,
+     "Null"
+    ],
+    "MapChip": [
+     1,
+     "MapChip"
+    ],
+    "MethanCapsule1": [
+     1,
+     "Null"
+    ],
+    "MicroPlastics": [
+     1,
+     "Null"
+    ],
+    "Minable-Neodymium": [
+     1,
+     "Null"
+    ],
+    "Minable-Tungsten": [
+     1,
+     "Null"
+    ],
+    "MultiBuild": [
+     1,
+     "MultiToolBuild"
+    ],
+    "MultiDeconstruct": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolCleaningGooChip1": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip2": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip3": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolCleaningGooChip4": [
+     1,
+     "ToxinsCleaningChip"
+    ],
+    "MultiToolDeconstruct2": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolDeconstruct3": [
+     1,
+     "MultiToolDeconstruct"
+    ],
+    "MultiToolLight": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolLight2": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolLight3": [
+     1,
+     "MultiToolLight"
+    ],
+    "MultiToolMagnet1": [
+     1,
+     20
+    ],
+    "MultiToolMagnet2": [
+     1,
+     20
+    ],
+    "MultiToolMagnet3": [
+     1,
+     20
+    ],
+    "MultiToolMineSpeed1": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed2": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed3": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "MultiToolMineSpeed4": [
+     1,
+     "MultiToolMineSpeed"
+    ],
+    "Mutagen1": [
+     1,
+     "Null"
+    ],
+    "Mutagen2": [
+     1,
+     "Null"
+    ],
+    "Mutagen3": [
+     1,
+     "Null"
+    ],
+    "Mutagen4": [
+     1,
+     "Null"
+    ],
+    "NitrogenCapsule1": [
+     1,
+     "Null"
+    ],
+    "Obsidian": [
+     1,
+     "Null"
+    ],
+    "Osmium": [
+     1,
+     "Null"
+    ],
+    "OxygenCapsule1": [
+     1,
+     "Null"
+    ],
+    "OxygenTank1": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank2": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank3": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank4": [
+     1,
+     "OxygenTank"
+    ],
+    "OxygenTank5": [
+     1,
+     "OxygenTank"
+    ],
+    "Phosphorus": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton1": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton2": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton3": [
+     1,
+     "Null"
+    ],
+    "Phytoplankton4": [
+     1,
+     "Null"
+    ],
+    "PinChip1": [
+     1,
+     "PinChip"
+    ],
+    "PinChip2": [
+     1,
+     "PinChip"
+    ],
+    "PinChip3": [
+     1,
+     "PinChip"
+    ],
+    "PlasticPolymer": [
+     1,
+     "Null"
+    ],
+    "PristineMushroom": [
+     1,
+     "Null"
+    ],
+    "ProceduralWreckContainer1": [
+     0,
+     "Null"
+    ],
+    "ProceduralWreckContainer2": [
+     0,
+     "Null"
+    ],
+    "PulsarQuartz": [
+     1,
+     "Null"
+    ],
+    "PurificationCapsule": [
+     1,
+     "Null"
+    ],
+    "PurificationGel": [
+     1,
+     "Null"
+    ],
+    "PurifiedWater": [
+     1,
+     "Null"
+    ],
+    "QuasarQuartz": [
+     1,
+     "Null"
+    ],
+    "RedPowder1": [
+     1,
+     "Null"
+    ],
+    "RocketAnimals1": [
+     1,
+     "Null"
+    ],
+    "RocketAnimals2": [
+     1,
+     "Null"
+    ],
+    "RocketBiomass1": [
+     1,
+     "Null"
+    ],
+    "RocketBiomass2": [
+     1,
+     "Null"
+    ],
+    "RocketDeparture1": [
+     1,
+     "Null"
+    ],
+    "RocketDrones1": [
+     1,
+     "Null"
+    ],
+    "RocketHeat1": [
+     1,
+     "Null"
+    ],
+    "RocketHeat2": [
+     1,
+     "Null"
+    ],
+    "RocketInformations1": [
+     1,
+     "Null"
+    ],
+    "RocketInformations2": [
+     1,
+     "Null"
+    ],
+    "RocketInsects1": [
+     1,
+     "Null"
+    ],
+    "RocketInsects2": [
+     1,
+     "Null"
+    ],
+    "RocketMagneticStabilization1": [
+     1,
+     "Null"
+    ],
+    "RocketMagneticStabilization2": [
+     1,
+     "Null"
+    ],
+    "RocketMap1": [
+     1,
+     "Null"
+    ],
+    "RocketMap2": [
+     1,
+     "Null"
+    ],
+    "RocketMap3": [
+     1,
+     "Null"
+    ],
+    "RocketMap4": [
+     1,
+     "Null"
+    ],
+    "RocketOxygen1": [
+     1,
+     "Null"
+    ],
+    "RocketOxygen2": [
+     1,
+     "Null"
+    ],
+    "RocketPressure1": [
+     1,
+     "Null"
+    ],
+    "RocketPressure2": [
+     1,
+     "Null"
+    ],
+    "RocketPurification1": [
+     1,
+     "Null"
+    ],
+    "RocketReactor": [
+     1,
+     "Null"
+    ],
+    "RocketReactor2": [
+     1,
+     "Null"
+    ],
+    "RocketToxicInformations1": [
+     1,
+     "Null"
+    ],
+    "RocketTravel1": [
+     1,
+     "Null"
+    ],
+    "Rod-alloy": [
+     1,
+     "Null"
+    ],
+    "Rod-iridium": [
+     1,
+     "Null"
+    ],
+    "Rod-osmium": [
+     1,
+     "Null"
+    ],
+    "Rod-plastic": [
+     1,
+     "Null"
+    ],
+    "Rod-tungsten": [
+     1,
+     "Null"
+    ],
+    "Rod-uranium": [
+     1,
+     "Null"
+    ],
+    "Seed0": [
+     1,
+     "Null"
+    ],
+    "Seed0Growable": [
+     1,
+     "Null"
+    ],
+    "Seed1": [
+     1,
+     "Null"
+    ],
+    "Seed10Humble": [
+     1,
+     "Null"
+    ],
+    "Seed10HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed11Humble": [
+     1,
+     "Null"
+    ],
+    "Seed11HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed1Growable": [
+     1,
+     "Null"
+    ],
+    "Seed2": [
+     1,
+     "Null"
+    ],
+    "Seed2Growable": [
+     1,
+     "Null"
+    ],
+    "Seed3": [
+     1,
+     "Null"
+    ],
+    "Seed3Growable": [
+     1,
+     "Null"
+    ],
+    "Seed4": [
+     1,
+     "Null"
+    ],
+    "Seed4Growable": [
+     1,
+     "Null"
+    ],
+    "Seed5": [
+     1,
+     "Null"
+    ],
+    "Seed5Growable": [
+     1,
+     "Null"
+    ],
+    "Seed6": [
+     1,
+     "Null"
+    ],
+    "Seed6Growable": [
+     1,
+     "Null"
+    ],
+    "Seed7Humble": [
+     1,
+     "Null"
+    ],
+    "Seed7HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed8Humble": [
+     1,
+     "Null"
+    ],
+    "Seed8HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "Seed9Humble": [
+     1,
+     "Null"
+    ],
+    "Seed9HumbleGrowable": [
+     1,
+     "Null"
+    ],
+    "SeedGold": [
+     1,
+     "Null"
+    ],
+    "SeedGoldGrowable": [
+     1,
+     "Null"
+    ],
+    "Selenium": [
+     1,
+     "Null"
+    ],
+    "Silicon": [
+     1,
+     "Null"
+    ],
+    "Silk": [
+     1,
+     "Null"
+    ],
+    "SilkWorm": [
+     1,
+     "Null"
+    ],
+    "Skin-01": [
+     1,
+     "Skin"
+    ],
+    "Skin-02": [
+     1,
+     "Skin"
+    ],
+    "Skin-03": [
+     1,
+     "Skin"
+    ],
+    "Skin-04": [
+     1,
+     "Skin"
+    ],
+    "Skin-05": [
+     1,
+     "Skin"
+    ],
+    "Skin-06": [
+     1,
+     "Skin"
+    ],
+    "Skin-07": [
+     1,
+     "Skin"
+    ],
+    "Skin-08": [
+     1,
+     "Skin"
+    ],
+    "Skin-09": [
+     1,
+     "Skin"
+    ],
+    "Skin-10": [
+     1,
+     "Skin"
+    ],
+    "Skin-11": [
+     1,
+     "Skin"
+    ],
+    "Skin-12": [
+     1,
+     "Skin"
+    ],
+    "Skin-13": [
+     1,
+     "Skin"
+    ],
+    "Skin-14": [
+     1,
+     "Skin"
+    ],
+    "Skin-15": [
+     1,
+     "Skin"
+    ],
+    "Skin-16": [
+     1,
+     "Skin"
+    ],
+    "Skin-17": [
+     1,
+     "Skin"
+    ],
+    "Skin-18": [
+     1,
+     "Skin"
+    ],
+    "Skin-19": [
+     1,
+     "Skin"
+    ],
+    "Skin-20": [
+     1,
+     "Skin"
+    ],
+    "Skin-21": [
+     1,
+     "Skin"
+    ],
+    "Skin-22": [
+     1,
+     "Skin"
+    ],
+    "Skin-23": [
+     1,
+     "Skin"
+    ],
+    "Skin-24": [
+     1,
+     "Skin"
+    ],
+    "Skin-25": [
+     1,
+     "Skin"
+    ],
+    "Skin-26": [
+     1,
+     "Skin"
+    ],
+    "SmartFabric": [
+     1,
+     "Null"
+    ],
+    "SolarQuartz": [
+     1,
+     "Null"
+    ],
+    "Sulfur": [
+     1,
+     "Null"
+    ],
+    "TerraTokens100": [
+     1,
+     "Null"
+    ],
+    "TerraTokens1000": [
+     1,
+     "Null"
+    ],
+    "TerraTokens500": [
+     1,
+     "Null"
+    ],
+    "TerraTokens5000": [
+     1,
+     "Null"
+    ],
+    "Titanium": [
+     1,
+     "Null"
+    ],
+    "ToxicGoo": [
+     1,
+     "Null"
+    ],
+    "ToxicSpores": [
+     1,
+     "Null"
+    ],
+    "ToxicWater": [
+     1,
+     "Null"
+    ],
+    "ToxicZoneHudDisplayer": [
+     1,
+     "ToxinsHUD"
+    ],
+    "ToxicZoneHudDisplayer2": [
+     1,
+     "ToxinsHUD"
+    ],
+    "ToxicityAmmo": [
+     1,
+     "Null"
+    ],
+    "ToxicityAmmoPack": [
+     1,
+     "Null"
+    ],
+    "ToxicityMedecine": [
+     1,
+     "Null"
+    ],
+    "ToxicityMedecinePack": [
+     1,
+     "Null"
+    ],
+    "Toxins": [
+     1,
+     "Null"
+    ],
+    "ToxinsFilter1": [
+     1,
+     "ToxinsFilter"
+    ],
+    "ToxinsFilter2": [
+     1,
+     "ToxinsFilter"
+    ],
+    "ToxinsFilter3": [
+     1,
+     "ToxinsFilter"
+    ],
+    "Tree0Growable": [
+     1,
+     "Null"
+    ],
+    "Tree0Seed": [
+     1,
+     "Null"
+    ],
+    "Tree10Growable": [
+     1,
+     "Null"
+    ],
+    "Tree10Seed": [
+     1,
+     "Null"
+    ],
+    "Tree11Growable": [
+     1,
+     "Null"
+    ],
+    "Tree11Seed": [
+     1,
+     "Null"
+    ],
+    "Tree12Growable": [
+     1,
+     "Null"
+    ],
+    "Tree12Seed": [
+     1,
+     "Null"
+    ],
+    "Tree13Growable": [
+     1,
+     "Null"
+    ],
+    "Tree13Seed": [
+     1,
+     "Null"
+    ],
+    "Tree14Growable": [
+     1,
+     "Null"
+    ],
+    "Tree14Seed": [
+     1,
+     "Null"
+    ],
+    "Tree15Growable": [
+     1,
+     "Null"
+    ],
+    "Tree15Seed": [
+     1,
+     "Null"
+    ],
+    "Tree16Growable": [
+     1,
+     "Null"
+    ],
+    "Tree16Seed": [
+     1,
+     "Null"
+    ],
+    "Tree17Growable": [
+     1,
+     "Null"
+    ],
+    "Tree17Seed": [
+     1,
+     "Null"
+    ],
+    "Tree18Growable": [
+     1,
+     "Null"
+    ],
+    "Tree18Seed": [
+     1,
+     "Null"
+    ],
+    "Tree19Growable": [
+     1,
+     "Null"
+    ],
+    "Tree19Seed": [
+     1,
+     "Null"
+    ],
+    "Tree1Growable": [
+     1,
+     "Null"
+    ],
+    "Tree1Seed": [
+     1,
+     "Null"
+    ],
+    "Tree2Growable": [
+     1,
+     "Null"
+    ],
+    "Tree2Seed": [
+     1,
+     "Null"
+    ],
+    "Tree3Growable": [
+     1,
+     "Null"
+    ],
+    "Tree3Seed": [
+     1,
+     "Null"
+    ],
+    "Tree4Growable": [
+     1,
+     "Null"
+    ],
+    "Tree4Seed": [
+     1,
+     "Null"
+    ],
+    "Tree5Growable": [
+     1,
+     "Null"
+    ],
+    "Tree5Seed": [
+     1,
+     "Null"
+    ],
+    "Tree6Growable": [
+     1,
+     "Null"
+    ],
+    "Tree6Seed": [
+     1,
+     "Null"
+    ],
+    "Tree7Growable": [
+     1,
+     "Null"
+    ],
+    "Tree7Seed": [
+     1,
+     "Null"
+    ],
+    "Tree8Growable": [
+     1,
+     "Null"
+    ],
+    "Tree8Seed": [
+     1,
+     "Null"
+    ],
+    "Tree9Growable": [
+     1,
+     "Null"
+    ],
+    "Tree9Seed": [
+     1,
+     "Null"
+    ],
+    "TreeRoot": [
+     1,
+     "Null"
+    ],
+    "Uranim": [
+     1,
+     "Null"
+    ],
+    "Uraninite": [
+     1,
+     "Null"
+    ],
+    "Vegetable0Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable0Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable1Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable1Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable2Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable2Seed": [
+     1,
+     "Null"
+    ],
+    "Vegetable3Growable": [
+     1,
+     "Null"
+    ],
+    "Vegetable3Seed": [
+     1,
+     "Null"
+    ],
+    "VehicleBeacon1": [
+     1,
+     "MapChip"
+    ],
+    "VehicleEquipmentSize1": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "VehicleEquipmentSize2": [
+     1,
+     "EquipmentIncrease"
+    ],
+    "VehicleInventorySize1": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleInventorySize2": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleInventorySize3": [
+     1,
+     "BackpackIncrease"
+    ],
+    "VehicleJetpack1": [
+     1,
+     "Jetpack"
+    ],
+    "VehicleLights1": [
+     1,
+     "MultiToolLight"
+    ],
+    "VehicleLights2": [
+     1,
+     "MultiToolLight"
+    ],
+    "VehicleLogistic1": [
+     1,
+     "LogisticChip"
+    ],
+    "VehicleOxygen1": [
+     1,
+     "OxygenTank"
+    ],
+    "VehicleSpeed1": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed2": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed3": [
+     1,
+     "Speed"
+    ],
+    "VehicleSpeed4": [
+     1,
+     "Speed"
+    ],
+    "VehicleTruck": [
+     1,
+     "Null"
+    ],
+    "WardenKey": [
+     1,
+     "Null"
+    ],
+    "WardensChip": [
+     1,
+     "Null"
+    ],
+    "WaterBottle1": [
+     1,
+     "Null"
+    ],
+    "WaterFilter": [
+     1,
+     "Null"
+    ],
+    "Zeolite": [
+     1,
+     "Null"
+    ],
+    "astrofood": [
+     1,
+     "Null"
+    ],
+    "astrofood2": [
+     1,
+     "Null"
+    ],
+    "honey": [
+     1,
+     "Null"
+    ],
+    "ice": [
+     1,
+     "Null"
+    ]
+   }
+  }
+ }
+}

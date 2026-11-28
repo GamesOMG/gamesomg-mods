@@ -1,6 +1,6 @@
 {
   "name": "GamesOMG_Item_Spawner",
-  "version_number": "0.2.1",
+  "version_number": "0.3.0",
   "website_url": "https://gamesomg.com/planet-crafter-item-spawner/",
   "description": "Find any item by its in-game name in your game's language, in English or by id, see what it does (a seed's multiplier, a fuse's reach, food's value), and put it straight into your backpack. Buttons and help in all 13 game languages.",
   "dependencies": [

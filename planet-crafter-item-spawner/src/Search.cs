@@ -22,6 +22,9 @@ namespace GamesOMG.PlanetCrafterSpawn
         // inside planters and aquariums, Tree5Growable / Fish1Hatched, and some Blueprint… chips). Its game would show the raw
         // id; here it reads as the id split into words, is left out of browsing, and comes up only when a search matches its id
         public bool Unnamed;
+        // 0.3.0: one of the things the game hands out for a base's looks (Decor.cs): an effigy or a poster (the game files
+        // those as buildings: Placeable, put down from the backpack) or a spacesuit skin
+        public bool Decoration, Placeable;
 
         public static ItemEntry Make(string id, string name, string english, int order, object group = null, bool unnamed = false)
         {

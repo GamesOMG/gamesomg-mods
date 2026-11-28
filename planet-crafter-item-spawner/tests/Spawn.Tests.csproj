@@ -15,7 +15,9 @@
     <Compile Include="../src/KeyCheck.cs" Link="KeyCheck.cs" />
     <Compile Include="../src/Strings.cs" Link="Strings.cs" />
     <Compile Include="../src/InfoText.cs" Link="InfoText.cs" />
+    <Compile Include="../src/Decor.cs" Link="Decor.cs" />
     <None Include="bindings-all.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="decoration-groups.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="building-names.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

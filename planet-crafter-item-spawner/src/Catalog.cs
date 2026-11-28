@@ -8,6 +8,8 @@
 // Rebuilt when the game's language changes, or its item list does: the game makes every Group anew each time a world loads
 // (StaticDataHandler.LoadStaticData), so a list kept from the last world would hold Groups no item in this one points at
 // (0.2.0: in the second world of a game run, "In your backpack" read 0).
+// 0.3.0: plus the effigies and posters, which the game files as buildings (GroupsHandler.GetGroupsConstructible(); the rule is
+// Decor.IsPlaceable), after every item; spacesuit skins and those are marked Decoration (the Decoration tab, "one of each").
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -27,8 +29,10 @@ namespace GamesOMG.PlanetCrafterSpawn
         private static string cachedLanguage;
         private static int cachedGroups = -1;
         private static List<GroupItem> cachedList;
+        private static List<GroupConstructible> cachedBuildings;
         private static bool warned;
         public static int Skipped { get; private set; }
+        public static int Decorations { get; private set; }
 
         public static string CurrentLanguage()
         {
@@ -51,34 +55,102 @@ namespace GamesOMG.PlanetCrafterSpawn
             List<GroupItem> groups;
             try { groups = GroupsHandler.GetGroupsItem(); } catch (Exception) { groups = null; }
             if (groups == null || groups.Count == 0) return cache ?? new List<ItemEntry>();
+            List<GroupConstructible> buildings;
+            try { buildings = GroupsHandler.GetGroupsConstructible(); } catch (Exception) { buildings = null; }
             string language = CurrentLanguage();
-            if (cache != null && language == cachedLanguage && groups.Count == cachedGroups && ReferenceEquals(groups, cachedList)) return cache;
+            if (cache != null && language == cachedLanguage && groups.Count == cachedGroups && ReferenceEquals(groups, cachedList)
+                && ReferenceEquals(buildings, cachedBuildings)) return cache;
             var english = English(log);
-            var list = new List<ItemEntry>(groups.Count);
+            var list = new List<ItemEntry>(groups.Count + 64);
             var seen = new HashSet<string>(StringComparer.Ordinal);
-            int order = 0, skipped = 0, unnamedCount = 0;
+            int order = 0, skipped = 0, unnamedCount = 0, skins = 0, placeable = 0;
             foreach (var g in groups)
             {
                 if (g == null) continue;
                 string id = g.GetId();
                 if (string.IsNullOrEmpty(id) || !seen.Add(id)) continue;
                 if (g.GetImage() == null) { skipped++; continue; }
-                string name = null, en = null;
-                try { name = Readable.GetGroupName(g); } catch (Exception) { }
-                if (english != null) english.TryGetValue(GameConfig.localizationGroupNameId + id, out en);
-                // no name in English nor in the current language: Readable hands back the bare id
-                bool unnamed = english != null && string.IsNullOrEmpty(en) && (string.IsNullOrEmpty(name) || name == id);
-                if (unnamed) unnamedCount++;
-                list.Add(ItemEntry.Make(id, name, en, order++, g, unnamed));
+                var e = Entry(g, id, english, order++, ref unnamedCount);
+                if (Decor.IsSkin(true, g.GetEquipableType().ToString())) { e.Decoration = true; skins++; }
+                list.Add(e);
             }
+            // the effigies and posters: buildings the game only hands out inside a crate, put down from the backpack
+            if (buildings != null)
+                foreach (var g in buildings)
+                {
+                    if (g == null) continue;
+                    string id = g.GetId();
+                    if (string.IsNullOrEmpty(id) || seen.Contains(id) || !Placeable(g)) continue;
+                    seen.Add(id);
+                    var e = Entry(g, id, english, order++, ref unnamedCount);
+                    e.Decoration = e.Placeable = true;
+                    placeable++;
+                    list.Add(e);
+                }
             cache = list;
             cachedLanguage = language;
             cachedGroups = groups.Count;
             cachedList = groups;
+            cachedBuildings = buildings;
             Skipped = skipped;
+            Decorations = skins + placeable;
             log.LogInfo("Item list: " + list.Count + " items (language " + language + ", " + skipped + " without an icon left out, "
-                + unnamedCount + " the game never names: shown only when a search matches their id).");
+                + unnamedCount + " the game never names: shown only when a search matches their id). Decoration: " + placeable
+                + " effigies and posters (buildings the game hands out in crates), " + skins + " spacesuit skins.");
             return cache;
+        }
+
+        private static ItemEntry Entry(Group g, string id, Dictionary<string, string> english, int order, ref int unnamedCount)
+        {
+            string name = null, en = null;
+            try { name = Readable.GetGroupName(g); } catch (Exception) { }
+            if (english != null) english.TryGetValue(GameConfig.localizationGroupNameId + id, out en);
+            // no name in English nor in the current language: Readable hands back the bare id
+            bool unnamed = english != null && string.IsNullOrEmpty(en) && (string.IsNullOrEmpty(name) || name == id);
+            if (unnamed) unnamedCount++;
+            return ItemEntry.Make(id, name, en, order, g, unnamed);
+        }
+
+        // Decor.IsPlaceable on the game's Group: an icon, no recipe, no inventory of its own
+        private static bool Placeable(GroupConstructible g)
+        {
+            try
+            {
+                var recipe = g.GetRecipe()?.GetIngredientsGroupInRecipe();
+                var more = g.GetSecondaryInventoriesSize();
+                return Decor.IsPlaceable(true, g.GetImage() != null, recipe?.Count ?? 0, g.GetInventorySize(), more?.Count ?? 0);
+            }
+            catch (Exception) { return false; }
+        }
+
+        // the decorations this world has (Decor.Counts): any copy in an inventory, or built by a player. Read when the panel
+        // opens, when the Decoration tab is picked and after a spawn, never per frame (a big world holds tens of thousands).
+        public static HashSet<string> Owned(IList<ItemEntry> items)
+        {
+            var had = new HashSet<string>(StringComparer.Ordinal);
+            var wanted = new HashSet<Group>();
+            foreach (var e in items) if (e != null && e.Decoration && e.Group is Group g) wanted.Add(g);
+            if (wanted.Count == 0) return had;
+            try
+            {
+                var inInventories = new HashSet<int>();
+                var inventories = InventoriesHandler.Instance?.GetAllInventories();
+                if (inventories != null)
+                    foreach (var inv in inventories.Values)
+                        if (inv != null) foreach (var wo in inv.GetInsideWorldObjects()) if (wo != null) inInventories.Add(wo.GetId());
+                var all = WorldObjectsHandler.Instance?.GetAllWorldObjects();
+                if (all != null)
+                    foreach (var kv in all)
+                    {
+                        var wo = kv.Value;
+                        var g = wo?.GetGroup();
+                        if (g == null || !wanted.Contains(g)) continue;
+                        int id = wo.GetId();
+                        if (Decor.Counts(inInventories.Contains(id), wo.GetIsPlaced(), WorldObjectsIdHandler.IsWorldObjectFromScene(id))) had.Add(g.GetId());
+                    }
+            }
+            catch (Exception) { }
+            return had;
         }
 
         public static ItemEntry Find(IList<ItemEntry> items, string id)

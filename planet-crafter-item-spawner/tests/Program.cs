@@ -139,6 +139,93 @@ Check(p.Failed && p.Done && p.ResultId() == "result.partialTimeout" && p.Added =
 p = new SpawnPlan(3, false); p.NextBatch(30, 0); p.TimedOut(0);
 Check(p.ResultId() == "result.timeout", "no answer, nothing added");
 
+// ── 0.3.0: what counts as decoration, against the game's own data (tests/decoration-groups.json: every GroupData of build
+// 26411416 and of the Magnetaris preview 26763323, read from the game files). The rule is Decor's; the families it must pick are
+// written here by their ids, so a rule that drifts (or a game update that adds a kind) goes red ──
+var familyRe = new System.Text.RegularExpressions.Regex(@"^(Poster|AnimalEffigie|GoldenEffigie|GoldenToxicityEffigie|GoldenMagnetarisEffigie|StarformEffigie)\d+$");
+var skinRe = new System.Text.RegularExpressions.Regex(@"^Skin-\d+$");
+using (var doc = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "decoration-groups.json"))))
+{
+    var builds = doc.RootElement.GetProperty("builds");
+    Check(builds.TryGetProperty("26411416", out _) && builds.TryGetProperty("26763323", out _), "the decoration fixture holds both builds");
+    foreach (var build in builds.EnumerateObject())
+    {
+        var placeable = new List<string>();
+        var skins = new List<string>();
+        var families = new SortedSet<string>();
+        foreach (var c in build.Value.GetProperty("constructibles").EnumerateObject())
+        {
+            var f = c.Value.EnumerateArray().Select(x => x.GetInt32()).ToArray();
+            if (Decor.IsPlaceable(true, f[0] == 1, f[1], f[2], f[3])) { placeable.Add(c.Name); families.Add(System.Text.RegularExpressions.Regex.Replace(c.Name, @"\d+$", "")); }
+            else Check(!familyRe.IsMatch(c.Name), build.Name + ": the rule leaves out " + c.Name);
+        }
+        int itemCount = 0;
+        foreach (var it in build.Value.GetProperty("items").EnumerateObject())
+        {
+            itemCount++;
+            var a = it.Value.EnumerateArray().ToArray();
+            bool icon = a[0].GetInt32() == 1;
+            string eq = a[1].ValueKind == JsonValueKind.String ? a[1].GetString() : null;
+            Check(!Decor.IsPlaceable(false, icon, 0, 0, 0), build.Name + ": an item is never a placeable building: " + it.Name);
+            if (Decor.IsSkin(true, eq)) { skins.Add(it.Name); Check(icon, build.Name + ": every skin has an icon (the list shows it): " + it.Name); }
+            else Check(!skinRe.IsMatch(it.Name), build.Name + ": the rule leaves out the skin " + it.Name);
+        }
+        Check(itemCount > 400, build.Name + ": the fixture holds the game's items");
+        Check(placeable.All(id => familyRe.IsMatch(id)), build.Name + ": the rule picks only effigies and posters: " + string.Join(", ", placeable.Where(id => !familyRe.IsMatch(id))));
+        Check(!placeable.Contains("WardenAustel"), build.Name + ": the Warden's altar (an icon, no recipe, an inventory of 1) is not decoration");
+        Check(skins.Count > 20 && skins.All(id => skinRe.IsMatch(id)), build.Name + ": the spacesuit skins and nothing else (" + skins.Count + ")");
+        var want = new SortedSet<string> { "AnimalEffigie", "GoldenEffigie", "GoldenToxicityEffigie", "Poster", "StarformEffigie" };
+        if (build.Name == "26763323") want.Add("GoldenMagnetarisEffigie");
+        Check(families.SetEquals(want), build.Name + ": every family of effigy and poster: " + string.Join(", ", families));
+        Console.WriteLine("decoration " + build.Name + ": " + placeable.Count + " effigies and posters, " + skins.Count + " spacesuit skins");
+    }
+}
+Check(!Decor.IsSkin(true, "OxygenTank") && !Decor.IsSkin(false, "Skin") && Decor.IsSkin(true, "Skin"), "a skin is an item whose equipableType is Skin");
+Check(!Decor.IsPlaceable(true, false, 0, 0, 0), "no icon: not something a player has seen");
+Check(!Decor.IsPlaceable(true, true, 2, 0, 0) && !Decor.IsPlaceable(true, true, 0, 1, 0) && !Decor.IsPlaceable(true, true, 0, 0, 1), "a recipe, or an inventory: not a found decoration");
+
+// "had": a copy in any inventory, or built by a player; one still lying where the game put it (a scene object) doesn't count
+Check(Decor.Counts(true, false, false) && Decor.Counts(true, false, true), "in an inventory (yours, a locker, a crate you opened): had");
+Check(Decor.Counts(false, true, false), "built by a player: had");
+Check(!Decor.Counts(false, true, true), "a scene object still where the game put it (a loose effigy in a wreck): not had");
+Check(!Decor.Counts(false, false, false) && !Decor.Counts(false, false, true), "nowhere (no position, no inventory): not had");
+
+// one of each: the ids shown, in order, each once, skipping what the world has
+var deco = new List<ItemEntry>
+{
+    ItemEntry.Make("Poster1", "Affiche A", "Poster A", 0),
+    ItemEntry.Make("Poster2", "Affiche B", "Poster B", 1),
+    ItemEntry.Make("GoldenEffigie1", "Maquette dorée", "Golden effigy", 2),
+    ItemEntry.Make("GoldenEffigie2", "Maquette dorée", "Golden effigy", 3),
+    ItemEntry.Make("Skin-01", "Combinaison spatiale Comto", "Spacesuit Comto", 4),
+    ItemEntry.Make("Iron", "Fer", "Iron", 5),
+};
+foreach (var e in deco) { e.Decoration = e.Id != "Iron"; e.Placeable = e.Decoration && !e.Id.StartsWith("Skin"); }
+Check(Decor.Only(deco).Select(e => e.Id).SequenceEqual(new[] { "Poster1", "Poster2", "GoldenEffigie1", "GoldenEffigie2", "Skin-01" }), "the Decoration tab: decorations only, Iron out");
+Check(Decor.Missing(deco, new HashSet<string>()).Select(e => e.Id).SequenceEqual(new[] { "Poster1", "Poster2", "GoldenEffigie1", "GoldenEffigie2", "Skin-01" }), "one of each, nothing had: every decoration once, in the order shown, never Iron");
+Check(Decor.Missing(deco, new HashSet<string> { "Poster2", "Skin-01" }).Select(e => e.Id).SequenceEqual(new[] { "Poster1", "GoldenEffigie1", "GoldenEffigie2" }), "one of each skips what the world has");
+Check(Decor.Missing(deco, new HashSet<string> { "Poster1", "Poster2", "GoldenEffigie1", "GoldenEffigie2", "Skin-01" }).Count == 0, "everything had: nothing to add");
+Check(Decor.Missing(new List<ItemEntry> { deco[0], deco[0], deco[1] }, null).Count == 2, "an id shown twice is added once");
+Check(Decor.Missing(null, null).Count == 0, "no list: nothing");
+// the search narrows it, in the player's language or English: "affiche" / "poster" = the posters; two golden effigies share a name
+Check(Search.Filter(Decor.Only(deco), "affiche").Select(e => e.Id).SequenceEqual(new[] { "Poster1", "Poster2" }) && Search.Filter(Decor.Only(deco), "poster").Count == 2, "a search on the Decoration tab: 'affiche' or 'poster' = the posters");
+Check(Decor.Missing(Search.Filter(Decor.Only(deco), "golden"), new HashSet<string> { "GoldenEffigie1" }).Single().Id == "GoldenEffigie2", "one of each of what the search shows: the golden effigy not had");
+
+// one of each through the batch planner: 68 missing, a 30-slot backpack holding 20
+p = new SpawnPlan(68, false);
+Check(p.NextBatch(30, 20) == 10, "one of each: ask for the 10 free slots");
+p.Answered(10, 0);
+Check(p.NextBatch(30, 30) == 1, "then one probe");
+p.Answered(0, 1);
+Check(p.Full && p.Added == 10 && p.DidNotFit == 58 && p.SetResultId() == "set.partial", "full: 10 in, 58 didn't fit");
+Check(L.T(p.SetResultId(), p.Added, p.DidNotFit) == "Backpack full: added 10, 58 didn't fit. Nothing was dropped. Make room and press again for the rest.", "the one-of-each full line");
+p = new SpawnPlan(5, false); p.NextBatch(30, 0); p.Answered(5, 0);
+Check(p.Done && p.SetResultId() == "set.added" && L.T("set.added", p.Added, p.DidNotFit) == "Added one of each: 5 into your backpack.", "all fit: added");
+p = new SpawnPlan(5, false); p.NextBatch(30, 30); p.Answered(0, 1);
+Check(p.SetResultId() == "set.fullNone", "a full backpack: nothing added, said so");
+p = new SpawnPlan(5, false); p.NextBatch(30, 0); p.TimedOut(2);
+Check(p.SetResultId() == "set.partialTimeout" && new Func<SpawnPlan>(() => { var q = new SpawnPlan(5, false); q.NextBatch(30, 0); q.TimedOut(0); return q; })().SetResultId() == "result.timeout", "no answer: said so");
+
 // ── every result line exists and fills its blanks ──
 foreach (var id in new[] { "result.added", "result.partial", "result.fullNone", "result.filled", "result.fillCap", "result.timeout", "result.partialTimeout" })
 {

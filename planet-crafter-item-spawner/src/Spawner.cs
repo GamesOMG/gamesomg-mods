@@ -45,11 +45,16 @@ namespace GamesOMG.PlanetCrafterSpawn
         }
 
         public IEnumerator Run(Group group, Inventory backpack, SpawnPlan plan, Action<SpawnPlan> done)
+            => Run(_ => group, group?.GetId() ?? "?", backpack, plan, done);
+
+        // 0.3.0: the k-th item of the plan is groupAt(k) ("one of each": a different decoration per ask, in the order shown).
+        // The game answers a backpack's asks in the order sent (its callback queue is first in, first out), and a plan stops at
+        // the first batch with a refusal, so the items that went in are always the first plan.Added.
+        public IEnumerator Run(Func<int, Group> groupAt, string id, Inventory backpack, SpawnPlan plan, Action<SpawnPlan> done)
         {
             Busy = true;
             Last = plan;
             StrayDestroyed = 0;
-            string id = group?.GetId() ?? "?";
             try { log.LogInfo("Spawn " + id + (plan.Fill ? " (fill)" : " x" + plan.Wanted) + (IsClient ? " as a co-op client" : "") + "."); } catch (Exception) { }
             while (!plan.Done)
             {
@@ -58,9 +63,10 @@ namespace GamesOMG.PlanetCrafterSpawn
                 catch (Exception error) { log.LogWarning("Backpack unreadable: " + error.GetType().Name); plan.TimedOut(0); break; }
                 if (n <= 0) break;
                 var answers = new Answers();
+                int first = plan.Added;
                 for (int i = 0; i < n; i++)
                 {
-                    try { InventoriesHandler.Instance.AddItemToInventory(group, backpack, answers.Take); }
+                    try { InventoriesHandler.Instance.AddItemToInventory(groupAt(first + i), backpack, answers.Take); }
                     catch (Exception error) { log.LogWarning("AddItemToInventory threw: " + error.GetType().Name + ": " + error.Message); answers.Thrown++; }
                 }
                 float deadline = Time.realtimeSinceStartup + AnswerSeconds;

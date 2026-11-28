@@ -17,6 +17,12 @@ Full guide: **[gamesomg.com/planet-crafter-item-spawner](https://gamesomg.com/pl
 - **Enter** adds the amount in the box (1 to start). **×1**, **×10** and **Fill** are one click (X and Y on a controller).
 - **Backpack full?** What fits goes in, the rest isn't made, and the panel says how many didn't fit. Nothing is ever dropped
   on the ground.
+- **Decoration** (LB/RB to the middle tab): every effigy, poster and spacesuit skin the game hands out in crates. Effigies and
+  posters are buildings in the game, so they go into your backpack and you put them down the way you would a found one:
+  right-click it in your inventory. **One of each** (the button above the grid, or Y on a controller) adds one of every
+  decoration shown that your world doesn't have yet (not on you, in a container or built). Search first to narrow it
+  ("poster"). It follows the same backpack rule as everything else: what doesn't fit isn't made, so put some away and press it
+  again for the rest.
 - **Recent** (LB/RB) holds what you spawned last. The open key then Enter adds your last item again.
 - **Esc** clears the search, then closes. **B** closes on a controller. The panel holds your character still while it's
   open, like any text box in the game; the world keeps going (it's not a pause).

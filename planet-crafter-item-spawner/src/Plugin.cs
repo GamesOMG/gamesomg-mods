@@ -215,6 +215,24 @@ namespace GamesOMG.PlanetCrafterSpawn
             }));
         }
 
+        // 0.3.0, "one of each": one ask per decoration, in the order shown; the game's answers decide what fits, as for Add.
+        // Not remembered in Recent (it would push out everything else there).
+        void IPanelHost.SpawnSet(List<ItemEntry> items, Inventory backpack)
+        {
+            if (items == null || items.Count == 0 || backpack == null || spawner.Busy) return;
+            string why = Spawner.Blocked();
+            if (why != null) { panel.Say(L.T(why, KeyLabel), true); return; }
+            var groups = new List<Group>();
+            foreach (var e in items) if (e?.Group is Group g) groups.Add(g);
+            if (groups.Count == 0) return;
+            var plan = new SpawnPlan(groups.Count, false);
+            StartCoroutine(spawner.Run(k => groups[k], "one of each (" + groups.Count + " decorations)", backpack, plan, done =>
+            {
+                if (panel.Open) panel.SetResult(done);
+                else Notice(L.T(done.SetResultId(), done.Added, done.DidNotFit), 5f, done.Full || done.Failed);
+            }));
+        }
+
         // ── the notice card (outside the panel): below the top, so GamesOMG Teleport's notices never sit on it ──
         private void Notice(string text, float seconds, bool bad)
         {

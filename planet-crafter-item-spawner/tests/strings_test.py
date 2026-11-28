@@ -36,9 +36,9 @@ for path, text in code.items():
         (plural if kind == "N" else used).add(ident)
     for m in re.finditer(r'L\.T\([^;()"]*?\?\s*"([a-zA-Z0-9_.-]+)"\s*:\s*"([a-zA-Z0-9_.-]+)"', text):
         used.update(m.groups())
-    # ids handed around as plain strings: "help.*", "btn.*", the spawner's "spawn.*" refusals, SpawnPlan's "result.*",
-    # ItemInfo's gauge kinds "info.*"
-    for m in re.finditer(r'"((?:help|btn|spawn|result|info)\.[a-zA-Z]+)"', text):
+    # ids handed around as plain strings: "help.*", "btn.*", the spawner's "spawn.*" refusals, SpawnPlan's "result.*" and
+    # "set.*" (0.3.0, one of each), ItemInfo's gauge kinds "info.*", the Panel's tab list "tab.*"
+    for m in re.finditer(r'"((?:help|btn|spawn|result|set|info|tab)\.[a-zA-Z]+)"', text):
         used.add(m.group(1))
 
 DYNAMIC = {
